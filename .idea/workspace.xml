@@ -23,10 +23,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Repositories/BaseRepository.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/backend/layouts/sidebar.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="40" lean-forward="true" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
+            <state relative-caret-position="471">
+              <caret line="100" column="8" lean-forward="true" selection-start-line="100" selection-start-column="8" selection-end-line="100" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -202,13 +202,28 @@
             <path>
               <item name="ht-intership-18-02" type="b2602c69:ProjectViewProjectNode" />
               <item name="ht-intership-18-02" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ht-intership-18-02" type="b2602c69:ProjectViewProjectNode" />
               <item name="ht-intership-18-02" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Repositories" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ht-intership-18-02" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ht-intership-18-02" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ht-intership-18-02" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ht-intership-18-02" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -264,12 +279,12 @@
       <option name="presentableId" value="Default" />
       <updated>1550543262268</updated>
       <workItem from="1550543268036" duration="2363000" />
-      <workItem from="1550545827244" duration="2745000" />
+      <workItem from="1550545827244" duration="3527000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5108000" />
+    <option name="totallyTimeSpent" value="5890000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -342,6 +357,13 @@
     <entry file="file://$PROJECT_DIR$/app/Repositories/BaseRepositoryInterface.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/BaseRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="40" lean-forward="true" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/backend/layouts/maincontent.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
@@ -349,10 +371,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/BaseRepository.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/backend/layouts/sidebar.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="40" lean-forward="true" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
+        <state relative-caret-position="471">
+          <caret line="100" column="8" lean-forward="true" selection-start-line="100" selection-start-column="8" selection-end-line="100" selection-end-column="8" />
         </state>
       </provider>
     </entry>

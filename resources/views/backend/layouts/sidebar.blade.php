@@ -9,7 +9,7 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
-                
+
                 <li class="sub-menu">
                     <a href="javascript:;">
                         <i class="fa fa-book"></i>
