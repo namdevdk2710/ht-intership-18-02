@@ -12,5 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('backend.index');
+});
+Route::prefix('admin')->group(function () {
+    Route::get('/', function () {
+        return view('backend.index');
+    });
 });
