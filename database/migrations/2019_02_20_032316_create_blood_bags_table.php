@@ -15,6 +15,15 @@ class CreateBloodBagsTable extends Migration
     {
         Schema::create('blood_bags', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('time');
+            $table->integer('unit');
+            $table->string('status');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->integer('warehouse_id')->unsigned();
+            $table->foreign('warehouse_id')->references('id')->on('blood_warehouses')->onDelete('cascade');
+            $table->integer('calendar_id')->unsigned();
+            $table->foreign('calendar_id')->references('id')->on('blood_calendars')->onDelete('cascade');
             $table->timestamps();
         });
     }

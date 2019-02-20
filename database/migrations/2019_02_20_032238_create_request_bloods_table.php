@@ -15,6 +15,12 @@ class CreateRequestBloodsTable extends Migration
     {
         Schema::create('request_bloods', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('content');
+            $table->string('status');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->integer('calendar_id')->unsigned();
+            $table->foreign('calendar_id')->references('id')->on('blood_calendars')->onDelete('cascade');
             $table->timestamps();
         });
     }

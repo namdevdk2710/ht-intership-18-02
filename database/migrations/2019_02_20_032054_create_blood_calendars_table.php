@@ -15,6 +15,12 @@ class CreateBloodCalendarsTable extends Migration
     {
         Schema::create('blood_calendars', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('time');
+            $table->string('address');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->integer('commune_id')->unsigned();
+            $table->foreign('commune_id')->references('id')->on('communes')->onDelete('cascade');
             $table->timestamps();
         });
     }

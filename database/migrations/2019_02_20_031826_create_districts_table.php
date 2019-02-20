@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBloodWarehousesTable extends Migration
+class CreateDistrictsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,11 @@ class CreateBloodWarehousesTable extends Migration
      */
     public function up()
     {
-        Schema::create('blood_warehouses', function (Blueprint $table) {
+        Schema::create('districts', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->integer('city_id')->unsigned();
+            $table->foreign('city_id')->references('id')->on('cities')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ class CreateBloodWarehousesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('blood_warehouses');
+        Schema::dropIfExists('districts');
     }
 }
