@@ -18,4 +18,7 @@ Route::prefix('admin')->group(function () {
     Route::get('/', function () {
         return view('backend.index');
     });
+    Route::get('/login', function () {
+        return view('backend.login');
+    });
 });
