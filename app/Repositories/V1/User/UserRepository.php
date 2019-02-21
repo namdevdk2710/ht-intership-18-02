@@ -21,8 +21,8 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
             return 0;
         }
         $data = [
-            'email'=>$request['email'],
-            'password'=>$request['password'],
+            'email' => $request['email'],
+            'password' => $request['password'],
         ];
         if (Auth::attempt($data)) {
             return 2;

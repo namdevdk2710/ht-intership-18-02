@@ -24,24 +24,23 @@ class AdminController extends Controller
 
     public function getLogin()
     {
-        if(!Auth::user()) {
+        if (!Auth::user()) {
             return view('backend.login');
         }
 
         return redirect()->route('admin.index');
     }
 
-    public function postLogin(LoginRequest $request)
+    public function postLogin (LoginRequest $request)
     {
         $rs = $this->repository->login($request);
 
-        if($rs == 0) {
+        if ($rs == 0) {
             return redirect()->back()->with('login-error','Email không tồn tại !');
-        } else if($rs == 1) {
+        } elseif ($rs == 1) {
             return redirect()->back()->with('login-error','Password không chính xác !');
         }
 
         return redirect()->back();
     }
-
 }
