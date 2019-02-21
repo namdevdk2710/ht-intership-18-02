@@ -42,4 +42,4 @@
 <script src="{{asset('admin-template/js/jquery.nicescroll.js')}}"></script>
 <script src="{{asset('admin-template/js/jquery.scrollTo.js')}}"></script>
 </body>
-
+</html>
