@@ -11,6 +11,10 @@
 |
 */
 
+Route::get('/', function() {
+    return view('welcome');
+});
+
 Route::get('admin/login', 'V1\Web\Backend\AdminController@getLogin')->name('admin.getLogin');
 Route::post('admin/login', 'V1\Web\Backend\AdminController@postLogin')->name('admin.postLogin');
 
