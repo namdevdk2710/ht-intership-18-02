@@ -31,14 +31,14 @@ class AdminController extends Controller
         return redirect()->route('admin.index');
     }
 
-    public function postLogin (LoginRequest $request)
+    public function postLogin(LoginRequest $request)
     {
         $rs = $this->repository->login($request);
 
         if ($rs == 0) {
-            return redirect()->back()->with('login-error','Email không tồn tại !');
+            return redirect()->back()->with('login-error', 'Email không tồn tại !');
         } elseif ($rs == 1) {
-            return redirect()->back()->with('login-error','Password không chính xác !');
+            return redirect()->back()->with('login-error', 'Password không chính xác !');
         }
 
         return redirect()->back();
