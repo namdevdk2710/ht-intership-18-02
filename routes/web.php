@@ -22,6 +22,6 @@ Route::prefix('admin')->group(function () {
         return view('backend.login');
     });
 });
-Route::group(['prefix'=>'users'],function () {
-    Route::get('/', 'V1\Web\Backend\UserController@index')->name("users.list");
+Route::group(['prefix' => 'users'], function () {
+    Route::get('/', 'V1\Web\Backend\UserController@index')->name('users.list');
 });

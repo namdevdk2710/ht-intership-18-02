@@ -18,7 +18,7 @@ class UserController extends Controller
     public function index()
     {
         $users = $this->repository->index();
-        return view('backend.users.index',compact('users'));
+        return view('backend.users.index', compact('users'));
     }
 
     public function create()
