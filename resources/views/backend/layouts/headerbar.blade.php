@@ -93,7 +93,7 @@
                 </li>
                 <li>
                     <a href="#">
-                        <span class="photo"><img alt="avatar" src="{{asset('admin-template/images/3.png')}}"></span>
+                        <span class="photo"><img alt="avatar" src="{{asset('asset/images/3.png')}}"></span>
                                 <span class="subject">
                                 <span class="from">Jonathan Smith</span>
                                 <span class="time">Just now</span>
@@ -105,7 +105,7 @@
                 </li>
                 <li>
                     <a href="#">
-                        <span class="photo"><img alt="avatar" src="{{asset('admin-template/images/1.png')}}"></span>
+                        <span class="photo"><img alt="avatar" src="{{asset('asset/images/1.png')}}"></span>
                                 <span class="subject">
                                 <span class="from">Jane Doe</span>
                                 <span class="time">2 min ago</span>
@@ -117,7 +117,7 @@
                 </li>
                 <li>
                     <a href="#">
-                        <span class="photo"><img alt="avatar" src="{{asset('admin-template/images/3.png')}}"></span>
+                        <span class="photo"><img alt="avatar" src="{{asset('asset/images/3.png')}}"></span>
                                 <span class="subject">
                                 <span class="from">Tasi sam</span>
                                 <span class="time">2 days ago</span>
@@ -129,7 +129,7 @@
                 </li>
                 <li>
                     <a href="#">
-                        <span class="photo"><img alt="avatar" src="{{asset('admin-template/images/2.png')}}"></span>
+                        <span class="photo"><img alt="avatar" src="{{asset('asset/images/2.png')}}"></span>
                                 <span class="subject">
                                 <span class="from">Mr. Perfect</span>
                                 <span class="time">2 hour ago</span>
@@ -196,7 +196,7 @@
         <!-- user login dropdown start-->
         <li class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                <img alt="" src="{{asset('admin-template/images/2.png')}}">
+                <img alt="" src="{{asset('asset/images/2.png')}}">
                 <span class="username">John Doe</span>
                 <b class="caret"></b>
             </a>

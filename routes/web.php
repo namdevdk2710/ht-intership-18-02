@@ -11,14 +11,20 @@
 |
 */
 
-Route::get('/', function () {
-    return view('backend.index');
+Route::get('admin/login', 'V1\Web\Backend\AdminController@getLogin')->name('admin.getLogin');
+Route::post('admin/login', 'V1\Web\Backend\AdminController@postLogin')->name('admin.postLogin');
+
+Route::group(['prefix'=>'admin', 'middleware'=>'admin'], function() {
+
+    Route::get('/', 'V1\Web\Backend\AdminController@index')->name('admin.index');
+    Route::get('/logout', 'V1\Web\Backend\AdminController@logout');
+
 });
-Route::prefix('admin')->group(function () {
-    Route::get('/', function () {
-        return view('backend.index');
-    });
-    Route::get('/login', function () {
-        return view('backend.login');
-    });
-});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
