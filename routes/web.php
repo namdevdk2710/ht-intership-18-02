@@ -22,11 +22,3 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::get('/', 'V1\Web\Backend\AdminController@index')->name('admin.index');
     Route::get('/logout', 'V1\Web\Backend\AdminController@logout');
 });
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
