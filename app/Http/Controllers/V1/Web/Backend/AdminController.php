@@ -46,7 +46,7 @@ class AdminController extends Controller
 
     public function logout()
     {
-        Auth::logout();
+        $this->repository->logout();
 
         return redirect()->back();
     }
