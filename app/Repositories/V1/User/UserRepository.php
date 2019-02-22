@@ -33,11 +33,6 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
 
     public function store($data)
     {
-        $user= new User;
-        $user->username= $data->username;
-        $user->email= $data->email;
-        $user->password= $data->password;
-        $user->role= $data->role;
-        $user->save();
+        return $this->model->create($data);
     }
 }

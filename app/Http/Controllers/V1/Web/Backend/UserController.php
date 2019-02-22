@@ -30,7 +30,7 @@ class UserController extends Controller
 
     public function store(UserRequest $request)
     {
-        $this->repository->store($request);
+        $this->repository->store($request->all());
 
         return redirect()->route('users.list');
     }
