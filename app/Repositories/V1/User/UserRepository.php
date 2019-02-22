@@ -31,7 +31,8 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
         return 1;
     }
 
-    public function store($data){
+    public function store($data)
+    {
         $user= new User;
         $user->username= $data->username;
         $user->email= $data->email;
