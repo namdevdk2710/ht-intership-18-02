@@ -17,7 +17,7 @@ class UserRequest extends FormRequest
         return [
             'username' => 'required',
             'email' => 'required|email|unique:users',
-            'password' => 'required'
+            'password' => 'required',
         ];
     }
 
@@ -28,7 +28,7 @@ class UserRequest extends FormRequest
             'email.required' => 'Vui lòng nhập tài khoản !',
             'email.email' => 'Địa chỉ email không hợp lệ !',
             'email.unique' => 'Email đã tồn tại!',
-            'password.required' => 'Vui lòng nhập Mật khẩu !'
+            'password.required' => 'Vui lòng nhập Mật khẩu !',
         ];
     }
 }

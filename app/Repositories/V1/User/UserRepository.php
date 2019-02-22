@@ -6,7 +6,6 @@ use App\Repositories\BaseRepository;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
-
 class UserRepository extends BaseRepository implements UserRepositoryInterface
 {
     public function getModel()
@@ -31,6 +30,7 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
 
         return 1;
     }
+
     public function store($data){
         $user= new User;
         $user->username= $data->username;
