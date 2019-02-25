@@ -17,5 +17,5 @@ Route::group(['prefix' => 'users'], function () {
     Route::post('/create', 'V1\Web\Backend\UserController@store')->name('users.store');
     Route::get('edit/{id}', 'V1\Web\Backend\UserController@edit')->name('users.edit');
     Route::put('edit/{id}', 'V1\Web\Backend\UserController@update')->name('users.update');
-    Route::get('delete/{id}', 'V1\Web\Backend\UserController@destroy')->name("users.destroy");
+    Route::get('delete/{id}', 'V1\Web\Backend\UserController@destroy')->name('users.destroy');
 });
