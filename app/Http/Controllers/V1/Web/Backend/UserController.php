@@ -55,7 +55,6 @@ class UserController extends Controller
             if ($result) {
                 return redirect()->route('users.list')->with('status', 'Successfull!');
             }
-
             return back()->withErrors('Update failed!');
     }
 
