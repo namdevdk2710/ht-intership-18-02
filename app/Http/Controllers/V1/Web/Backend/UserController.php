@@ -50,11 +50,13 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $user = $this->repository->find($id);
-            $result = $this->repository->update($id, $request->all());
+        $result = $this->repository->update($id, $request->all());
 
-            if ($result) {
-                return redirect()->route('users.list')->with('status', 'Successfull!');
-            }
+        if ($result) {
+
+            return redirect()->route('users.list')->with('status', 'Successfull!');
+        }
+
             return back()->withErrors('Update failed!');
     }
 
