@@ -60,6 +60,9 @@ class UserController extends Controller
 
     public function destroy($id)
     {
-        //
+        $user = $this->repository->find($id);
+        $this->repository->destroy($id);
+
+        return redirect()->route('users.list')->with('success', 'Xóa thành công');
     }
 }

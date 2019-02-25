@@ -39,26 +39,37 @@
                         @endif
                     </td>
                     <td style="width:17%;">
-                        <a href="" alt="Xem chi tiết" class="btn btn-info" data-toggle="modal"
-                            data-target="">
+                        <a href="" alt="Xem chi tiết" class="btn btn-info" data-toggle="modal" data-target="">
                             <i class="fa fa-info-circle" aria-hidden="true"></i>
                         </a>
-                        <a href="users/index/{{ $user->id }}" class="btn btn-warning "  class="btn btn-primary"
-                             data-toggle="modal" data-target="#exampleModalLong{{$user->id}}">
-                                <i class="fa fa-pencil text-white" aria-hidden="true"></i>
+                        <a href="users/index/{{ $user->id }}" class="btn btn-warning " class="btn btn-primary"
+                            data-toggle="modal" data-target="#exampleModalLong{{$user->id}}">
+                            <i class="fa fa-pencil text-white" aria-hidden="true"></i>
                         </a>
-                        <a href="#" class="btn btn-danger">
+                        <button  type="button" value="{{$user->id}}" class="btn btn-danger">
                             <i class="fa fa-trash-o" aria-hidden="true"></i>
-                        </a>
+                        </button>
                     </td>
                 </tr>
 
                 @include('backend.users.edit')
                 @endforeach
             </tbody>
-
         </table>
     </div>
 </div>
+
+<script>
+    $(document).ready(function() {
+        var button = $('.btn-danger');
+        button.click(function() {
+            if (confirm("Bạn có muốn xóa người dùng này?")) {
+                var url = '{{ route("users.destroy", ":id") }}';
+                url = url.replace(':id', $(this).val());
+                window.location.href = url;
+            }
+        });
+    });
+</script>
 
 @endsection
