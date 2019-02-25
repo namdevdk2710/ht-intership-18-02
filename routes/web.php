@@ -14,6 +14,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 
 Route::group(['prefix' => 'users'], function () {
     Route::get('/', 'V1\Web\Backend\UserController@index')->name('users.list');
-    Route::get('/create', 'V1\Web\Backend\UserController@create');
     Route::post('/create', 'V1\Web\Backend\UserController@store')->name('users.store');
+    Route::get('edit/{id}', 'V1\Web\Backend\UserController@edit')->name('users.edit');
+    Route::put('edit/{id}','V1\Web\Backend\UserController@update')->name('users.update');
+
 });

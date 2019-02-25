@@ -27,19 +27,33 @@
                     <td>
 
                         @if($user->role == 1)
-                            {{"Quản trị viên"}}
+                        {{"Quản trị viên"}}
                         @endif
 
                         @if($user->role == 2)
-                            {{"Cơ quan y tế"}}
+                        {{"Cơ quan y tế"}}
                         @endif
 
                         @if($user->role == 0)
-                            {{"Người dùng"}}
+                        {{"Người dùng"}}
                         @endif
                     </td>
-                    <td></td>
+                    <td style="width:17%;">
+                        <a href="" alt="Xem chi tiết" class="btn btn-info" data-toggle="modal"
+                            data-target="">
+                            <i class="fa fa-info-circle" aria-hidden="true"></i>
+                        </a>
+                        <a href="users/index/{{ $user->id }}" class="btn btn-warning "  class="btn btn-primary"
+                             data-toggle="modal" data-target="#exampleModalLong{{$user->id}}">
+                                <i class="fa fa-pencil text-white" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="btn btn-danger">
+                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                        </a>
+                    </td>
                 </tr>
+
+                @include('backend.users.edit')
                 @endforeach
             </tbody>
 
