@@ -1,6 +1,6 @@
 @extends('backend.layouts.app')
 @section('content')
-<div class="table-responsive calendar-table" style="margin:0px 10px; padding:5px 15px; background: #fff">
+<div class="table-responsive calendar-table">
     <div>
         <h2 class="text-center">Danh sách lịch hiến máu nhận máu</h2>
     </div>
@@ -30,7 +30,7 @@
             @endforeach
         </tbody>
     </table>
-    <div class="pull-right">
+    <div class="pagination-wrapper">
     {{ $calendars->links() }}
     </div>
 </div>

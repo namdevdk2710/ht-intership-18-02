@@ -12,7 +12,7 @@
 
                 <li class="sub-menu">
                     <a class="{{( Request::path() === 'admin/list-calendar' || Request::path() === 'admin/add-calendar' )? 'active' : '' }}" href="javascript:;">
-                        <i class="fa fa-th"></i>
+                        <i class="fa fa-calendar"></i>
                         <span>Quản Lý Lịch</span>
                     </a>
                     <ul class="sub">
@@ -20,7 +20,6 @@
                         <li><a href="responsive_table.html">Đăng lịch mới</a></li>
                     </ul>
                 </li>
-
                 <li class="sub-menu">
                     <a href="javascript:;">
                         <i class="fa fa-book"></i>
