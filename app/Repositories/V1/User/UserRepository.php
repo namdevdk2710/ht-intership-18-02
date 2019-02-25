@@ -44,5 +44,4 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
 
         return $this;
     }
-
 }

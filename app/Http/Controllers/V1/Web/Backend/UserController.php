@@ -51,13 +51,11 @@ class UserController extends Controller
     {
         $user = $this->repository->find($id);
         $result = $this->repository->update($id, $request->all());
-
         if ($result) {
-
             return redirect()->route('users.list')->with('status', 'Successfull!');
         }
 
-            return back()->withErrors('Update failed!');
+        return back()->withErrors('Update failed!');
     }
 
     public function destroy($id)
