@@ -23,3 +23,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::get('/logout', 'V1\Web\Backend\AdminController@logout');
     Route::get('/list-calendar', 'V1\Web\Backend\CalendarController@listCalendar')->name('calendar.listCalendar');
 });
+Route::group(['prefix' => 'users'], function () {
+    Route::get('/', 'V1\Web\Backend\UserController@index')->name('users.list');
+});

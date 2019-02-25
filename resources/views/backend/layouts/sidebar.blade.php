@@ -25,12 +25,11 @@
                     <a href="javascript:;">
                         <i class="fa fa-book"></i>
                         <span>UI Elements</span>
+                <li>
+                    <a class="active" href="{{route('users.list')}}">
+                        <i class="fa fa-user"></i>
+                        <span>Quản lý người dùng</span>
                     </a>
-                    <ul class="sub">
-						<li><a href="typography.html">Typography</a></li>
-						<li><a href="glyphicon.html">glyphicon</a></li>
-                        <li><a href="grids.html">Grids</a></li>
-                    </ul>
                 </li>
                 <li>
                     <a href="fontawesome.html">
@@ -56,7 +55,7 @@
                     <ul class="sub">
                         <li><a href="form_component.html">Form Elements</a></li>
                         <li><a href="form_validation.html">Form Validation</a></li>
-						<li><a href="dropzone.html">Dropzone</a></li>
+                        <li><a href="dropzone.html">Dropzone</a></li>
                     </ul>
                 </li>
                 <li class="sub-menu">
@@ -96,7 +95,7 @@
                     </a>
                     <ul class="sub">
                         <li><a href="gallery.html">Gallery</a></li>
-						<li><a href="404.html">404 Error</a></li>
+                        <li><a href="404.html">404 Error</a></li>
                         <li><a href="registration.html">Registration</a></li>
                     </ul>
                 </li>
@@ -106,7 +105,8 @@
                         <span>Login Page</span>
                     </a>
                 </li>
-            </ul>            </div>
+            </ul>
+        </div>
         <!-- sidebar menu end-->
     </div>
 </aside>
