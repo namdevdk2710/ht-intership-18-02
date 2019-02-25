@@ -16,7 +16,7 @@ class CommunesTableSeeder extends Seeder
         $faker = Faker::create();
         foreach (range(1, 10) as $value) {
             Commune::create([
-                'name' => $faker->country(),
+                'name' => $faker->city(),
             ]);
         }
     }

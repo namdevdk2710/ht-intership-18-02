@@ -21,4 +21,5 @@ Route::post('admin/login', 'V1\Web\Backend\AdminController@postLogin')->name('ad
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::get('/', 'V1\Web\Backend\AdminController@index')->name('admin.index');
     Route::get('/logout', 'V1\Web\Backend\AdminController@logout');
+    Route::get('/list-calendar', 'V1\Web\Backend\CalendarController@listCalendar')->name('calendar.listCalendar');
 });
