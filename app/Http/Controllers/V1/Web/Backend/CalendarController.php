@@ -18,6 +18,7 @@ class CalendarController extends Controller
     public function listCalendar()
     {
         $calendars = $this->repository->listCalendar();
+
         return view('backend.calendar.list_calendar', compact('calendars'));
     }
 }

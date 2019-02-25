@@ -14,11 +14,9 @@ class CalendarsTableSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create();
-        // $users = App\Models\User::whereIn('role', [1, 2]);
         $communes = App\Models\Commune::all();
         foreach (range(1, 20) as $index) {
             Calendar::create([
-                // 'user_id' => $faker->randomElement($users->pluck('id')->toArray()),
                 'user_id' => $faker->randomElement([1, 2]),
                 'commune_id' => $faker->randomElement($communes->pluck('id')->toArray()),
                 'time' => $faker->dateTimeBetween($startDate = 'now', $endDate = '+3 years', $timezone = null),
