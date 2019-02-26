@@ -14,6 +14,6 @@ class CalendarRepository extends BaseRepository implements CalendarRepositoryInt
 
     public function listCalendar()
     {
-        return Calendar::paginate(7);
+        return $this->model->paginate(7);
     }
 }
