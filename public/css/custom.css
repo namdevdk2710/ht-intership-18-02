@@ -12,3 +12,16 @@
     color: red;
     text-align: center;
 }
+.calendar-table{
+    margin:0px 10px;
+    padding: 15px;
+    background: #fff;
+}
+.calendar-table table tr td{
+    color: black;
+}
+.calendar-table .pagination-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
