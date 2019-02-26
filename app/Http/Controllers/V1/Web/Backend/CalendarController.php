@@ -21,4 +21,14 @@ class CalendarController extends Controller
 
         return view('backend.calendar.list_calendar', compact('calendars'));
     }
+
+    public function getAddCalendar()
+    {
+        return view('backend.calendar.add_calendar');
+    }
+
+    public function postAddCalendar()
+    {
+        return view('backend.calendar.add_calendar');
+    }
 }
