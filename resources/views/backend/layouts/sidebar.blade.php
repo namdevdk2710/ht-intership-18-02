@@ -4,12 +4,26 @@
         <div class="leftside-navigation">
             <ul class="sidebar-menu" id="nav-accordion">
                 <li>
-                    <a class="active" href="index.html">
+                    <a class="{{( Request::path() === 'admin/index' || Request::path() === 'admin' )? 'active' : '' }}" href="">
                         <i class="fa fa-dashboard"></i>
                         <span>Dashboard</span>
                     </a>
                 </li>
 
+                <li class="sub-menu">
+                    <a class="{{( Request::path() === 'admin/list-calendar' || Request::path() === 'admin/add-calendar' )? 'active' : '' }}" href="javascript:;">
+                        <i class="fa fa-calendar"></i>
+                        <span>Quản Lý Lịch</span>
+                    </a>
+                    <ul class="sub">
+                        <li><a class="{{( Request::path() === 'admin/list-calendar')? 'active' : '' }}" href="{{ route('calendar.listCalendar') }}">Danh Sách</a></li>
+                        <li><a href="responsive_table.html">Đăng lịch mới</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-book"></i>
+                        <span>UI Elements</span>
                 <li>
                     <a class="active" href="{{route('users.list')}}">
                         <i class="fa fa-user"></i>
