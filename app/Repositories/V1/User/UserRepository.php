@@ -35,6 +35,7 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
     {
         return $this->model->create($data);
     }
+
     public function logout()
     {
         return Auth::logout();
