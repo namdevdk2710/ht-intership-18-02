@@ -3,13 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Carbon\Carbon;
 
 class Calendar extends Model
 {
     public function getTimeAttribute($value)
     {
-        return date("h:m d-m-Y", strtotime($value));
+        return date('h:m d-m-Y', strtotime($value));
     }
 
     public function user()
