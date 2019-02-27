@@ -2,9 +2,9 @@
 
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
-use App\Models\Commune;
+use App\Models\District;
 
-class CommunesTableSeeder extends Seeder
+class DistrictsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,11 +14,11 @@ class CommunesTableSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create();
-        $districts = App\Models\District::all();
+        $cities = App\Models\City::all();
         foreach (range(1, 10) as $value) {
-            Commune::create([
-                'name' => $faker->streetName(),
-                'district_id' => $faker->randomElement($districts->pluck('id')->toArray()),
+            District::create([
+                'name' => $faker->citySuffix(),
+                'city_id' => $faker->randomElement($cities->pluck('id')->toArray()),
             ]);
         }
     }

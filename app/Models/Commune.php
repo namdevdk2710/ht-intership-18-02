@@ -10,4 +10,9 @@ class Commune extends Model
     {
         return $this->hasOne('App\Models\Calendar');
     }
+
+    public function district()
+    {
+        return $this->belongsTo('App\Models\District');
+    }
 }
