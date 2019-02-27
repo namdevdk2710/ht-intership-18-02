@@ -17,14 +17,20 @@
         <tbody>
             @foreach($calendars as $key => $calendar)
             <tr>
-                <th scope="row">{{ $key }}</th>
+                <th scope="row">{{ $key +1 }}</th>
                 <td>{{ $calendar->time }}</td>
-                <td>{{ $calendar->address }} - {{ $calendar->commune->name }}
-                </td>
+                @php
+                $add = $calendar->address . ' - ' . $calendar->commune->name .
+                ' - ' . $calendar->commune->district->name . ' - ' .
+                $calendar->commune->district->city->name
+                @endphp
+                <td>{{ $add }}</td>
                 <td>{{ $calendar->user->username }}</td>
                 <td>
-                    <a class="btn btn-sm btn-primary" href="#" data-toggle="modal"
-                        data-target="#showDetailCalendar">Chi tiết</a>
+                    <a class="btn btn-sm btn-primary" href="#"
+                        data-toggle="modal"
+                        data-target="#showDetailCalendar{{$calendar->id}}">Chi tiết</a>
+                    @include('backend.calendar.modal_form_calendar')
                     <a class="btn btn-sm btn-warning" href="#">Sửa</a>
                     <a class="btn btn-sm btn-danger" href="#">Xóa</a>
                 </td>
@@ -36,28 +42,4 @@
         {{ $calendars->links() }}
     </div>
 </div>
-<!-- Modal -->
-<div class="modal fade" id="showDetailCalendar" tabindex="-1" role="dialog"
-    aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"
-                    aria-label="Close"><span
-                        aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Thông tin chi tiết</h4>
-            </div>
-            <div class="modal-body">
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default"
-                    data-dismiss="modal">Đóng</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
 @endsection
