@@ -16,8 +16,8 @@ class UserController extends Controller
     protected $inforReponsitoty;
 
     public function __construct(UserRepositoryInterFace $userRepository
-    , BloodGroupRepositoryInterFace $groupRepository
-    , InformationRepositoryInterFace $inforRepository)
+    ,BloodGroupRepositoryInterFace $groupRepository
+    ,InformationRepositoryInterFace $inforRepository)
     {
         $this->userRepository = $userRepository;
         $this->groupReponsitoty = $groupRepository;
