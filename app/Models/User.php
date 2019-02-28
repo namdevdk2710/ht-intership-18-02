@@ -12,4 +12,10 @@ class User extends Model
     {
         return $this->hasOne('App\Models\Calendar');
     }
+
+    public function information()
+    {
+        return $this->hasOne('App\Models\Information');
+    }
+
 }
