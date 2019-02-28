@@ -18,7 +18,8 @@ class UserController extends Controller
     public function __construct(
         UserRepositoryInterFace $userRepository,
         BloodGroupRepositoryInterFace $groupRepository,
-        InformationRepositoryInterFace $inforRepository)
+        InformationRepositoryInterFace $inforRepository
+    )
     {
         $this->userRepository = $userRepository;
         $this->groupReponsitoty = $groupRepository;
