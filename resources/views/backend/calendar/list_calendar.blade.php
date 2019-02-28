@@ -2,7 +2,7 @@
 @section('content')
 <div class="table-responsive calendar-table">
     <div>
-        <h2 class="text-center">Danh sách lịch hiến máu nhận máu</h2>
+        <h2 class="text-center">Danh sách lịch hiến máu</h2>
     </div>
     <table class="table table-hover">
         <thead>
@@ -17,21 +17,29 @@
         <tbody>
             @foreach($calendars as $key => $calendar)
             <tr>
-                <th scope="row">{{ $key }}</th>
+                <th scope="row">{{ $key +1 }}</th>
                 <td>{{ $calendar->time }}</td>
-                <td>{{ $calendar->address }} - {{ $calendar->commune->name }}</td>
+                @php
+                $add = $calendar->address . ' - ' . $calendar->commune->name .
+                ' - ' . $calendar->commune->district->name . ' - ' .
+                $calendar->commune->district->city->name
+                @endphp
+                <td>{{ $add }}</td>
                 <td>{{ $calendar->user->username }}</td>
                 <td>
-                    <a class="btn btn-primary" href="#">Chi tiết</a>
-                    <a class="btn btn-warning" href="#">Sửa</a>
-                    <a class="btn btn-danger" href="#">Xóa</a>
+                    <a class="btn btn-sm btn-primary" href="#"
+                        data-toggle="modal"
+                        data-target="#showDetailCalendar{{$calendar->id}}">Chi tiết</a>
+                    @include('backend.calendar.modal_form_calendar')
+                    <a class="btn btn-sm btn-warning" href="#">Sửa</a>
+                    <a class="btn btn-sm btn-danger" href="#">Xóa</a>
                 </td>
             </tr>
             @endforeach
         </tbody>
     </table>
     <div class="pagination-wrapper">
-    {{ $calendars->links() }}
+        {{ $calendars->links() }}
     </div>
 </div>
 @endsection
