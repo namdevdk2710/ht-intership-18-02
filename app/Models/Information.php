@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Information extends Model
 {
-    protected $fillable = ['name','gender','dob','cmnd','address','phone','user_id','blood_id','commune_id'];
+    protected $fillable = ['name', 'gender', 'dob', 'cmnd', 'address', 'phone', 'user_id', 'blood_id', 'commune_id'];
 
     public function bloodGroup()
     {

@@ -12,5 +12,4 @@ class BloodGroup extends Model
     {
         return $this->hasMany('App\Models\Information');
     }
-
 }

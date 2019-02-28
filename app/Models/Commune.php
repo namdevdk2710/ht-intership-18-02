@@ -20,5 +20,4 @@ class Commune extends Model
     {
         return $this->hasMany('App\Models\Information');
     }
-
 }
