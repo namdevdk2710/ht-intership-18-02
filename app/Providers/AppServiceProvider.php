@@ -14,7 +14,6 @@ use App\Repositories\V1\BloodGroup\BloodGroupRepositoryInterface;
 use App\Repositories\V1\Information\InformationRepository;
 use App\Repositories\V1\Information\InformationRepositoryInterface;
 
-
 class AppServiceProvider extends ServiceProvider
 {
     /**
