@@ -22,5 +22,4 @@ class Information extends Model
     {
         return $this->belongsTo('App\Models\Commune');
     }
-
 }
