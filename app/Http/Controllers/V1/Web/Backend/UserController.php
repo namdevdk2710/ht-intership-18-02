@@ -19,7 +19,7 @@ class UserController extends Controller
         UserRepositoryInterFace $userRepository,
         BloodGroupRepositoryInterFace $groupRepository,
         InformationRepositoryInterFace $inforRepository
-    ){
+    ) {
         $this->userRepository = $userRepository;
         $this->groupReponsitoty = $groupRepository;
         $this->inforReponsitoty = $inforRepository;
