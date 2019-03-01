@@ -16,9 +16,10 @@ class CalendarController extends Controller
 
     public function __construct(
         CalendarRepositoryInterFace $calendarRepository,
-        CityRepositoryInterFace $cityRepository, DistrictRepositoryInterFace $districtRepository,
+        CityRepositoryInterFace $cityRepository,
+        DistrictRepositoryInterFace $districtRepository,
         CommuneRepositoryInterFace $communeRepository
-        ) {
+    ) {
         $this->calendarRepository = $calendarRepository;
         $this->cityRepository = $cityRepository;
         $this->districtRepository = $districtRepository;
@@ -30,7 +31,7 @@ class CalendarController extends Controller
         $calendars = $this->calendarRepository->listCalendar();
         $cities = $this->cityRepository->getCity();
 
-        return view('backend.calendar.list_calendar', compact('calendars','cities'));
+        return view('backend.calendar.list_calendar', compact('calendars', 'cities'));
     }
 
     public function postAddCalendar(Request $request)
