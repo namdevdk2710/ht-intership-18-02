@@ -81,11 +81,12 @@
                     </div>
                     <div class="form-group col-md-6">
                         {!! Form::label('Số điện thoại:') !!}
-                        {!! Form::text('address',old('address'), ['class' => 'form-control']) !!}
+                        {!! Form::text('phone',old('phone'), ['class' => 'form-control']) !!}
                     </div>
                     <div class="form-group col-md-6">
-                        {!! Form::label('Nhóm máu:') !!}
-                        {!! Form::text('address',old('address'), ['class' => 'form-control']) !!}
+                    {!! Form::label('Nhóm máu:') !!}
+                        {!! Form::select('blood_id', [''=>'--- Chọn nhóm máu
+                        ---']+$bloodGroup, null, ['class'=>'form-control']) !!}
                     </div>
                 </div>
                 <div class="modal-footer">
