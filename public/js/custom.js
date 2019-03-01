@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $("select[name='city']").change(function() {
+    $("select[name='city']").on('change', function() {
         var city_id = $(this).val();
         var token = $("input[name='_token']").val();
         $.ajax({

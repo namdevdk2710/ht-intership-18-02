@@ -29,3 +29,9 @@
 .form-padding{
     padding-bottom: 2em;
 }
+.modal-body form .form-group:nth-child(2){
+    padding-top: 1em;
+}
+.padding-right-15px{
+    padding-right: 15x!important;
+}

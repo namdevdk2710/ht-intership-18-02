@@ -35,7 +35,9 @@
                         data-target="#showDetailCalendar{{$calendar->id}}">Chi
                         tiết</a>
                     @include('backend.calendar.modal_form_calendar')
-                    <a class="btn btn-sm btn-warning" href="#">Sửa</a>
+                    <a class="btn btn-sm btn-warning" href="#" data-toggle="modal"
+                        data-target="#edit-calendar-{{$calendar->id}}">Sửa</a>
+                    @include('backend.calendar.edit_calendar')
                     <a class="btn btn-sm btn-danger" href="#">Xóa</a>
                 </td>
             </tr>
