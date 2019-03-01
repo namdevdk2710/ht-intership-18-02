@@ -12,4 +12,24 @@ class BloodGroupRepository extends BaseRepository implements BloodGroupRepositor
     {
         return BloodGroup::class;
     }
+
+    public function index()
+    {
+        return $this->model->paginate(7);
+    }
+
+    public function store($data)
+    {
+        return $this->model->create($data);
+
+    }
+
+    public function update($id, $data)
+    {
+        $blood= $this->model->find($id);
+        $blood->fill($data);
+        $blood->save();
+
+        return $blood;
+    }
 }

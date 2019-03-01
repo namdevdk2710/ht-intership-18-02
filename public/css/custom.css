@@ -7,7 +7,9 @@
     padding: .5em;
 
 }
-.calendar-table, .page-content-wrapper{}
+.calendar-table, .page-content-wrapper{
+
+}
 
 .title-modal{
     color: red;
@@ -28,4 +30,7 @@
 }
 .form-padding{
     padding-bottom: 2em;
+}
+.form-blood{
+    padding: 15px;
 }
