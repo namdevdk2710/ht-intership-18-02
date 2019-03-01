@@ -6,6 +6,7 @@
     <h2 class="tittle-w3-agileits mb-4 title-user">DANH SÁCH NGƯỜI DÙNG</h2>
     <div class="table-responsive">
         <table class="table table-bordered table-striped table-color">
+            <div>@include('backend.users.add')</div>
 
             <thead>
                 <tr>

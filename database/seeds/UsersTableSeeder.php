@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Carbon;
 
 class UsersTableSeeder extends Seeder
 {
@@ -11,7 +12,6 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        $currentTime = date('Y-m-d H:i:s');
         DB::table('users')->insert([
             [
                 'id' => 1,
@@ -19,8 +19,8 @@ class UsersTableSeeder extends Seeder
                 'email' => 'admin@gmail.com',
                 'password' => bcrypt('123456'),
                 'role' => 1,
-                'created_at' => $currentTime,
-                'updated_at' => $currentTime
+                'created_at' => now(),
+                'updated_at' =>  now()
             ],
             [
                 'id' => 2,
@@ -28,8 +28,8 @@ class UsersTableSeeder extends Seeder
                 'email' => 'staff@gmail.com',
                 'password' => bcrypt('123456'),
                 'role' => 2,
-                'created_at' => $currentTime,
-                'updated_at' => $currentTime
+                'created_at' =>  now(),
+                'updated_at' =>  now()
             ],
             [
                 'id' => 3,
@@ -37,8 +37,8 @@ class UsersTableSeeder extends Seeder
                 'email' => 'user@gmail.com',
                 'password' => bcrypt('123456'),
                 'role' => 0,
-                'created_at' => $currentTime,
-                'updated_at' => $currentTime
+                'created_at' =>  now(),
+                'updated_at' =>  now()
             ]
         ]);
     }

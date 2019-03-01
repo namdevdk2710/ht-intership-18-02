@@ -7,7 +7,13 @@
     padding: .5em;
 
 }
-.calendar-table, .page-content-wrapper{
+.calendar-table, .page-content-wrapper{}
+
+.title-modal{
+    color: red;
+    text-align: center;
+}
+.calendar-table{
     margin:0px 10px;
     padding: 15px;
     background: #fff;
