@@ -1,4 +1,3 @@
-
 <div class="modal fade" id="add-blood" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
