@@ -22,9 +22,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="fontawesome.html">
+                    <a href="{{route('bloods.list')}}">
                         <i class="fa fa-bullhorn"></i>
-                        <span>Font awesome </span>
+                        <span>Quản lý nhóm máu</span>
                     </a>
                 </li>
                 <li class="sub-menu">
