@@ -49,7 +49,8 @@
                     </div>
                     <div class="form-group col-md-6">
                         {!! Form::label('Giới tính:') !!} <br>
-                        {!! Form::select('gender' ,['1' => 'Nam', '0' => 'Nữ'], null, ['class' => 'form-control']) !!}
+                        {!! Form::select('gender' ,['1' => 'Nam', '0' => 'Nữ'],
+                             null, ['class' => 'form-control']) !!}
                     </div>
                     <div class="form-group col-md-6">
                         {!! Form::label('Ngày sinh:') !!}
@@ -61,11 +62,18 @@
                     </div>
                     <div class="form-group col-md-6">
                         {!! Form::label('Thành phố:') !!}
-                        {!! Form::text('email',old('email'), ['class' => 'form-control']) !!}
+                        {!! Form::select('city',[''=>'--- Chọn Thành
+                            phố---']+$cities ,null,['class'=>'form-control']) !!}
                     </div>
                     <div class="form-group col-md-6">
-                        {!! Form::label('Huyện/xã:') !!}
-                        {!! Form::text('email',old('email'), ['class' => 'form-control']) !!}
+                        {!! Form::label('Quận/huyện:') !!}
+                        {!! Form::select('district',[''=>'--- Chọn Quận/huyện
+                        ---'],null,['class'=>'form-control']) !!}
+                    </div>
+                    <div class="form-group col-md-6">
+                        {!! Form::label('Xã/phường:') !!}
+                        {!! Form::select('commune',[''=>'--- Chọn Xã phường
+                        ---'],null,['class'=>'form-control']) !!}
                     </div>
                     <div class="form-group col-md-6">
                         {!! Form::label('Số nhà:') !!}
@@ -75,7 +83,7 @@
                         {!! Form::label('Số điện thoại:') !!}
                         {!! Form::text('address',old('address'), ['class' => 'form-control']) !!}
                     </div>
-                    <div class="form-group col-md-12">
+                    <div class="form-group col-md-6">
                         {!! Form::label('Nhóm máu:') !!}
                         {!! Form::text('address',old('address'), ['class' => 'form-control']) !!}
                     </div>
