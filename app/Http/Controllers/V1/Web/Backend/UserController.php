@@ -51,10 +51,7 @@ class UserController extends Controller
     public function store(UserRequest $request)
     {
         $this->userRepository->store($request->only('username', 'email', 'password', 'role'));
-        $this->inforReponsitoty->store($request->only(
-            'user_id', 'name', 'gender', 'dob',
-            'cmnd', 'commune', 'address', 'phone', 'blood_id'
-    ) );
+        $this->inforReponsitoty->store($request->only('user_id', 'name', 'gender', 'dob','cmnd', 'commune', 'address', 'phone', 'blood_id'));
 
         return redirect()->route('users.list');
     }
