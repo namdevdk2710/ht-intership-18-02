@@ -27,18 +27,24 @@
                     <td>
 
                         @if($user->role == 1)
-                            {{"Quản trị viên"}}
+                        {{"Quản trị viên"}}
                         @endif
 
                         @if($user->role == 2)
-                            {{"Cơ quan y tế"}}
+                        {{"Cơ quan y tế"}}
                         @endif
 
                         @if($user->role == 0)
-                            {{"Người dùng"}}
+                        {{"Người dùng"}}
                         @endif
                     </td>
-                    <td></td>
+                    <td>
+                        <a class="btn btn-sm btn-primary" href="#" data-toggle="modal"
+                            data-target="#">Chi
+                            tiết</a>
+                        <a class="btn btn-sm btn-warning" href="#">Sửa</a>
+                        <a class="btn btn-sm btn-danger" href="#">Xóa</a>
+                    </td>
                 </tr>
                 @endforeach
             </tbody>

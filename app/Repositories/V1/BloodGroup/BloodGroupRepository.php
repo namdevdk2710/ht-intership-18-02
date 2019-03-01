@@ -31,4 +31,9 @@ class BloodGroupRepository extends BaseRepository implements BloodGroupRepositor
 
         return $blood;
     }
+
+    public function getBlood()
+    {
+        return $this->model->pluck('name', 'id')->all();
+    }
 }
