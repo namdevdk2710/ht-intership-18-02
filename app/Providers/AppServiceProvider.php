@@ -42,13 +42,10 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(TodoRepositoryInterface::class, TodoRepository::class);
         $this->app->bind(UserRepositoryInterface::class, UserRepository::class);
         $this->app->bind(CalendarRepositoryInterface::class, CalendarRepository::class);
-<<<<<<< HEAD
         $this->app->bind(CityRepositoryInterface::class, CityRepository::class);
         $this->app->bind(DistrictRepositoryInterface::class, DistrictRepository::class);
         $this->app->bind(CommuneRepositoryInterface::class, CommuneRepository::class);
-=======
         $this->app->bind(BloodGroupRepositoryInterface::class, BloodGroupRepository::class);
         $this->app->bind(InformationRepositoryInterface::class, InformationRepository::class);
->>>>>>> 38b308701ff403a113ca4c8889084b624382bd65
     }
 }
