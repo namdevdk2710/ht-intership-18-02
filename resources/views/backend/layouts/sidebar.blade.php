@@ -11,13 +11,13 @@
                 </li>
 
                 <li class="sub-menu">
-                    <a class="{{( Request::path() === 'admin/list-calendar' || Request::path() === 'admin/add-calendar' )? 'active' : '' }}" href="javascript:;">
+                    <a class="{{( Request::path() === 'admin/calendar' || Request::path() === 'admin/calendar/add-new' )? 'active' : '' }}" href="javascript:;">
                         <i class="fa fa-calendar"></i>
                         <span>Quản Lý Lịch</span>
                     </a>
                     <ul class="sub">
-                        <li><a class="{{( Request::path() === 'admin/list-calendar')? 'active' : '' }}" href="{{ route('calendar.listCalendar') }}">Danh Sách</a></li>
-                        <li><a href="responsive_table.html">Đăng lịch mới</a></li>
+                        <li><a class="{{( Request::path() === 'admin/calendar')? 'active' : '' }}" href="{{ route('calendar.listCalendar') }}">Danh Sách</a></li>
+                        <li><a class="{{( Request::path() === 'admin/calendar/add-new')? 'active' : '' }}" href="{{ route('calendar.getAddCalendar') }}">Đăng lịch mới</a></li>
                     </ul>
                 </li>
                 <li class="sub-menu">

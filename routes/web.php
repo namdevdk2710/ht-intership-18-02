@@ -10,7 +10,14 @@ Route::post('admin/login', 'V1\Web\Backend\AdminController@postLogin')->name('ad
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::get('/', 'V1\Web\Backend\AdminController@index')->name('admin.index');
     Route::get('/logout', 'V1\Web\Backend\AdminController@logout')->name('admin.logout');
-    Route::get('/list-calendar', 'V1\Web\Backend\CalendarController@listCalendar')->name('calendar.listCalendar');
+    Route::group(['prefix' => 'calendar'], function () {
+        Route::get('/', 'V1\Web\Backend\CalendarController@listCalendar')->name('calendar.listCalendar');
+        Route::post('/add-new', 'V1\Web\Backend\CalendarController@postAddCalendar')->name('calendar.postAddCalendar');
+        Route::post('/showDistrictInCity', 'V1\Web\Backend\CalendarController@showDistrictInCity')
+        ->name('calendar.showDistrictInCity');
+        Route::post('/showCommuneInDistrict', 'V1\Web\Backend\CalendarController@showCommuneInDistrict')
+        ->name('calendar.showCommuneInDistrict');
+    });
 });
 
 Route::group(['prefix' => 'users'], function () {
