@@ -14,6 +14,6 @@ class DistrictRepository extends BaseRepository implements DistrictRepositoryInt
 
     public function showDistrictInCity($request)
     {
-        return $this->model->where('city_id', $request->city_id)->pluck("name","id")->all();
+        return $this->model->where('city_id', $request->city_id)->pluck('name','id')->all();
     }
 }

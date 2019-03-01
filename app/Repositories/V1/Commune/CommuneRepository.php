@@ -14,6 +14,6 @@ class CommuneRepository extends BaseRepository implements CommuneRepositoryInter
 
     public function showCommuneInDistrict($request)
     {
-        return $this->model->where('district_id', $request->district_id)->pluck("name","id")->all();
+        return $this->model->where('district_id', $request->district_id)->pluck('name','id')->all();
     }
 }

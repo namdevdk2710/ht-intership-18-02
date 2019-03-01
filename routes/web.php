@@ -13,8 +13,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::group(['prefix' => 'calendar'], function () {
         Route::get('/', 'V1\Web\Backend\CalendarController@listCalendar')->name('calendar.listCalendar');
         Route::post('/add-new', 'V1\Web\Backend\CalendarController@postAddCalendar')->name('calendar.postAddCalendar');
-        Route::post('/showDistrictInCity', 'V1\Web\Backend\CalendarController@showDistrictInCity')->name('calendar.showDistrictInCity');
-        Route::post('/showCommuneInDistrict', 'V1\Web\Backend\CalendarController@showCommuneInDistrict')->name('calendar.showCommuneInDistrict');
+        Route::post('/showDistrictInCity', 'V1\Web\Backend\CalendarController@showDistrictInCity')
+        ->name('calendar.showDistrictInCity');
+        Route::post('/showCommuneInDistrict', 'V1\Web\Backend\CalendarController@showCommuneInDistrict')
+        ->name('calendar.showCommuneInDistrict');
     });
 });
 

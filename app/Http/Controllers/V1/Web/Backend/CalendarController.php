@@ -11,10 +11,14 @@ use App\Repositories\V1\Commune\CommuneRepositoryInterFace;
 
 class CalendarController extends Controller
 {
-    protected $calendarRepository, $cityRepository;
+    protected $calendarRepository;
+    protected $cityRepository;
 
-    public function __construct(CalendarRepositoryInterFace $calendarRepository, CityRepositoryInterFace $cityRepository, DistrictRepositoryInterFace $districtRepository, CommuneRepositoryInterFace $communeRepository)
-    {
+    public function __construct(
+        CalendarRepositoryInterFace $calendarRepository,
+        CityRepositoryInterFace $cityRepository, DistrictRepositoryInterFace $districtRepository,
+        CommuneRepositoryInterFace $communeRepository
+        ) {
         $this->calendarRepository = $calendarRepository;
         $this->cityRepository = $cityRepository;
         $this->districtRepository = $districtRepository;
