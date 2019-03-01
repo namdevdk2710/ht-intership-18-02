@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class City extends Model
 {
-    public function district()
+    public function districts()
     {
-        return $this->hasOne('App\Models\District');
+        return $this->hasMany('App\Models\District');
     }
 }

@@ -35,5 +35,6 @@
 <script src="{{asset('asset/js/jquery.slimscroll.js')}}"></script>
 <script src="{{asset('asset/js/jquery.nicescroll.js')}}"></script>
 <script src="{{asset('asset/js/jquery.scrollTo.js')}}"></script>
+<script src="{{asset('js/custom.js')}}"></script>
 </body>
 </html>

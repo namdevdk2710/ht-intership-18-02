@@ -11,8 +11,8 @@ class District extends Model
         return $this->belongsTo('App\Models\City');
     }
 
-    public function commune()
+    public function communes()
     {
-        return $this->hasOne('App\Models\Commune');
+        return $this->hasMany('App\Models\Commune');
     }
 }

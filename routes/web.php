@@ -23,10 +23,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::get('/logout', 'V1\Web\Backend\AdminController@logout')->name('admin.logout');
     Route::group(['prefix' => 'calendar'], function () {
         Route::get('/', 'V1\Web\Backend\CalendarController@listCalendar')->name('calendar.listCalendar');
-        Route::get('/add-new', 'V1\Web\Backend\CalendarController@getAddCalendar')->name('calendar.getAddCalendar');
         Route::post('/add-new', 'V1\Web\Backend\CalendarController@postAddCalendar')->name('calendar.postAddCalendar');
+        Route::post('/showDistrictInCity', 'V1\Web\Backend\CalendarController@showDistrictInCity')->name('calendar.showDistrictInCity');
+        Route::post('/showCommuneInDistrict', 'V1\Web\Backend\CalendarController@showCommuneInDistrict')->name('calendar.showCommuneInDistrict');
     });
 });
+
 Route::group(['prefix' => 'users'], function () {
     Route::get('/', 'V1\Web\Backend\UserController@index')->name('users.list');
 });
