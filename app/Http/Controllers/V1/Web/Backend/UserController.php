@@ -32,7 +32,6 @@ class UserController extends Controller
         $this->groupReponsitoty = $groupRepository;
         $this->inforReponsitoty = $inforRepository;
         $this->cityRepository = $cityRepository;
-
     }
 
     public function index()
@@ -41,7 +40,7 @@ class UserController extends Controller
         $cities = $this->cityRepository->getCity();
         $bloodGroup = $this->groupReponsitoty->getBlood();
 
-        return view('backend.users.index', compact('users', 'cities','bloodGroup'));
+        return view('backend.users.index', compact('users', 'cities', 'bloodGroup'));
     }
 
     public function create()
@@ -52,9 +51,8 @@ class UserController extends Controller
     public function store(UserRequest $request)
     {
         $this->userRepository->store($request->only('username', 'email', 'password', 'role'));
-        $this->inforReponsitoty->store($request->only('user_id','name', 'gender', 'dob',
-         'cmnd', 'commune', 'address', 'phone', 'blood_id'));
-
+        $this->inforReponsitoty->store($request->only('user_id', 'name', 'gender', 'dob',
+        'cmnd', 'commune', 'address', 'phone', 'blood_id'));
 
         return redirect()->route('users.list');
     }
