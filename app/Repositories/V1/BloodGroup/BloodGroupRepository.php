@@ -21,7 +21,6 @@ class BloodGroupRepository extends BaseRepository implements BloodGroupRepositor
     public function store($data)
     {
         return $this->model->create($data);
-
     }
 
     public function update($id, $data)
