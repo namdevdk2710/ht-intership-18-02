@@ -85,7 +85,9 @@ class UserController extends Controller
 
     public function destroy($id)
     {
-        //
+        $this->userRepository->destroy($id);
+
+        return redirect()->route('users.list')->with('success', 'Xóa thành công');
     }
 
     public function showDistrictInCity(Request $request)
