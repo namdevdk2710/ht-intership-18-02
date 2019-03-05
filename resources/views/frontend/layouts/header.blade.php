@@ -20,7 +20,7 @@
                                             class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="about.html" class="nav-link">Địa điểm hiến máu hôn nay</a>
+                                    <a href="" data-toggle="modal" data-target="#calendarModal" class="nav-link">Địa điểm hiến máu hôn nay</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="services.html" class="nav-link">Đăng ký hiến máu</a>

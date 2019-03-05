@@ -38,3 +38,19 @@
     color: black;
     padding: 1em;
 }
+.calendar-table{
+    font-weight: bold;
+    clear: both;
+    line-height: 0;
+    padding: 0;
+    margin: 0;
+}
+.calendar-model {
+    max-height: 85%;
+    overflow: hidden;
+}
+.modal-calendar{
+    opacity: 1;
+    -webkit-transition: opacity 1s linear;
+    transition: opacity 1s linear;
+}

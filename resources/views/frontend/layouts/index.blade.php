@@ -35,7 +35,7 @@
     @include('frontend.layouts.header')
     @include('frontend.layouts.banner')
     @include('frontend.layouts.footer')
-
+    @include('frontend.calendar')
     <!--js working-->
     <script src="{{asset('asset/fe/js/jquery.min.js')}}"></script>
     <!--//js working-->

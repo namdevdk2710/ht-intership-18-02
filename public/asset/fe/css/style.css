@@ -11,8 +11,7 @@ body {
     padding: 0;
     margin: 0;
     background: #fff;
-    letter-spacing: 1px;
- font-family: 'PT Sans', sans-serif;
+    font-family: 'PT Sans', sans-serif;
 }
 
 body a {
@@ -1661,7 +1660,7 @@ section#tables  p {
 }
 .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
 	font-size: 0.9em;
-	color: #999;
+	color:black;
 	border-top: none !important;
 }
 .tab-content > .active {
