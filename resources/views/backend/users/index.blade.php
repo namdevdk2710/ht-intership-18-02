@@ -39,9 +39,14 @@
                         @endif
                     </td>
                     <td>
-                        <a class="btn btn-sm btn-primary" href="#" data-toggle="modal" data-target="#">Chi
-                            tiết</a>
-                        <a class="btn btn-sm btn-warning" href="#">Sửa</a>
+                        <a class="btn btn-sm btn-primary" href="#" data-toggle="modal" data-target="#">
+                            Chi tiết
+                        </a>
+                        <a href="" class="btn btn-warning " class="btn btn-primary"
+                            data-toggle="modal" data-target="#exampleModalLong{{$user->id}}">
+                            <i class="fa fa-pencil text-white" aria-hidden="true"></i>
+                        </a>
+                        @include('backend.users.edit')
                         <button type="button" value="{{$user->id}}" class="btn btn-sm btn-danger">
                             Xóa
                         </button>
@@ -49,22 +54,21 @@
                 </tr>
                 @endforeach
             </tbody>
-
         </table>
     </div>
 </div>
 
 <script>
-    $(document).ready(function() {
-        var button = $('.btn-danger');
-        button.click(function() {
-            if (confirm("Bạn có muốn xóa người dùng này?")) {
-                var url = "{{ route('users.destroy', ':id') }}";
-                url = url.replace(':id', $(this).val());
-                window.location.href = url;
-            }
-        });
+$(document).ready(function() {
+    var button = $('.btn-danger');
+    button.click(function() {
+        if (confirm("Bạn có muốn xóa người dùng này?")) {
+            var url = "{{ route('users.destroy', ':id') }}";
+            url = url.replace(':id', $(this).val());
+            window.location.href = url;
+        }
     });
+});
 </script>
 
 @endsection

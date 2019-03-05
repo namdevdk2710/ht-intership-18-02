@@ -33,5 +33,7 @@ Route::group(['prefix' => 'bloods'], function () {
     Route::post('create', 'V1\Web\Backend\BloodController@store')->name('bloods.store');
     Route::get('edit/{id}', 'V1\Web\Backend\BloodController@update');
     Route::put('edit/{id}', 'V1\Web\Backend\BloodController@update')->name('bloods.update');
+    Route::get('edit/{id}', 'V1\Web\Backend\UserController@edit')->name('users.edit');
+    Route::put('edit/{id}', 'V1\Web\Backend\UserController@update')->name('users.update');
     Route::get('delete/{id}', 'V1\Web\Backend\BloodController@destroy')->name('bloods.destroy');
 });
