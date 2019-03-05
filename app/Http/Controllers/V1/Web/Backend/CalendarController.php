@@ -41,6 +41,13 @@ class CalendarController extends Controller
         return redirect()->route('calendar.listCalendar');
     }
 
+    public function delete($id)
+    {
+        $this->calendarRepository->destroy($id);
+
+        return redirect()->back();
+    }
+
     public function showDistrictInCity(Request $request)
     {
         if ($request->ajax()) {

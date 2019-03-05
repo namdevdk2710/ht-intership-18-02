@@ -29,16 +29,21 @@
                 @endphp
                 <td>{{ $add }}</td>
                 <td>{{ $calendar->user->username }}</td>
-                <td>
+                <td class="list-calendar-action">
                     <a class="btn btn-sm btn-primary" href="#"
                         data-toggle="modal"
-                        data-target="#showDetailCalendar{{$calendar->id}}">Chi
-                        tiết</a>
+                        data-target="#showDetailCalendar{{$calendar->id}}">
+                        Chi tiết
+                    </a>
                     @include('backend.calendar.modal_form_calendar')
-                    <a class="btn btn-sm btn-warning" href="#" data-toggle="modal"
+                    <a class="btn btn-sm btn-warning btn-edit" id="calendar-edit" href="#" data-toggle="modal"
                         data-target="#edit-calendar-{{$calendar->id}}">Sửa</a>
                     @include('backend.calendar.edit_calendar')
-                    <a class="btn btn-sm btn-danger" href="#">Xóa</a>
+                    <a type="button" class="btn btn-danger btn-sm"
+                        data-toggle="modal" data-target="#del-calendar-{{$calendar->id}}" href="#">
+                        Xóa
+                    </a>
+                    @include('backend.calendar.delete_confirm_dialog')
                 </td>
             </tr>
             @endforeach

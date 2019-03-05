@@ -36,6 +36,15 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
         return $this->model->create($data);
     }
 
+    public function update($id, $data)
+    {
+        $user= $this->model->find($id);
+        $user->fill($data);
+        $user->save();
+
+        return $user;
+    }
+
     public function logout()
     {
         return Auth::logout();

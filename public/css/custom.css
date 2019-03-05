@@ -5,10 +5,8 @@
 .title-user{
     text-align: center;
     padding: .5em;
-
 }
 .calendar-table, .page-content-wrapper{}
-
 .title-modal{
     color: red;
     text-align: center;
@@ -34,4 +32,21 @@
 }
 .padding-right-15px{
     padding-right: 15x!important;
+}
+.calendar-table .list-calendar-action {
+    display: flex;
+}
+.calendar-table .list-calendar-action .btn-edit {
+    margin: 0px 4px;
+}
+.form-blood{
+    padding: 15px;
+}
+.delete-dialog-footer-custom{
+    padding: 5px 15px;
+    border-top: none;
+}
+.editUser{
+    color: black;
+    padding: 1em;
 }
