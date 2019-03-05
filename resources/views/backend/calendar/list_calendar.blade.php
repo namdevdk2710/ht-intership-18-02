@@ -32,14 +32,16 @@
                 <td class="list-calendar-action">
                     <a class="btn btn-sm btn-primary" href="#"
                         data-toggle="modal"
-                        data-target="#showDetailCalendar{{$calendar->id}}">Chi
-                        tiết</a>
+                        data-target="#showDetailCalendar{{$calendar->id}}">
+                        Chi tiết
+                    </a>
                     @include('backend.calendar.modal_form_calendar')
                     <a class="btn btn-sm btn-warning btn-edit" href="#">Sửa</a>
-                    {!! Form::open(['route' => ['calendar.delete',$calendar->id], 'class' => '']) !!}
-                        {{ Form::hidden('_method', 'DELETE') }}
-                        <a class="btn btn-sm btn-danger"" >Xóa</a>
-                    {!! Form::close() !!}
+                    <a type="button" class="btn-sm btn-danger btn-sm"
+                        data-toggle="modal" data-target="#del-calendar-{{$calendar->id}}" href="#">
+                        Xóa
+                    </a>
+                    @include('backend.calendar.delete_confirm_dialog')
                 </td>
             </tr>
             @endforeach

@@ -36,3 +36,7 @@
 .form-blood{
     padding: 15px;
 }
+.delete-dialog-footer-custom{
+    padding: 5px 15px;
+    border-top: none;
+}
