@@ -15,7 +15,7 @@ class DistrictsTableSeeder extends Seeder
     {
         $faker = Faker::create();
         $cities = App\Models\City::all();
-        foreach (range(1, 30) as $value) {
+        foreach (range(1, 10) as $value) {
             District::create([
                 'name' => $faker->citySuffix(),
                 'city_id' => $faker->randomElement($cities->pluck('id')->toArray()),

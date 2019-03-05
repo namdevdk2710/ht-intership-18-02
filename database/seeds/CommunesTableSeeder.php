@@ -15,7 +15,7 @@ class CommunesTableSeeder extends Seeder
     {
         $faker = Faker::create();
         $districts = App\Models\District::all();
-        foreach (range(1, 100) as $value) {
+        foreach (range(1, 10) as $value) {
             Commune::create([
                 'name' => $faker->streetName(),
                 'district_id' => $faker->randomElement($districts->pluck('id')->toArray()),
