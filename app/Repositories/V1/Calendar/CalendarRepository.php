@@ -30,12 +30,12 @@ class CalendarRepository extends BaseRepository implements CalendarRepositoryInt
 
     public function update($id, $request)
     {
-        $Calendar = $this->model->find($id);
-        $Calendar->time = date('Y-m-d H:i:s', strtotime($request->input('time') . ' ' . $request->input('date')));
-        $Calendar->user_id =  Auth::id();
-        $Calendar->commune_id = $request->input('commune');
-        $Calendar->address = $request->input('address');
+        $calendar = $this->model->find($id);
+        $calendar->time = date('Y-m-d H:i:s', strtotime($request->input('time') . ' ' . $request->input('date')));
+        $calendar->user_id =  Auth::id();
+        $calendar->commune_id = $request->input('commune');
+        $calendar->address = $request->input('address');
 
-        return $Calendar->save();
+        return $calendar->save();
     }
 }
