@@ -41,6 +41,7 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
         $user= $this->model->find($id);
         $user->fill($data);
         $user->save();
+
         return $user;
     }
 
