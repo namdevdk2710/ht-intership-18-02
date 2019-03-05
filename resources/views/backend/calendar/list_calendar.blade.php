@@ -29,14 +29,17 @@
                 @endphp
                 <td>{{ $add }}</td>
                 <td>{{ $calendar->user->username }}</td>
-                <td>
+                <td class="list-calendar-action">
                     <a class="btn btn-sm btn-primary" href="#"
                         data-toggle="modal"
                         data-target="#showDetailCalendar{{$calendar->id}}">Chi
                         tiết</a>
                     @include('backend.calendar.modal_form_calendar')
-                    <a class="btn btn-sm btn-warning" href="#">Sửa</a>
-                    <a class="btn btn-sm btn-danger" href="#">Xóa</a>
+                    <a class="btn btn-sm btn-warning btn-edit" href="#">Sửa</a>
+                    {!! Form::open(['route' => ['calendar.delete',$calendar->id], 'class' => '']) !!}
+                        {{ Form::hidden('_method', 'DELETE') }}
+                        <a class="btn btn-sm btn-danger"" >Xóa</a>
+                    {!! Form::close() !!}
                 </td>
             </tr>
             @endforeach

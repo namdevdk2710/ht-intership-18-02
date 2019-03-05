@@ -5,10 +5,8 @@
 .title-user{
     text-align: center;
     padding: .5em;
-
 }
 .calendar-table, .page-content-wrapper{}
-
 .title-modal{
     color: red;
     text-align: center;
@@ -28,4 +26,10 @@
 }
 .form-padding{
     padding-bottom: 2em;
+}
+.calendar-table .list-calendar-action {
+    display: flex;
+}
+.calendar-table .list-calendar-action .btn-edit {
+    margin: 0px 4px;
 }
