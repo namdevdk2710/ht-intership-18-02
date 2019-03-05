@@ -33,5 +33,4 @@ class PageController extends Controller
 
         return view('frontend.layouts.index', compact('calendars', 'cities'));
     }
-
 }
