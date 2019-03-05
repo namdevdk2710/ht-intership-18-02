@@ -37,7 +37,7 @@
                     </a>
                     @include('backend.calendar.modal_form_calendar')
                     <a class="btn btn-sm btn-warning btn-edit" href="#">Sửa</a>
-                    <a type="button" class="btn-sm btn-danger btn-sm"
+                    <a type="button" class="btn btn-danger btn-sm"
                         data-toggle="modal" data-target="#del-calendar-{{$calendar->id}}" href="#">
                         Xóa
                     </a>
