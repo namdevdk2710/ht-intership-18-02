@@ -33,12 +33,6 @@
 .padding-right-15px{
     padding-right: 15x!important;
 }
-.calendar-table .list-calendar-action {
-    display: flex;
-}
-.calendar-table .list-calendar-action .btn-edit {
-    margin: 0px 4px;
-}
 .form-blood{
     padding: 15px;
 }
