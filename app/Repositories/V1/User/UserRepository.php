@@ -45,7 +45,6 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
         return $user;
     }
 
-
     public function logout()
     {
         return Auth::logout();
