@@ -12,4 +12,19 @@ class InformationRepository extends BaseRepository implements InformationReposit
     {
         return Information::class;
     }
+
+    public function store($data)
+    {
+        return $this->model->create([
+            'name' => $data['name'],
+            'blood_id' => $data['blood_id'],
+            'commune_id' => $data['commune'],
+            'name' => $data['name'],
+            'gender' => $data['gender'],
+            'dob' => $data['dob'],
+            'cmnd' => $data['cmnd'],
+            'address' => $data['address'],
+            'phone' => $data['phone'],
+        ]);
+    }
 }

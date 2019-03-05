@@ -27,18 +27,25 @@
                     <td>
 
                         @if($user->role == 1)
-                            {{"Quản trị viên"}}
+                        {{"Quản trị viên"}}
                         @endif
 
                         @if($user->role == 2)
-                            {{"Cơ quan y tế"}}
+                        {{"Cơ quan y tế"}}
                         @endif
 
                         @if($user->role == 0)
-                            {{"Người dùng"}}
+                        {{"Người dùng"}}
                         @endif
                     </td>
-                    <td></td>
+                    <td>
+                        <a class="btn btn-sm btn-primary" href="#" data-toggle="modal" data-target="#">Chi
+                            tiết</a>
+                        <a class="btn btn-sm btn-warning" href="#">Sửa</a>
+                        <button type="button" value="{{$user->id}}" class="btn btn-sm btn-danger">
+                            Xóa
+                        </button>
+                    </td>
                 </tr>
                 @endforeach
             </tbody>
@@ -46,5 +53,18 @@
         </table>
     </div>
 </div>
+
+<script>
+    $(document).ready(function() {
+        var button = $('.btn-danger');
+        button.click(function() {
+            if (confirm("Bạn có muốn xóa người dùng này?")) {
+                var url = "{{ route('users.destroy', ':id') }}";
+                url = url.replace(':id', $(this).val());
+                window.location.href = url;
+            }
+        });
+    });
+</script>
 
 @endsection
