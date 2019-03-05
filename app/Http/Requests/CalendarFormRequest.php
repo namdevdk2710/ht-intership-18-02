@@ -36,14 +36,14 @@ class CalendarFormRequest extends FormRequest
     public function messages()
     {
         return [
-            'time.required' => 'Vui lòng nhập tài khoản !',
-            'time.required' => 'sai dinh dang thoi gian !',
-            'date.required' => 'Vui lòng nhập tài khoản !',
-            'date.required' => 'sai ngay !',
-            'city.required' => 'Vui lòng nhập tài khoản !',
-            'district.required' => 'Vui lòng nhập tài khoản !',
-            'commune.required' => 'Vui lòng nhập tài khoản !',
-            'address.required' => 'Vui lòng nhập tài khoản !',
+            'time.required' => 'Vui lòng chọn thời gian !',
+            'time.date' => 'Sai định dạng thời qian !',
+            'date.required' => 'Vui lòng chọn ngày !',
+            'date.date' => 'Sai định dạng ngày !',
+            'city.required' => 'Vui lòng chọn thành phố !',
+            'district.required' => 'Vui lòng chọn quận/huyện !',
+            'commune.required' => 'Vui lòng chọn xã/phường !',
+            'address.required' => 'Vui lòng nhập địa chỉ !',
         ];
     }
 }
