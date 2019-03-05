@@ -39,54 +39,10 @@
                         {!! Form::password('password', ['class' => 'form-control']) !!}
                     </div>
                     <div class="form-group col-md-6 ">
-                        {!! Form::label('Quyền người dùng:') !!}<br>
-                        {!! Form::select('role' ,['1' => 'Quản trị viên', '2' => 'Cơ quan y tế', '0' => 'Người dùng'], null,
-                            ['class' => 'form-control']) !!}
-                    </div>
-                    <div class="form-group col-md-6">
-                        {!! Form::label('Họ và tên:') !!}
-                        {!! Form::text('name',old('name'), ['class' => 'form-control']) !!}
-                    </div>
-                    <div class="form-group col-md-6">
-                        {!! Form::label('Giới tính:') !!} <br>
-                        {!! Form::select('gender' ,['1' => 'Nam', '0' => 'Nữ'],
-                             null, ['class' => 'form-control']) !!}
-                    </div>
-                    <div class="form-group col-md-6">
-                        {!! Form::label('Ngày sinh:') !!}
-                        {!! Form::date('dob',old('dob'), ['class' => 'form-control']) !!}
-                    </div>
-                    <div class="form-group col-md-6">
-                        {!! Form::label('CMND:') !!}
-                        {!! Form::text('cmnd',old('cmnd'), ['class' => 'form-control']) !!}
-                    </div>
-                    <div class="form-group col-md-6">
-                        {!! Form::label('Thành phố:') !!}
-                        {!! Form::select('city',[''=>'--- Chọn Thành
-                            phố---']+$cities ,null,['class'=>'form-control']) !!}
-                    </div>
-                    <div class="form-group col-md-6">
-                        {!! Form::label('Quận/huyện:') !!}
-                        {!! Form::select('district',[''=>'--- Chọn Quận/huyện
-                        ---'],null,['class'=>'form-control']) !!}
-                    </div>
-                    <div class="form-group col-md-6">
-                        {!! Form::label('Xã/phường:') !!}
-                        {!! Form::select('commune',[''=>'--- Chọn Xã phường
-                        ---'],null,['class'=>'form-control']) !!}
-                    </div>
-                    <div class="form-group col-md-6">
-                        {!! Form::label('Số nhà:') !!}
-                        {!! Form::text('address',old('address'), ['class' => 'form-control']) !!}
-                    </div>
-                    <div class="form-group col-md-6">
-                        {!! Form::label('Số điện thoại:') !!}
-                        {!! Form::text('phone',old('phone'), ['class' => 'form-control']) !!}
-                    </div>
-                    <div class="form-group col-md-6">
-                    {!! Form::label('Nhóm máu:') !!}
-                        {!! Form::select('blood_id', [''=>'--- Chọn nhóm máu
-                        ---']+$bloodGroup, null, ['class'=>'form-control']) !!}
+                        {!! Form::label('Quyền người dùng:') !!}
+                        {!! Form::select('role', [''=>'--- Chọn quyền
+                            ---', 1 => 'Quản trị viên', 2 => 'Cơ quan y tế', 3 => 'Người dùng'],
+                            null, ['class'=>'form-control']) !!}
                     </div>
                 </div>
                 <div class="modal-footer">

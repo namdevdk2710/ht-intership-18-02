@@ -16,7 +16,6 @@ class InformationRepository extends BaseRepository implements InformationReposit
     public function store($data)
     {
         return $this->model->create([
-            'user_id' => Auth::id(),
             'name' => $data['name'],
             'blood_id' => $data['blood_id'],
             'commune_id' => $data['commune'],
