@@ -31,6 +31,6 @@ class PageController extends Controller
         $calendars = $this->calendarRepository->listCalendar();
         $cities = $this->cityRepository->getCity();
 
-        return view('frontend.layouts.index', compact('calendars', 'cities'));
+        return view('frontend.layouts.index', compact('calendars', 'cities')) ;
     }
 }
