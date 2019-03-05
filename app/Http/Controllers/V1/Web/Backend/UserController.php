@@ -67,7 +67,12 @@ class UserController extends Controller
 
     public function update(Request $request, $id)
     {
-        //
+        $user = $this->userRepository->find($id);
+        $result = $this->userRepository->update($id, $request->all());
+        if ($result) {
+            return redirect()->route('users.list')->with('success', 'Sữa thành công!');
+        }
+        return back()->withErrors('Sữa thất bại!');
     }
 
     public function destroy($id)
