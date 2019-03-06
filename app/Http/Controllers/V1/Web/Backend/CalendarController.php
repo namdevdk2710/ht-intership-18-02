@@ -4,6 +4,7 @@ namespace App\Http\Controllers\V1\Web\backend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CalendarFormRequest;
 use App\Repositories\V1\Calendar\CalendarRepositoryInterFace;
 use App\Repositories\V1\City\CityRepositoryInterFace;
 use App\Repositories\V1\District\DistrictRepositoryInterFace;
@@ -34,16 +35,23 @@ class CalendarController extends Controller
         return view('backend.calendar.list_calendar', compact('calendars', 'cities'));
     }
 
-    public function postAddCalendar(Request $request)
+    public function postAddCalendar(CalendarFormRequest $request)
     {
         $this->calendarRepository->store($request->all());
 
-        return redirect()->route('calendar.listCalendar');
+        return redirect()->back();
     }
 
     public function delete($id)
     {
         $this->calendarRepository->destroy($id);
+
+        return redirect()->back();
+    }
+
+    public function update(CalendarFormRequest $request, $id)
+    {
+        $this->calendarRepository->update($id, $request);
 
         return redirect()->back();
     }

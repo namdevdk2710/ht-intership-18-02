@@ -16,6 +16,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
         Route::post('/showCommuneInDistrict', 'V1\Web\Backend\CalendarController@showCommuneInDistrict')
         ->name('calendar.showCommuneInDistrict');
         Route::delete('/delete/{id}', 'V1\Web\Backend\CalendarController@delete')->name('calendar.delete');
+        Route::put('/edit/{id}', 'V1\Web\Backend\CalendarController@update')->name('calendar.update');
     });
 });
 

@@ -35,7 +35,6 @@ class LoginRequest extends FormRequest
             'email.required' => 'Vui lòng nhập tài khoản !',
             'email.email' => 'Địa chỉ email không hợp lệ !',
             'password.required' => 'Vui lòng nhập Mật khẩu !',
-            // 'password.between' => 'Mật Khẩu có 6-25 kí tự !',
         ];
     }
 }
