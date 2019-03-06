@@ -16,7 +16,7 @@
                     </a>
                 </li>
                 <li>
-                    <a class="{{( Request::path() === 'user' )? 'active' : '' }}" href="{{route('users.list')}}">
+                    <a class="{{( Request::path() === 'users' )? 'active' : '' }}" href="{{route('users.list')}}">
                         <i class="fa fa-user"></i>
                         <span>Quản lý người dùng</span>
                     </a>

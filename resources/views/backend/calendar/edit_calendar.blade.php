@@ -1,12 +1,12 @@
 <!-- Modal -->
-<div class="modal fade" id="edit-calendar-{{$calendar->id}}" tabindex="-1" role="dialog"
+<div class="modal fade edit-calendar" id="edit-calendar-{{$calendar->id}}" tabindex="-1" role="dialog"
     aria-labelledby="exampleModalLongTitle" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                         aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Thông tin chi tiết</h4>
+                <h3 class="modal-title">Thông tin chi tiết</h3>
             </div>
             <div class="modal-body">
                 {!! Form::open(['route' => ['calendar.update', $calendar->id], 'id' => 'js-edit-calendar-form']) !!}
@@ -57,12 +57,12 @@
                         !!}
                     </div>
                 </div>
-            </div>
-            <div class="modal-footer">
-                {!! Form::button('Hủy',['class' => 'btn btn-default',
-                'data-dismiss' => 'modal']) !!}
-                {!! Form::submit('Cập nhật', ['class' => 'btn btn-success'])
-                !!}
+                <div class="form-group form-padding padding-x-15 margin-bottom-0" align="right">
+                    {!! Form::button('Hủy',['class' => 'btn btn-default',
+                    'data-dismiss' => 'modal']) !!}
+                    {!! Form::submit('Cập nhật', ['class' => 'btn btn-warning'])
+                    !!}
+                </div>
                 {!! Form::close() !!}
             </div>
         </div>
