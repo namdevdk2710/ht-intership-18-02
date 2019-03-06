@@ -1,81 +1,66 @@
- <!-- Footer -->
- <footer>
-     <section class="w3ls_address_mail_footer_grids">
-         <div class="container">
-             <div class="row">
-                 <div class="col-sm-4 w3ls_footer_grid_left">
-                     <h5 class="sub-head">Địa chỉ</h5>
-                     <p>ĐHSP Kỹ Thuật
-                         <span>38 Cao Thắng</span>
-                     </p>
-                 </div>
-                 <div class="col-sm-4 w3ls_footer_grid_left">
-                     <h5 class="sub-head">Liên hệ</h5>
-                     <p>+076 25 88 340
-                         <span>+(012) 678 3459</span>
-                     </p>
-                 </div>
-                 <div class="col-sm-4 w3ls_footer_grid_left">
-                     <h5 class="sub-head">Mail</h5>
-                     <p>
-                         <a href="mailto:info@example.com">typhan0112@gmail.com</a>
-                         <span>
-                             <a href="mailto:info@example.com">info@example2.com</a>
-                         </span>
-                     </p>
-                 </div>
-             </div>
-
-             <!-- Newsletter -->
-             <div class="w3layouts_newsletter_right">
-                 <div class="row">
-                     <div class="col-md-3 n-left">
-                         <h6>Newsletter</h6>
-                     </div>
-                     <div class="col-md-9 n-right">
-                         <form action="#" method="post">
-                             <div class="input-flds">
-                                 <input type="text" name="Name" placeholder="Name" required="">
-                             </div>
-                             <div class="input-flds">
-                                 <input type="email" name="Email" placeholder="Email" required="">
-                             </div>
-                             <div class="input-flds">
-                                 <input type="submit" value="Subscribe">
-                             </div>
-                         </form>
-                     </div>
-                 </div>
-             </div>
-             <!-- //Newsletter -->
-
-         </div>
-     </section>
- </footer>
- <section class="copyright-wthree">
-     <div class="container">
-         <p>&copy; 2019 Phần mềm quản lý hiến máu . All Rights Reserved | Design by
-             <a href="http://w3layouts.com/"> Tý - Nhân </a>
-         </p>
-         <div class="w3l-social">
-             <ul>
-                 <li>
-                     <a href="#" class="fab fa-facebook-f"></a>
-                 </li>
-                 <li>
-                     <a href="#" class="fab fa-twitter"></a>
-                 </li>
-                 <li>
-                     <a href="#" class="fab fa-google-plus-g"></a>
-                 </li>
-                 <li>
-                     <a href="#" class="fab fa-instagram"></a>
-                 <li>
-                 <li>
-                     <a href="#" class="fab fa-linkedin-in"></a>
-                 <li>
-             </ul>
-         </div>
-     </div>
- </section>
-
+<!-- footer -->
+<footer>
+    <div class="w3ls-footer-grids pt-sm-4 pt-3">
+        <div class="container py-xl-5 py-lg-3">
+            <div class="row">
+                <div class="col-md-4 w3l-footer">
+                    <h2 class="mb-sm-3 mb-2">
+                        <a href="index.html" class="text-white font-italic font-weight-bold">
+                            <span>B</span>lood
+                            <i class="fas fa-syringe ml-2"></i>
+                        </a>
+                    </h2>
+                    <p>
+                        Thể hiện sâu sắc truyền thống tương thân tương ái cao cả của dân tộc Việt Nam:
+                        “Thương người như thể thương thân”, “Lá lành đùm lá rách”.
+                    </p>
+                </div>
+                <div class="col-md-4 w3l-footer my-md-0 my-4">
+                    <h3 class="mb-sm-3 mb-2 text-white">Liên hệ</h3>
+                    <ul class="list-unstyled">
+                        <li>
+                            <i class="fas fa-location-arrow float-left"></i>
+                            <p class="ml-4">Bệnh viện
+                                <span>Đà Nẵng</span>    38 Cao Thắng</p>
+                            <div class="clearfix"></div>
+                        </li>
+                        <li class="my-3">
+                            <i class="fas fa-phone float-left"></i>
+                            <p class="ml-4">+ 78 25 88 340</p>
+                            <div class="clearfix"></div>
+                        </li>
+                        <li>
+                            <i class="far fa-envelope-open float-left"></i>
+                            <a href="" class="ml-3">mail@gmail.com</a>
+                            <div class="clearfix"></div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4 w3l-footer">
+                    <h3 class="mb-sm-3 mb-2 text-white">Truy cập</h3>
+                    <div class="nav-w3-l">
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="">Trang chủ</a>
+                            <li class="mt-2">
+                                <a href="">Thư viện</a>
+                            </li>
+                            <li class="mt-2">
+                                <a href="">Đối tác</a>
+                            </li>
+                            <li class="mt-2">
+                                <a href="">Phản hồi</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="border-top mt-5 pt-lg-4 pt-3 pb-lg-0 pb-3 text-center">
+                <p class="copy-right-grids mt-lg-1">© 2019 Phần mềm quản lý hiến máu | Thế kế bởi
+                    <a href="" target="_blank">NTGroup</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- //footer -->

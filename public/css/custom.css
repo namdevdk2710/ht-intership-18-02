@@ -11,11 +11,7 @@
     color: red;
     text-align: center;
 }
-.calendar-table{
-    margin:0px 10px;
-    padding: 15px;
-    background: #fff;
-}
+
 .calendar-table table tr td{
     color: black;
 }
@@ -44,10 +40,4 @@
     color: black;
     padding: 1em;
 }
-.calendar-table{
-    font-weight: bold;
-    clear: both;
-    line-height: 0;
-    padding: 0;
-    margin: 0;
-}
+
