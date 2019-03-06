@@ -6,14 +6,15 @@
     text-align: center;
     padding: .5em;
 }
-.calendar-table, .page-content-wrapper{}
 .title-modal{
     color: red;
     text-align: center;
 }
+
+/* ----- Start Admin Calendar ----- */
 .calendar-table {
     margin: 0px 10px;
-    padding: 15px;
+    padding: 0px;
     background: #fff;
 }
 .calendar-table table tr td{
@@ -23,25 +24,75 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    margin-bottom: 15px;
 }
-.form-padding{
-    padding-bottom: 2em;
-}
-.modal-body form .form-group:nth-child(2){
+.form-padding {
+    padding-bottom: 1em;
     padding-top: 1em;
 }
+.delete-dialog-footer-custom {
+    padding: 5px 15px;
+    border-top: none;
+}
+.calendar-table-header{
+    padding: 16px 0px 12px 0px;
+    display: flex;
+    justify-content: space-around;
+    font-weight: 500;
+    align-items: center;
+    border-bottom: 1px solid #999;
+}
+.calendar-table-header-title{
+    font-size: 24px;
+}
+.calendar-table table thead tr th{
+    color: #111;
+}
+.calendar-table .add-calendar .modal-header,
+.calendar-table .detail-calendar .modal-header,
+.calendar-table .edit-calendar .modal-header {
+    padding: 10px 15px;
+}
+.calendar-table .add-calendar form,
+.calendar-table .detail-calendar form,
+.calendar-table .edit-calendar form {
+    padding: 0px 15px;
+}
+/* ----- End Admin Calendar ----- */
+
 .padding-right-15px{
-    padding-right: 15x!important;
+    padding-right: 15px!important;
+}
+.padding-x-15{
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+}
+.padding-right-15px {
+    padding-right: 15px !important;
+}
+.margin-bottom-0{
+    margin-bottom: 0px!important;
 }
 .form-blood{
     padding: 15px;
 }
-.delete-dialog-footer-custom{
-    padding: 5px 15px;
-    border-top: none;
-}
 .editUser{
     color: black;
     padding: 1em;
+}
+
+
+
+
+
+/* -------------------------- */
+.border-red{
+    border: 1px solid red!important;
+}
+.border-gray {
+    border: 1px solid gray !important;
+}
+.border-blue {
+    border: 1px solid blue !important;
 }
 

@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="add-new-calendar" tabindex="-1" role="dialog"
+<div class="modal fade add-calendar" id="add-new-calendar" tabindex="-1" role="dialog"
     aria-labelledby="exampleModalLongTitle" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -7,7 +7,7 @@
                 <button type="button" class="close" data-dismiss="modal"
                     aria-label="Close"><span
                         aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Thông tin chi tiết</h4>
+                <h3 class="modal-title">Thông tin chi tiết</h3>
             </div>
             <div class="modal-body">
                 {!! Form::open(['route' => 'calendar.postAddCalendar', 'id' => 'js-add-calendar-form']) !!}
@@ -55,11 +55,11 @@
                         !!}
                     </div>
                 </div>
-                <div class="form-group" align="right">
-                    {!! Form::submit('Submit', ['class' => 'btn btn-success'])
-                    !!}
-                    {!! Form::button('close',['class' => 'btn btn-default',
+                <div class="form-group form-padding padding-x-15 margin-bottom-0" align="right">
+                    {!! Form::button('Hủy',['class' => 'btn btn-default',
                     'data-dismiss' => 'modal']) !!}
+                    {!! Form::submit('Thêm mới', ['class' => 'btn btn-primary'])
+                    !!}
                 </div>
                 {!! Form::close() !!}
             </div>
