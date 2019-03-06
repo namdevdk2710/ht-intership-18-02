@@ -1,292 +1,215 @@
-<section class="w3-services">
-    <div class="container">
-        <div class="wthree_head_section">
-            <h2 class="w3l_header">About Our Preparation</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
-        </div>
-        <div class="row w3-services-grids">
-
-            <div class="col-lg-4 w3-services-left-grid">
-                <img src="{{asset('asset/fe/images/1.jpg')}}" class="img-fluid" alt="">
+<!-- middle section -->
+<div class="w3ls-welcome py-5">
+    <div class="container py-xl-5 py-lg-3">
+        <div class="row">
+            <div class="col-lg-5 welcome-right">
+                <img src="images/b2.png" alt=" " class="img-fluid">
             </div>
-            <div class="col-lg-8 w3-services-right-grid">
-                <div class="row w3-icon-grid-gap1">
-                    <div class="col-md-6 w3-icon-grid1">
-                        <i class="fas fa-paint-brush"></i>
-                        <div class="Supp">
-                            <h3>Special Education</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit..</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 w3-icon-grid1">
-                        <i class="fas fa-book"></i>
-                        <div class="Supp">
-                            <h3>Full Day Session</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit..</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row w3-icon-grid-gap1">
-                    <div class="col-md-6 w3-icon-grid1">
-                        <i class="fas fa-user"></i>
-                        <div class="Supp">
-                            <h3>Qualified Teachers</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit..</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 w3-icon-grid1">
-                        <i class="fas fa-calendar"></i>
-                        <div class="Supp">
-                            <h3>Events</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit..</p>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="row w3-icon-grid-gap1">
-                    <div class="col-md-6 w3-icon-grid1">
-                        <i class="fas fa-graduation-cap"></i>
-                        <div class="Supp">
-                            <h3>Pre Classes</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit..</p>
-                        </div>
-
-                    </div>
-                    <div class="col-md-6 w3-icon-grid1">
-                        <i class="far fa-clock"></i>
-                        <div class="Supp">
-                            <h3>24/7 Supports</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit..</p>
-                        </div>
-
-                    </div>
+            <div class="col-lg-7 welcome-left mt-4">
+                <h3>Awesome Theme for Medical and Health Websites</h3>
+                <h6 class="mt-3">Suspendisse porta erat sit amet eros sagittis</h6>
+                <h4 class="my-4 font-italic">Cum sociis natoque penatibus et magnis dis parturient montesmus, Proin vel
+                    nibh et
+                    elit mollis commodo et nec augue
+                    tristique sed.</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse porta erat sit amet eros
+                    sagittis, quis
+                    hendrerit
+                    libero aliquam. Fusce semper augue ac dolor efficitur, a pretium metus pellentesque.</p>
+                <div class="readmore-w3-agileits mt-md-5 mt-4">
+                    <a href="single.html" class="w3ls-button-agile text-dark">View Some More</a>
                 </div>
             </div>
-
         </div>
     </div>
-</section>
+</div>
+<!-- //middle section -->
+
+<!-- services -->
+<div class="why-choose-agile pt-5" id="services">
+    <div class="container pt-xl-5 pt-lg-3">
+        <div class="w3ls-titles text-center mb-5">
+            <h3 class="title">Our Best Services</h3>
+            <span>
+                <i class="fas fa-user-md"></i>
+            </span>
+            <p class="mt-2">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div class="row why-choose-agile-grids-top">
+            <div class="col-lg-4 agileits-w3layouts-grid">
+                <div class="row wthree_agile_us">
+                    <div class="col-3 agile-why-text p-0 text-right">
+                        <div class="wthree_features_grid">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                    </div>
+                    <div class="col-9 agile-why-text-2">
+                        <h4 class="text-dark font-weight-bold mb-3">General health care</h4>
+                        <p>Lorem ipsum magna, vehicula ut porta ete.</p>
+                    </div>
+                </div>
+                <div class="row wthree_agile_us my-5">
+                    <div class="col-3 agile-why-text p-0 text-right">
+                        <div class="wthree_features_grid">
+                            <i class="fas fa-syringe"></i>
+                        </div>
+                    </div>
+                    <div class="col-9 agile-why-text-2">
+                        <h4 class="text-dark font-weight-bold mb-3">Dental services</h4>
+                        <p>Lorem ipsum magna, vehicula ut porta ete.</p>
+                    </div>
+                </div>
+                <div class="row wthree_agile_us">
+                    <div class="col-3 agile-why-text p-0 text-right">
+                        <div class="wthree_features_grid">
+                            <i class="fab fa-medrt"></i>
+                        </div>
+                    </div>
+                    <div class="col-9 agile-why-text-2">
+                        <h4 class="text-dark font-weight-bold mb-3">Medical Treatment</h4>
+                        <p>Lorem ipsum magna, vehicula ut porta ete.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 agileits-w3layouts-grid img text-center">
+                <img src="images/b3.png" alt=" " class="img-fluid" />
+            </div>
+            <div class="col-lg-4 agileits-w3layouts-grid">
+                <div class="row wthree_agile_us">
+                    <div class="col-9 agile-why-text-2">
+                        <h4 class="text-dark font-weight-bold mb-3">Cardiac Clinic</h4>
+                        <p>Lorem ipsum magna, vehicula ut porta ete.</p>
+                    </div>
+                    <div class="col-3 agile-why-text p-0">
+                        <div class="wthree_features_grid">
+                            <i class="fas fa-medkit"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="row wthree_agile_us my-5">
+                    <div class="col-9 agile-why-text-2">
+                        <h4 class="text-dark font-weight-bold mb-3">Orthopedics</h4>
+                        <p>Lorem ipsum magna, vehicula ut porta ete.</p>
+                    </div>
+                    <div class="col-3 agile-why-text p-0">
+                        <div class="wthree_features_grid">
+                            <i class="fas fa-wheelchair"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="row wthree_agile_us">
+                    <div class="col-9 agile-why-text-2">
+                        <h4 class="text-dark font-weight-bold mb-3">Laboratory</h4>
+                        <p>Lorem ipsum magna, vehicula ut porta ete.</p>
+                    </div>
+                    <div class="col-3 agile-why-text p-0">
+                        <div class="wthree_features_grid">
+                            <i class="fas fa-hospital"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- //services -->
-<!-- classes -->
-<section class="ser-agile">
-    <div class="container">
-        <div class="wthree_head_section">
-            <h3 class="w3l_header w3_agileits_header two">Our Classes</h3>
+
+<!-- blog -->
+<div class="blog-w3ls py-5" id="blog">
+    <div class="container py-xl-5 py-lg-3">
+        <div class="w3ls-titles text-center mb-5">
+            <h3 class="title text-white">Our Blog</h3>
+            <span>
+                <i class="fas fa-user-md text-white"></i>
+            </span>
+            <p class="mt-2 text-white">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </div>
-        <div class="row w3l-info">
-            <div class="col-lg-4 ser-lef-agile">
-                <div class="grid1">
-                    <h5>Sunday - 10:00 Am</h5>
-                    <h4>Special Classes</h4>
-                    <h6>Tutor: Andrew Ross</h6>
+        <div class="row package-grids mt-5">
+            <div class="col-md-4 pricing">
+                <div class="price-top">
+                    <a href="single.html">
+                        <img src="images/blog1.jpg" alt="" class="img-fluid" />
+                    </a>
+                    <h3>13
+                        <span>August</span>
+                    </h3>
+                </div>
+                <div class="price-bottom p-4">
+                    <h4 class="text-dark mb-3">Sit voluptatem accusantium doloremque</h4>
+                    <a href="single.html">
+                        <i class="fas fa-user mr-2"></i>Posted by accusantium</a>
                 </div>
             </div>
-            <div class="col-lg-4 ser-lef-agile">
-                <div class="grid1">
-                    <h5>Daily - 8:00 Am</h5>
-                    <h4>Special Classes</h4>
-                    <h6>Tutor: Steve Smith</h6>
+            <div class="col-md-4 pricing my-md-0 my-5">
+                <div class="price-top">
+                    <a href="single.html">
+                        <img src="images/blog2.jpg" alt="" class="img-fluid" />
+                    </a>
+                    <h3>24
+                        <span>August</span>
+                    </h3>
+                </div>
+                <div class="price-bottom p-4">
+                    <h4 class="text-dark mb-3">Sit voluptatem accusantium doloremque</h4>
+                    <a href="single.html">
+                        <i class="fas fa-user mr-2"></i>Posted by accusantium</a>
                 </div>
             </div>
-            <div class="col-lg-4 ser-lef-agile">
-                <div class="grid1">
-                    <h5>Saturday - 9:00 Am</h5>
-                    <h4>Special Classes</h4>
-                    <h6>Tutor: Jessy Raider</h6>
+            <div class="col-md-4 pricing">
+                <div class="price-top">
+                    <a href="single.html">
+                        <img src="images/blog3.jpg" alt="" class="img-fluid" />
+                    </a>
+                    <h3>30
+                        <span>August</span>
+                    </h3>
+                </div>
+                <div class="price-bottom p-4">
+                    <h4 class="text-dark mb-3">Sit voluptatem accusantium doloremque</h4>
+                    <a href="single.html">
+                        <i class="fas fa-user mr-2"></i>Posted by accusantium</a>
                 </div>
             </div>
         </div>
     </div>
-</section>
-<!-- //classes -->
+</div>
+<!-- //blog -->
 
-<!-- what we do -->
-<section class="what_you">
-    <div class="container">
-        <div class="wthree_head_section">
-            <h3 class="w3l_header">What we do</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+<!-- treatments -->
+<div class="screen-w3ls py-5">
+    <div class="container py-xl-5 py-lg-3">
+        <div class="w3ls-titles text-center mb-5">
+            <h3 class="title">Best Treatments</h3>
+            <span>
+                <i class="fas fa-user-md"></i>
+            </span>
+            <p class="mt-2">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </div>
-
-        <div class="row about-info-grids">
-            <div class="col-md-4 about-info about-info1">
-                <i class="far fa-gem"></i>
-                <h4>Coaching</h4>
-                <div class="h4-underline"></div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                    labore.</p>
+        <div class="row">
+            <div class="col-lg-6 w3ls-wthree-screen text-center">
+                <img src="images/b5.png" alt="" class="img-fluid">
             </div>
-            <div class="col-md-4 about-info about-info2">
-                <i class="fas fa-book"></i>
-                <h4>Certified Tutors</h4>
-                <div class="h4-underline"></div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                    labore.</p>
-            </div>
-            <div class="col-md-4 about-info about-info3">
-                <i class="fab fa-codepen"></i>
-                <h4>Infant Care</h4>
-                <div class="h4-underline"></div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                    labore.</p>
-            </div>
-        </div>
-        <div class="bord"></div>
-        <div class="row about-info-grids">
-            <div class="col-md-4 about-info about-info1">
-                <i class="fas fa-university"></i>
-                <h4>Certified Tutors</h4>
-                <div class="h4-underline"></div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                    labore.</p>
-            </div>
-            <div class="col-md-4 about-info about-info2">
-                <i class="fas fa-folder"></i>
-                <h4>Coaching</h4>
-                <div class="h4-underline"></div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                    labore.</p>
-            </div>
-            <div class="col-md-4 about-info about-info3">
-                <i class="fas fa-graduation-cap"></i>
-                <h4>Infant Care</h4>
-                <div class="h4-underline"></div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                    labore.</p>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- //what we do -->
-<!-- testimonials -->
-<section class="test">
-    <div class="container">
-        <div class="wthree_head_section">
-            <h3 class="w3l_header w3_agileits_header two">What Students Says</h3>
-        </div>
-        <div class=" test-gr">
-            <div class=" test-gri1">
-                <div id="owl-demo2" class="owl-carousel">
-                    <div class="row agile">
-                        <div class="col-md-6 test-grid">
-                            <div class="test-grid1-agileinfo hrms">
-                                <img src="{{asset('asset/fe/images/ts1.jpg')}}" alt="" class="img-r">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna
-                                    aliqua. Ut enim ad minim veniam, quis. Lorem ipsum dolor .</p>
-                                <h4>Shane Watson</h4>
-                                <span>Student</span>
-                            </div>
-                        </div>
-                        <div class="col-md-6 test-grid">
-                            <div class="test-grid1-agileinfo">
-                                <img src="{{asset('asset/feimages/ts2.jpg')}}" alt="" class="img-r">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna
-                                    aliqua. Ut enim ad minim veniam, quis. Lorem ipsum dolor.</p>
-                                <h4>Steve Smith</h4>
-                                <span>Student</span>
-                            </div>
-                        </div>
+            <div class="col-lg-6 w3ls-wthree-texts mt-5">
+                <div class="row icons-screen">
+                    <div class="col-3 screen-agile text-right">
+                        <i class="fas fa-syringe"></i>
                     </div>
-                    <div class="row agile">
-                        <div class="col-md-6 test-grid">
-                            <div class="test-grid1-agileinfo hrms">
-                                <img src="{{asset('asset/fe/images/ts3.jpg')}}" alt="" class="img-r">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna
-                                    aliqua. Ut enim ad minim veniam, quis. Lorem ipsum dolor.</p>
-                                <h4>James Franklin</h4>
-                                <span>Student</span>
-                            </div>
-                        </div>
-                        <div class="col-md-6 test-grid">
-                            <div class="test-grid1-agileinfo">
-                                <img src="{{asset('asset/fe/images/ts1.jpg')}}" alt="" class="img-r">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna
-                                    aliqua. Ut enim ad minim veniam, quis. Lorem ipsum dolor .</p>
-                                <h4>Mitchel Starc</h4>
-                                <span>Student</span>
-                            </div>
-                        </div>
+                    <div class="col-9 screen-agile-2">
+                        <h5 class="mb-3">Oxygen therapy</h5>
+                        <p>Incididunt ut labore et dolore magna aliqua, sed do eiusmod tempor incididunt ut</p>
                     </div>
-                    <div class="row agile">
-                        <div class="col-md-6 test-grid">
-                            <div class="test-grid1-agileinfo hrms">
-                                <img src="{{asset('asset/fe/images/ts2.jpg')}}" alt="" class="img-r">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna
-                                    aliqua. Ut enim ad minim veniam, quis. Lorem ipsum dolor .</p>
-                                <h4>Colling Wood</h4>
-                                <span>Student</span>
-                            </div>
-                        </div>
-                        <div class="col-md-6 test-grid">
-                            <div class="test-grid1-agileinfo">
-                                <img src="{{asset('asset/fe/images/ts3.jpg')}}" alt="" class="img-r">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna
-                                    aliqua. Ut enim ad minim veniam, quis. Lorem ipsum dolor .</p>
-                                <h4>Mark Henry</h4>
-                                <span>Student</span>
-                            </div>
-                        </div>
+                </div>
+                <div class="row icons-screen mt-5">
+                    <div class="col-3 screen-agile text-right">
+                        <i class="fab fa-medrt"></i>
+                    </div>
+                    <div class="col-9 screen-agile-2">
+                        <h5 class="mb-3">Medical procedure</h5>
+                        <p>Incididunt ut labore et dolore magna aliqua, sed do eiusmod tempor incididunt ut</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</section>
-<!-- testimonials -->
-<!-- features -->
-<section class="features">
-    <div class="container">
-        <div class="wthree_head_section">
-            <h3 class="w3l_header">Our Features</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
-        </div>
-        <div class="row about-main">
-            <div class="col-md-7 about-right">
-                <!-- stats -->
-                <div class="stats">
-                    <div class="row stats_inner">
-                        <div class="col-md-6 col-sm-6 col-xs-6 stat-grids">
-                            <p class="counter-agileits-w3layouts">32</p>
-                            <div class="stats-text-wthree">
-                                <h3>Awards</h3>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-6 stat-grids">
-                            <p class="counter-agileits-w3layouts">45</p>
-                            <div class="stats-text-wthree">
-                                <h3>Featured Programs</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row stats_inner">
-                        <div class="col-md-6 col-sm-6 col-xs-6 stat-grids">
-                            <p class="counter-agileits-w3layouts">20</p>
-                            <div class="stats-text-wthree">
-                                <h3> Certified Teachers</h3>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-6 stat-grids">
-                            <p class="counter-agileits-w3layouts">598</p>
-                            <div class="stats-text-wthree">
-                                <h3>Students</h3>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <!-- //stats -->
-
-            </div>
-            <div class="col-md-5 about-left">
-                <img src="{{asset('asset/fe/images/g1.jpg')}}" class="img-fluid" alt="">
-            </div>
-        </div>
-    </div>
-</section>
-<!-- //features -->
+</div>
+<!-- //treatments -->
