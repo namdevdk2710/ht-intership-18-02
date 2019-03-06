@@ -34,6 +34,7 @@
         href="//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
         rel="stylesheet">
     <!-- //Web-Fonts -->
+    <link rel="stylesheet" href="{{asset('css/custom.css')}}">
 
 </head>
 
@@ -42,6 +43,7 @@
     @include('frontend.layouts.banner')
     @include('frontend.layouts.login')
     @include('frontend.layouts.register')
+    @include('frontend.calendar')
     @include('frontend.layouts.footer')
 
     <!-- Js files -->
