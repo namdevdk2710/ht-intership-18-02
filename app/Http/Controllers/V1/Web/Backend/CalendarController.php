@@ -35,11 +35,11 @@ class CalendarController extends Controller
         return view('backend.calendar.list_calendar', compact('calendars', 'cities'));
     }
 
-    public function postAddCalendar(Request $request)
+    public function postAddCalendar(CalendarFormRequest $request)
     {
         $this->calendarRepository->store($request->all());
 
-        return redirect()->route('calendar.listCalendar');
+        return redirect()->back();
     }
 
     public function delete($id)

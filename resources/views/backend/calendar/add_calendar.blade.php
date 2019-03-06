@@ -10,7 +10,7 @@
                 <h4 class="modal-title">Thông tin chi tiết</h4>
             </div>
             <div class="modal-body">
-                {!! Form::open(['route' => 'calendar.postAddCalendar']) !!}
+                {!! Form::open(['route' => 'calendar.postAddCalendar', 'id' => 'js-add-calendar-form']) !!}
                 <div class="form-group form-padding">
                     {!! Form::label('Thời gian: ', null , ['class' =>
                     'col-sm-4']) !!}

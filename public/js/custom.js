@@ -20,6 +20,7 @@ $(document).ready(function () {
             }
         });
     });
+
     $("select[name='district']").change(function() {
         var district_id = $(this).val();
         var token = $("input[name='_token']").val();
@@ -41,5 +42,79 @@ $(document).ready(function () {
                 });
             }
         });
+    });
+
+    $('#js-edit-calendar-form').validate({
+        rules: {
+            time: {
+                required: true,
+            },
+            date: {
+                required: true,
+                date: true,
+            },
+            city: "required",
+            district: "required",
+            commune: "required",
+            address: "required",
+        },
+        messages: {
+            time: {
+                required: "Trường này phải có dữ liệu",
+            },
+            date: {
+                required: "Trường này phải có dữ liệu",
+                date: "Nhập đúng định dạng",
+            },
+            city: {
+                required: "Trường này phải có dữ liệu",
+            },
+            district: {
+                required: "Trường này phải có dữ liệu",
+            },
+            commune: {
+                required: "Trường này phải có dữ liệu",
+            },
+            address: {
+                required: "Trường này phải có dữ liệu",
+            },
+        }
+    });
+
+    $('#js-add-calendar-form').validate({
+        rules: {
+            time: {
+                required: true,
+            },
+            date: {
+                required: true,
+                date: true
+            },
+            city: "required",
+            district: "required",
+            commune: "required",
+            address: "required",
+        },
+        messages: {
+            time: {
+                required: "Trường này phải có dữ liệu",
+            },
+            date: {
+                required: "Trường này phải có dữ liệu",
+                date: "Nhập đúng định dạng",
+            },
+            city: {
+                required: "Trường này phải có dữ liệu",
+            },
+            district: {
+                required: "Trường này phải có dữ liệu",
+            },
+            commune: {
+                required: "Trường này phải có dữ liệu",
+            },
+            address: {
+                required: "Trường này phải có dữ liệu",
+            },
+        }
     });
 });

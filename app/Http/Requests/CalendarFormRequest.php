@@ -24,7 +24,7 @@ class CalendarFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'time' => 'required|date',
+            'time' => 'required',
             'date' => 'required|date',
             'city' => 'required',
             'district' => 'required',
@@ -37,7 +37,6 @@ class CalendarFormRequest extends FormRequest
     {
         return [
             'time.required' => 'Vui lòng chọn thời gian !',
-            'time.date' => 'Sai định dạng thời qian !',
             'date.required' => 'Vui lòng chọn ngày !',
             'date.date' => 'Sai định dạng ngày !',
             'city.required' => 'Vui lòng chọn thành phố !',

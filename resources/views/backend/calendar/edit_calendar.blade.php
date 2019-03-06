@@ -9,7 +9,7 @@
                 <h4 class="modal-title">Thông tin chi tiết</h4>
             </div>
             <div class="modal-body">
-                {!! Form::open(['route' => ['calendar.update', $calendar->id]]) !!}
+                {!! Form::open(['route' => ['calendar.update', $calendar->id], 'id' => 'js-edit-calendar-form']) !!}
                 {{ Form::hidden('_method', 'PUT') }}
                 <div class="form-group form-padding">
                     {!! Form::label('Thời gian: ', null , ['class' =>
