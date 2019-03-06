@@ -2,11 +2,11 @@
 <html lang="zxx">
 
 <head>
-    <title>Blood Donation</title>
-    <!-- Meta Tags -->
+    <title>Blood Donantion</title>
+    <!-- Meta tag Keywords -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">
-    <script type="application/x-javascript">
+    <meta charset="UTF-8" />
+    <script>
     addEventListener("load", function() {
         setTimeout(hideURLbar, 0);
     }, false);
@@ -15,106 +15,77 @@
         window.scrollTo(0, 1);
     }
     </script>
-    <!-- // Meta Tags -->
-    <!--booststrap-->
-    <link href="{{asset('asset/fe/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" media="all">
-    <!--//booststrap end-->
-    <!-- font-awesome icons -->
-    <link href="{{asset('asset/fe/css/fontawesome-all.css')}}" rel="stylesheet">
-    <!-- //font-awesome icons -->
-    <link href="{{asset('asset/fe/css/owl.carousel.css')}}" rel="stylesheet">
-    <!--stylesheets-->
-    <link href="{{asset('asset/fe/css/style.css')}}" rel='stylesheet' type='text/css' media="all">
-    <!--//stylesheets-->
-    <link href="//fonts.googleapis.com/css?family=Josefin+Sans:100,100i,300,300i,400,400i,600,600i,700,700i"
+    <!--// Meta tag Keywords -->
+
+    <!-- Custom-Files -->
+    <link rel="stylesheet" href="{{asset('asset/fe/css/bootstrap.css')}}">
+    <!-- Bootstrap-Core-CSS -->
+    <link rel="stylesheet" href="{{asset('asset/fe/css/style.css')}}" type="text/css" media="all" />
+    <!-- Style-CSS -->
+    <link rel="stylesheet" href="{{asset('asset/fe/css/fontawesome-all.css')}}">
+    <!-- Font-Awesome-Icons-CSS -->
+    <!-- //Custom-Files -->
+
+    <!-- Web-Fonts -->
+    <link
+        href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
         rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i" rel="stylesheet">
+    <link
+        href="//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
+        rel="stylesheet">
+    <!-- //Web-Fonts -->
+
 </head>
 
 <body>
     @include('frontend.layouts.header')
     @include('frontend.layouts.banner')
+    @include('frontend.layouts.login')
+    @include('frontend.layouts.register')
     @include('frontend.layouts.footer')
 
-    <!--js working-->
-    <script src="{{asset('asset/fe/js/jquery.min.js')}}"></script>
-    <!--//js working-->
-    <!-- requried-jsfiles-for owl -->
-    <script src="{{asset('asset/fe/js/owl.carousel.js')}}"></script>
-    <script>
-    $(document).ready(function() {
-        $("#owl-demo2").owlCarousel({
-            items: 1,
-            lazyLoad: false,
-            autoPlay: true,
-            navigation: false,
-            navigationText: false,
-            pagination: true,
-        });
-    });
-    </script>
-    <!-- //requried-jsfiles-for owl -->
+    <!-- Js files -->
+    <!-- JavaScript -->
+    <script src="{{asset('asset/fe/js/jquery-2.2.3.min.js')}}"></script>
+    <!-- Default-JavaScript-File -->
 
-
-    <!-- Slider script -->
+    <!-- banner slider -->
     <script src="{{asset('asset/fe/js/responsiveslides.min.js')}}"></script>
     <script>
-    // You can also use "$(window).load(function() {"
     $(function() {
-        $("#slider").responsiveSlides({
+        $("#slider4").responsiveSlides({
             auto: true,
+            pager: true,
             nav: true,
-            manualControls: '#slider3-pager',
+            speed: 1000,
+            namespace: "callbacks",
+            before: function() {
+                $('.events').append("<li>before event fired.</li>");
+            },
+            after: function() {
+                $('.events').append("<li>after event fired.</li>");
+            }
         });
     });
     </script>
-    <!-- stats -->
-    <script src="{{asset('asset/fe/js/jquery.waypoints.min.js')}}"></script>
-    <script src="{{asset('asset/fe/js/jquery.countup.js')}}"></script>
-    <script>
-    $('.counter-agileits-w3layouts').countUp();
-    </script>
-    <!-- //stats -->
+    <!-- //banner slider -->
+
+    <!-- fixed navigation -->
+    <script src="{{asset('asset/fe/js/fixed-nav.js')}}"></script>
+    <!-- //fixed navigation -->
 
     <!-- smooth scrolling -->
-    <script type="text/javascript" src="{{asset('asset/fe/js/move-top.js')}}"></script>
-    <script type="text/javascript" src="{{asset('asset/fe/js/easing.js')}}"></script>
-    <!-- here stars scrolling icon -->
-    <script type="text/javascript">
-    $(document).ready(function() {
-        /*
-        	var defaults = {
-        	containerID: 'toTop', // fading element id
-        	containerHoverID: 'toTopHover', // fading element hover id
-        	scrollSpeed: 1200,
-        	easingType: 'linear'
-        	};
-        */
+    <script src="{{asset('asset/fe/js/SmoothScroll.min.js')}}"></script>
+    <!-- move-top -->
+    <script src="{{asset('asset/fe/js/move-top.js')}}"></script>
+    <!-- easing -->
+    <script src="{{asset('asset/fe/js/easing.js')}}"></script>
+    <!--  necessary snippets for few javascript files -->
+    <script src="{{asset('asset/fe/js/medic.js')}}"></script>
 
-        $().UItoTop({
-            easingType: 'easeOutQuart'
-        });
+    <script src="{{asset('asset/fe/js/bootstrap.js')}}"></script>
+    <!-- Necessary-JavaScript-File-For-Bootstrap -->
 
-    });
-    </script>
-    <!-- //here ends scrolling icon -->
-    <!-- //smooth scrolling -->
-    <!-- scrolling script -->
-    <script type="text/javascript">
-    jQuery(document).ready(function($) {
-        $(".scroll").click(function(event) {
-            event.preventDefault();
-            $('html,body').animate({
-                scrollTop: $(this.hash).offset().top
-            }, 1000);
-        });
-    });
-    </script>
-    <!-- //scrolling script -->
-
-    <!--bootstrap working-->
-    <script src="{{asset('asset/fe/js/bootstrap.min.js')}}"></script>
-    <!-- //bootstrap working-->
+    <!-- //Js files -->
 </body>
-
 </html>
