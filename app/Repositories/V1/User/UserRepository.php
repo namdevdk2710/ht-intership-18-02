@@ -15,7 +15,7 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
 
     public function login($request)
     {
-        $user = User::where('email', $request->email)->first();
+        $user = $this->model->where('email', $request->email)->first();
 
         if (! $user) {
             return 'email';
@@ -32,5 +32,24 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
         }
 
         return 'success';
+    }
+
+    public function store($data)
+    {
+        return $this->model->create($data);
+    }
+
+    public function update($id, $data)
+    {
+        $user= $this->model->find($id);
+        $user->fill($data);
+        $user->save();
+
+        return $user;
+    }
+
+    public function logout()
+    {
+        return Auth::logout();
     }
 }

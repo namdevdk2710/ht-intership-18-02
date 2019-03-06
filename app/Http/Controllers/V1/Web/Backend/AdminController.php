@@ -45,4 +45,11 @@ class AdminController extends Controller
 
         return redirect()->route('admin.index');
     }
+
+    public function logout()
+    {
+        $this->repository->logout();
+
+        return redirect()->back();
+    }
 }
