@@ -18,17 +18,20 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
         $user = $this->model->where('email', $request->email)->first();
 
         if (! $user) {
-            return 0;
+            return 'email';
+        } elseif ($user->role !== 1) {
+            return 'role';
         }
         $data = [
             'email' => $request['email'],
             'password' => $request['password'],
+            'role' => 1,
         ];
         if (Auth::attempt($data)) {
-            return 2;
+            return 'password';
         }
 
-        return 1;
+        return 'success';
     }
 
     public function store($data)

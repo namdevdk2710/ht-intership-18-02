@@ -35,13 +35,15 @@ class AdminController extends Controller
     {
         $rs = $this->repository->login($request);
 
-        if ($rs == 0) {
+        if ($rs == 'email') {
             return redirect()->back()->with('login-error', 'Email không tồn tại !');
-        } elseif ($rs == 1) {
+        } elseif ($rs == 'role') {
+            return redirect()->back()->with('login-error', 'Không có quyền truy cập trang này !');
+        } elseif ($rs == 'password') {
             return redirect()->back()->with('login-error', 'Password không chính xác !');
         }
 
-        return redirect()->back();
+        return redirect()->route('admin.index');
     }
 
     public function logout()
