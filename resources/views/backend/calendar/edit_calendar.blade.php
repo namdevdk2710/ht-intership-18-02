@@ -32,7 +32,7 @@
                     </div>
                 </div>
                 <div class="form-group form-padding">
-                    {!! Form::label('Quận/huyện: ', null , ['class' =>
+                    {!! Form::label('Quận/Huyện: ', null , ['class' =>
                     'col-sm-4']) !!}
                     <div class="col-sm-8">
                         {!! Form::select('district', $calendar->commune->district->city->districts->pluck('name', 'id')->toArray(),
@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 <div class="form-group form-padding">
-                    {!! Form::label('Xã phường: ', null , ['class' =>
+                    {!! Form::label('Xã/Phường: ', null , ['class' =>
                     'col-sm-4']) !!}
                     <div class="col-sm-8">
                         {!! Form::select('commune', $calendar->commune->district->communes->pluck('name', 'id')->toArray(),

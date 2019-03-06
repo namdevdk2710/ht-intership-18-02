@@ -27,12 +27,12 @@ class CalendarController extends Controller
         $this->communeRepository = $communeRepository;
     }
 
-    public function listCalendar()
+    public function index()
     {
         $calendars = $this->calendarRepository->listCalendar();
         $cities = $this->cityRepository->getCity();
 
-        return view('backend.calendar.list_calendar', compact('calendars', 'cities'));
+        return view('backend.calendar.index', compact('calendars', 'cities'));
     }
 
     public function postAddCalendar(CalendarFormRequest $request)

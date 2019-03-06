@@ -10,13 +10,13 @@
                     </a>
                 </li>
                 <li>
-                    <a class="{{( Request::path() === 'admin/calendar' )? 'active' : '' }}" href="{{ route('calendar.listCalendar') }}">
+                    <a class="{{( Request::path() === 'admin/calendar' )? 'active' : '' }}" href="{{ route('calendar.index') }}">
                         <i class="fa fa-calendar"></i>
                         <span>Quản Lý Lịch</span>
                     </a>
                 </li>
                 <li>
-                    <a class="active" href="{{route('users.list')}}">
+                    <a class="{{( Request::path() === 'user' )? 'active' : '' }}" href="{{route('users.list')}}">
                         <i class="fa fa-user"></i>
                         <span>Quản lý người dùng</span>
                     </a>

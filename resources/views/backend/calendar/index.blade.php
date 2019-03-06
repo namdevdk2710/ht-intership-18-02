@@ -35,7 +35,7 @@
                         data-target="#showDetailCalendar{{$calendar->id}}">
                         Chi tiết
                     </a>
-                    @include('backend.calendar.modal_form_calendar')
+                    @include('backend.calendar.detail_calendar')
                     <a class="btn btn-sm btn-warning" id="calendar-edit" href="#" data-toggle="modal"
                         data-target="#edit-calendar-{{$calendar->id}}">
                         Sửa
