@@ -83,15 +83,12 @@
                             </a>
                         </li>
                         <li class="nav-item mx-lg-4 my-lg-0 my-3">
-                            <a class="nav-link" href="about.html">Đăng ký hiến máu</a>
-                        </li>
-                        <li class="nav-item mx-lg-4 my-lg-0 my-3">
-                            <a class="nav-link" href="appointment.html">Đối tác</a>
+                            <a class="nav-link" href="">Đăng ký hiến máu</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Phản hồi</a>
+                            <a class="nav-link" href="appointment.html">Đối tác</a>
                         </li>
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown mx-lg-4 my-lg-0 my-3">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Thông tin
@@ -102,6 +99,10 @@
                                 <a class="dropdown-item" href="">Kết quả xét nghiệm</a>
                             </div>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Phản hồi</a>
+                        </li>
+
                     </ul>
                     <!-- login -->
                     <a href="#" class="login-button ml-lg-5 mt-lg-0 mt-4 mb-lg-0 mb-3" data-toggle="modal"
