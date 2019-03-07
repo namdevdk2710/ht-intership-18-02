@@ -309,7 +309,6 @@ a.login-button:hover {
     color: #fff;
     font-size: 30px;
     letter-spacing: 1px;
-    margin-left: 4em;
 }
 
 p.account-w3ls {
@@ -325,7 +324,6 @@ p.account-w3ls a {
     letter-spacing: 1px;
     color: #fff;
     margin-bottom: 8px;
-    text-align: right;
     display: block;
 }
 
