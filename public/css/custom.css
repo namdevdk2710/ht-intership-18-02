@@ -10,11 +10,17 @@
     color: red;
     text-align: center;
 }
+.titles-modal{
+    color: #fff;
+}
 
 /* ----- Start Admin Calendar ----- */
 .calendar-table {
     margin: 0px 10px;
     padding: 0px;
+    background: #fff;
+}
+.calendars-table {
     background: #fff;
 }
 .calendar-table table tr td{
@@ -80,11 +86,6 @@
     color: black;
     padding: 1em;
 }
-
-
-
-
-
 /* -------------------------- */
 .border-red{
     border: 1px solid red!important;
@@ -94,5 +95,8 @@
 }
 .border-blue {
     border: 1px solid blue !important;
+}
+.panigate{
+
 }
 
