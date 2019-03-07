@@ -10,6 +10,9 @@
     color: red;
     text-align: center;
 }
+.titles-modal{
+    color: #fff;
+}
 
 /* ----- Start Admin Calendar ----- */
 .calendar-table, .request-blood {
@@ -63,15 +66,9 @@
 }
 /* ----- End Admin Calendar ----- */
 
-/* ----- Start Admin RequestBlood ----- */
-.request-blood{
-
+.calendars-table {
+    background: #fff;
 }
-.request-blood-header{
-
-}
-/* ----- End Admin RequestBlood ----- */
-
 .padding-right-15px{
     padding-right: 15px!important;
 }
@@ -92,7 +89,6 @@
     color: black;
     padding: 1em;
 }
-
 /* -------------------------- */
 .border-red{
     border: 1px solid red!important;
@@ -102,5 +98,8 @@
 }
 .border-blue {
     border: 1px solid blue !important;
+}
+.panigate{
+
 }
 
