@@ -5,7 +5,6 @@ Route::group(['prefix' => '/'], function () {
     Route::post('/login', 'V1\Web\Frontend\PageController@postLogin')->name('postLogin');
 });
 
-
 Route::get('admin/login', 'V1\Web\Backend\AdminController@getLogin')->name('admin.getLogin');
 Route::post('admin/login', 'V1\Web\Backend\AdminController@postLogin')->name('admin.postLogin');
 
