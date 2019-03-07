@@ -26,25 +26,26 @@
                         {{ session('login-error') }}
                     </div>
                     @endif
-                    <form action="{{route('postLogin')}}" method="post">
-                        @csrf
-                        <div class="form-group">
-                            <label>Email</label>
-                            <input type="email"  class="form-control" name="email">
-                        </div>
-                        <div class="form-group">
-                            <label class="mb-2">Mật khẩu</label>
-                            <input type="password" class="form-control" name="password">
-                        </div>
-                        <button type="submit" class="btn submit mb-4">Đăng nhập</button>
-                        <p class="forgot-w3ls text-center pb-4">
-                            <a href="#" class="text-white">Quên mật khẩu?</a>
-                        </p>
-                        <p class="account-w3ls text-center pb-4">
-                            Không có tài khoản?
-                            <a href="#" data-toggle="modal" data-target="#exampleModalCenter2">Đăng ký ngay</a>
-                        </p>
-                    </form>
+
+                    {!! Form::open(['method' => 'POST', 'route' => ['postLogin']]) !!}
+                    <div class="form-group">
+                        {!! Form::label('Email:') !!}
+                        {!! Form::text('email', old('email'), ['class' => 'form-control']) !!}
+                    </div>
+                    <div class="form-group">
+                        {!! Form::label('Mật khẩu:') !!}
+                        {!! Form::password('password', ['class' => 'form-control']) !!}
+                    </div>
+                    {!! Form::button('Đăng nhập', ['class' => 'btn submit mb-4', 'type' => 'submit'])!!}
+                    <p class="account-w3ls text-center pb-4">
+                        Không có tài khoản?
+                        <a href="#" data-toggle="modal" data-target="#exampleModalCenter2">Đăng ký ngay</a>
+                    </p>
+                    <p class="account-w3ls text-center pb-4">
+                        Không có tài khoản?
+                        <a href="#" data-toggle="modal" data-target="#exampleModalCenter2">Đăng ký ngay</a>
+                    </p>
+                    {!! Form::close() !!}
                 </div>
             </div>
         </div>
