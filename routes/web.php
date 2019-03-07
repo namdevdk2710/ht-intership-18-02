@@ -24,6 +24,8 @@ Route::group(['prefix' => 'users'], function () {
     Route::get('/', 'V1\Web\Backend\UserController@index')->name('users.list');
     Route::get('/create', 'V1\Web\Backend\UserController@create');
     Route::post('/create', 'V1\Web\Backend\UserController@store')->name('users.store');
+    Route::get('edit/{id}', 'V1\Web\Backend\UserController@edit');
+    Route::put('edit/{id}', 'V1\Web\Backend\UserController@update')->name('users.update');
     Route::get('delete/{id}', 'V1\Web\Backend\UserController@destroy')->name('users.destroy');
 });
 
@@ -31,7 +33,7 @@ Route::group(['prefix' => 'bloods'], function () {
     Route::get('', 'V1\Web\Backend\BloodController@index')->name('bloods.list');
     Route::get('create', 'V1\Web\Backend\BloodController@create');
     Route::post('create', 'V1\Web\Backend\BloodController@store')->name('bloods.store');
-    Route::get('edit/{id}', 'V1\Web\Backend\BloodController@update');
+    Route::get('edit/{id}', 'V1\Web\Backend\BloodController@edit');
     Route::put('edit/{id}', 'V1\Web\Backend\BloodController@update')->name('bloods.update');
     Route::get('delete/{id}', 'V1\Web\Backend\BloodController@destroy')->name('bloods.destroy');
 });
