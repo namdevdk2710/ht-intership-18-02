@@ -6,4 +6,5 @@ interface UserRepositoryInterface
 {
     public function login($request);
     public function logout();
+    public function userLogin($request);
 }
