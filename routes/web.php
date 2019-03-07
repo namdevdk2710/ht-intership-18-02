@@ -1,6 +1,10 @@
 <?php
+Route::group(['prefix' => '/'], function () {
+    Route::get('', 'V1\Web\Frontend\PageController@index')->name('home');
+    Route::get('/login', 'V1\Web\Frontend\PageController@getLogin');
+    Route::post('/login', 'V1\Web\Frontend\PageController@postLogin')->name('postLogin');
+});
 
-Route::get('/', 'V1\Web\Frontend\PageController@index');
 
 Route::get('admin/login', 'V1\Web\Backend\AdminController@getLogin')->name('admin.getLogin');
 Route::post('admin/login', 'V1\Web\Backend\AdminController@postLogin')->name('admin.postLogin');
@@ -40,4 +44,4 @@ Route::group(['prefix' => 'bloods'], function () {
     Route::get('delete/{id}', 'V1\Web\Backend\BloodController@destroy')->name('bloods.destroy');
 });
 
-Auth::routes();
+// Auth::routes();

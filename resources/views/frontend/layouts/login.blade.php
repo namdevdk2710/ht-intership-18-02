@@ -11,10 +11,26 @@
             <div class="modal-body">
                 <div class="login px-4 mx-auto mw-100">
                     <h5 class="text-center mb-4">Đăng nhập</h5>
-                    <form action="#" method="post">
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul class=''>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+
+                    @endif
+                    @if (session('login-error'))
+                    <div class="alert alert-danger" role="alert">
+                        {{ session('login-error') }}
+                    </div>
+                    @endif
+                    <form action="{{route('postLogin')}}" method="post">
+                        @csrf
                         <div class="form-group">
                             <label>Email</label>
-                            <input type="email" class="form-control" name="email">
+                            <input type="email"  class="form-control" name="email">
                         </div>
                         <div class="form-group">
                             <label class="mb-2">Mật khẩu</label>

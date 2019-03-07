@@ -52,4 +52,15 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
     {
         return Auth::logout();
     }
+
+    public function userLogin($request)
+    {
+        $user = $this->model->where('email', $request->email)->first();
+        if (! $user) {
+            return 'email';
+        } elseif ($user->password !=='password') {
+            return 'password';
+        }
+    }
+
 }
