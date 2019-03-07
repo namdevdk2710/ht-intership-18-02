@@ -23,7 +23,6 @@ class PageController extends Controller
         DistrictRepositoryInterFace $districtRepository,
         CommuneRepositoryInterFace $communeRepository,
         UserRepositoryInterFace $userRepository
-
     ) {
         $this->calendarRepository = $calendarRepository;
         $this->cityRepository = $cityRepository;
