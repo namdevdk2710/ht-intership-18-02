@@ -1,8 +1,33 @@
 @extends('backend.layouts.app')
 @section('content')
-<div class="">
-    <div class="">
+<div class="request-blood table-responsive">
+    <div class="request-blood-header">
         <span class="text-center text-uppercase">Danh sách yêu cầu hiến máu</span>
+    </div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col" class="text-center">Stt</th>
+                <th scope="col" class="text-center">E-Mail</th>
+                <th scope="col" class="text-center text-nowrap">Trạng thái</th>
+                <th scope="col" class="text-center">Nội dung</th>
+                <th scope="col" class="text-center text-nowrap">Thời gian</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($requestBloods as $key => $requestBlood)
+            <tr>
+                <td scope="row" class="text-center">{{ $key +1 }}</td>
+                <td class="text-left">{{ $requestBlood->user->email }}</td>
+                <td class="text-left">{{ ($requestBlood->status === 1) ? 'Cho' : 'Nhận' }}</td>
+                <td class="text-left">{{ $requestBlood->content }}</td>
+                <td class="text-left text-nowrap">{{ $requestBlood->calendar->time }}</td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+    <div class="pagination-wrapper">
+        {{ $requestBloods->links() }}
     </div>
 </div>
 @endsection

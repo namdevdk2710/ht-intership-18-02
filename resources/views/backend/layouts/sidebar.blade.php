@@ -29,7 +29,7 @@
                 </li>
                 <li>
                     <a class="{{( Request::path() === 'admin/request-bloods' ) ? 'active' : '' }}" href="{{ route('request-bloods.index') }}">
-                        <i class="fa fa-calendar"></i>
+                        <i class="fa fa-wpforms"></i>
                         <span>Yêu cầu hiến máu</span>
                     </a>
                 </li>
