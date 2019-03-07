@@ -17,4 +17,9 @@ class User extends Model
     {
         return $this->hasOne('App\Models\Information');
     }
+
+    public function requestBlood()
+    {
+        return $this->hasOne('App\Models\RequestBlood');
+    }
 }
