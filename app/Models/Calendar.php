@@ -22,4 +22,9 @@ class Calendar extends Model
     {
         return $this->belongsTo('App\Models\Commune');
     }
+
+    public function requestBloods()
+    {
+        return $this->hasMany('App\Model\RequestBlood');
+    }
 }
