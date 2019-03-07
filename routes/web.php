@@ -39,3 +39,5 @@ Route::group(['prefix' => 'bloods'], function () {
     Route::put('edit/{id}', 'V1\Web\Backend\UserController@update')->name('users.update');
     Route::get('delete/{id}', 'V1\Web\Backend\BloodController@destroy')->name('bloods.destroy');
 });
+
+Auth::routes();
