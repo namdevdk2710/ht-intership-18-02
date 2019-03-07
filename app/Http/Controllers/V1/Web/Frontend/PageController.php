@@ -51,11 +51,4 @@ class PageController extends Controller
 
         return redirect()->route('home');
     }
-
-    public function logout()
-    {
-        $this->userRepository->logout();
-
-        return redirect()->back();
-    }
 }

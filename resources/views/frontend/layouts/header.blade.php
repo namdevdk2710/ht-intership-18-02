@@ -101,16 +101,41 @@
                                 <a class="dropdown-item" href="">Kết quả xét nghiệm</a>
                             </div>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item" >
                             <a class="nav-link" href="">Phản hồi</a>
                         </li>
 
                     </ul>
                     <!-- login -->
-                    <a href="#" class="login-button ml-lg-5 mt-lg-0 mt-4 mb-lg-0 mb-3" data-toggle="modal"
-                        data-target="#exampleModalCenter1">
-                        <i class="fas fa-sign-in-alt mr-2"></i>Đăng nhập</a>
-                    <!-- //login -->
+                    <div class="top-nav  mx-lg-4 my-lg-0 my-3 ">
+                        @if(Auth::user())
+                        <ul class="nav pull-right top-menu">
+                            <!-- user login dropdown start-->
+                            <li class="dropdown">
+                                <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                    <img alt="" src="{{asset('asset/images/2.png')}}">
+                                    <span class="username">{{Auth::user()->name }}</span>
+                                    <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu extended dropdown-login">
+                                    <li>
+                                        <a href="#"><i class=" fa fa-suitcase"></i>Thông tin cá nhân</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ route('admin.logout') }}"><i class="fa fa-key"></i>Đăng xuất</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- user login dropdown end -->
+                        </ul>
+                        @else
+                        <a href="#" class="login-button ml-lg-5 mt-lg-0 mt-4 mb-lg-0 mb-3" data-toggle="modal"
+                            data-target="#exampleModalCenter1">
+                            <i class="fas fa-sign-in-alt mr-2"></i>Đăng nhập
+                        </a>
+                        @endif
+                        <!-- //login -->
+                    </div>
                 </div>
             </div>
         </nav>

@@ -5,6 +5,7 @@ namespace App\Repositories\V1\User;
 use App\Repositories\BaseRepository;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class UserRepository extends BaseRepository implements UserRepositoryInterface
 {
@@ -58,8 +59,17 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
         $user = $this->model->where('email', $request->email)->first();
         if (! $user) {
             return 'email';
-        } elseif ($user->password !=='password') {
+        }
+        if (! Hash::check($request->password, $user['password'])) {
             return 'password';
         }
+        $data = [
+            'email' => $request['email'],
+            'password' => $request['password'],
+        ];
+        if (Auth::attempt($data)) {
+            return 1;
+        }
+        return 'success';
     }
 }
