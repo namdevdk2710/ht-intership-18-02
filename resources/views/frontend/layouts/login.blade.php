@@ -41,10 +41,6 @@
                         Không có tài khoản?
                         <a href="#" data-toggle="modal" data-target="#exampleModalCenter2">Đăng ký ngay</a>
                     </p>
-                    <p class="account-w3ls text-center pb-4">
-                        Không có tài khoản?
-                        <a href="#" data-toggle="modal" data-target="#exampleModalCenter2">Đăng ký ngay</a>
-                    </p>
                     {!! Form::close() !!}
                 </div>
             </div>
