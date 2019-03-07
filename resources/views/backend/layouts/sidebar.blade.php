@@ -27,6 +27,12 @@
                         <span>Quản lý nhóm máu</span>
                     </a>
                 </li>
+                <li>
+                    <a class="{{( Request::path() === 'admin/request-bloods' ) ? 'active' : '' }}" href="{{ route('request-bloods.index') }}">
+                        <i class="fa fa-calendar"></i>
+                        <span>Yêu cầu hiến máu</span>
+                    </a>
+                </li>
                 <li class="sub-menu">
                     <a href="javascript:;">
                         <i class="fa fa-th"></i>

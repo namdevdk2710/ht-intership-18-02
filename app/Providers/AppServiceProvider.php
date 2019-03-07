@@ -19,6 +19,8 @@ use App\Repositories\V1\BloodGroup\BloodGroupRepository;
 use App\Repositories\V1\BloodGroup\BloodGroupRepositoryInterface;
 use App\Repositories\V1\Information\InformationRepository;
 use App\Repositories\V1\Information\InformationRepositoryInterface;
+use App\Repositories\V1\RequestBlood\RequestBloodRepository;
+use App\Repositories\V1\RequestBlood\RequestBloodRepositoryInterface;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -47,5 +49,6 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(CommuneRepositoryInterface::class, CommuneRepository::class);
         $this->app->bind(BloodGroupRepositoryInterface::class, BloodGroupRepository::class);
         $this->app->bind(InformationRepositoryInterface::class, InformationRepository::class);
+        $this->app->bind(RequestBloodRepositoryInterface::class, RequestBloodRepository::class);
     }
 }
