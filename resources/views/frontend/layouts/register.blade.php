@@ -10,27 +10,33 @@
             <div class="modal-body">
                 <div class="login px-4 mx-auto mw-100">
                     <h5 class="text-center mb-4">Đăng ký</h5>
-                    <form action="#" method="post">
-                        <div class="form-group">
-                            <label>Username</label>
-                            <input type="text" class="form-control" name="name" placeholder="" required="">
-                        </div>
-                        <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" class="form-control" name="email" placeholder="" required="">
-                        </div>
-                        <div class="form-group">
-                            <label class="mb-2">Mật khẩu</label>
-                            <input type="password" class="form-control" name="password" id="password1" placeholder=""
-                                required="">
-                        </div>
-                        <div class="form-group">
-                            <label>Nhập lại mật khẩu</label>
-                            <input type="password" class="form-control" name="password" id="password2" placeholder=""
-                                required="">
-                        </div>
-                        <button type="submit" class="btn btn-primary submit mb-4">Đăng ký</button>
-                    </form>
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                        @foreach ($errors->all() as $error)
+                        <div>{{ $error }}</div>
+                        @endforeach
+                        </ul>
+                    </div>
+                    @endif
+                    {!! Form::open(['method' => 'POST', 'route' => ['postRegister']]) !!}
+                    <div class="form-group">
+                        {!! Form::label('Username:') !!}
+                        {!! Form::text('username', old('username'), ['class' => 'form-control']) !!}
+                    </div>
+                    <div class="form-group">
+                        {!! Form::label('Email:') !!}
+                        {!! Form::text('email', old('email'), ['class' => 'form-control']) !!}
+                    </div>
+                    <div class="form-group">
+                        {!! Form::label('Mật khẩu:') !!}
+                        {!! Form::password('password', ['class' => 'form-control']) !!}
+                    </div>
+                    <div class="form-group">
+                        {!! Form::label('Mật khẩu:') !!}
+                        {!! Form::password('password_confirmation', ['class' => 'form-control']) !!}
+                    </div>
+                    {!! Form::button('Đăng nhập', ['class' => 'btn submit mb-4', 'type' => 'submit'])!!}
+                    {!! Form::close() !!}
                 </div>
             </div>
         </div>
