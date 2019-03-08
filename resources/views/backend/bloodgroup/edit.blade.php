@@ -6,9 +6,9 @@
                         aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title">Chỉnh sữa nhóm máu</h4>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" id="modal-blood">
                 {!! Form::open(['method' => 'PUT', 'route' => ['bloods.update', $blood->id]]) !!}
-                <div class="form-group form-blood">
+                <div class="form-group">
                     {!! Form::label('Tên nhóm máu:') !!}
                     {!! Form::text('name', $blood->name, ['class' => 'form-control']) !!}
                 </div>
