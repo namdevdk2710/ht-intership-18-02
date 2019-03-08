@@ -53,7 +53,7 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
     {
         return Auth::logout();
     }
-
+// ---------------------------Frontend-------------------------------------------------------------
     public function userLogin($request)
     {
         $user = $this->model->where('email', $request->email)->first();
@@ -71,5 +71,15 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
             return 1;
         }
         return 'success';
+    }
+
+    public function register($data)
+    {
+        return $this->model->create([
+            'username' => $data['username'],
+            'email' => $data['email'],
+            'password' => bcrypt($data['password']),
+            'role' => 0,
+        ]);
     }
 }

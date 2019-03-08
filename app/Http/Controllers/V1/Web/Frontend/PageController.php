@@ -11,6 +11,7 @@ use App\Repositories\V1\Commune\CommuneRepositoryInterFace;
 use Illuminate\Support\Facades\Auth;
 use App\Repositories\V1\User\UserRepositoryInterFace;
 use App\Http\Requests\LoginRequest;
+use App\Http\Requests\RegisterRequest;
 
 class PageController extends Controller
 {
@@ -48,6 +49,13 @@ class PageController extends Controller
         } elseif ($rs == 'password') {
             return redirect()->back()->with('login-error', 'Password không chính xác !');
         }
+
+        return redirect()->route('home');
+    }
+
+    public function postRegister(RegisterRequest $request)
+    {
+        $this->userRepository->register($request->all());
 
         return redirect()->route('home');
     }
