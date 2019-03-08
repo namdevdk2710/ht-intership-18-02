@@ -1,4 +1,3 @@
-<!-- modal -->
 <!-- login -->
 <div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -11,16 +10,7 @@
             <div class="modal-body">
                 <div class="login px-4 mx-auto mw-100">
                     <h5 class="text-center mb-4">Đăng nhập</h5>
-                    @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul class=''>
-                            @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
 
-                    @endif
                     @if (session('login-error'))
                     <div class="alert alert-danger" role="alert">
                         {{ session('login-error') }}
