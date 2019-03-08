@@ -35,13 +35,13 @@
                     {{ $requestBlood->calendar->time }}</td>
                 @if ($requestBlood->status == true)
                 <td scope="row" class="text-center">
-                    <a href="" class="btn-sm btn-warning">
-                        Hủy
+                    <a href="" class="btn-sm btn-warning  text-nowrapgit a">
+                        Hủy xác nhận
                     </a>
                 </td>
                 @else
                 <td scope="row" class="text-center"><a href=""
-                        class="btn-sm btn-primary">
+                        class="btn-sm btn-primary text-nowrap">
                         Xác nhận
                     </a>
                 </td>
