@@ -25,6 +25,6 @@ class Calendar extends Model
 
     public function requestBloods()
     {
-        return $this->hasMany('App\Model\RequestBlood');
+        return $this->hasMany('App\Models\RequestBlood');
     }
 }
