@@ -19,7 +19,7 @@ class CalendarsTableSeeder extends Seeder
             Calendar::create([
                 'user_id' => $faker->randomElement([1, 2]),
                 'commune_id' => $faker->randomElement($communes->pluck('id')->toArray()),
-                'time' => $faker->dateTimeBetween($startDate = 'now', $endDate = '+3 years', $timezone = null),
+                'time' => $faker->dateTimeBetween($startDate = '-1 years', $endDate = '+1 years', $timezone = null),
                 'address' => $faker->streetAddress(),
             ]);
         }
