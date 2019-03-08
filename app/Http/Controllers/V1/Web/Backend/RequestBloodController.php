@@ -17,9 +17,7 @@ class RequestBloodController extends Controller
 
     public function index()
     {
-        $requestBloods = $this->repository->index();
-
-        return view('backend.requestblood.index', compact('requestBloods'));
+        //
     }
 
     public function create()
@@ -50,5 +48,12 @@ class RequestBloodController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function donated()
+    {
+        $requestBloods = $this->repository->donated();
+
+        return view('backend.requestblood.donated', compact('requestBloods'));
     }
 }

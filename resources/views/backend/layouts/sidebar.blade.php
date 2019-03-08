@@ -27,11 +27,15 @@
                         <span>Quản lý nhóm máu</span>
                     </a>
                 </li>
-                <li>
-                    <a class="{{( Request::path() === 'admin/request-bloods' ) ? 'active' : '' }}" href="{{ route('request-bloods.index') }}">
+                <li class="sub-menu">
+                    <a href="javascript:;" class="{{( Request::path() === 'admin/request-bloods/donated' ) ? 'active' : '' }}"  >
                         <i class="fa fa-wpforms"></i>
-                        <span>Yêu cầu hiến máu</span>
+                        <span>Yêu cầu hiến/nhận máu</span>
                     </a>
+                    <ul class="sub">
+                        <li><a class="{{( Request::path() === 'admin/request-bloods/donated' ) ? 'active' : '' }}" href="{{ route('request-bloods.donated') }}">Yêu cầu hiến máu</a></li>
+                        <li><a href="responsive_table.html">Responsive Table</a></li>
+                    </ul>
                 </li>
                 <li class="sub-menu">
                     <a href="javascript:;">
