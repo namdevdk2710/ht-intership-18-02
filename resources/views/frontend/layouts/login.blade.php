@@ -17,7 +17,7 @@
                     </div>
                     @endif
 
-                    {!! Form::open(['method' => 'POST', 'route' => ['postLogin']]) !!}
+                    {!! Form::open(['method' => 'POST', 'route' => ['postLogin'], 'id' => 'fe-login']) !!}
                     <div class="form-group">
                         {!! Form::label('Email:') !!}
                         {!! Form::text('email', old('email'), ['class' => 'form-control']) !!}
