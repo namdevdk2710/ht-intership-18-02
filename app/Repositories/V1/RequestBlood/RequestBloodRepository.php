@@ -22,7 +22,7 @@ class RequestBloodRepository extends BaseRepository implements RequestBloodRepos
         return $this->model->where('type', 'nhan')->paginate(10);
     }
     
-    public function donatedConfirm($id)
+    public function confirm($id)
     {
         $requestBlood = $this->model->find($id);
         $requestBlood->status = !($requestBlood->status);
