@@ -17,6 +17,11 @@ class RequestBloodRepository extends BaseRepository implements RequestBloodRepos
         return $this->model->where('type', 'cho')->paginate(10);
     }
 
+    public function received()
+    {
+        return $this->model->where('type', 'nhan')->paginate(10);
+    }
+    
     public function donatedConfirm($id)
     {
         $requestBlood = $this->model->find($id);
