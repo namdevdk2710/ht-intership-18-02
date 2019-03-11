@@ -26,6 +26,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 
     Route::group(['prefix' => 'request-bloods'], function () {
         Route::get('/donated', 'V1\Web\Backend\RequestBloodController@donated')->name('request-bloods.donated');
+        Route::get('/received', 'V1\Web\Backend\RequestBloodController@received')->name('request-bloods.received');
     });
 });
 
