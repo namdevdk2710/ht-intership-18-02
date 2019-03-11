@@ -26,7 +26,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 
     Route::group(['prefix' => 'request-bloods'], function () {
         Route::get('/donated', 'V1\Web\Backend\RequestBloodController@donated')->name('request-bloods.donated');
-        Route::get('/donated/confirm/{id}', 'V1\Web\Backend\RequestBloodController@donatedConfirm')->name('request-bloods.donatedConfirm');
+        Route::get('/donated/confirm/{id}', 'V1\Web\Backend\RequestBloodController@donatedConfirm')
+        ->name('request-bloods.donatedConfirm');
     });
 });
 
@@ -47,3 +48,4 @@ Route::group(['prefix' => 'bloods'], function () {
     Route::put('edit/{id}', 'V1\Web\Backend\BloodController@update')->name('bloods.update');
     Route::get('delete/{id}', 'V1\Web\Backend\BloodController@destroy')->name('bloods.destroy');
 });
+ß
