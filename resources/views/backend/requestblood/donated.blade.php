@@ -35,13 +35,13 @@
                     {{ $requestBlood->calendar->time }}</td>
                 @if ($requestBlood->status == true)
                 <td scope="row" class="text-center">
-                    <a href="" class="btn-sm btn-warning  text-nowrapgit a">
+                    <a href="{{ route('request-bloods.donatedConfirm', $requestBlood->id) }}" class="btn-sm btn-warning text-nowrap">
                         Hủy xác nhận
                     </a>
                 </td>
                 @else
-                <td scope="row" class="text-center"><a href=""
-                        class="btn-sm btn-primary text-nowrap">
+                <td scope="row" class="text-center">
+                    <a href="{{ route('request-bloods.donatedConfirm', $requestBlood->id) }}" class="btn-sm btn-primary text-nowrap">
                         Xác nhận
                     </a>
                 </td>
