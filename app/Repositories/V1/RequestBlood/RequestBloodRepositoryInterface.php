@@ -6,4 +6,5 @@ interface RequestBloodRepositoryInterface
 {
     public function donated();
     public function received();
+    public function donatedConfirm($id);
 }
