@@ -22,6 +22,7 @@ class RequestBloodsTableSeeder extends Seeder
                 'calendar_id' => $faker->randomElement($calendars->pluck('id')->toArray()),
                 'content'=> $faker->text(100),
                 'status' => $faker->randomElement([True, False]),
+                'type' => $faker->randomElement(['cho', 'nhan']),
             ]);
         }
     }
