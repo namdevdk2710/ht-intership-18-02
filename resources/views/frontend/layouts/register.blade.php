@@ -18,7 +18,7 @@
                         </ul>
                     </div>
                     @endif
-                    {!! Form::open(['method' => 'POST', 'route' => ['postRegister']]) !!}
+                    {!! Form::open(['method' => 'POST', 'route' => ['postRegister'], 'id' => 'fe-register']) !!}
                     <div class="form-group">
                         {!! Form::label('Username:') !!}
                         {!! Form::text('username', old('username'), ['class' => 'form-control']) !!}
@@ -29,13 +29,13 @@
                     </div>
                     <div class="form-group">
                         {!! Form::label('Mật khẩu:') !!}
-                        {!! Form::password('password', ['class' => 'form-control']) !!}
+                        {!! Form::password('password', ['class' => 'form-control', 'id' => 'password']) !!}
                     </div>
                     <div class="form-group">
                         {!! Form::label('Mật khẩu:') !!}
                         {!! Form::password('password_confirmation', ['class' => 'form-control']) !!}
                     </div>
-                    {!! Form::button('Đăng nhập', ['class' => 'btn submit mb-4', 'type' => 'submit'])!!}
+                    {!! Form::button('Đăng ký', ['class' => 'btn submit mb-4', 'type' => 'submit'])!!}
                     {!! Form::close() !!}
                 </div>
             </div>
