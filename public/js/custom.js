@@ -117,4 +117,25 @@ $(document).ready(function () {
             },
         }
     });
+
+    $('#fe-login').validate({
+        rules: {
+            email: {
+                required: true,
+                email: true,
+            },
+            password: {
+                required: true,
+            },
+        },
+        messages: {
+            email: {
+                required: "Trường này phải có dữ liệu",
+                email: "Email không hợp lệ",
+            },
+            password: {
+                required: "Trường này phải có dữ liệu",
+            },
+        }
+    });
 });
