@@ -41,9 +41,6 @@
 <body>
     @include('frontend.layouts.header')
     @include('frontend.layouts.banner')
-    @include('frontend.layouts.login')
-    @include('frontend.layouts.register')
-    @include('frontend.calendar')
     @include('frontend.layouts.footer')
 
     <!-- Js files -->

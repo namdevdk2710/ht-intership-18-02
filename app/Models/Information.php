@@ -10,7 +10,7 @@ class Information extends Model
 
     public function bloodGroup()
     {
-        return $this->belongsTo('App\Models\BloodGroup');
+        return $this->belongsTo('App\Models\BloodGroup', 'blood_id');
     }
 
     public function user()
