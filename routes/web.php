@@ -48,4 +48,3 @@ Route::group(['prefix' => 'bloods'], function () {
     Route::put('edit/{id}', 'V1\Web\Backend\BloodController@update')->name('bloods.update');
     Route::get('delete/{id}', 'V1\Web\Backend\BloodController@destroy')->name('bloods.destroy');
 });
-ß
