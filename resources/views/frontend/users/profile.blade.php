@@ -42,12 +42,14 @@
                                     <label class="text-muted">Tình trạng sức khỏe:</label>
                                     <label class="label-profile"></label>
                                 </div>
+                                @if(Auth::user())
                                 <div class="col-md-4">
                                     <label class="text-muted">Username:</label>
                                     <label class="label-profile">{{Auth::user()->username}}</label><br>
                                     <label class="text-muted">Email:</label>
                                     <label class="label-profile">{{Auth::user()->email}}</label>
                                 </div>
+                                @endif
                             </div>
                             @else
                             <div class="row">

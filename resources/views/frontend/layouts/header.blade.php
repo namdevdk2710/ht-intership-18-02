@@ -123,7 +123,7 @@
                             data-target="#modalProfile"><i class=" fa fa-suitcase"></i>Thông tin cá nhân</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('admin.logout') }}"><i class="fa fa-key"></i>Đăng xuất</a>
+                                        <a href="{{ route('logout') }}"><i class="fa fa-key"></i>Đăng xuất</a>
                                     </li>
                                 </ul>
                             </li>
