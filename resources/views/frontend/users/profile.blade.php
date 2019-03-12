@@ -16,6 +16,40 @@
                                 display:block; margin:auto;" src="http://robohash.org/sitsequiquia.png?size=120x120">
                         </div>
                         <div class="col-md-10">
+                            @if(!$infor)
+                            <div class="row">
+                                <div class="col-md-4 infor">
+                                    <label class="text-muted">Họ tên:</label>
+                                    <label class="label-profile"></label><br>
+                                    <label class="text-muted">Ngày sinh:</label>
+                                    <label class="label-profile"></label><br>
+                                    <label class="text-muted">Giới tính:</label>
+                                    <label class="label-profile"></label><br>
+                                    <label class="text-muted">CMND:</label>
+                                    <label class="label-profile"></label><br>
+                                    <label class="text-muted">Địa chỉ:</label>
+                                    <label class="label-profile"></label><br>
+                                    <label class="text-muted">SĐT:</label>
+                                    <label class="label-profile"></label><br>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="text-muted">Nhóm máu:</label>
+                                    <label class="label-profile"></label><br>
+                                    <label class="text-muted">Số lần đã hiến:</label>
+                                    <label class="label-profile"></label><br>
+                                    <label class="text-muted">Số lần đã nhận:</label>
+                                    <label class="label-profile"></label><br>
+                                    <label class="text-muted">Tình trạng sức khỏe:</label>
+                                    <label class="label-profile"></label>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="text-muted">Username:</label>
+                                    <label class="label-profile">{{Auth::user()->username}}</label><br>
+                                    <label class="text-muted">Email:</label>
+                                    <label class="label-profile">{{Auth::user()->email}}</label>
+                                </div>
+                            </div>
+                            @else
                             <div class="row">
                                 <div class="col-md-4 infor">
                                     <label class="text-muted">Họ tên:</label>
@@ -49,6 +83,7 @@
                                 </div>
                             </div>
                         </div>
+                        @endif
                     </div>
                     {!! Form::button('Chỉnh sữa', ['class' => 'btn submit mb-4', 'type' => 'submit'])!!}
                 </div>
