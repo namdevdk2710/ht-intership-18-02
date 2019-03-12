@@ -138,4 +138,37 @@ $(document).ready(function () {
             },
         }
     });
+
+    $('#fe-register').validate({
+        rules: {
+            email: {
+                required: true,
+                email: true,
+              
+            },
+            password: {
+                required: true,
+                confirmed: true,
+            },
+            password_confirmation:{
+                required: true,
+                equalTo: "#password",
+            },
+        },
+        messages: {
+            email: {
+                required: "Trường này phải có dữ liệu",
+                email: "Email không hợp lệ",
+                unique: "Email đã tồn tại"
+            },
+            password: {
+                required: "Trường này phải có dữ liệu",
+                confirmed: "Nhập lại mật khẩu không đúng",
+            },
+            password_confirmation:{
+                required: "Trường này phải có dữ liệu",
+                equalTo: "Nhập lại mật khẩu không đúng",
+            },
+        }
+    });
 });
