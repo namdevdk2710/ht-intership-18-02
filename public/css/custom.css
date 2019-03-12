@@ -120,4 +120,9 @@
 .label-profile{
     color: red;
 }
+.blood-table .pagination-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 

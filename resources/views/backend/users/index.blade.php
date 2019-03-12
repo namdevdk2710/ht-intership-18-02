@@ -2,30 +2,30 @@
 
 @section('content')
 
-<div class="table-responsive calendar-table">
+<div class="table-responsive blood-table">
     <div class='calendar-table-header'>
         <span class="calendar-table-header-title text-center text-uppercase col-md-10 col-sm-8 col-6">
             Danh sách người dùng
         </span>
-        <div class="col-md-2 col-sm-4 col-6 text-center">
+        <div class="col-md-2 col-sm-4 col-6">
             <a class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
                 Thêm người dùng
             </a>
             @include('backend.users.add')
         </div>
     </div>
-    <table class="table table-hover">
+    <table class="table table-hover t">
         <thead>
             <tr>
-                <th scope="col">STT</th>
-                <th scope="col">Tên người dùng</th>
-                <th scope="col">Email</th>
-                <th scope="col">Quyền người dùng</th>
-                <th scope="col">Thao tác</th>
+                <th class="text-center" scope="col">STT</th>
+                <th class="text-center" scope="col">Tên người dùng</th>
+                <th class="text-center" scope="col">Email</th>
+                <th class="text-center" scope="col">Quyền người dùng</th>
+                <th class="text-center" scope="col">Thao tác</th>
             </tr>
         </thead>
 
-        <tbody>
+        <tbody class="text-center">
             @foreach($users as $key => $user)
             <tr>
                 <td>{{$key + 1}}</td>
@@ -63,7 +63,7 @@
         </tbody>
     </table>
     <div class="pagination-wrapper">
-
+        {{$users->links()}}
     </div>
 </div>
 
