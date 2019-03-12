@@ -15,7 +15,7 @@ class BloodGroupRepository extends BaseRepository implements BloodGroupRepositor
 
     public function index()
     {
-        return $this->model->paginate(7);
+        return $this->model->paginate(5);
     }
 
     public function store($data)
