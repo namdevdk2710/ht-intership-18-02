@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade add-calendar" id="exampleModalLong" tabindex="-1" role="dialog"
+<div class="modal fade =edit-calendar" id="exampleModalLong" tabindex="-1" role="dialog"
     aria-labelledby="exampleModalLongTitle" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -33,7 +33,7 @@
                     {!! Form::label('Quyền người dùng:', null, ['class' => 'col-sm-4']) !!}
                     <div class="col-sm-8">
                         {!! Form::select('role', [''=>'--- Chọn quyền
-                        ---', 1 => 'Quản trị viên', 2 => 'Cơ quan y tế', 3 => 'Người dùng'],
+                        ---', 1 => 'Quản trị viên', 2 => 'Cơ quan y tế', 0 => 'Người dùng'],
                         null, ['class'=>'form-control']) !!}
                     </div>
                 </div>
