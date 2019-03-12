@@ -21,6 +21,7 @@ class CreateRequestBloodsTable extends Migration
             $table->foreign('calendar_id')->references('id')->on('calendars')->onDelete('cascade');
             $table->string('content')->nullable();
             $table->boolean('status');
+            $table->string('type');
             $table->timestamps();
         });
     }

@@ -33,7 +33,7 @@
                 @endphp
                 <td class="text-center">{{ $add }}</td>
                 <td class="text-center">{{ $calendar->user->username }}</td>
-                <td class="text-center">
+                <td class="text-center text-nowrap">
                     <a class="btn btn-sm btn-primary" href="#"
                         data-toggle="modal"
                         data-target="#showDetailCalendar{{$calendar->id}}">

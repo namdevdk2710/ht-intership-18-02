@@ -35,7 +35,6 @@
         rel="stylesheet">
     <!-- //Web-Fonts -->
     <link rel="stylesheet" href="{{asset('css/custom.css')}}">
-
 </head>
 
 <body>
@@ -84,7 +83,10 @@
 
     <script src="{{asset('asset/fe/js/bootstrap.js')}}"></script>
     <!-- Necessary-JavaScript-File-For-Bootstrap -->
-
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js" type="text/javascript">
+    </script>
+    <script src="{{asset('js/custom.js')}}"></script>
     <!-- //Js files -->
 </body>
+
 </html>

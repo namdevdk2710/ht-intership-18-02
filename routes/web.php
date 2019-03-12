@@ -1,7 +1,6 @@
 <?php
 Route::group(['prefix' => '/'], function () {
     Route::get('', 'V1\Web\Frontend\PageController@index')->name('home');
-    Route::get('/login', 'V1\Web\Frontend\PageController@getLogin');
     Route::post('/login', 'V1\Web\Frontend\PageController@postLogin')->name('postLogin');
     Route::post('/register', 'V1\Web\Frontend\PageController@postRegister')->name('postRegister');
 });
@@ -24,7 +23,14 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
         Route::put('/edit/{id}', 'V1\Web\Backend\CalendarController@update')->name('calendar.update');
     });
 
-    Route::resource('/request-bloods', 'V1\Web\Backend\RequestBloodController');
+    Route::group(['prefix' => 'request-bloods'], function () {
+        Route::get('/donated', 'V1\Web\Backend\RequestBloodController@donated')->name('request-bloods.donated');
+        Route::get('/received', 'V1\Web\Backend\RequestBloodController@received')->name('request-bloods.received');
+        Route::get('/donated/confirm/{id}', 'V1\Web\Backend\RequestBloodController@confirm')
+        ->name('request-bloods.confirm');
+        Route::get('/received/confirm/{id}', 'V1\Web\Backend\RequestBloodController@confirm')
+        ->name('request-bloods.confirm');
+    });
 });
 
 Route::group(['prefix' => 'users'], function () {
