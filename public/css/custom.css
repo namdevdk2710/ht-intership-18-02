@@ -108,4 +108,16 @@
     clear: both;
     padding: 1em;
 }
+.profile-content{
+    background: #fff;
+}
+.title-profile{
+    color: black;
+}
+.text-muted{
+    color: black !important;
+}
+.label-profile{
+    color: red;
+}
 
