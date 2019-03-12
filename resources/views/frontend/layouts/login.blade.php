@@ -11,6 +11,11 @@
                 <div class="login px-4 mx-auto mw-100">
                     <h5 class="text-center mb-4">Đăng nhập</h5>
 
+                    @if (session('success_message'))
+                    <div class="alert alert-success">
+                        {{ session('success_message') }}
+                    </div>
+                    @endif
                     @if (session('login-error'))
                     <div class="alert alert-danger" role="alert">
                         {{ session('login-error') }}
