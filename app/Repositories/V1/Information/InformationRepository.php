@@ -33,5 +33,4 @@ class InformationRepository extends BaseRepository implements InformationReposit
         $infor = $this->model->with('bloodGroup')->where('user_id', Auth::id())->first();
         return $infor;
     }
-
 }
