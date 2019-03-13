@@ -18,5 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call(CommunesTableSeeder::class);
         $this->call(CalendarsTableSeeder::class);
         $this->call(RequestBloodsTableSeeder::class);
+        $this->call(InformationsTableSeeder::class);
+        $this->call(BloodGroupsTableSeeder::class);
     }
 }
