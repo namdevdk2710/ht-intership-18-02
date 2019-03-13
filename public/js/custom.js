@@ -138,4 +138,31 @@ $(document).ready(function () {
             },
         }
     });
+    $('#js-import-user-code #js-import-user-getinfo').click(function (e) {
+        e.preventDefault();
+        var code = $('#js-import-user-code input[name ="request_blood_id"]').val();
+        if (Math.floor(code) == code && $.isNumeric(code)) {
+            $('#import-user-info .import-user-info-code-error').hide();
+            var token = $("input[name='_token']").val();
+            $.ajax({
+                url: "/admin/blood-bags/getInfoByCode",
+                method: 'POST',
+                data: {
+                    request_id: code,
+                    _token: token,
+                },
+                success: function (data) {
+                    $('#import-user-info .import-user-info-name').text(data.fullname);
+                    $('#import-user-info .import-user-info-birthday').text(data.birthday);
+                    $('#import-user-info .import-user-info-gender').text(data.gender);
+                    $('#import-user-info .import-user-info-cmnd').text(data.cmnd);
+                    $('#import-user-info .import-user-info-time').text(data.time);
+                    $('#import-user-info .import-user-info-blood').text(data.blood);
+                }
+            });
+        } else {
+            $('#import-user-info .import-user-info-code-error').show();
+            $('#js-import-user-code input[name ="request_blood_id"]').val('');
+        }
+    })
 });

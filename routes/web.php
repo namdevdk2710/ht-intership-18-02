@@ -31,6 +31,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
         Route::get('/received/confirm/{id}', 'V1\Web\Backend\RequestBloodController@confirm')
         ->name('request-bloods.confirm');
     });
+
+    Route::group(['prefix' => 'blood-bags'], function () {
+        Route::get('/import', 'V1\Web\Backend\BloodBagController@getImport')->name('blood-bags.getImport');
+        Route::Post('/getInfoByCode', 'V1\Web\Backend\BloodBagController@getInfoByCode');
+        Route::post('/store', 'V1\Web\Backend\BloodBagController@store')->name('blood-bags.store');
+    });
 });
 
 Route::group(['prefix' => 'users'], function () {
