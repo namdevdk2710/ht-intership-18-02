@@ -144,7 +144,7 @@ $(document).ready(function () {
             email: {
                 required: true,
                 email: true,
-              
+
             },
             password: {
                 required: true,
@@ -171,4 +171,11 @@ $(document).ready(function () {
             },
         }
     });
+
+    $("#myInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $(".body-user tr").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
 });

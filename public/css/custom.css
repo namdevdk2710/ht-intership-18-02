@@ -125,4 +125,11 @@
     display: flex;
     justify-content: center;
 }
-
+/*-----------Search------------------- */
+.inputSearch{
+    float: right;
+    padding-top: 10px;
+}
+.lable-search{
+    padding-top: 5px;
+}
