@@ -179,6 +179,13 @@ $(document).ready(function () {
         });
       });
 
+      $(".myInput").on("keyup", function()  {
+        var value = $(this).val().toLowerCase();
+        $(".body-bloodgroup tr").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+
       $('#addUser').validate({
         rules: {
             email: {
@@ -216,6 +223,19 @@ $(document).ready(function () {
         },
         messages: {
             role: {
+                required: "Trường này phải có dữ liệu",
+            }
+        }
+    });
+
+    $('.form-blood').validate({
+        rules: {
+            name: {
+                required: true,
+            }
+        },
+        messages: {
+            name: {
                 required: "Trường này phải có dữ liệu",
             }
         }

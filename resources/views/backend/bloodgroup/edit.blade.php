@@ -6,8 +6,17 @@
                         aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title">Chỉnh sữa nhóm máu</h4>
             </div>
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
             <div class="modal-body" id="modal-blood">
-                {!! Form::open(['method' => 'PUT', 'route' => ['bloods.update', $blood->id]]) !!}
+                {!! Form::open(['method' => 'PUT', 'route' => ['bloods.update', $blood->id], 'class' => 'form-blood']) !!}
                 <div class="form-group">
                     {!! Form::label('Tên nhóm máu:') !!}
                     {!! Form::text('name', $blood->name, ['class' => 'form-control']) !!}

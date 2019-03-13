@@ -5,6 +5,7 @@ namespace App\Http\Controllers\V1\Web\Backend;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Repositories\V1\BloodGroup\BloodGroupRepositoryInterface;
+use App\Http\Requests\BloodGroupRequest;
 
 class BloodController extends Controller
 {
@@ -22,7 +23,7 @@ class BloodController extends Controller
         return view('backend.bloodgroup.index', compact('bloods'));
     }
 
-    public function store(Request $request)
+    public function store(BloodGroupRequest $request)
     {
         $this->bloodRepository->store($request->all());
 
@@ -39,7 +40,7 @@ class BloodController extends Controller
         //
     }
 
-    public function update(Request $request, $id)
+    public function update(BloodGroupRequest $request, $id)
     {
         $this->bloodRepository->update($id, $request->all());
 
