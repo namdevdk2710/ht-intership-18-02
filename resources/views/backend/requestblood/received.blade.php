@@ -7,6 +7,12 @@
     </div>
     <table class="table table-hover">
         <thead>
+            <div class="form-group col-md-4 inputSearch">
+                <label class="col-md-2 lable-search">Search:</label>
+                <div class="col-sm-8">
+                    <input class="form-control myInput" type="text" placeholder="Search..">
+                </div>
+            </div>
             <tr>
                 <th scope="col" class="text-center">Stt</th>
                 <th scope="col" class="text-center">E-Mail</th>
@@ -16,7 +22,7 @@
                 <th scope="col" class="text-center text-nowrap">Xác nhận</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id= "body-received">
             @foreach($requestBloods as $key => $requestBlood)
             <tr>
                 <td scope="row" class="text-center">{{ $key +1 }}</td>
