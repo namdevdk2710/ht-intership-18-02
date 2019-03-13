@@ -39,7 +39,7 @@ class RequestBloodRepository extends BaseRepository implements RequestBloodRepos
                     'birthday' => $requestBlood->user->information->dob,
                     'gender' => ($requestBlood->user->information->gender == 1) ? 'Nam' : 'Nữ',
                     'cmnd' => $requestBlood->user->information->cmnd,
-                    'time' => "Cập nhật sau",
+                    'time' => 'Cập nhật sau',
                     'blood' => $requestBlood->user->information->bloodGroup->name,
             ];
     }
