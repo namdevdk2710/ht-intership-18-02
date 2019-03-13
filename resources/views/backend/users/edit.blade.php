@@ -18,7 +18,8 @@
             </div>
             @endif
             <div class="modal-body">
-                {!! Form::open(['method' => 'PUT', 'route' => ['users.update', $user->id]]) !!}
+                {!! Form::open(['method' => 'PUT', 'route' => ['users.update', $user->id],
+                    'id' => 'edit-user']) !!}
                 <div class="form-group form-padding">
                     {!! Form::label('Tên người dùng:', null, ['class' => 'col-sm-4']) !!}
                     <div class="col-sm-8">
