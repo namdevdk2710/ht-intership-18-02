@@ -26,7 +26,7 @@ class BloodBagRepository extends BaseRepository implements BloodBagRepositoryInt
             'hcvnat' => $request->input('hcvnat'),
             'syphilis' => $request->input('syphilis'),
             'malaria' => $request->input('malaria'),
-            'requotherest' => $request->input('other'),
+            'other' => $request->input('other'),
         ]);
     }
 }

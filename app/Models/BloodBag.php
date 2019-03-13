@@ -18,7 +18,7 @@ class BloodBag extends Model
         'hcvnat',
         'syphilis',
         'malaria',
-        'other'
+        'other',
     ];
 
     public function requestBlood()
