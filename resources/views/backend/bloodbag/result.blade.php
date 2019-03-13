@@ -54,11 +54,25 @@
                 tính'],1,['class'=>'col-sm-6']) !!}
             </td>
             <td class="col-sm-4">
+                {!! Form::label('status', 'Tình trạng', ['class' =>
+                'col-sm-6']) !!}
+                {!! Form::select('status',['1'=>'Dương tính', '0'=>'Âm
+                tính'],1,['class'=>'col-sm-6']) !!}
+            </td>
+        </tr>
+        <tr>
+            <td class="col-sm-4">
                 {!! Form::label('other', 'Kết quả khác', ['class' =>
                 'col-sm-6']) !!}
                 {!! Form::text('other', null, ['class' => 'col-sm-6']) !!}
             </td>
+            <td class="col-sm-4">
+                {!! Form::label('unit', 'Lượng máu', ['class' =>
+                'col-sm-6']) !!}
+                {!! Form::text('unit', null, ['class' => 'col-sm-6']) !!}
+            </td>
+            <td class="col-sm-4">
+            </td>
         </tr>
     </tbody>
 </table>
-

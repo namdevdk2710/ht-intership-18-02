@@ -6,6 +6,18 @@
             class="calendar-table-header-title text-center text-uppercase col-12">Danh
             sách lịch hiến máu</span>
     </div>
+    <div class="row">
+        @if ($errors->any())
+        <div
+            class="alert alert-danger col-sm-offset-4 col-sm-4 col-sm-offset-4">
+            <ul class=''>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
+    </div>
     {!! Form::open(['method' => 'POST', 'route' => 'blood-bags.store',
     'class' => '']) !!}
     <div class="import-title">

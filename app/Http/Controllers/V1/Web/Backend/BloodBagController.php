@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Repositories\V1\RequestBlood\RequestBloodRepositoryInterFace;
 use App\Repositories\V1\BloodBag\BloodBagRepositoryInterFace;
+use App\Http\Requests\BloodBagRequest;
 
 class BloodBagController extends Controller
 {
@@ -42,7 +43,7 @@ class BloodBagController extends Controller
         }
     }
 
-    public function store(Request $request)
+    public function store(BloodBagRequest $request)
     {
         $this->bloodBagRepository->store($request);
 

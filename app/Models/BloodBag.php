@@ -6,7 +6,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class BloodBag extends Model
 {
-    protected $fillable = ['requestBlood_id', 'unit', 'status','hbsag', 'antihiv', 'antihcv', 'hbvnat', 'hivnat', 'hcvnat', 'syphilis', 'malaria', 'other'];
+    protected $fillable = [
+        'requestBlood_id',
+        'unit',
+        'status',
+        'hbsag',
+        'antihiv',
+        'antihcv',
+        'hbvnat',
+        'hivnat',
+        'hcvnat',
+        'syphilis',
+        'malaria',
+        'other'
+    ];
 
     public function requestBlood()
     {

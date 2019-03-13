@@ -16,8 +16,8 @@ class BloodBagRepository extends BaseRepository implements BloodBagRepositoryInt
     {
         return $this->model->create([
             'requestBlood_id' => $request->input('request_blood_id'),
-            'unit' => 12345,
-            'status' => True,
+            'unit' => $request->input('unit'),
+            'status' => $request->input('status'),
             'hbsag' => $request->input('hbsag'),
             'antihiv' => $request->input('antihiv'),
             'antihcv' => $request->input('antihcv'),
