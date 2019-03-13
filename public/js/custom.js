@@ -227,4 +227,17 @@ $(document).ready(function () {
             }
         }
     });
+
+    $('.form-blood').validate({
+        rules: {
+            name: {
+                required: true,
+            }
+        },
+        messages: {
+            name: {
+                required: "Trường này phải có dữ liệu",
+            }
+        }
+    });
 });

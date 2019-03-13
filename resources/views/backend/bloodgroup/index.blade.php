@@ -14,6 +14,12 @@
         </div>
     </div>
     <table class="table table-hover">
+        <div class="form-group col-md-4 inputSearch">
+            <label class="col-md-2 lable-search">Search:</label>
+            <div class="col-sm-8">
+                <input class="form-control myInput"  type="text" placeholder="Search..">
+            </div>
+        </div>
         <thead>
             <tr>
                 <th class="text-center" scope="col">STT</th>
@@ -21,7 +27,7 @@
                 <th class="text-center" scope="col">Hoạt động</th>
             </tr>
         </thead>
-        <tbody class="text-center">
+        <tbody class="text-center body-bloodgroup">
             @foreach($bloods as $key => $blood)
             <tr>
                 <td>{{ $key +1 }}</td>
