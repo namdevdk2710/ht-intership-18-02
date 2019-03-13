@@ -181,7 +181,11 @@ $(document).ready(function () {
 
       $(".myInput").on("keyup", function()  {
         var value = $(this).val().toLowerCase();
+<<<<<<< HEAD
         $(".body-bloodgroup tr").filter(function() {
+=======
+        $("#body-calendar tr").filter(function() {
+>>>>>>> 478905dd785fb3399cd27982d6aa07a24d4647ab
           $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
       });
