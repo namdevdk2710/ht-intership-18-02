@@ -29,15 +29,7 @@ class BloodBagController extends Controller
     public function getInfoByCode(Request $request)
     {
         if ($request->ajax()) {
-            $req = $this->requestBloodRepository->find($request->request_id);
-            $data = [
-                    'fullname' => $req->calendar->user->username,
-                    'birthday' => 'birthday',
-                    'gender' => 'gender',
-                    'cmnd' => 'cmnd',
-                    'time' => 'Lorêtimedddf',
-                    'blood' => 'ABC',
-            ];
+            $data = $this->requestBloodRepository->getById($request->request_id);
 
             return response()->json($data);
         }
