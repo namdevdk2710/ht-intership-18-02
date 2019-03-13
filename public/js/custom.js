@@ -178,4 +178,46 @@ $(document).ready(function () {
           $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
       });
+
+      $('#addUser').validate({
+        rules: {
+            email: {
+                required: true,
+                email: true,
+
+            },
+            password: {
+                required: true,
+            },
+            role: {
+                required: true,
+            }
+        },
+        messages: {
+            email: {
+                required: "Trường này phải có dữ liệu",
+                email: "Email không hợp lệ",
+            },
+            password: {
+                required: "Trường này phải có dữ liệu",
+                confirmed: "Nhập lại mật khẩu không đúng",
+            },
+            role: {
+                required: "Trường này phải có dữ liệu",
+            }
+        }
+    });
+
+    $('#edit-user').validate({
+        rules: {
+            role: {
+                required: true,
+            }
+        },
+        messages: {
+            role: {
+                required: "Trường này phải có dữ liệu",
+            }
+        }
+    });
 });
