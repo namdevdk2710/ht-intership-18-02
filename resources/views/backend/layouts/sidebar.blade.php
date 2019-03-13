@@ -38,6 +38,16 @@
                     </ul>
                 </li>
                 <li class="sub-menu">
+                    <a href="javascript:;" class="{{( Request::path() === 'admin/blood-bags/import' ||  Request::path() === 'admin/blood-bags/search' ) ? 'active' : '' }}"  >
+                        <i class="fa fa-wpforms"></i>
+                        <span>Nhập kết quả</span>
+                    </a>
+                    <ul class="sub">
+                        <li><a class="{{( Request::path() === 'admin/blood-bags/import' ) ? 'active' : '' }}" href="{{ route('blood-bags.getImport') }}">Nhập túi máu</a></li>
+                        <li><a class="{{( Request::path() === 'admin/blood-bags/search' ) ? 'active' : '' }}" href="">Tra cứu</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu">
                     <a href="javascript:;">
                         <i class="fa fa-th"></i>
                         <span>Data Tables</span>

@@ -1,29 +1,37 @@
-.table-color{
-    background:#fff;
+.table-color {
+    background: #fff;
     color: black;
 }
-.title-user{
+
+.title-user {
     text-align: center;
     padding: .5em;
 }
-.title-modal{
+
+.title-modal {
     color: red;
     text-align: center;
 }
-.titles-modal{
+
+.titles-modal {
     color: #fff;
 }
 
+
 /* ----- Start Admin Calendar ----- */
-.calendar-table, .request-blood {
+
+.calendar-table,
+.request-blood, .blood-bag {
     margin: 0px 10px;
     padding: 0px;
     background: #fff;
 }
+
 .calendar-table table tr td,
 .request-blood table tr td {
     color: black;
 }
+
 .calendar-table .pagination-wrapper,
 .request-blood .pagination-wrapper {
     width: 100%;
@@ -31,15 +39,19 @@
     justify-content: center;
     margin-bottom: 15px;
 }
+
 .form-padding {
     padding-bottom: 1em;
     padding-top: 1em;
 }
+
 .delete-dialog-footer-custom {
     padding: 5px 15px;
     border-top: none;
 }
-.calendar-table-header, .request-blood-header {
+
+.calendar-table-header,
+.request-blood-header {
     padding: 16px 0px 12px 0px;
     display: flex;
     justify-content: space-around;
@@ -47,18 +59,22 @@
     align-items: center;
     border-bottom: 1px solid #999;
 }
-.calendar-table-header-title{
+
+.calendar-table-header-title {
     font-size: 24px;
 }
+
 .calendar-table table thead tr th,
 .request-blood table thead tr th {
     color: #111;
 }
+
 .calendar-table .add-calendar .modal-header,
 .calendar-table .detail-calendar .modal-header,
 .calendar-table .edit-calendar .modal-header {
     padding: 10px 15px;
 }
+
 .calendar-table .add-calendar form,
 .calendar-table .detail-calendar form,
 .calendar-table .edit-calendar form {
@@ -66,45 +82,75 @@
 }
 /* ----- End Admin Calendar ----- */
 
+/* ----- Start Admin bloog bag ----- */
+.blood-bag .import-title{
+    padding: 12px 15px;
+    color: #000;
+}
+.blood-bag .import-title span{
+    font-size: 20px;
+    padding: 0pc 15px;
+    font-weight: 500;
+    /* border-bottom: 3px solid #04708A; */
+}
+.blood-bag table .import-user-info-code-error{
+    margin-left: 15px;
+    padding: 5px 16px;
+    display: none;
+}
+#js-import-user-code {
+    display: flex;
+    align-items: center;
+}
+.blood-bag .table{
+    margin-bottom: 0px;
+}
+.blood-bag .import-submit {
+    float: right;
+    margin: 7px 15px 5px 0px;
+}
+/* ----- End Admin bloog bag ----- */
+
 .calendars-table {
     background: #fff;
 }
-.padding-right-15px{
+
+.padding-right-15px {
     padding-right: 15px!important;
 }
-.padding-x-15{
+
+.padding-x-15 {
     padding-right: 15px !important;
     padding-left: 15px !important;
 }
+
 .padding-right-15px {
     padding-right: 15px !important;
 }
-.margin-bottom-0{
+
+.margin-bottom-0 {
     margin-bottom: 0px!important;
 }
-.form-blood{
+
+.form-blood {
     padding: 15px;
 }
-.editUser{
+
+.editUser {
     color: black;
     padding: 1em;
 }
+
+
 /* -------------------------- */
-.border-red{
-    border: 1px solid red!important;
-}
-.border-gray {
-    border: 1px solid gray !important;
-}
-.border-blue {
-    border: 1px solid blue !important;
-}
-.blood-table{
+
+.blood-table {
     margin: 0px 10px;
     padding: .5em;
     background: #fff;
 }
-#modal-blood{
+
+#modal-blood {
     clear: both;
     padding: 1em;
 }

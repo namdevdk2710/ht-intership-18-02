@@ -1,0 +1,44 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateBloodBagsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('blood_bags', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('requestBlood_id')->unsigned();
+            $table->foreign('requestBlood_id')->references('id')->on('request_bloods')->onDelete('cascade');
+            $table->integer('unit');
+            $table->boolean('status');
+            $table->boolean('hbsag');
+            $table->boolean('antihiv');
+            $table->boolean('antihcv');
+            $table->boolean('hbvnat');
+            $table->boolean('hivnat');
+            $table->boolean('hcvnat');
+            $table->boolean('syphilis');
+            $table->boolean('malaria');
+            $table->string('other')->nullable();
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('blood_bags');
+    }
+}

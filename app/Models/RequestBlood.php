@@ -15,4 +15,9 @@ class RequestBlood extends Model
     {
         return $this->belongsTo('App\Models\Calendar');
     }
+
+    public function bloodBag()
+    {
+        return $this->hasOne('App\Models\BloodBag');
+    }
 }
