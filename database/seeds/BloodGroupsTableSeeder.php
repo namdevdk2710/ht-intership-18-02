@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Carbon;
 
-class UsersTableSeeder extends Seeder
+class BloodGroupsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,12 +14,9 @@ class UsersTableSeeder extends Seeder
     {
         $faker = Faker\Factory::create();
 
-        for ($i = 0; $i < 50; $i++) {
-            DB::table('users')->insert([
-                'username' => $faker->name,
-                'email' => $faker->unique()->email,
-                'password' => bcrypt('123456'),
-                'role' =>  $faker->randomElement([0, 1, 2]),
+        for ($i = 0; $i < 2; $i++) {
+            DB::table('blood_groups')->insert([
+                'name' => $faker->randomElement($array = array ('A','B')),
                 'created_at' =>now(),
                 'updated_at' =>now(),
             ]);
