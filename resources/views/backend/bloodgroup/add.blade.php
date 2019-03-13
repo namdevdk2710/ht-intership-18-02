@@ -5,10 +5,19 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                         aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Thêm nhóm máu</h4>
+                <h4 class="text-center">Thêm nhóm máu</h4>
             </div>
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
             <div class="modal-body">
-                {!! Form::open(['route' => 'bloods.store']) !!}
+                {!! Form::open(['route' => 'bloods.store', 'class' => 'form-blood']) !!}
                 <div class="form-group form-blood">
                     {!! Form::label('Tên nhóm máu:') !!}
                     {!! Form::text('name',old('name'), ['class' => 'form-control']) !!}

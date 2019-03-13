@@ -6,6 +6,12 @@
             máu</span>
     </div>
     <table class="table table-hover">
+        <div class="form-group col-md-4 inputSearch">
+            <label class="col-md-2 lable-search">Search:</label>
+            <div class="col-sm-8">
+                <input class="form-control myInput" type="text" placeholder="Search..">
+            </div>
+        </div>
         <thead>
             <tr>
                 <th scope="col" class="text-center">Stt</th>
@@ -16,7 +22,7 @@
                 <th scope="col" class="text-center text-nowrap">Xác nhận</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id="body-donated">
             @foreach($requestBloods as $key => $requestBlood)
             <tr>
                 <td scope="row" class="text-center">{{ $key +1 }}</td>
@@ -35,13 +41,15 @@
                     {{ $requestBlood->calendar->time }}</td>
                 @if ($requestBlood->status == true)
                 <td scope="row" class="text-center">
-                    <a href="{{ route('request-bloods.confirm', $requestBlood->id) }}" class="btn-sm btn-warning text-nowrap">
+                    <a href="{{ route('request-bloods.confirm', $requestBlood->id) }}"
+                        class="btn-sm btn-warning text-nowrap">
                         Hủy xác nhận
                     </a>
                 </td>
                 @else
                 <td scope="row" class="text-center">
-                    <a href="{{ route('request-bloods.confirm', $requestBlood->id) }}" class="btn-sm btn-primary text-nowrap">
+                    <a href="{{ route('request-bloods.confirm', $requestBlood->id) }}"
+                        class="btn-sm btn-primary text-nowrap">
                         Xác nhận
                     </a>
                 </td>

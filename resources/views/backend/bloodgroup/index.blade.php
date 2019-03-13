@@ -2,13 +2,24 @@
 @section('content')
 
 <div class="table-responsive blood-table">
-    <h2 class="text-center">Danh sách nhóm máu</h2>
-    <div align="right">
-        <button class="btn btn-sm btn-primary" href="#" data-toggle="modal" data-target="#add-blood">Thêm nhóm máu
-        </button>
+    <div class='calendar-table-header'>
+        <span class="calendar-table-header-title text-center text-uppercase col-md-10 col-sm-8 col-6">
+            Danh sách nhóm máu
+        </span>
+        <div class="col-md-2 col-sm-4 col-6">
+            <a class="btn btn-primary" data-toggle="modal" data-target="#add-blood">
+                Thêm nhóm máu
+            </a>
+            @include('backend.bloodgroup.add')
+        </div>
     </div>
-    @include('backend.bloodgroup.add')
     <table class="table table-hover">
+        <div class="form-group col-md-4 inputSearch">
+            <label class="col-md-2 lable-search">Search:</label>
+            <div class="col-sm-8">
+                <input class="form-control myInput"  type="text" placeholder="Search..">
+            </div>
+        </div>
         <thead>
             <tr>
                 <th class="text-center" scope="col">STT</th>
@@ -16,12 +27,12 @@
                 <th class="text-center" scope="col">Hoạt động</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody class="text-center body-bloodgroup">
             @foreach($bloods as $key => $blood)
             <tr>
-                <td class="text-center">{{ $key +1 }}</td>
-                <td class="text-center">{{ $blood->name }}</td>
-                <td class="text-center">
+                <td>{{ $key +1 }}</td>
+                <td>{{ $blood->name }}</td>
+                <td>
                     <a class="btn btn-sm btn-warning" data-toggle="modal" data-target="#edit-blood{{$blood->id}}"
                         type="button">
                         Sửa

@@ -101,7 +101,7 @@
                                 <a class="dropdown-item" href="">Kết quả xét nghiệm</a>
                             </div>
                         </li>
-                        <li class="nav-item" >
+                        <li class="nav-item">
                             <a class="nav-link" href="">Phản hồi</a>
                         </li>
 
@@ -119,10 +119,11 @@
                                 </a>
                                 <ul class="dropdown-menu extended dropdown-login">
                                     <li>
-                                        <a href="#"><i class=" fa fa-suitcase"></i>Thông tin cá nhân</a>
+                                        <a href="#"  data-toggle="modal"
+                            data-target="#modalProfile"><i class=" fa fa-suitcase"></i>Thông tin cá nhân</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('admin.logout') }}"><i class="fa fa-key"></i>Đăng xuất</a>
+                                        <a href="{{ route('logout') }}"><i class="fa fa-key"></i>Đăng xuất</a>
                                     </li>
                                 </ul>
                             </li>
@@ -140,3 +141,8 @@
             </div>
         </nav>
     </div>
+    @include('frontend.calendar')
+    @include('frontend.layouts.login')
+    @include('frontend.layouts.register')
+    @include('frontend.users.profile')
+</div>

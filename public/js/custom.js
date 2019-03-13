@@ -138,6 +138,7 @@ $(document).ready(function () {
             },
         }
     });
+
     $('#js-import-user-code #js-import-user-getinfo').click(function (e) {
         e.preventDefault();
         var code = $('#js-import-user-code input[name ="request_blood_id"]').val();
@@ -165,4 +166,120 @@ $(document).ready(function () {
             $('#js-import-user-code input[name ="request_blood_id"]').val('');
         }
     })
+
+    $('#fe-register').validate({
+        rules: {
+            email: {
+                required: true,
+                email: true,
+
+            },
+            password: {
+                required: true,
+                confirmed: true,
+            },
+            password_confirmation:{
+                required: true,
+                equalTo: "#password",
+            },
+        },
+        messages: {
+            email: {
+                required: "Trường này phải có dữ liệu",
+                email: "Email không hợp lệ",
+                unique: "Email đã tồn tại"
+            },
+            password: {
+                required: "Trường này phải có dữ liệu",
+                confirmed: "Nhập lại mật khẩu không đúng",
+            },
+            password_confirmation:{
+                required: "Trường này phải có dữ liệu",
+                equalTo: "Nhập lại mật khẩu không đúng",
+            },
+        }
+    });
+
+    $("#myInput").on("keyup", function()  {
+        var value = $(this).val().toLowerCase();
+        $(".body-user tr").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+
+      $(".myInput").on("keyup", function()  {
+        var value = $(this).val().toLowerCase();
+        $("#body-calendar tr").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+
+      $(".myInput").on("keyup", function()  {
+        var value = $(this).val().toLowerCase();
+        $("#body-donated tr").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+
+      $(".myInput").on("keyup", function()  {
+        var value = $(this).val().toLowerCase();
+        $("#body-received tr").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+
+      $('#addUser').validate({
+        rules: {
+            email: {
+                required: true,
+                email: true,
+
+            },
+            password: {
+                required: true,
+            },
+            role: {
+                required: true,
+            }
+        },
+        messages: {
+            email: {
+                required: "Trường này phải có dữ liệu",
+                email: "Email không hợp lệ",
+            },
+            password: {
+                required: "Trường này phải có dữ liệu",
+                confirmed: "Nhập lại mật khẩu không đúng",
+            },
+            role: {
+                required: "Trường này phải có dữ liệu",
+            }
+        }
+    });
+
+    $('#edit-user').validate({
+        rules: {
+            role: {
+                required: true,
+            }
+        },
+        messages: {
+            role: {
+                required: "Trường này phải có dữ liệu",
+            }
+        }
+    });
+
+    $('.form-blood').validate({
+        rules: {
+            name: {
+                required: true,
+            }
+        },
+        messages: {
+            name: {
+                required: "Trường này phải có dữ liệu",
+            }
+        }
+    });
 });

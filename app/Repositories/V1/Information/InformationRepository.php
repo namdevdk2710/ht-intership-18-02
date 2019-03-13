@@ -27,4 +27,11 @@ class InformationRepository extends BaseRepository implements InformationReposit
             'phone' => $data['phone'],
         ]);
     }
+
+    public function getInfor()
+    {
+        $infor = $this->model->with('bloodGroup')->where('user_id', Auth::id())->first();
+
+        return $infor;
+    }
 }

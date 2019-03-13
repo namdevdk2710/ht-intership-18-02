@@ -154,3 +154,28 @@
     clear: both;
     padding: 1em;
 }
+.profile-content{
+    background: #fff;
+}
+.title-profile{
+    color: black;
+}
+.text-muted{
+    color: black !important;
+}
+.label-profile{
+    color: red;
+}
+.blood-table .pagination-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+/*-----------Search------------------- */
+.inputSearch{
+    float: right;
+    padding-top: 10px;
+}
+.lable-search{
+    padding-top: 5px;
+}
