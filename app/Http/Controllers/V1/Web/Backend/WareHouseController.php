@@ -5,14 +5,23 @@ namespace App\Http\Controllers\V1\Web\Backend;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Repositories\V1\WareHouse\WareHouseRepositoryInterface;
+use App\Repositories\V1\RequestBlood\RequestBloodRepositoryInterface;
+use App\Repositories\V1\BloodBag\BloodBagRepositoryInterface;
 
 class WareHouseController extends Controller
 {
     protected $repository;
+    protected $requestRepository;
+    protected $bloodBagRepository;
 
-    public function __construct(WareHouseRepositoryInterFace $repository)
-    {
+    public function __construct(
+        WareHouseRepositoryInterFace $repository,
+        RequestBloodRepositoryInterface $requestRepository,
+        BloodBagRepositoryInterface $bloodBagRepository
+    ) {
         $this->repository = $repository;
+        $this->requestRepository = $requestRepository;
+        $this->bloodBagRepository = $bloodBagRepository;
     }
 
     public function index()
@@ -93,4 +102,21 @@ class WareHouseController extends Controller
 
         return redirect()->back();
     }
+
+    public function getExport()
+    {
+        $requestBloods = $this->requestRepository->received();
+
+        return view('backend.warehouses.list_export', compact('requestBloods'));
+    }
+
+    public function getExportRequset($id)
+    {
+        $requests = $this->requestRepository->find($id);
+        $bloodbags = $this->bloodBagRepository->index();
+
+        return view('backend.warehouses.export_request', compact('requests', 'bloodbags'));
+    }
+
+
 }
