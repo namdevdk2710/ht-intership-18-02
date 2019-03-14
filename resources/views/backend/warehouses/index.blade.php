@@ -24,15 +24,15 @@
             </tr>
         </thead>
 
-        <tbody class="text-center body-user">
+        <tbody class="body-user">
             @foreach($warehouses as $key => $warehouse)
-            <tr>
+            <tr class="text-center">
                 <td>{{$key + 1}}</td>
                 <td>{{$warehouse->name}}</td>
                 <td>{{$warehouse->address}}</td>
                 <td>
                     <a href="" class="btn btn-sm btn-warning " class="btn btn-primary" data-toggle="modal"
-                        data-target="">
+                        data-target="#edit-warehouse{{$warehouse->id}}">
                         Sữa
                     </a>
                     <button type="button" value="" class="btn btn-sm btn-danger">
@@ -40,6 +40,7 @@
                     </button>
                 </td>
             </tr>
+            @include('backend.warehouses.edit')
             @endforeach
         </tbody>
     </table>

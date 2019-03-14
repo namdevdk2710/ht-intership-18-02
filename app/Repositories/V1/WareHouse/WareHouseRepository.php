@@ -23,4 +23,13 @@ class WareHouseRepository extends BaseRepository implements WareHouseRepositoryI
     {
         return $this->model->create($data);
     }
+
+    public function update($id, $data)
+    {
+        $warehouse = $this->model->find($id);
+        $warehouse->name = $data->input('name');
+        $warehouse->address = $data->input('address');
+
+        return $warehouse->save();
+    }
 }

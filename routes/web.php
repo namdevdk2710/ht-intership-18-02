@@ -42,6 +42,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::group(['prefix' => 'hourseware'], function () {
         Route::get('/', 'V1\Web\Backend\WareHouseController@index')->name('warehouses.index');
         Route::post('/add', 'V1\Web\Backend\WareHouseController@store')->name('warehouses.store');
+        Route::put('/edit/{id}', 'V1\Web\Backend\WareHouseController@update')->name('warehouses.update');
     });
 });
 
