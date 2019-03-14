@@ -76,7 +76,9 @@ class WareHouseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->repository->update($id, $request);
+
+        return redirect()->back();
     }
 
     /**
