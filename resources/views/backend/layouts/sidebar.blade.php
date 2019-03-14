@@ -50,10 +50,10 @@
                 <li class="sub-menu">
                     <a href="javascript:;">
                         <i class="fa fa-th"></i>
-                        <span>Data Tables</span>
+                        <span>Quản lý kho máu</span>
                     </a>
                     <ul class="sub">
-                        <li><a href="basic_table.html">Basic Table</a></li>
+                        <li><a href="{{route('warehouse.index')}}">Danh sách kho máu</a></li>
                         <li><a href="responsive_table.html">Responsive Table</a></li>
                     </ul>
                 </li>
