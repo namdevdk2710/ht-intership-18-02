@@ -40,7 +40,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     });
 
     Route::group(['prefix' => 'hourseware'], function () {
-        Route::get('/', 'V1\Web\Backend\WareHouseController@index')->name('warehouse.index');
+        Route::get('/', 'V1\Web\Backend\WareHouseController@index')->name('warehouses.index');
+        Route::post('/add', 'V1\Web\Backend\WareHouseController@store')->name('warehouses.store');
     });
 });
 

@@ -53,7 +53,7 @@
                         <span>Quản lý kho máu</span>
                     </a>
                     <ul class="sub">
-                        <li><a href="{{route('warehouse.index')}}">Danh sách kho máu</a></li>
+                        <li><a href="{{route('warehouses.index')}}">Danh sách kho máu</a></li>
                         <li><a href="responsive_table.html">Responsive Table</a></li>
                     </ul>
                 </li>

@@ -8,9 +8,10 @@
             Danh sách kho máu
         </span>
         <div class="col-md-2 col-sm-4 col-6">
-            <a class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+            <a class="btn btn-primary" data-toggle="modal" data-target="#add-warehouse">
                 Thêm kho máu
             </a>
+            @include('backend.warehouses.add')
         </div>
     </div>
     <table class="table table-hover">
