@@ -20,5 +20,6 @@ class DatabaseSeeder extends Seeder
         $this->call(RequestBloodsTableSeeder::class);
         $this->call(BloodGroupsTableSeeder::class);
         $this->call(InformationsTableSeeder::class);
+        $this->call(WareHousesTableSeeder::class);
     }
 }

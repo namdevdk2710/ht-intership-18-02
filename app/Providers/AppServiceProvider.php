@@ -23,6 +23,8 @@ use App\Repositories\V1\RequestBlood\RequestBloodRepository;
 use App\Repositories\V1\RequestBlood\RequestBloodRepositoryInterface;
 use App\Repositories\V1\BloodBag\BloodBagRepository;
 use App\Repositories\V1\BloodBag\BloodBagRepositoryInterface;
+use App\Repositories\V1\WareHouse\WareHouseRepository;
+use App\Repositories\V1\WareHouse\WareHouseRepositoryInterface;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -53,5 +55,6 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(InformationRepositoryInterface::class, InformationRepository::class);
         $this->app->bind(RequestBloodRepositoryInterface::class, RequestBloodRepository::class);
         $this->app->bind(BloodBagRepositoryInterface::class, BloodBagRepository::class);
+        $this->app->bind(WareHouseRepositoryInterface::class, WareHouseRepository::class);
     }
 }
