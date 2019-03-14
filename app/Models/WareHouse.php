@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class WareHouse extends Model
 {
-    protected $fillable = ['namme', 'address'];
+    protected $fillable = ['name', 'address'];
 
     public function bloodBag()
     {

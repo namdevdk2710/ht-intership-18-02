@@ -18,4 +18,9 @@ class WareHouseRepository extends BaseRepository implements WareHouseRepositoryI
     {
         return $this->model->paginate(5);
     }
+
+    public function store($data)
+    {
+        return $this->model->create($data);
+    }
 }

@@ -19,7 +19,7 @@ class WareHouseController extends Controller
     {
         $warehouses = $this->repository->index();
 
-        return view('backend.warehouse.index', compact('warehouses'));
+        return view('backend.warehouses.index', compact('warehouses'));
     }
 
     /**
@@ -40,7 +40,9 @@ class WareHouseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->repository->store($request->all());
+
+        return redirect()->back();
     }
 
     /**
