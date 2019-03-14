@@ -42,7 +42,12 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
 
     public function store($data)
     {
-        return $this->model->create($data);
+        return $this->model->create([
+            'username' => $data['username'],
+            'email' => $data['email'],
+            'password' => bcrypt($data['password']),
+            'role' => $data['role'],
+        ]);
     }
 
     public function update($id, $data)
