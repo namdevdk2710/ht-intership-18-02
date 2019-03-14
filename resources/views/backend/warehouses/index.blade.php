@@ -35,7 +35,7 @@
                         data-target="#edit-warehouse{{$warehouse->id}}">
                         Sữa
                     </a>
-                    <button type="button" value="" class="btn btn-sm btn-danger">
+                    <button type="button" value="{{$warehouse->id}}" class="btn btn-sm btn-danger">
                         Xóa
                     </button>
                 </td>
@@ -48,4 +48,18 @@
         {{$warehouses->links()}}
     </div>
 </div>
+
+<script>
+$(document).ready(function() {
+    var button = $('.btn-danger');
+    button.click(function() {
+        if (confirm("Bạn có muốn xóa kho máu này?")) {
+            var url = "{{ route('warehouses.destroy', ':id') }}";
+            url = url.replace(':id', $(this).val());
+            window.location.href = url;
+        }
+    });
+});
+</script>
+
 @endsection

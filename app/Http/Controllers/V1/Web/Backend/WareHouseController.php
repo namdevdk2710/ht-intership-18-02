@@ -89,6 +89,8 @@ class WareHouseController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $this->repository->destroy($id);
+
+        return redirect()->back();
     }
 }
