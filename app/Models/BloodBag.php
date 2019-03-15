@@ -29,6 +29,6 @@ class BloodBag extends Model
 
     public function wareHouse()
     {
-        return belongsTo('App\Model\WareHouse', 'wareHouse_id');
+        return $this->belongsTo('App\Models\WareHouse', 'wareHouse_id');
     }
 }

@@ -45,7 +45,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
         Route::put('/edit/{id}', 'V1\Web\Backend\WareHouseController@update')->name('warehouses.update');
         Route::get('/delete/{id}', 'V1\Web\Backend\WareHouseController@destroy')->name('warehouses.destroy');
         Route::get('/export-blood', 'V1\Web\Backend\WareHouseController@getExport')->name('export-bloods.index');
-        Route::get('/export-blood/request/{id}', 'V1\Web\Backend\WareHouseController@getExportRequset')->name('export-request');
+        Route::get('/export-blood/request/{id}', 'V1\Web\Backend\WareHouseController@getExportRequset')
+            ->name('export-request');
     });
 });
 

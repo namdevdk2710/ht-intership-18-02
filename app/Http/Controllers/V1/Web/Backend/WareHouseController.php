@@ -117,6 +117,4 @@ class WareHouseController extends Controller
 
         return view('backend.warehouses.export_request', compact('requests', 'bloodbags'));
     }
-
-
 }
