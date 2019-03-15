@@ -17,8 +17,8 @@ class CreateBloodBagsTable extends Migration
             $table->increments('id');
             $table->integer('requestBlood_id')->unsigned();
             $table->foreign('requestBlood_id')->references('id')->on('request_bloods')->onDelete('cascade');
-            $table->integer('warehouse_id')->unsigned();
-            $table->foreign('warehouse_id')->references('id')->on('ware_houses')->onDelete('cascade');
+            $table->integer('wareHouse_id')->unsigned();
+            $table->foreign('wareHouse_id')->references('id')->on('ware_houses')->onDelete('cascade');
             $table->integer('unit');
             $table->boolean('status');
             $table->boolean('hbsag');

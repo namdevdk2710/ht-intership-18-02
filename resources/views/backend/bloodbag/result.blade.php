@@ -56,11 +56,15 @@
             <td class="col-sm-4">
                 {!! Form::label('status', 'Tình trạng', ['class' =>
                 'col-sm-6']) !!}
-                {!! Form::select('status',['1'=>'Dương tính', '0'=>'Âm
-                tính'],1,['class'=>'col-sm-6']) !!}
+                {!! Form::select('status',['1'=>'Chưa hết hạn', '0'=>'Hết hạn'],1,['class'=>'col-sm-6']) !!}
             </td>
         </tr>
         <tr>
+            <td class="col-sm-4">
+                {!! Form::label('wareHouse_id', 'Kho máu', ['class' =>
+                'col-sm-6']) !!}
+                {!! Form::select('wareHouse_id', $warehouses ,'1',['class'=>'col-sm-6']) !!}
+            </td>
             <td class="col-sm-4">
                 {!! Form::label('other', 'Kết quả khác', ['class' =>
                 'col-sm-6']) !!}
@@ -70,8 +74,6 @@
                 {!! Form::label('unit', 'Lượng máu', ['class' =>
                 'col-sm-6']) !!}
                 {!! Form::text('unit', null, ['class' => 'col-sm-6']) !!}
-            </td>
-            <td class="col-sm-4">
             </td>
         </tr>
     </tbody>
