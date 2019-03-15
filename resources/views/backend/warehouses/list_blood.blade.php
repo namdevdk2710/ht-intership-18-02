@@ -14,8 +14,27 @@
         </tr>
     </thead>
     <tbody>
+        @foreach($bloodbags as $key => $bloodbag)
         <tr>
-            <td></td>
+
+            <td>{{$key + 1}}</td>
+            <td>{{$bloodbag->id}}</td>
+            <td>{{$bloodbag->wareHouse->name}}</td>
+            <td>{{$bloodbag->requestBlood->user->information->bloodgroup->name}}</td>
+            <td>{{$bloodbag->unit}}</td>
+
+            @php
+                $week = strtotime(date("d-m-Y", strtotime($bloodbag->created_at)) . " +6 week");
+                $expiryDate = strftime("%d-%m-%Y", $week);
+            @endphp
+
+            <td>{{$expiryDate}}</td>
+            <td>
+                <button type="submit" class="btn btn-sm btn-danger">
+                    Xuất
+                </button>
+            </td>
         </tr>
+        @endforeach
     </tbody>
 </table>

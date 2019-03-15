@@ -8,8 +8,8 @@ class WareHouse extends Model
 {
     protected $fillable = ['name', 'address'];
 
-    public function bloodBag()
+    public function bloodBags()
     {
-        return $this->beLongsTo('App\Models\BloodBag');
+        return $this->hasMany('App\Models\BloodBag');
     }
 }

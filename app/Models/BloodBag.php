@@ -8,6 +8,7 @@ class BloodBag extends Model
 {
     protected $fillable = [
         'requestBlood_id',
+        'warehouse_id',
         'unit',
         'status',
         'hbsag',
@@ -23,6 +24,11 @@ class BloodBag extends Model
 
     public function requestBlood()
     {
-        return $this->belongsTo('App\Models\RequestBlood');
+        return $this->belongsTo('App\Models\RequestBlood', 'requestBlood_id');
+    }
+
+    public function wareHouse()
+    {
+        return $this->belongsTo('App\Models\WareHouse', 'warehouse_id');
     }
 }
