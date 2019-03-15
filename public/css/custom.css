@@ -183,3 +183,16 @@
 .add-warehouse{
     padding: 1em;
 }
+.title-request{
+    background: navy;
+    color: #fff;
+    padding: 0.7em;
+}
+.export{
+    border-bottom: 2px solid #999;
+    min-height: 150px ;
+    padding-top: 1em;
+}
+.export-tr{
+    padding-top: .5em;
+}

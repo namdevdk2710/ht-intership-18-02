@@ -24,11 +24,11 @@ class BloodBag extends Model
 
     public function requestBlood()
     {
-        return $this->belongsTo('App\Models\RequestBlood');
+        return $this->belongsTo('App\Models\RequestBlood', 'requestBlood_id');
     }
 
     public function wareHouse()
     {
-        return belongsTo('App\Model\WareHouse');
+        return $this->belongsTo('App\Models\WareHouse', 'wareHouse_id');
     }
 }

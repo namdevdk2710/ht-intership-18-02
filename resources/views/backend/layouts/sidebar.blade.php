@@ -54,7 +54,7 @@
                     </a>
                     <ul class="sub">
                         <li><a href="{{route('warehouses.index')}}">Danh sách kho máu</a></li>
-                        <li><a href="responsive_table.html">Responsive Table</a></li>
+                        <li><a href="{{route('export-bloods.index')}}">Xuất túi máu</a></li>
                     </ul>
                 </li>
             </ul>
