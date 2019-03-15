@@ -41,7 +41,7 @@
                     {{ $requestBlood->calendar->time }}</td>
                 @if ($requestBlood->status == true)
                 <td scope="row" class="text-center">
-                    <a href="{{ route('request-bloods.confirm', $requestBlood->id) }}"
+                    <a href="{{route('export-bloods.index')}}"
                         class="btn-sm btn-warning  text-nowrap">
                         Hủy xác nhận
                     </a>
