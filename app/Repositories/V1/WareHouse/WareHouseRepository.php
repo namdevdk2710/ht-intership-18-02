@@ -32,4 +32,9 @@ class WareHouseRepository extends BaseRepository implements WareHouseRepositoryI
 
         return $warehouse->save();
     }
+
+    public function getWareHouseAsArray()
+    {
+        return $this->model->pluck('name', 'id')->all();
+    }
 }
