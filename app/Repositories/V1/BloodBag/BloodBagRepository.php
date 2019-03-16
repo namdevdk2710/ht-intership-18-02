@@ -34,7 +34,7 @@ class BloodBagRepository extends BaseRepository implements BloodBagRepositoryInt
     public function getResultByRequestId($id)
     {
         $result = $this->model->where('requestBlood_id', $id)->first();
-        if(!$result) {
+        if (!$result) {
             return [
             'exist' => false,
             ];
