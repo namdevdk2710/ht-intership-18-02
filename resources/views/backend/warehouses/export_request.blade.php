@@ -12,8 +12,6 @@
         <tbody>
             <div>
                 @include('backend.warehouses.information_reciver')
-            </div>
-            <div>
                 @include('backend.warehouses.list_blood')
             </div>
         </tbody>

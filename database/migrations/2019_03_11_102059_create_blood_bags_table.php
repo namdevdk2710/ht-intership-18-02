@@ -29,6 +29,7 @@ class CreateBloodBagsTable extends Migration
             $table->boolean('hcvnat');
             $table->boolean('syphilis');
             $table->boolean('malaria');
+            $table->string('note');
             $table->string('other')->nullable();
             $table->timestamps();
         });

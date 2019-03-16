@@ -30,4 +30,13 @@ class BloodBagRepository extends BaseRepository implements BloodBagRepositoryInt
             'other' => $request->input('other'),
         ]);
     }
+
+    public function confirm($id)
+    {
+        $bloodBag = $this->model->find($id);
+        $bloodBag->note = 'Đã xuất';
+        $bloodBag->save();
+
+        return $bloodBag;
+    }
 }
