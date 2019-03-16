@@ -15,10 +15,8 @@ class BloodBagRepository extends BaseRepository implements BloodBagRepositoryInt
     public function store($request)
     {
         return $this->model->create([
-            'requestBlood_id' => $request->input('request_blood_id'),
-            'wareHouse_id' => $request->input('wareHouse_id'),
+            'request_blood_id' => $request->input('request_blood_id'),
             'unit' => $request->input('unit'),
-            'status' => $request->input('status'),
             'hbsag' => $request->input('hbsag'),
             'antihiv' => $request->input('antihiv'),
             'antihcv' => $request->input('antihcv'),
@@ -28,12 +26,15 @@ class BloodBagRepository extends BaseRepository implements BloodBagRepositoryInt
             'syphilis' => $request->input('syphilis'),
             'malaria' => $request->input('malaria'),
             'other' => $request->input('other'),
+            'status' => ($request->input('hbsag') || $request->input('antihiv')|| $request->input('antihcv')
+            || $request->input('hbvnat') || $request->input('hivnat') || $request->input('hcvnat')
+            || $request->input('syphilis') || $request->input('malaria')) ? false : true,
         ]);
     }
 
     public function getResultByRequestId($id)
     {
-        $result = $this->model->where('requestBlood_id', $id)->first();
+        $result = $this->model->where('request_blood_id', $id)->first();
         if (!$result) {
             return [
             'exist' => false,
@@ -49,9 +50,9 @@ class BloodBagRepository extends BaseRepository implements BloodBagRepositoryInt
             'hcvnat' => ($result->hcvnat == 1) ? 'Dương tính': 'Âm tính',
             'syphilis' => ($result->syphilis == 1) ? 'Dương tính': 'Âm tính',
             'malaria' => ($result->malaria == 1) ? 'Dương tính': 'Âm tính',
-            'status' => ($result->status == 1) ? 'Chưa hết hạn': 'Đã hết hạn',
+            'status' => ($result->hbsag || $result->antihcv || $result->hbvnat || $result->antihiv
+            || $result->hivnat || $result->hcvnat || $result->syphilis || $result->malaria ) ? 'Không Đạt': 'Đạt',
             'unit' => $result->unit,
-            'warehouse' => $result->warehouse->address,
             ];
         }
     }

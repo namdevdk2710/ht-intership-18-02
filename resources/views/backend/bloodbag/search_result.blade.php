@@ -3,7 +3,7 @@
         <tr>
             <td class="col-sm-4">
                 <span class="col-sm-6">Hbs Ag (ELISA)</span>
-                <h5 class="col-sm- 6search-result-hbsag"></h5>
+                <h5 class="col-sm-6 search-result-hbsag"></h5>
             </td>
             <td class="col-sm-4">
                 <span class="col-sm-6">Anti HIV (ELISA)</span>
@@ -38,14 +38,14 @@
                 <h5 class="col-sm-6 search-result-malaria"></h5>
             </td>
             <td class="col-sm-4">
-                <span class="col-sm-6">Tình trạng</span>
-                <h5 class="col-sm-6 search-result-status"></h5>
+            <span class="col-sm-6">Kêt quả khác</span>
+                <h5 class="col-sm-6 search-result-other"></h5>
             </td>
         </tr>
         <tr>
             <td class="col-sm-4">
-                <span class="col-sm-6">Kêt quả khác</span>
-                <h5 class="col-sm-6 search-result-other"></h5>
+                <span class="col-sm-6">Kết quả</span>
+                <h5 class="col-sm-6 search-result-status"></h5>
             </td>
             <td class="col-sm-4">
                 <span class="col-sm-6">Lượng máu</span>
@@ -54,14 +54,5 @@
             <td class="col-sm-4">
             </td>
         </tr>
-        <tr>
-            <td class="">
-                <span class="col-sm-6">Kho máu</span>
-                <h5 class="col-sm-6 search-result-warehouse text-nowrap"></h5>
-            </td>
-        </tr>
     </tbody>
 </table>
-<div id="js-search-bloodbag-no-result" class=" text-center">
-    Không tìm thấy túi máu với mã này.
-</div>

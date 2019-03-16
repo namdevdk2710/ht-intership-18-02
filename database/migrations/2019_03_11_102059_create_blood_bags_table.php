@@ -15,9 +15,9 @@ class CreateBloodBagsTable extends Migration
     {
         Schema::create('blood_bags', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('requestBlood_id')->unsigned();
-            $table->foreign('requestBlood_id')->references('id')->on('request_bloods')->onDelete('cascade');
-            $table->integer('wareHouse_id')->unsigned();
+            $table->integer('request_blood_id')->unsigned();
+            $table->foreign('request_blood_id')->references('id')->on('request_bloods')->onDelete('cascade');
+            $table->integer('wareHouse_id')->unsigned()->nullable();
             $table->foreign('wareHouse_id')->references('id')->on('ware_houses')->onDelete('cascade');
             $table->integer('unit');
             $table->boolean('status');
@@ -29,7 +29,7 @@ class CreateBloodBagsTable extends Migration
             $table->boolean('hcvnat');
             $table->boolean('syphilis');
             $table->boolean('malaria');
-            $table->string('note');
+            $table->string('note')->nullable();
             $table->string('other')->nullable();
             $table->timestamps();
         });

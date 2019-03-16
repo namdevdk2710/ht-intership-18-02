@@ -33,14 +33,20 @@ class RequestBloodRepository extends BaseRepository implements RequestBloodRepos
     public function getById($id)
     {
         $requestBlood = $this->model->find($id);
+        if ($this->model->has('bloodBag')->find($requestBlood->id)) {
+            $hasBag = true;
+        } else {
+            $hasBag = false;
+        }
 
         return [
-                    'fullname' => $requestBlood->user->information->name,
-                    'birthday' => $requestBlood->user->information->dob,
-                    'gender' => ($requestBlood->user->information->gender == 1) ? 'Nam' : 'Nữ',
-                    'cmnd' => $requestBlood->user->information->cmnd,
-                    'time' => 'Cập nhật sau',
-                    'blood' => $requestBlood->user->information->bloodGroup->name,
+                'hasBag' => $hasBag,
+                'fullname' => $requestBlood->user->information->name,
+                'birthday' => $requestBlood->user->information->dob,
+                'gender' => ($requestBlood->user->information->gender == 1) ? 'Nam' : 'Nữ',
+                'cmnd' => $requestBlood->user->information->cmnd,
+                'time' =>  $requestBlood->calendar->time,
+                'blood' => $requestBlood->user->information->bloodGroup->name,
             ];
     }
 }
