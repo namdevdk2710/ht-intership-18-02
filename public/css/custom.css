@@ -141,7 +141,8 @@
     color: black;
     padding: 1em;
 }
-#js-search-bloodbag-no-result{
+#js-search-bloodbag-no-result,
+#js-import-bloodbag-no-result{
     padding:15px 0px;
     display: none;
 }

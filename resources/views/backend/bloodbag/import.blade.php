@@ -3,7 +3,8 @@
 <div class="table-responsive blood-bag">
     <div class='calendar-table-header'>
         <span
-            class="calendar-table-header-title text-center text-uppercase col-12">Nhập túi máu</span>
+            class="calendar-table-header-title text-center text-uppercase col-12">Nhập
+            túi máu</span>
     </div>
     <div class="row">
         @if ($errors->any())
@@ -17,8 +18,7 @@
         </div>
         @endif
     </div>
-    {!! Form::open(['method' => 'POST', 'route' => 'blood-bags.store',
-    'class' => '']) !!}
+    {!! Form::open(['method' => 'POST', 'route' => 'blood-bags.store' ]) !!}
     <div class="import-title">
         <span>
             Thông tin người hiến máu
@@ -33,7 +33,7 @@
     @include('backend.bloodbag.result')
     <div>
         {!! Form::submit('Lưu lại', ['class' => 'btn-sm btn-primary
-        import-submit']) !!}
+        import-submit', 'id' => 'js-import-bloodbag-result-submit']) !!}
     </div>
     {!! Form::close() !!}
 </div>
