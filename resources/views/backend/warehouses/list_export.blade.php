@@ -1,5 +1,7 @@
 @extends('backend.layouts.app')
+
 @section('content')
+
 <div class="request-blood table-responsive">
     <div class="request-blood-header">
         <span class="text-center text-uppercase">Danh sách yêu cầu nhận
@@ -53,4 +55,5 @@
         {{ $requestBloods->links() }}
     </div>
 </div>
+
 @endsection

@@ -20,11 +20,12 @@ class BloodBag extends Model
         'syphilis',
         'malaria',
         'other',
+        'note',
     ];
 
     public function requestBlood()
     {
-        return $this->belongsTo('App\Models\RequestBlood');
+        return $this->belongsTo('App\Models\RequestBlood', 'requestBlood_id');
     }
 
     public function wareHouse()

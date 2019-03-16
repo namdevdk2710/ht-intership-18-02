@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class RequestBlood extends Model
 {
+    protected $fillable = ['user_id', 'calendar_id', 'content', 'status', 'type'];
+
     public function user()
     {
         return $this->belongsTo('App\Models\User');
@@ -18,6 +20,6 @@ class RequestBlood extends Model
 
     public function bloodBag()
     {
-        return $this->hasOne('App\Models\BloodBag');
+        return $this->hasMany('App\Models\BloodBag');
     }
 }

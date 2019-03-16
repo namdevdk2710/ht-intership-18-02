@@ -54,5 +54,12 @@ class BloodBagRepository extends BaseRepository implements BloodBagRepositoryInt
             'warehouse' => $result->warehouse->address,
             ];
         }
+    public function confirm($id)
+    {
+        $bloodBag = $this->model->find($id);
+        $bloodBag->note = 'Đã xuất';
+        $bloodBag->save();
+
+        return $bloodBag;
     }
 }
