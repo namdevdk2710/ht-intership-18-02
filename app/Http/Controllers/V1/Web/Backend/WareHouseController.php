@@ -113,7 +113,7 @@ class WareHouseController extends Controller
     public function getExportRequest($id)
     {
         $requests = $this->requestRepository->find($id);
-        $bloodbags = $this->bloodBagRepository->index();
+        $bloodbags = $this->bloodBagRepository->getBloodBagByStatus();
 
         return view('backend.warehouses.export_request', compact('requests', 'bloodbags'));
     }
