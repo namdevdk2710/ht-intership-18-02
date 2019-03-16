@@ -47,4 +47,19 @@ class BloodBagController extends Controller
 
         return back();
     }
+
+    public function getSearch()
+    {
+        return view('backend.bloodbag.search');
+    }
+
+    public function searchBloodBagByCode(Request $request)
+    {
+        if ($request->ajax()) {
+            $data = $this->requestBloodRepository->getById($request->request_id);
+            $data += $this->bloodBagRepository->getResultByRequestId($request->request_id);
+
+            return response()->json($data);
+        }
+    }
 }

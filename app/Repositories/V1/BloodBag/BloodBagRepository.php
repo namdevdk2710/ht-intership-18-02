@@ -38,6 +38,31 @@ class BloodBagRepository extends BaseRepository implements BloodBagRepositoryInt
         return $bloodBag;
     }
 
+    public function getResultByRequestId($id)
+    {
+        $result = $this->model->where('requestBlood_id', $id)->first();
+        if (!$result) {
+            return [
+            'exist' => false,
+            ];
+        } else {
+            return [
+            'exist' => true,
+            'hbsag' => ($result->hbsag == 1) ? 'Dương tính': 'Âm tính',
+            'antihiv' => ($result->antihiv == 1) ? 'Dương tính': 'Âm tính',
+            'antihcv' => ($result->antihcv == 1) ? 'Dương tính': 'Âm tính',
+            'hbvnat' => ($result->hbvnat == 1) ? 'Dương tính': 'Âm tính',
+            'hivnat' => ($result->hivnat == 1) ? 'Dương tính': 'Âm tính',
+            'hcvnat' => ($result->hcvnat == 1) ? 'Dương tính': 'Âm tính',
+            'syphilis' => ($result->syphilis == 1) ? 'Dương tính': 'Âm tính',
+            'malaria' => ($result->malaria == 1) ? 'Dương tính': 'Âm tính',
+            'status' => ($result->status == 1) ? 'Chưa hết hạn': 'Đã hết hạn',
+            'unit' => $result->unit,
+            'warehouse' => $result->warehouse->address,
+            ];
+        }
+    }
+
     public function confirm($id)
     {
         $bloodBag = $this->model->find($id);

@@ -165,6 +165,61 @@ $(document).ready(function () {
             $('#import-user-info .import-user-info-code-error').show();
             $('#js-import-user-code input[name ="request_blood_id"]').val('');
         }
+    });
+
+    $('#js-search-user-code #js-bloodbag-search').click(function (e) {
+        e.preventDefault();
+        var code = $('#js-search-user-code input[name ="request_blood_id"]').val();
+        if (Math.floor(code) == code && $.isNumeric(code)) {
+            $('#search-user-info .search-user-info-code-error').hide();
+            var token = $("input[name='_token']").val();
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                url: "/admin/blood-bags/search-blood-bag",
+                method: 'GET',
+                data: {
+                    request_id: code,
+                    _token: token,
+                },
+                success: function (data) {
+                    console.log(data);
+                    $('#search-user-info .search-user-info-name').text(data.fullname);
+                    $('#search-user-info .search-user-info-birthday').text(data.birthday);
+                    $('#search-user-info .search-user-info-gender').text(data.gender);
+                    $('#search-user-info .search-user-info-cmnd').text(data.cmnd);
+                    $('#search-user-info .search-user-info-time').text(data.time);
+                    $('#search-user-info .search-user-info-blood').text(data.blood);
+
+                    if (data.status) {
+                        $('#js-search-bloodbag-result').show();
+                        $('#js-search-bloodbag-no-result').hide();
+                        $('.search-result-hbsag').text(data.hbsag);
+                        $('.search-result-antihiv').text(data.antihiv);
+                        $('.search-result-antihcv').text(data.antihcv);
+                        $('.search-result-hbvnat').text(data.hbvnat);
+                        $('.search-result-hivnat').text(data.hivnat);
+                        $('.search-result-hcvnat').text(data.hcvnat);
+                        $('.search-result-syphilis').text(data.syphilis);
+                        $('.search-result-malaria').text(data.malaria);
+                        $('.search-result-status').text(data.status);
+                        $('.search-result-warehouse').text(data.warehouse);
+                        $('.search-result-other').text(data.other);
+                        $('.search-result-unit').text(data.unit);
+                    } else {
+                        $('#js-search-bloodbag-result').hide();
+                        $('#js-search-bloodbag-no-result').show();
+                    }
+
+                }
+            });
+        } else {
+            $('#search-user-info .search-user-info-code-error').show();
+            $('#js-search-user-code input[name ="request_blood_id"]').val('');
+        }
     })
 
     $('#fe-register').validate({
