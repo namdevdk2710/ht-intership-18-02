@@ -26,7 +26,7 @@ class BloodBagRepository extends BaseRepository implements BloodBagRepositoryInt
             'syphilis' => $request->input('syphilis'),
             'malaria' => $request->input('malaria'),
             'other' => $request->input('other'),
-            'status' => ($request->input('hbsag') || $request->input('antihiv')|| $request->input('antihcv')
+            'status' => ($request->input('hbsag') || $request->input('antihiv') || $request->input('antihcv')
             || $request->input('hbvnat') || $request->input('hivnat') || $request->input('hcvnat')
             || $request->input('syphilis') || $request->input('malaria')) ? false : true,
         ]);
