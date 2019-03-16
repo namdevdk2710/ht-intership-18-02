@@ -70,5 +70,4 @@ class RequestBloodController extends Controller
 
         return redirect()->back();
     }
-
 }

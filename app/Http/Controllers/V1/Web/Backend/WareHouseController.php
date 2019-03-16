@@ -121,7 +121,7 @@ class WareHouseController extends Controller
     public function confirm($id, $id2)
     {
         $this->bloodBagRepository->confirm($id2);
-        $a= $this->requestRepository->confirm($id);
+        $this->requestRepository->confirm($id);
 
         return redirect()->route('export-bloods.index');
     }
