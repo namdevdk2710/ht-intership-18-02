@@ -44,7 +44,7 @@
                     </a>
                     <ul class="sub">
                         <li><a class="{{( Request::path() === 'admin/blood-bags/import' ) ? 'active' : '' }}" href="{{ route('blood-bags.getImport') }}">Nhập túi máu</a></li>
-                        <li><a class="{{( Request::path() === 'admin/blood-bags/search' ) ? 'active' : '' }}" href="">Tra cứu</a></li>
+                        <li><a class="{{( Request::path() === 'admin/blood-bags/search' ) ? 'active' : '' }}" href="{{ route('blood-bags.getSearch') }}">Tra cứu</a></li>
                     </ul>
                 </li>
                 <li class="sub-menu">

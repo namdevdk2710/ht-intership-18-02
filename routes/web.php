@@ -37,6 +37,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
         Route::get('/import', 'V1\Web\Backend\BloodBagController@getImport')->name('blood-bags.getImport');
         Route::Post('/getInfoByCode', 'V1\Web\Backend\BloodBagController@getInfoByCode');
         Route::post('/store', 'V1\Web\Backend\BloodBagController@store')->name('blood-bags.store');
+        Route::get('/search', 'V1\Web\Backend\BloodBagController@getSearch')->name('blood-bags.getSearch');
+        Route::get('/search-blood-bag', 'V1\Web\Backend\BloodBagController@searchBloodBagByCode');
     });
 
     Route::group(['prefix' => 'hourseware'], function () {
