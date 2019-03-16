@@ -93,7 +93,8 @@
     font-weight: 500;
     /* border-bottom: 3px solid #04708A; */
 }
-.blood-bag table .import-user-info-code-error{
+.blood-bag table .import-user-info-code-error,
+.blood-bag table .search-user-info-code-error {
     margin-left: 15px;
     padding: 5px 16px;
     display: none;
@@ -139,6 +140,10 @@
 .editUser {
     color: black;
     padding: 1em;
+}
+#js-search-bloodbag-no-result{
+    padding:15px 0px;
+    display: none;
 }
 
 
