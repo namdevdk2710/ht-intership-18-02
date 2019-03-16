@@ -105,7 +105,7 @@ class WareHouseController extends Controller
 
     public function getExport()
     {
-        $requestBloods = $this->requestRepository->received();
+        $requestBloods = $this->requestRepository->receivedByStatus();
 
         return view('backend.warehouses.list_export', compact('requestBloods'));
     }
