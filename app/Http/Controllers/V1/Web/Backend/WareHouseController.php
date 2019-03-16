@@ -110,11 +110,19 @@ class WareHouseController extends Controller
         return view('backend.warehouses.list_export', compact('requestBloods'));
     }
 
-    public function getExportRequset($id)
+    public function getExportRequest($id)
     {
         $requests = $this->requestRepository->find($id);
         $bloodbags = $this->bloodBagRepository->index();
 
         return view('backend.warehouses.export_request', compact('requests', 'bloodbags'));
+    }
+
+    public function confirm($id, $id2)
+    {
+        $this->bloodBagRepository->confirm($id2);
+        $a= $this->requestRepository->confirm($id);
+
+        return redirect()->route('export-bloods.index');
     }
 }

@@ -27,7 +27,7 @@
             <tr>
                 <td scope="row" class="text-center">{{ $key +1 }}</td>
                 <td class="text-left">{{ $requestBlood->user->email }}</td>
-                @if ($requestBlood->status == true)
+                @if ($requestBlood->status == 1)
                 <td scope="row" class="text-center">
                     <strong class="text-success text-nowrap">Đã nhận</strong>
                 </td>
@@ -39,21 +39,12 @@
                 <td class="text-left">{{ $requestBlood->content }}</td>
                 <td class="text-left text-nowrap">
                     {{ $requestBlood->calendar->time }}</td>
-                @if ($requestBlood->status == true)
                 <td scope="row" class="text-center">
-                    <a href="{{route('export-bloods.index')}}"
-                        class="btn-sm btn-warning  text-nowrap">
-                        Hủy xác nhận
-                    </a>
-                </td>
-                @else
-                <td scope="row" class="text-center">
-                    <a href="{{ route('request-bloods.confirm', $requestBlood->id) }}"
+                    <a href="{{route('export-request', $requestBlood->id)}}"
                         class="btn-sm btn-primary text-nowrap">
                         Xác nhận
                     </a>
                 </td>
-                @endif
             </tr>
             @endforeach
         </tbody>

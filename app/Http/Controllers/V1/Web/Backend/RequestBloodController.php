@@ -63,11 +63,12 @@ class RequestBloodController extends Controller
 
         return view('backend.requestblood.received', compact('requestBloods'));
     }
-    
+
     public function confirm($id)
     {
         $this->repository->confirm($id);
 
         return redirect()->back();
     }
+
 }

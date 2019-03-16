@@ -29,7 +29,7 @@
             <tr>
                 <td scope="row" class="text-center">{{ $key +1 }}</td>
                 <td class="text-left">{{ $requestBlood->user->email }}</td>
-                @if ($requestBlood->status == true)
+                @if ($requestBlood->status == 1)
                 <td scope="row" class="text-center">
                     <strong class="text-success text-nowrap">Đã nhận</strong>
                 </td>

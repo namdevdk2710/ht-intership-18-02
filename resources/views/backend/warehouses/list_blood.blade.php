@@ -1,3 +1,4 @@
+
 <div class="title-request">
     <h4>Danh sách các túi máu đạt yêu cầu</h4>
 </div>
@@ -24,15 +25,21 @@
             <td>{{$bloodbag->unit}}</td>
 
             @php
-                $week = strtotime(date("d-m-Y", strtotime($bloodbag->created_at)) . " +6 week");
-                $expiryDate = strftime("%d-%m-%Y", $week);
+            $week = strtotime(date("d-m-Y", strtotime($bloodbag->created_at)) . " +6 week");
+            $expiryDate = strftime("%d-%m-%Y", $week);
             @endphp
 
             <td>{{$expiryDate}}</td>
             <td>
-                <button type="submit" class="btn btn-sm btn-danger">
-                    Xuất
-                </button>
+                @php
+                    $a= (explode("/", Request::path()));
+                @endphp
+
+                <form action="{{route('confirm-request', [end($a), $bloodbag->id ])}}" method="GET">
+                    <button type="submit">
+                        Xuất
+                    </button>
+                </form>
             </td>
         </tr>
         @endforeach
