@@ -13,6 +13,7 @@ use App\Repositories\V1\Commune\CommuneRepositoryInterFace;
 use Illuminate\Support\Facades\Auth;
 
 use App\Http\Requests\UserRequest;
+use App\Http\Requests\ChangePasswordRequest;
 
 class UserController extends Controller
 {
@@ -106,5 +107,15 @@ class UserController extends Controller
         $user = $this->userRepository->find(Auth::id());
 
         return view('backend.profile.index', compact('user'));
+    }
+
+    public function changeAdminPassword(ChangePasswordRequest $request)
+    {
+        $result = $this->userRepository->changeAdminPassword($request);
+        if ($result == 'password') {
+            return redirect()->back()->with('message', 'Password không chính xác !');
+        } else {
+            return back()->with('message', 'Thay đổi mật khẩu thành công !');
+        }
     }
 }
