@@ -345,4 +345,8 @@ $(document).ready(function () {
             }
         }
     });
+
+    $('#js-change-admin-password-btn').click(function () {
+        $('#js-change-admin-password-form').slideToggle('slow');
+    });
 });

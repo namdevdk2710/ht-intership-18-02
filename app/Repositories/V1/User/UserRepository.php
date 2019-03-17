@@ -92,4 +92,17 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
             'role' => 0,
         ]);
     }
+
+    public function changeAdminPassword($request)
+    {
+        $user = $this->model->find(Auth::id());
+        if (! Hash::check($request->input('current_password'), $user->password)) {
+            return 'password';
+        } else {
+            $user->password = bcrypt($request->input('new_password'));
+            $user->save();
+
+            return 'success';
+        }
+    }
 }

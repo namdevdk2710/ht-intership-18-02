@@ -15,6 +15,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 
     Route::group(['prefix' => 'profile'], function () {
         Route::get('/', 'V1\Web\Backend\UserController@profile')->name('user.profile');
+        Route::post('/', 'V1\Web\Backend\UserController@changeAdminPassword')->name('user.changeAdminPassword');
     });
 
     Route::group(['prefix' => 'calendar'], function () {

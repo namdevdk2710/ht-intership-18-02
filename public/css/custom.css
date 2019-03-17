@@ -17,6 +17,21 @@
     color: #fff;
 }
 
+/* ----- Start profile ----- */
+#js-change-admin-password-form label{
+    font-weight: normal;
+    padding: 4px 0px;
+}
+#js-change-admin-password-submit{
+    margin-top: 15px;
+}
+#js-change-admin-password-form .alert{
+    margin-top: 10px;
+}
+#js-change-admin-password-form{
+    display: none;
+}
+/* ----- end profile ----- */
 
 /* ----- Start Admin Calendar ----- */
 
@@ -83,10 +98,6 @@
 .calendar-show{
     margin-bottom: 0px;
 }
-.calendar-show-heading{
-
-}
-
 /* ----- End Admin Calendar ----- */
 
 /* ----- Start Admin bloog bag ----- */
