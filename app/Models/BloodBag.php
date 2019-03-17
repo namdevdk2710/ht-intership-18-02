@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class BloodBag extends Model
 {
     protected $fillable = [
-        'requestBlood_id',
+        'request_blood_id',
         'wareHouse_id',
         'unit',
         'status',
@@ -25,7 +25,7 @@ class BloodBag extends Model
 
     public function requestBlood()
     {
-        return $this->belongsTo('App\Models\RequestBlood', 'requestBlood_id');
+        return $this->belongsTo('App\Models\RequestBlood');
     }
 
     public function wareHouse()

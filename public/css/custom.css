@@ -80,6 +80,13 @@
 .calendar-table .edit-calendar form {
     padding: 0px 15px;
 }
+.calendar-show{
+    margin-bottom: 0px;
+}
+.calendar-show-heading{
+
+}
+
 /* ----- End Admin Calendar ----- */
 
 /* ----- Start Admin bloog bag ----- */
@@ -141,7 +148,8 @@
     color: black;
     padding: 1em;
 }
-#js-search-bloodbag-no-result{
+#js-search-bloodbag-no-result,
+#js-import-bloodbag-no-result{
     padding:15px 0px;
     display: none;
 }

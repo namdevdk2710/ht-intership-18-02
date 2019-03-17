@@ -13,6 +13,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::get('/', 'V1\Web\Backend\AdminController@index')->name('admin.index');
     Route::get('/logout', 'V1\Web\Backend\AdminController@logout')->name('admin.logout');
 
+    Route::group(['prefix' => 'profile'], function () {
+        Route::get('/', 'V1\Web\Backend\UserController@profile')->name('user.profile');
+    });
+
     Route::group(['prefix' => 'calendar'], function () {
         Route::get('/', 'V1\Web\Backend\CalendarController@index')->name('calendar.index');
         Route::post('/add-new', 'V1\Web\Backend\CalendarController@postAddCalendar')->name('calendar.postAddCalendar');
@@ -22,6 +26,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
         ->name('calendar.showCommuneInDistrict');
         Route::delete('/delete/{id}', 'V1\Web\Backend\CalendarController@delete')->name('calendar.delete');
         Route::put('/edit/{id}', 'V1\Web\Backend\CalendarController@update')->name('calendar.update');
+        Route::get('/{id}', 'V1\Web\Backend\CalendarController@show')->name('calendar.show');
     });
 
     Route::group(['prefix' => 'request-bloods'], function () {

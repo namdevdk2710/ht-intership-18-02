@@ -16,8 +16,10 @@
     </thead>
     <tbody>
         @foreach($bloodbags as $key => $bloodbag)
-        <tr>
 
+        @if ($bloodbag->requestBlood->user->information->bloodgroup->name
+            == $requests->user->information->bloodgroup->name)
+        <tr>
             <td>{{$key + 1}}</td>
             <td>{{$bloodbag->id}}</td>
             <td>{{$bloodbag->wareHouse->name}}</td>
@@ -42,6 +44,8 @@
                 </form>
             </td>
         </tr>
+        @endif
+
         @endforeach
     </tbody>
 </table>

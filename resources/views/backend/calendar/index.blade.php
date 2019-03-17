@@ -38,13 +38,11 @@
                 $calendar->commune->district->city->name
                 @endphp
                 <td class="text-center">{{ $add }}</td>
-                <td class="text-center">{{ $calendar->user->username }}</td>
+                <td class="text-center">{{ $calendar->user->information->name }}</td>
                 <td class="text-center text-nowrap">
-                    <a class="btn btn-sm btn-primary" href="#" data-toggle="modal"
-                        data-target="#showDetailCalendar{{$calendar->id}}">
+                    <a class="btn btn-sm btn-primary" href="{{ route('calendar.show', $calendar->id) }}">
                         Chi tiết
                     </a>
-                    @include('backend.calendar.detail_calendar')
                     <a class="btn btn-sm btn-warning" id="calendar-edit" href="#" data-toggle="modal"
                         data-target="#edit-calendar-{{$calendar->id}}">
                         Sửa

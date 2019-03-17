@@ -159,6 +159,15 @@ $(document).ready(function () {
                     $('#import-user-info .import-user-info-cmnd').text(data.cmnd);
                     $('#import-user-info .import-user-info-time').text(data.time);
                     $('#import-user-info .import-user-info-blood').text(data.blood);
+                    if (data.hasBag) {
+                        $('#js-import-bloodbag-result').hide();
+                        $('#js-import-bloodbag-result-submit').hide();
+                        $('#js-import-bloodbag-no-result').show();
+                    } else {
+                        $('#js-import-bloodbag-result').show();
+                        $('#js-import-bloodbag-result-submit').show();
+                        $('#js-import-bloodbag-no-result').hide();
+                    }
                 }
             });
         } else {
@@ -194,7 +203,7 @@ $(document).ready(function () {
                     $('#search-user-info .search-user-info-time').text(data.time);
                     $('#search-user-info .search-user-info-blood').text(data.blood);
 
-                    if (data.status) {
+                    if (data.exist) {
                         $('#js-search-bloodbag-result').show();
                         $('#js-search-bloodbag-no-result').hide();
                         $('.search-result-hbsag').text(data.hbsag);
@@ -205,10 +214,9 @@ $(document).ready(function () {
                         $('.search-result-hcvnat').text(data.hcvnat);
                         $('.search-result-syphilis').text(data.syphilis);
                         $('.search-result-malaria').text(data.malaria);
-                        $('.search-result-status').text(data.status);
-                        $('.search-result-warehouse').text(data.warehouse);
                         $('.search-result-other').text(data.other);
                         $('.search-result-unit').text(data.unit);
+                        $('.search-result-status').text(data.status);
                     } else {
                         $('#js-search-bloodbag-result').hide();
                         $('#js-search-bloodbag-no-result').show();
