@@ -75,7 +75,9 @@ class BloodBagRepository extends BaseRepository implements BloodBagRepositoryInt
 
     public function getImport()
     {
-        $bloodBag = $this->model->where('status', 1)->where('note', '<>', 'Đã nhập kho' )->orWhere('note', NULL)->paginate(6);
+        $bloodBag = $this->model->where('status', 1)
+                    ->where('note', '<>', 'Đã nhập kho')
+                    ->orWhere('note', null)->paginate(6);
 
         return $bloodBag;
     }
