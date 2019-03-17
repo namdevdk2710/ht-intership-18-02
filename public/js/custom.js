@@ -349,4 +349,17 @@ $(document).ready(function () {
     $('#js-change-admin-password-btn').click(function () {
         $('#js-change-admin-password-form').slideToggle('slow');
     });
+
+    $('#js-add-calendar-form input[type = "submit"]').click(function (e) {
+        e.preventDefault();
+        var time = $('#js-add-calendar-form input[name = "time"]').val();
+        var date = $('#js-add-calendar-form input[name = "date"]').val();
+        var dateTime = new Date(time.concat(' ' + date)).toLocaleString();
+        var currentdate = new Date().toLocaleString();
+        if (dateTime < currentdate) {
+            alert('Thời gian phải lớn hơn thời gian hiện tại');
+        } else {
+            $('#js-add-calendar-form').submit();
+        }
+    })
 });
