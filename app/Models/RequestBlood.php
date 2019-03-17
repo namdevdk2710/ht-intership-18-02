@@ -18,7 +18,7 @@ class RequestBlood extends Model
         return $this->belongsTo('App\Models\Calendar');
     }
 
-    public function bloodBags()
+    public function bloodBag()
     {
         return $this->hasMany('App\Models\BloodBag');
     }
