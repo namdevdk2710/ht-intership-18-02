@@ -22,6 +22,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
         ->name('calendar.showCommuneInDistrict');
         Route::delete('/delete/{id}', 'V1\Web\Backend\CalendarController@delete')->name('calendar.delete');
         Route::put('/edit/{id}', 'V1\Web\Backend\CalendarController@update')->name('calendar.update');
+        Route::get('/{id}', 'V1\Web\Backend\CalendarController@show')->name('calendar.show');
     });
 
     Route::group(['prefix' => 'request-bloods'], function () {

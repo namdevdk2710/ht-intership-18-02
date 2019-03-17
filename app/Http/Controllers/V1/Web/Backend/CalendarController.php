@@ -73,4 +73,11 @@ class CalendarController extends Controller
             return response()->json($communes);
         }
     }
+
+    public function show($id)
+    {
+        $calendar = $this->calendarRepository->find($id);
+
+        return view('backend.calendar.list_user_of_calendar', compact('calendar'));
+    }
 }

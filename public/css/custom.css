@@ -80,6 +80,13 @@
 .calendar-table .edit-calendar form {
     padding: 0px 15px;
 }
+.calendar-show{
+    margin-bottom: 0px;
+}
+.calendar-show-heading{
+
+}
+
 /* ----- End Admin Calendar ----- */
 
 /* ----- Start Admin bloog bag ----- */
