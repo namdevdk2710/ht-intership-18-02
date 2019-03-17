@@ -209,3 +209,9 @@
 .export-tr{
     padding-top: .5em;
 }
+/* Import-blood */
+#select-warehouse{
+    border-radius: 5px;
+    padding: .3em;
+}
+

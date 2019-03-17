@@ -129,7 +129,15 @@ class WareHouseController extends Controller
     public function getImport()
     {
         $bloodBags = $this->bloodBagRepository->getImport();
+        $warehouses = $this->repository->index();
 
-        return view('backend.warehouses.list_import', compact('bloodBags'));
+        return view('backend.warehouses.list_import', compact('bloodBags', 'warehouses'));
+    }
+
+    public function import($id, Request $request)
+    {
+        $this->bloodBagRepository->confirmImport($id, $request);
+
+        return redirect()->back();
     }
 }

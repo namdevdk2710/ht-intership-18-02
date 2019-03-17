@@ -15,41 +15,50 @@
                 <th class="text-center" scope="col">Người hiến</th>
                 <th class="text-center" scope="col">Nhóm máu</th>
                 <th class="text-center" scope="col">Thể tích</th>
+                <th class="text-center" scope="col">Trạng thái</th>
+                <th class="text-center" scope="col">Chọn kho nhập</th>
                 <th class="text-center" scope="col">Thao tác</th>
             </tr>
         </thead>
 
         <tbody class="body-user">
-            @foreach($bloodBags as $key => $bloodBag)
+            @foreach($bloodBags as $bloodBag)
+
+            {!! Form::open(['method' => 'POST', 'route' => ['import-loods', $bloodBag->id]]) !!}
             <tr class="text-center">
-                <td></td>
                 <td>{{$bloodBag->id}}</td>
-                <td>{{$bloodBag}}</td>
+                <td>{{$bloodBag->requestBlood->user->information->name}}</td>
+                <td>{{$bloodBag->requestBlood->user->information->bloodGroup->name}}</td>
+                <td>{{$bloodBag->unit}}</td>
+                <td>Đạt yêu cầu</td>
                 <td>
-                    <button type="button" value="   " class="btn btn-sm btn-danger">
-                        Xóa
+                    <select name="warehouse_id" id="select-warehouse">
+                        <option value="">---Chọn kho máu---</option>
+                        @foreach($warehouses as $warehouse )
+                        <option value="{{$warehouse->id}}">{{$warehouse->name}}</option>
+                        @endforeach
+                    </select>
+                </td>
+                <td>
+                    <button type="submit" class="btn btn-sm btn-danger">
+                        Nhập kho
                     </button>
                 </td>
             </tr>
+            {!! Form::close() !!}
+
             @endforeach
         </tbody>
     </table>
     <div class="pagination-wrapper">
-
+        {{$bloodBags->links()}}
     </div>
 </div>
 
 <script>
-$(document).ready(function() {
-    var button = $('.btn-danger');
-    button.click(function() {
-        if (confirm("Bạn có muốn xóa kho máu này?")) {
-            var url = "{{ route('warehouses.destroy', ':id') }}";
-            url = url.replace(':id', $(this).val());
-            window.location.href = url;
-        }
+    $(".btn-danger").click(function() {
+        return confirm("Bạn có muốn nhập túi máu này vào kho?");
     });
-});
 </script>
 
 @endsection
