@@ -104,7 +104,7 @@ class UserController extends Controller
     public function profile()
     {
         $user = $this->userRepository->find(Auth::id());
-        // dd($user->information);
+
         return view('backend.profile.index', compact('user'));
     }
 }
