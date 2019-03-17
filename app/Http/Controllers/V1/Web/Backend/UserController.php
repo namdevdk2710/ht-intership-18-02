@@ -112,7 +112,6 @@ class UserController extends Controller
     public function changeAdminPassword(ChangePasswordRequest $request)
     {
         $result = $this->userRepository->changeAdminPassword($request);
-        // dd($result);
         if ($result == 'password') {
             return redirect()->back()->with('message', 'Password không chính xác !');
         } else {
