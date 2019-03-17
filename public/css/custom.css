@@ -98,6 +98,9 @@
 .calendar-show{
     margin-bottom: 0px;
 }
+#js-edit-calendar-form .form-group:last-child{
+    margin-top: 30px;
+}
 /* ----- End Admin Calendar ----- */
 
 /* ----- Start Admin bloog bag ----- */
@@ -220,3 +223,4 @@
 .export-tr{
     padding-top: .5em;
 }
+
