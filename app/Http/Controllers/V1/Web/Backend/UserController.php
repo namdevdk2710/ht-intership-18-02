@@ -10,6 +10,7 @@ use App\Repositories\V1\BloodGroup\BloodGroupRepositoryInterFace;
 use App\Repositories\V1\City\CityRepositoryInterFace;
 use App\Repositories\V1\District\DistrictRepositoryInterFace;
 use App\Repositories\V1\Commune\CommuneRepositoryInterFace;
+use Illuminate\Support\Facades\Auth;
 
 use App\Http\Requests\UserRequest;
 
@@ -98,5 +99,12 @@ class UserController extends Controller
 
             return response()->json($communes);
         }
+    }
+
+    public function profile()
+    {
+        $user = $this->userRepository->find(Auth::id());
+
+        return view('backend.profile.index', compact('user'));
     }
 }
