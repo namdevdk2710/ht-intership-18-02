@@ -71,4 +71,11 @@ class BloodBagRepository extends BaseRepository implements BloodBagRepositoryInt
 
         return $bloodBag;
     }
+
+    public function getImport()
+    {
+        $bloodBag = $this->model->where('status', 1)->get();
+
+        return $bloodBag;
+    }
 }

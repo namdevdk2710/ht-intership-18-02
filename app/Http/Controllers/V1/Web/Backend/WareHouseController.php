@@ -125,4 +125,11 @@ class WareHouseController extends Controller
 
         return redirect()->route('export-bloods.index');
     }
+
+    public function getImport()
+    {
+        $bloodBags = $this->bloodBagRepository->getImport();
+
+        return view('backend.warehouses.list_import', compact('bloodBags'));
+    }
 }

@@ -51,6 +51,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
             ->name('export-request');
         Route::get('/export-blood/{id}/{id2}', 'V1\Web\Backend\WareHouseController@confirm')
             ->name('confirm-request');
+        Route::get('/import-blood', 'V1\Web\Backend\WareHouseController@getImport')->name('import-loods.index');
     });
 });
 
