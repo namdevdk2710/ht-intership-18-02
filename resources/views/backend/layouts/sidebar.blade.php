@@ -28,12 +28,6 @@
                         <span>Quản lý người dùng</span>
                     </a>
                 </li>
-                <li>
-                    <a href="{{route('bloods.list')}}">
-                        <i class="fa fa-bullhorn"></i>
-                        <span>Quản lý nhóm máu</span>
-                    </a>
-                </li>
                 <li class="sub-menu">
                     <a href="javascript:;"
                         class="{{( Request::path() === 'admin/request-bloods/donated' ||  Request::path() === 'admin/request-bloods/received' ) ? 'active' : '' }}">
@@ -67,6 +61,7 @@
                     </a>
                     <ul class="sub">
                         <li><a href="{{route('warehouses.index')}}">Danh sách kho máu</a></li>
+                        <li><a href="{{route('blood-bags.index')}}">Quản lý túi máu</a></li>
                         <li><a href="{{route('import-loods.index')}}">Nhập kho túi máu</a></li>
                         <li><a href="{{route('export-bloods.index')}}">Xuất túi máu</a></li>
                     </ul>

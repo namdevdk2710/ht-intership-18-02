@@ -91,4 +91,20 @@ class BloodBagRepository extends BaseRepository implements BloodBagRepositoryInt
 
         return $bloodBag;
     }
+
+    public function listBloodBagInWareHouse()
+    {
+        $bloodBag = $this->model->where('note', 'Đã nhập kho')->get();
+
+        return $bloodBag;
+    }
+
+    public function updateStatus($id, $request)
+    {
+        $bloodBag = $this->model->find($id);
+        $bloodBag->note = $request->note;
+        $bloodBag->save();
+
+        return $bloodBag;
+    }
 }
