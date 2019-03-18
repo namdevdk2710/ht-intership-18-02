@@ -33,16 +33,13 @@
                 <td>Đạt yêu cầu</td>
                 <td>
                     <select name="warehouse_id" id="select-warehouse">
-                        <option value="">---Chọn kho máu---</option>
                         @foreach($warehouses as $warehouse )
                         <option value="{{$warehouse->id}}">{{$warehouse->name}}</option>
                         @endforeach
                     </select>
                 </td>
                 <td>
-                    <button type="submit" class="btn btn-sm btn-danger">
-                        Nhập kho
-                    </button>
+                    {!! Form::button('Nhập kho', ['class' => 'btn btn-sm btn-danger', 'type' => 'submit']) !!}
                 </td>
             </tr>
             {!! Form::close() !!}
@@ -56,9 +53,9 @@
 </div>
 
 <script>
-    $(".btn-danger").click(function() {
-        return confirm("Bạn có muốn nhập túi máu này vào kho?");
-    });
+$(".btn-danger").click(function() {
+    return confirm("Bạn có muốn nhập túi máu này vào kho?");
+});
 </script>
 
 @endsection

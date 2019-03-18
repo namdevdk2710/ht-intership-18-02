@@ -37,15 +37,18 @@
                     $a= (explode("/", Request::path()));
                 @endphp
 
-                <form action="{{route('confirm-request', [end($a), $bloodbag->id ])}}" method="GET">
-                    <button type="submit">
-                        Xuất
-                    </button>
-                </form>
+                {!! Form::open(['method' => 'GET', 'route' => ['confirm-request', end($a), $bloodbag->id]]) !!}
+                    {!! Form::button('Xuất', ['class' => 'btn btn-sm btn-danger', 'type' => 'submit']) !!}
+                {!! Form::close() !!}
             </td>
         </tr>
         @endif
-
         @endforeach
     </tbody>
 </table>
+
+<script>
+$(".btn-danger").click(function() {
+    return confirm("Bạn có muốn xuất túi máu này?");
+});
+</script>

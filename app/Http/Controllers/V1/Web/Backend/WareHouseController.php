@@ -145,4 +145,25 @@ class WareHouseController extends Controller
 
         return redirect()->back();
     }
+
+    public function listBloodBag()
+    {
+        $bloodbags = $this->bloodBagRepository->listBloodBagInWareHouse();
+
+        return view('backend.warehouses.bloodbag', compact('bloodbags'));
+    }
+
+    public function detailBloodBag($id)
+    {
+        $bloodbag = $this->bloodBagRepository->find($id);
+
+        return view('backend.warehouses.bloodbag_detail', compact('bloodbag'));
+    }
+
+    public function updateStatus($id, Request $request)
+    {
+        $this->bloodBagRepository->updateStatus($id, $request);
+
+        return redirect()->route('blood-bags.index');
+    }
 }
