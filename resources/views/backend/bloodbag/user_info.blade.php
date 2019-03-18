@@ -18,6 +18,13 @@
                     <span class="text-danger">Mã số nhập vào không hợp
                         lệ.</span>
                 </div>
+                <div class="import-user-info-code-error" id="js-import-bloodbag-no-request">
+                    <span
+                        class="glyphicon glyphicon-exclamation-sign text-danger"
+                        aria-hidden="true"></span>
+                    <span class="sr-only text-danger">Error:</span>
+                    <span class="text-danger">Không tồn tại mã hiến máu này.</span>
+                </div>
             </td>
         </tr>
         <tr>

@@ -7,21 +7,25 @@ use App\Http\Controllers\Controller;
 use App\Repositories\V1\WareHouse\WareHouseRepositoryInterface;
 use App\Repositories\V1\RequestBlood\RequestBloodRepositoryInterface;
 use App\Repositories\V1\BloodBag\BloodBagRepositoryInterface;
+use App\Repositories\V1\Diary\DiaryRepositoryInterFace;
 
 class WareHouseController extends Controller
 {
     protected $repository;
     protected $requestRepository;
     protected $bloodBagRepository;
+    protected $diaryRepository;
 
     public function __construct(
         WareHouseRepositoryInterFace $repository,
         RequestBloodRepositoryInterface $requestRepository,
-        BloodBagRepositoryInterface $bloodBagRepository
+        BloodBagRepositoryInterface $bloodBagRepository,
+        DiaryRepositoryInterFace $diaryRepository
     ) {
         $this->repository = $repository;
         $this->requestRepository = $requestRepository;
         $this->bloodBagRepository = $bloodBagRepository;
+        $this->diaryRepository = $diaryRepository;
     }
 
     public function index()
@@ -122,6 +126,7 @@ class WareHouseController extends Controller
     {
         $this->bloodBagRepository->confirm($id2);
         $this->requestRepository->confirm($id);
+        $this->diaryRepository->save($id, 'Xuất túi máu');
 
         return redirect()->route('export-bloods.index');
     }
