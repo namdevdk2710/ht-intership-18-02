@@ -39,9 +39,7 @@
                     </select>
                 </td>
                 <td>
-                    <button type="submit" class="btn btn-sm btn-danger">
-                        Nhập kho
-                    </button>
+                    {!! Form::button('Nhập kho', ['class' => 'btn btn-sm btn-danger', 'type' => 'submit']) !!}
                 </td>
             </tr>
             {!! Form::close() !!}
@@ -55,9 +53,9 @@
 </div>
 
 <script>
-    $(".btn-danger").click(function() {
-        return confirm("Bạn có muốn nhập túi máu này vào kho?");
-    });
+$(".btn-danger").click(function() {
+    return confirm("Bạn có muốn nhập túi máu này vào kho?");
+});
 </script>
 
 @endsection

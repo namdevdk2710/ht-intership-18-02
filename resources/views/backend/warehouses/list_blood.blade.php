@@ -38,14 +38,19 @@
                 @endphp
 
                 <form action="{{route('confirm-request', [end($a), $bloodbag->id ])}}" method="GET">
-                    <button type="submit">
+                    <button type="submit" class="btn btn-sm btn-danger">
                         Xuất
                     </button>
                 </form>
             </td>
         </tr>
         @endif
-
         @endforeach
     </tbody>
 </table>
+
+<script>
+$(".btn-danger").click(function() {
+    return confirm("Bạn có muốn xuất túi máu này?");
+});
+</script>
