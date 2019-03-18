@@ -8,7 +8,6 @@ use App\Repositories\V1\Diary\DiaryRepositoryInterFace;
 
 class DiaryController extends Controller
 {
-
     protected $repository;
 
     public function __construct(DiaryRepositoryInterFace $repository)
