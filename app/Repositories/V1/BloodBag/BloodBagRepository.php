@@ -76,8 +76,11 @@ class BloodBagRepository extends BaseRepository implements BloodBagRepositoryInt
     public function getImport()
     {
         $bloodBag = $this->model->where('status', 1)
+                    ->where('note', '<>', 'Hỏng')
                     ->where('note', '<>', 'Đã nhập kho')
-                    ->orWhere('note', null)->paginate(6);
+                    ->where('note', '<>', 'Đã xuất')
+                    ->where('note', '<>', 'Hết hạn')
+                    ->orwhere('status', 1)->where('note', null)->paginate(6);
 
         return $bloodBag;
     }
@@ -87,6 +90,22 @@ class BloodBagRepository extends BaseRepository implements BloodBagRepositoryInt
         $bloodBag = $this->model->find($id);
         $bloodBag->wareHouse_id = $request->warehouse_id;
         $bloodBag->note = 'Đã nhập kho';
+        $bloodBag->save();
+
+        return $bloodBag;
+    }
+
+    public function listBloodBagInWareHouse()
+    {
+        $bloodBag = $this->model->where('status', 1)->where('note', 'Đã nhập kho')->get();
+
+        return $bloodBag;
+    }
+    
+    public function updateStatus($id, $request)
+    {
+        $bloodBag = $this->model->find($id);
+        $bloodBag->note = $request->note;
         $bloodBag->save();
 
         return $bloodBag;

@@ -6,4 +6,6 @@ interface BloodBagRepositoryInterface
 {
     public function getResultByRequestId($id);
     public function confirm($id);
+    public function listBloodBagInWareHouse();
+    public function updateStatus($id, $request);
 }
