@@ -33,7 +33,6 @@
                 <td>Đạt yêu cầu</td>
                 <td>
                     <select name="warehouse_id" id="select-warehouse">
-                        <option value="">---Chọn kho máu---</option>
                         @foreach($warehouses as $warehouse )
                         <option value="{{$warehouse->id}}">{{$warehouse->name}}</option>
                         @endforeach

@@ -33,8 +33,15 @@
             </label>
         </div>
         {!! Form::open(['method' => 'POST', 'route' => ['updateStatus', $bloodbag->id]]) !!}
-        <div class="col-md-4 col-md-push-3 form-group export-status">
-            <label class="">Trạng thái:</label>
+        <div class="col-md-12 export-tr">
+            <label class="col-md-4">Kho máu:
+                <span>{{$bloodbag->wareHouse->name}}</span>
+            </label>
+            <div class="col-md-4">
+                <label class="">Trạng thái:</label>
+                {!! Form::select('note',[ 'Đã nhập kho' => 'Đã nhập kho', 'Hỏng' => 'Hỏng', 'Hết hạn' => 'Hết hạn'],
+                ['id' => 'select-warehouse']) !!}
+            </div>
         </div>
     </div>
     <div class="col-md-12 export-tr" align="right">
