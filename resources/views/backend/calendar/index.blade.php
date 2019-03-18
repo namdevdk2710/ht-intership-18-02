@@ -12,12 +12,6 @@
         </div>
     </div>
     <table class="table table-hover">
-        <div class="form-group col-md-4 inputSearch">
-            <label class="col-md-2 lable-search">Search:</label>
-            <div class="col-sm-8">
-                <input class="form-control myInput" type="text" placeholder="Search..">
-            </div>
-        </div>
         <thead>
             <tr>
                 <th scope="col" class="text-center">Stt</th>
