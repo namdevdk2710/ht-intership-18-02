@@ -60,6 +60,11 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
         Route::get('/import-blood', 'V1\Web\Backend\WareHouseController@getImport')->name('import-loods.index');
         Route::post('/import-blood/{id}', 'V1\Web\Backend\WareHouseController@import')->name('import-loods');
     });
+
+    Route::group(['prefix' => 'diary'], function () {
+        Route::get('/', 'V1\Web\Backend\DiaryController@index')->name('diary.index');
+        Route::post('/', 'V1\Web\Backend\DiaryController@search')->name('diary.search');
+    });
 });
 
 Route::group(['prefix' => 'users'], function () {
