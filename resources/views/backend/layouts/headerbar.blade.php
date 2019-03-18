@@ -1,8 +1,8 @@
 <header class="header fixed-top clearfix">
 <!--logo start-->
 <div class="brand">
-    <a href="index.html" class="logo">
-        VISITORS
+    <a href="" class="logo">
+        BLOOD
     </a>
     <div class="sidebar-toggle-box">
         <div class="fa fa-bars"></div>
@@ -201,9 +201,8 @@
                 <b class="caret"></b>
             </a>
             <ul class="dropdown-menu extended logout">
-                <li><a href="{{ route('user.profile') }}"><i class=" fa fa-suitcase"></i>Profile</a></li>
-                <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
-                <li><a href="{{ route('admin.logout') }}"><i class="fa fa-key"></i> Log Out</a></li>
+                <li><a href="{{ route('user.profile') }}"><i class=" fa fa-suitcase"></i>Thông tin cá nhân</a></li>
+                <li><a href="{{ route('admin.logout') }}"><i class="fa fa-key"></i> Đăng xuất</a></li>
             </ul>
         </li>
         <!-- user login dropdown end -->
