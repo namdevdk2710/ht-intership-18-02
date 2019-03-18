@@ -58,5 +58,8 @@
             @endforeach
         </tbody>
     </table>
+    <div class="pagination-wrapper">
+        {{ $calendars->links() }}
+    </div>
 </div>
 @endsection

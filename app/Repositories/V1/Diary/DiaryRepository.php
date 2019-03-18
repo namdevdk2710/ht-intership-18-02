@@ -6,9 +6,6 @@ use App\Repositories\BaseRepository;
 use App\Models\Diary;
 use Illuminate\Support\Facades\Auth;
 
-
-use DB;
-
 class DiaryRepository extends BaseRepository implements DiaryRepositoryInterface
 {
     public function getModel()
@@ -32,7 +29,7 @@ class DiaryRepository extends BaseRepository implements DiaryRepositoryInterface
 
     public function search($request)
     {
-        if ($request->input('search') == "") {
+        if ($request->input('search') == '') {
             return $this->model->paginate(7);
         }
         if ($request->input('code') == 'request_id') {
