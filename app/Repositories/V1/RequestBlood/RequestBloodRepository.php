@@ -58,6 +58,5 @@ class RequestBloodRepository extends BaseRepository implements RequestBloodRepos
         } else {
             return ['hasRequest' => false];
         }
-
     }
 }

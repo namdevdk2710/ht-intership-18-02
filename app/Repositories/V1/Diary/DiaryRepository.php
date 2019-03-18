@@ -13,9 +13,10 @@ class DiaryRepository extends BaseRepository implements DiaryRepositoryInterface
         return Diary::class;
     }
 
-    public function save($request_id, $note) {
+    public function save($requestId, $note)
+    {
         return $this->model->create([
-            'request_blood_id' => $request_id,
+            'request_blood_id' => $requestId,
             'user_id' => Auth::id(),
             'note' => $note,
         ]);
