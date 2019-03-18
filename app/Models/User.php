@@ -22,4 +22,9 @@ class User extends Model
     {
         return $this->hasOne('App\Models\RequestBlood');
     }
+
+    public function diaries()
+    {
+        return $this->hasMany('App\Models\Diary');
+    }
 }

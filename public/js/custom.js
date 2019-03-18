@@ -153,20 +153,26 @@ $(document).ready(function () {
                     _token: token,
                 },
                 success: function (data) {
-                    $('#import-user-info .import-user-info-name').text(data.fullname);
-                    $('#import-user-info .import-user-info-birthday').text(data.birthday);
-                    $('#import-user-info .import-user-info-gender').text(data.gender);
-                    $('#import-user-info .import-user-info-cmnd').text(data.cmnd);
-                    $('#import-user-info .import-user-info-time').text(data.time);
-                    $('#import-user-info .import-user-info-blood').text(data.blood);
-                    if (data.hasBag) {
-                        $('#js-import-bloodbag-result').hide();
-                        $('#js-import-bloodbag-result-submit').hide();
-                        $('#js-import-bloodbag-no-result').show();
+                    console.log(data.hasRequest);
+                    if (!data.hasRequest) {
+                        $('#js-import-bloodbag-no-request').show();
                     } else {
-                        $('#js-import-bloodbag-result').show();
-                        $('#js-import-bloodbag-result-submit').show();
-                        $('#js-import-bloodbag-no-result').hide();
+                        $('#js-import-bloodbag-no-request').hide();
+                        $('#import-user-info .import-user-info-name').text(data.fullname);
+                        $('#import-user-info .import-user-info-birthday').text(data.birthday);
+                        $('#import-user-info .import-user-info-gender').text(data.gender);
+                        $('#import-user-info .import-user-info-cmnd').text(data.cmnd);
+                        $('#import-user-info .import-user-info-time').text(data.time);
+                        $('#import-user-info .import-user-info-blood').text(data.blood);
+                        if (data.hasBag) {
+                            $('#js-import-bloodbag-result').hide();
+                            $('#js-import-bloodbag-result-submit').hide();
+                            $('#js-import-bloodbag-no-result').show();
+                        } else {
+                            $('#js-import-bloodbag-result').show();
+                            $('#js-import-bloodbag-result-submit').show();
+                            $('#js-import-bloodbag-no-result').hide();
+                        }
                     }
                 }
             });

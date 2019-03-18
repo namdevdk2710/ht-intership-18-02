@@ -66,6 +66,12 @@
                         <li><a href="{{route('export-bloods.index')}}">Xuất túi máu</a></li>
                     </ul>
                 </li>
+                <li>
+                    <a class="{{(Request::path() == 'admin/diary' )? 'active' : '' }}" href="{{ route('diary.index') }}">
+                        <i class="fa fa-clipboard"></i>
+                        <span>Nhật ký</span>
+                    </a>
+                </li>
             </ul>
         </div>
         <!-- sidebar menu end-->

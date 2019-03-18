@@ -22,4 +22,9 @@ class RequestBlood extends Model
     {
         return $this->hasMany('App\Models\BloodBag');
     }
+
+    public function diary()
+    {
+        return $this->hasOne('App\Models\Diary');
+    }
 }

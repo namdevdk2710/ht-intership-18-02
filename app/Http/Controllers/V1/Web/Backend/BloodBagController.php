@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Repositories\V1\RequestBlood\RequestBloodRepositoryInterFace;
 use App\Repositories\V1\BloodBag\BloodBagRepositoryInterFace;
 use App\Repositories\V1\WareHouse\WareHouseRepositoryInterFace;
+use App\Repositories\V1\Diary\DiaryRepositoryInterFace;
 use App\Http\Requests\BloodBagRequest;
 
 class BloodBagController extends Controller
@@ -14,15 +15,18 @@ class BloodBagController extends Controller
     protected $requestBloodRepository;
     protected $bloodBagRepository;
     protected $wareHouseRepository;
+    protected $diaryRepository;
 
     public function __construct(
         RequestBloodRepositoryInterFace $requestBloodRepository,
         BloodBagRepositoryInterFace $bloodBagRepository,
-        WareHouseRepositoryInterFace $wareHouseRepository
+        WareHouseRepositoryInterFace $wareHouseRepository,
+        DiaryRepositoryInterFace $diaryRepository
     ) {
         $this->requestBloodRepository = $requestBloodRepository;
         $this->bloodBagRepository = $bloodBagRepository;
         $this->wareHouseRepository = $wareHouseRepository;
+        $this->diaryRepository = $diaryRepository;
     }
 
     public function getImport()
@@ -44,6 +48,7 @@ class BloodBagController extends Controller
     public function store(BloodBagRequest $request)
     {
         $this->bloodBagRepository->store($request);
+        $this->diaryRepository->save($request->input('request_blood_id'), 'Nhập túi máu');
 
         return back();
     }

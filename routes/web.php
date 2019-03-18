@@ -62,6 +62,11 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
         Route::get('/blood-bag/{id}', 'V1\Web\Backend\WareHouseController@detailBloodBag')->name('blood-bags.updateStatus');
         Route::post('/blood-bag/{id}', 'V1\Web\Backend\WareHouseController@updateStatus')->name('updateStatus');
     });
+
+    Route::group(['prefix' => 'diary'], function () {
+        Route::get('/', 'V1\Web\Backend\DiaryController@index')->name('diary.index');
+        Route::post('/', 'V1\Web\Backend\DiaryController@search')->name('diary.search');
+    });
 });
 
 Route::group(['prefix' => 'users'], function () {
