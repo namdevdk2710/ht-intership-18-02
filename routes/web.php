@@ -60,7 +60,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
         Route::get('/import-blood', 'V1\Web\Backend\WareHouseController@getImport')->name('import-loods.index');
         Route::post('/import-blood/{id}', 'V1\Web\Backend\WareHouseController@import')->name('import-loods');
         Route::get('/blood-bag', 'V1\Web\Backend\WareHouseController@listBloodBag')->name('blood-bags.index');
-        Route::get('/blood-bag/{id}', 'V1\Web\Backend\WareHouseController@detailBloodBag')->name('blood-bags.updateStatus');
+        Route::get('/blood-bag/{id}', 'V1\Web\Backend\WareHouseController@detailBloodBag')
+        ->name('blood-bags.updateStatus');
         Route::post('/blood-bag/{id}', 'V1\Web\Backend\WareHouseController@updateStatus')->name('updateStatus');
     });
 

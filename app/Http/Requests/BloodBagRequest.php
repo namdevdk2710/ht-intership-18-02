@@ -26,7 +26,6 @@ class BloodBagRequest extends FormRequest
         return [
             'unit' => 'required|numeric',
             'request_blood_id' => 'required|numeric',
-            'note' =>'required',
         ];
     }
 
