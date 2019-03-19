@@ -27,7 +27,7 @@ class AdminController extends Controller
         CalendarRepositoryInterFace $calendarRepository,
         DiaryRepositoryInterFace $diaryRepository,
         BloodBagRepositoryInterFace $bloodBagRepository
-        ) {
+    ) {
         $this->userRepository = $userRepository;
         $this->requestBloodRepository = $requestBloodRepository;
         $this->calendarRepository = $calendarRepository;
