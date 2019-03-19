@@ -164,6 +164,6 @@ class WareHouseController extends Controller
     {
         $this->bloodBagRepository->updateStatus($id, $request);
 
-        return redirect()->route('blood-bags.index')->with('success', 'Cập nhập thành công');;
+        return redirect()->route('blood-bags.index')->with('success', 'Cập nhập thành công');
     }
 }
