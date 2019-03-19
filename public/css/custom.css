@@ -264,3 +264,9 @@
     background-size: cover;
     -webkit-background-size: cover;
 }
+/* span-color-in-export-blood */
+.span-color{
+    color: red;
+    font-weight: normal;
+    padding-left: .5em;
+}

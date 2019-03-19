@@ -39,21 +39,21 @@ class CalendarController extends Controller
     {
         $this->calendarRepository->store($request->all());
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Thêm thành công');
     }
 
     public function delete($id)
     {
         $this->calendarRepository->destroy($id);
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Xóa thành công');
     }
 
     public function update(CalendarFormRequest $request, $id)
     {
         $this->calendarRepository->update($id, $request);
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Cập nhập thành công');
     }
 
     public function showDistrictInCity(Request $request)

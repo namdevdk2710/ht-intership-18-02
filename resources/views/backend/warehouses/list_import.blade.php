@@ -52,6 +52,12 @@
     </div>
 </div>
 
+@if (session('success'))
+<script>
+    alert('{{ session('success') }}');
+</script>
+@endif
+
 <script>
 $(".btn-danger").click(function() {
     return confirm("Bạn có muốn nhập túi máu này vào kho?");

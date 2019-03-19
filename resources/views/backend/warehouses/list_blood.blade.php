@@ -4,14 +4,13 @@
 </div>
 <table class="table table-hover">
     <thead>
-        <tr class="text-center">
-            <th scope="col">STT</th>
-            <th scope="col">Mã túi máu</th>
-            <th scope="col">Kho</th>
-            <th scope="col">Nhóm máu</th>
-            <th scope="col">Thể tích</th>
-            <th scope="col">Ngày hết hạn</th>
-            <th scope="col">Thao tác</th>
+        <tr>
+            <th scope="col"  class="text-center">Mã túi máu</th>
+            <th scope="col"  class="text-center">Kho</th>
+            <th scope="col"  class="text-center">Nhóm máu</th>
+            <th scope="col"  class="text-center">Thể tích</th>
+            <th scope="col" class="text-center">Ngày hết hạn</th>
+            <th scope="col" class="text-center">Thao tác</th>
         </tr>
     </thead>
     <tbody>
@@ -19,8 +18,7 @@
 
         @if ($bloodbag->requestBlood->user->information->bloodgroup->name
             == $requests->user->information->bloodgroup->name)
-        <tr>
-            <td>{{$key + 1}}</td>
+        <tr class="text-center">
             <td>{{$bloodbag->id}}</td>
             <td>{{$bloodbag->wareHouse->name}}</td>
             <td>{{$bloodbag->requestBlood->user->information->bloodgroup->name}}</td>
@@ -46,6 +44,12 @@
         @endforeach
     </tbody>
 </table>
+
+@if (session('success'))
+<script>
+    alert('{{ session('success') }}');
+</script>
+@endif
 
 <script>
 $(".btn-danger").click(function() {

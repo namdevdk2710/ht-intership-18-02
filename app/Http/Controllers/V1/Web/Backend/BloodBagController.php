@@ -50,7 +50,7 @@ class BloodBagController extends Controller
         $this->bloodBagRepository->store($request);
         $this->diaryRepository->save($request->input('request_blood_id'), 'Nhập túi máu');
 
-        return back();
+        return back()->with('success', 'Nhập túi máu thành công');
     }
 
     public function getSearch()

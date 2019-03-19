@@ -54,7 +54,7 @@
                         Sữa
                     </a>
                     @include('backend.users.edit')
-                    <button type="button" value="{{$user->id}}" class="btn btn-sm btn-danger">
+                    <button type="button" value="{{$user->id}}" class="btn btn-sm btn-danger submit">
                         Xóa
                     </button>
                 </td>
@@ -66,6 +66,25 @@
         {{$users->links()}}
     </div>
 </div>
+
+@if ($errors->any())
+<script>
+    var str = "";
+</script>
+@foreach($errors->all() as $error)
+<script>
+    str = str.concat('{{ $error }}' + '\n');
+</script>
+@endforeach
+<script>
+    alert(str);
+</script>
+@endif
+@if (session('success'))
+<script>
+    alert('{{ session('success') }}');
+</script>
+@endif
 
 <script>
 $(document).ready(function() {
