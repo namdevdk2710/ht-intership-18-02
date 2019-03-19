@@ -237,3 +237,24 @@
 .export-status{
     padding-top: 1em;
 }
+.dashboard-icon-custom{
+    font-size: 3em;
+    color: #fff;
+    text-align: left;
+}
+.dashboard-notification-heading {
+    position: relative;
+    height: 57px;
+    line-height: 57px;
+    letter-spacing: 0.2px;
+    color: #000;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 0px 16px;
+    margin-bottom: 16px;
+    background:#ddede0;
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+    text-transform: uppercase;
+    text-align: center;
+}

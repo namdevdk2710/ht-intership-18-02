@@ -8,4 +8,5 @@ interface BloodBagRepositoryInterface
     public function confirm($id);
     public function listBloodBagInWareHouse();
     public function updateStatus($id, $request);
+    public function getDashboardData();
 }
