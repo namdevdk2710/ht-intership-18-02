@@ -44,7 +44,7 @@
     <div class="col-md-3 market-update-gd">
         <div class="market-update-block clr-block-4">
             <div class="col-md-4 market-update-right">
-                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <i class="fa fa-tint dashboard-icon-custom" aria-hidden="true"></i>
             </div>
             <div class="col-md-8 market-update-left">
                 <h4>Lượng máu</h4>
