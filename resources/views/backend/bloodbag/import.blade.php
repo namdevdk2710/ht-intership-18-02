@@ -2,21 +2,10 @@
 @section('content')
 <div class="table-responsive blood-bag">
     <div class='calendar-table-header'>
-        <span
-            class="calendar-table-header-title text-center text-uppercase col-12">Nhập
+        <span class="calendar-table-header-title text-center text-uppercase col-12">Nhập
             túi máu</span>
     </div>
     <div class="row">
-        @if ($errors->any())
-        <div
-            class="alert alert-danger col-sm-offset-4 col-sm-4 col-sm-offset-4">
-            <ul class=''>
-                @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-        @endif
     </div>
     {!! Form::open(['method' => 'POST', 'route' => 'blood-bags.store' ]) !!}
     <div class="import-title">
@@ -37,4 +26,22 @@
     </div>
     {!! Form::close() !!}
 </div>
+@if ($errors->any())
+<script>
+    var str = "";
+</script>
+@foreach($errors->all() as $error)
+<script>
+    str = str.concat('{{ $error }}' + '\n');
+</script>
+@endforeach
+<script>
+    alert(str);
+</script>
+@endif
+@if (session('success'))
+<script>
+    alert('{{ session('success') }}');
+</script>
+@endif
 @endsection

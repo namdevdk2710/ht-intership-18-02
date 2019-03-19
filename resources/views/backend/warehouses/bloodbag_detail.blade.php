@@ -54,7 +54,7 @@
 
 <script>
 $(".btn-danger").click(function() {
-    return confirm("Bạn có muốn nhập trạng thái túi máu này?");
+    return confirm("Bạn có muốn thay đổi trạng thái túi máu này?");
 });
 </script>
 

@@ -54,7 +54,7 @@ class UserController extends Controller
     {
         $this->userRepository->store($request->only('username', 'email', 'password', 'role'));
 
-        return redirect()->route('users.list');
+        return redirect()->route('users.list')->with('success', 'Thêm người dùng thành công');
     }
 
     public function show($id)

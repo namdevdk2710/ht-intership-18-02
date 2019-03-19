@@ -55,7 +55,7 @@ class WareHouseController extends Controller
     {
         $this->repository->store($request->all());
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Thêm thành công');
     }
 
     /**
@@ -128,7 +128,7 @@ class WareHouseController extends Controller
         $this->requestRepository->confirm($id);
         $this->diaryRepository->save($id, 'Xuất túi máu');
 
-        return redirect()->route('export-bloods.index');
+        return redirect()->route('export-bloods.index')->with('success', 'Xuất túi máu thành công');
     }
 
     public function getImport()
@@ -143,7 +143,7 @@ class WareHouseController extends Controller
     {
         $this->bloodBagRepository->confirmImport($id, $request);
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Nhập kho thành công');
     }
 
     public function listBloodBag()
@@ -164,6 +164,6 @@ class WareHouseController extends Controller
     {
         $this->bloodBagRepository->updateStatus($id, $request);
 
-        return redirect()->route('blood-bags.index');
+        return redirect()->route('blood-bags.index')->with('success', 'Cập nhập thành công');
     }
 }

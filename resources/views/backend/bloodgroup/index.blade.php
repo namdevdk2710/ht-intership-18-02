@@ -45,6 +45,25 @@
     </div>
 </div>
 
+@if ($errors->any())
+<script>
+    var str = "";
+</script>
+@foreach($errors->all() as $error)
+<script>
+    str = str.concat('{{ $error }}' + '\n');
+</script>
+@endforeach
+<script>
+    alert(str);
+</script>
+@endif
+@if (session('success'))
+<script>
+    alert('{{ session('success') }}');
+</script>
+@endif
+
 <script>
 $(document).ready(function() {
     var button = $('.btn-danger');
