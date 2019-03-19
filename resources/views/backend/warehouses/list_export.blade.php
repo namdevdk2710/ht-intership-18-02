@@ -9,14 +9,8 @@
     </div>
     <table class="table table-hover">
         <thead>
-            <div class="form-group col-md-4 inputSearch">
-                <label class="col-md-2 lable-search">Search:</label>
-                <div class="col-sm-8">
-                    <input class="form-control myInput" type="text" placeholder="Search..">
-                </div>
-            </div>
             <tr>
-                <th scope="col" class="text-center">Stt</th>
+                <th scope="col" class="text-center">Mã</th>
                 <th scope="col" class="text-center">E-Mail</th>
                 <th scope="col" class="text-center text-nowrap">Trạng thái</th>
                 <th scope="col" class="text-center">Nội dung</th>
@@ -27,8 +21,8 @@
         <tbody id= "body-received">
             @foreach($requestBloods as $key => $requestBlood)
             <tr>
-                <td scope="row" class="text-center">{{ $key +1 }}</td>
-                <td class="text-left">{{ $requestBlood->user->email }}</td>
+                <td scope="row" class="text-center">{{ $requestBlood->id }}</td>
+                <td class="text-center">{{ $requestBlood->user->email }}</td>
                 @if ($requestBlood->status == 1)
                 <td scope="row" class="text-center">
                     <strong class="text-success text-nowrap">Đã nhận</strong>
@@ -38,8 +32,8 @@
                     <strong class="text-muted text-nowrap">Chưa nhận</strong>
                 </td>
                 @endif
-                <td class="text-left">{{ $requestBlood->content }}</td>
-                <td class="text-left text-nowrap">
+                <td class="text-center">{{ $requestBlood->content }}</td>
+                <td class="text-center text-nowrap">
                     {{ $requestBlood->calendar->time }}</td>
                 <td scope="row" class="text-center">
                     <a href="{{route('export-request', $requestBlood->id)}}"
@@ -55,5 +49,11 @@
         {{ $requestBloods->links() }}
     </div>
 </div>
+
+@if (session('success'))
+<script>
+    alert('{{ session('success') }}');
+</script>
+@endif
 
 @endsection

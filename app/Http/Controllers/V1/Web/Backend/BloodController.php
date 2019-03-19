@@ -27,7 +27,7 @@ class BloodController extends Controller
     {
         $this->bloodRepository->store($request->all());
 
-        return redirect()->route('bloods.list');
+        return redirect()->route('bloods.list')->with('success', 'Thêm thành công');
     }
 
     public function show($id)
@@ -44,7 +44,7 @@ class BloodController extends Controller
     {
         $this->bloodRepository->update($id, $request->all());
 
-        return redirect()->route('bloods.list')->with('success', 'Successfull!');
+        return redirect()->route('bloods.list')->with('success', 'Chỉnh sửa thành công');
     }
 
     public function destroy($id)

@@ -9,6 +9,13 @@
                 <h4 class="text-center">Thêm người dùng</h4>
             </div>
             <div class="modal-body">
+                @if ($errors->any())
+                <div class="alert alert-danger">
+                        @foreach ($errors->all() as $error)
+                            {{ $error }}
+                        @endforeach
+                </div>
+                @endif
                 {!! Form::open(['method' => 'POST', 'route' => ['users.store'],'id' =>'addUser']) !!}
                 <div class="form-group form-padding">
                     {!! Form::label('Tên người dùng:', null, ['class' => 'col-sm-4']) !!}

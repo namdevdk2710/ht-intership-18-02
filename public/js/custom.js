@@ -368,4 +368,9 @@ $(document).ready(function () {
             $('#js-add-calendar-form').submit();
         }
     })
+
+    $(".submit").click(function(evt){
+        evt.preventDefault();
+        $('#exampleModalLong').modal('show');
+    });
 });

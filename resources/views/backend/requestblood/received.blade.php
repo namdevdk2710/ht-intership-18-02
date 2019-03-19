@@ -8,19 +8,19 @@
     <table class="table table-hover">
         <thead>
             <tr>
-                <th scope="col" class="text-center">Stt</th>
+                <th scope="col" class="text-center">Mã</th>
                 <th scope="col" class="text-center">E-Mail</th>
                 <th scope="col" class="text-center text-nowrap">Trạng thái</th>
                 <th scope="col" class="text-center">Nội dung</th>
                 <th scope="col" class="text-center text-nowrap">Thời gian</th>
-                <th scope="col" class="text-center text-nowrap">Xác nhận</th>
+                <th scope="col" class="text-center text-nowrap">Thao tác</th>
             </tr>
         </thead>
-        <tbody id= "body-received">
+        <tbody id="body-received">
             @foreach($requestBloods as $key => $requestBlood)
             <tr>
-                <td scope="row" class="text-center">{{ $key +1 }}</td>
-                <td class="text-left">{{ $requestBlood->user->email }}</td>
+                <td scope="row" class="text-center">{{ $requestBlood->id }}</td>
+                <td class="text-center">{{ $requestBlood->user->email }}</td>
                 @if ($requestBlood->status == 1)
                 <td scope="row" class="text-center">
                     <strong class="text-success text-nowrap">Đã nhận</strong>
@@ -30,15 +30,22 @@
                     <strong class="text-muted text-nowrap">Chưa nhận</strong>
                 </td>
                 @endif
-                <td class="text-left">{{ $requestBlood->content }}</td>
-                <td class="text-left text-nowrap">
+                <td class="text-center">{{ $requestBlood->content }}</td>
+                <td class="text-center text-nowrap">
                     {{ $requestBlood->calendar->time }}</td>
+                @if($requestBlood->status == 1)
+                <td class="text-center">
+                    <p class="text-danger">
+                        Đã nhận
+                    </p>
+                </td>
+                @else
                 <td scope="row" class="text-center">
-                    <a href="{{route('export-request', $requestBlood->id)}}"
-                        class="btn-sm btn-primary text-nowrap">
+                    <a href="{{route('export-request', $requestBlood->id)}}">
                         Xác nhận
                     </a>
                 </td>
+                @endif
             </tr>
             @endforeach
         </tbody>
@@ -47,4 +54,12 @@
         {{ $requestBloods->links() }}
     </div>
 </div>
+
+@if (session('success'))
+<script>
+alert('{{ session('
+    success ') }}');
+</script>
+@endif
+
 @endsection

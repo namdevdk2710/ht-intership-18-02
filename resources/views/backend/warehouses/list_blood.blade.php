@@ -47,6 +47,12 @@
     </tbody>
 </table>
 
+@if (session('success'))
+<script>
+    alert('{{ session('success') }}');
+</script>
+@endif
+
 <script>
 $(".btn-danger").click(function() {
     return confirm("Bạn có muốn xuất túi máu này?");
