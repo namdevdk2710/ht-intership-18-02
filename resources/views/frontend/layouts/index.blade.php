@@ -40,6 +40,7 @@
 <body>
     @include('frontend.layouts.header')
     @include('frontend.layouts.banner')
+    @include('frontend.layouts.introducation')
     @include('frontend.layouts.footer')
 
     <!-- Js files -->

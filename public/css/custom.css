@@ -258,3 +258,9 @@
     text-transform: uppercase;
     text-align: center;
 }
+/* frontend home */
+.fe-information-bg{
+    background: url('http://daihocnguyentrai.edu.vn/wp-content/uploads/2015/11/hien-mau.jpg') no-repeat center fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+}
