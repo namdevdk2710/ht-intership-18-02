@@ -4,9 +4,9 @@
 
 <div class="request-blood table-responsive">
     <div class="request-blood-header">
-        <span class="text-center text-uppercase">
+        <h3 class="text-center text-uppercase">
             Xuất túi máu
-        </span>
+        </h3>
     </div>
     <table class="table">
         <tbody>

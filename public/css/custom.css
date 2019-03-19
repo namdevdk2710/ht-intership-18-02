@@ -258,3 +258,9 @@
     text-transform: uppercase;
     text-align: center;
 }
+/* span-color-in-export-blood */
+.span-color{
+    color: red;
+    font-weight: normal;
+    padding-left: .5em;
+}
