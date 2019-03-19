@@ -43,4 +43,9 @@ class DiaryRepository extends BaseRepository implements DiaryRepositoryInterface
                         ->paginate(7);
         }
     }
+
+    public function getDashboardData()
+    {
+        return $this->model->orderBy('created_at', 'desc')->get();
+    }
 }

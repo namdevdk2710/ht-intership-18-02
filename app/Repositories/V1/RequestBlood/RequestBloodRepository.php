@@ -59,4 +59,9 @@ class RequestBloodRepository extends BaseRepository implements RequestBloodRepos
             return ['hasRequest' => false];
         }
     }
+
+    public function getDashboardData()
+    {
+        return $this->model->orderBy('created_at', 'desc')->get();
+    }
 }

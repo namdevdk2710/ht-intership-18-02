@@ -38,4 +38,9 @@ class CalendarRepository extends BaseRepository implements CalendarRepositoryInt
 
         return $calendar->save();
     }
+
+    public function getDashboardData()
+    {
+        return $this->model->where('time', '>', now())->get();
+    }
 }
