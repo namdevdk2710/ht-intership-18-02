@@ -8,4 +8,5 @@ interface UserRepositoryInterface
     public function logout();
     public function userLogin($request);
     public function changeAdminPassword($request);
+    public function getDashboardData();
 }

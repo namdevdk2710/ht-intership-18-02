@@ -101,7 +101,7 @@ class BloodBagRepository extends BaseRepository implements BloodBagRepositoryInt
 
         return $bloodBag;
     }
-    
+
     public function updateStatus($id, $request)
     {
         $bloodBag = $this->model->find($id);
@@ -109,5 +109,10 @@ class BloodBagRepository extends BaseRepository implements BloodBagRepositoryInt
         $bloodBag->save();
 
         return $bloodBag;
+    }
+
+    public function getDashboardData()
+    {
+        return $this->model->where('note', 'Đã nhập kho')->get();
     }
 }

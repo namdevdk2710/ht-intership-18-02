@@ -4,8 +4,8 @@
         <div class="leftside-navigation">
             <ul class="sidebar-menu" id="nav-accordion">
                 <li>
-                    <a class="{{( Request::path() === 'admin/index'
-                        || Request::path() === 'admin' )? 'active' : '' }}" href="">
+                    <a class="{{( Request::path() === 'admin/index' || Request::path() === 'admin' )? 'active' : '' }}"
+                        href="{{ route('admin.index') }}">
                         <i class="fa fa-dashboard"></i>
                         <span>Dashboard</span>
                     </a>

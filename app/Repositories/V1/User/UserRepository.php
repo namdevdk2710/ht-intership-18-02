@@ -105,4 +105,9 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
             return 'success';
         }
     }
+
+    public function getDashboardData()
+    {
+        return $this->model->all();
+    }
 }

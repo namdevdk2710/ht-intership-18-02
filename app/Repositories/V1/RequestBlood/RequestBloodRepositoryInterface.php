@@ -8,4 +8,5 @@ interface RequestBloodRepositoryInterface
     public function received();
     public function confirm($id);
     public function getById($id);
+    public function getDashboardData();
 }
