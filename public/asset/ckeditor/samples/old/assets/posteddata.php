@@ -31,13 +31,14 @@ For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
 
         if (!empty($_POST)) {
             foreach ($_POST as $key => $value) {
-                if (( !is_string($value) && !is_numeric($value) ) || !is_string($key))
+                if (( !is_string($value) && !is_numeric($value) ) || !is_string($key)) {
                     continue;
-
-                if ( get_magic_quotes_gpc() )
+                }
+                if (get_magic_quotes_gpc()) {
                     $value = htmlspecialchars(stripslashes((string)$value));
-                else
+                } else {
                     $value = htmlspecialchars((string)$value);
+                }
                 ?>
         <tr>
             <th style="vertical-align: top">
