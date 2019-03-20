@@ -270,3 +270,6 @@
     font-weight: normal;
     padding-left: .5em;
 }
+#deletePost{
+    display: inline;
+}

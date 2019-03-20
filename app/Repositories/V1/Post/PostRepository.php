@@ -64,4 +64,15 @@ class PostRepository extends BaseRepository implements PostRepositoryInterface
 
         return $post->save();
     }
+
+    public function destroy($id)
+    {
+        $post = $this->model->find($id);
+        $nameImageOld = 'uploads/images/' . $post->image_url;
+        if (file_exists(public_path($nameImageOld))) {
+            unlink(public_path($nameImageOld));
+        }
+
+        return $post->delete();
+    }
 }

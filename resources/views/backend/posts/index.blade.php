@@ -40,9 +40,10 @@
                         Sữa
                     </a>
                     @include('backend.posts.edit')
-                    <button type="button" value="{{$post->id}}" class="btn btn-sm btn-danger submit">
-                        Xóa
-                    </button>
+                    {!! Form::open(['method' => 'DELETE', 'route' => ['posts.destroy', $post->id], 'id' =>
+                    'deletePost']) !!}
+                    {!! Form::submit('Xóa', ['class' => 'btn btn-sm btn-danger'] )!!}
+                    {!! Form::close() !!}
                 </td>
             </tr>
             @endforeach
@@ -55,34 +56,26 @@
 
 @if ($errors->any())
 <script>
-    var str = "";
+var str = "";
 </script>
 @foreach($errors->all() as $error)
 <script>
-    str = str.concat('{{ $error }}' + '\n');
+str = str.concat('{{ $error }}' + '\n');
 </script>
 @endforeach
 <script>
-    alert(str);
+alert(str);
 </script>
 @endif
 @if (session('success'))
 <script>
-    alert('{{ session('success') }}');
+alert('{{ session('success') }}');
 </script>
 @endif
 
 <script>
-$(document).ready(function() {
-    var button = $('.btn-danger');
-    button.click(function() {
-        if (confirm("Bạn có muốn xóa người dùng này?")) {
-            var url = "{{ route('posts.destroy', ':id') }}";
-            url = url.replace(':id', $(this).val());
-            window.location.href = url;
-        }
-    });
+$(".btn-danger").click(function() {
+    return confirm('Bạn có muốn xóa tin này?');
 });
 </script>
-
 @endsection
