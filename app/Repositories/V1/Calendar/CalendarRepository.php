@@ -45,4 +45,11 @@ class CalendarRepository extends BaseRepository implements CalendarRepositoryInt
                     ->orderBy('time', 'asc')
                     ->get();
     }
+
+    public function getFutureCalendar($num)
+    {
+        return $this->model->where('time', '>', now())
+                    ->orderBy('time', 'asc')
+                    ->paginate($num);
+    }
 }

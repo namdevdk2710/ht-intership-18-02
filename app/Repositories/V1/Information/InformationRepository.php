@@ -37,12 +37,22 @@ class InformationRepository extends BaseRepository implements InformationReposit
 
     public function register($request, $userId)
     {
-        return $this->model->create([
+        $data = [
             'name' => $request->input('name'),
             'gender' => $request->input('gender'),
             'cmnd' => $request->input('cmnd'),
             'phone' => $request->input('phone'),
             'user_id' => $userId,
-        ]);
+        ];
+        $blood_id = $request->input('bloodgroup');
+        if (isset($blood_id)) {
+            $data['blood_id'] = $blood_id;
+        }
+        $dob = $request->input('dob');
+        if (isset($dob)) {
+            $data['dbo'] = $dob;
+        }
+
+        return $this->model->create($data);
     }
 }

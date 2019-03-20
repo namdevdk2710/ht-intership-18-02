@@ -114,12 +114,13 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
     public function registerDonated($request)
     {
         if (!$this->model->where('email', $request->email)->first()) {
-            $this->model->create([
+            $data = [
                 'username' => explode('@', $request->email)[0],
                 'email' => $request->email,
                 'password' => bcrypt('123456'),
                 'role' => 2,
-            ]);
+            ];
+            $this->model->create($data);
 
             return $this->model->orderBy('created_at', 'desc')->first()->id;
         } else {
