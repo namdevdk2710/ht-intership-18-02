@@ -68,22 +68,23 @@ class RequestBloodRepository extends BaseRepository implements RequestBloodRepos
 
     public function registerDonated($request, $calendarId, $userId)
     {
-        if (Auth::check()) {
-            return $this->model->create([
-                'user_id' => Auth::id(),
-                'calendar_id' => $calendarId,
-                'content' => 'Đăng ký hiến máu',
-                'status' => 0,
-                'type' => 'cho',
-            ]);
-        } else {
-            return $this->model->create([
+        return $this->model->create([
                 'user_id' => $userId,
                 'calendar_id' => $calendarId,
                 'content' => 'Đăng ký hiến máu',
                 'status' => 0,
                 'type' => 'cho',
             ]);
-        }
+    }
+
+    public function registerReceived($request, $userId)
+    {
+        return $this->model->create([
+                'user_id' => $userId,
+                'content' => 'Đăng ký nhận máu',
+                'status' => 0,
+                'type' => 'nhan',
+                'user_id' => $userId,
+        ]);
     }
 }

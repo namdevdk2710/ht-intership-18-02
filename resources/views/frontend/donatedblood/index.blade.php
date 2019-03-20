@@ -34,7 +34,7 @@
                         href="#">
                         Đăng ký
                     </a>
-                    @include('frontend.requestblood.confirm')
+                    @include('frontend.donatedblood.confirm')
                     @else
                     <a type="button" class="btn btn-danger btn-sm"
                         data-toggle="modal"
@@ -42,7 +42,7 @@
                         href="#">
                         Đăng ký
                     </a>
-                    @include('frontend.requestblood.register')
+                    @include('frontend.donatedblood.register')
                     @endif
                 </td>
             </tr>

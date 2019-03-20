@@ -6,4 +6,5 @@ interface CalendarRepositoryInterface
 {
     public function listCalendar($num);
     public function getDashboardData();
+    public function getFutureCalendar($num);
 }

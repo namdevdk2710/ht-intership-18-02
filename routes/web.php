@@ -9,6 +9,10 @@ Route::group(['prefix' => '/', 'namespace' => 'V1\Web\Frontend'], function () {
     ->name('requestBlood.getRegisterDonated');
     Route::post('/register-donate/{calendarId}', 'RequestBloodController@postRegisterDonated')
     ->name('requestBlood.postRegisterDonated');
+    Route::get('/register-received', 'RequestBloodController@getRegisterReceived')
+    ->name('requestBlood.getRegisterReceived');
+    Route::post('/register-received', 'RequestBloodController@postRegisterReceived')
+    ->name('requestBlood.postRegisterReceived');
 });
 //---------------------------Admin-Login----------------------------------------//
 Route::get('admin/login', 'V1\Web\Backend\AdminController@getLogin')->name('admin.getLogin');
