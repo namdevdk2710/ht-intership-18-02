@@ -29,7 +29,7 @@ class PostRepository extends BaseRepository implements PostRepositoryInterface
                 'title' => $request['title'],
                 'content' => $request['content'],
                 'user_id' => Auth::id(),
-                'image_url' =>  $imageUrl,
+                'image_url' => $imageUrl,
             ]);
         } else {
             $this->model->create([
