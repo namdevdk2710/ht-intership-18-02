@@ -87,7 +87,7 @@ class RequestBloodController extends Controller
                 return redirect()->back()->with('message', 'Đăng ký thất bại.');
             }
         }
-        if ($result == false){
+        if ($result == false) {
             return redirect()->back()->with('message', 'Đăng ký thất bại.');
         } else {
             return redirect()->back()->with('message', 'Đăng ký thành công.');

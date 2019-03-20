@@ -70,7 +70,7 @@ class RequestBloodRepository extends BaseRepository implements RequestBloodRepos
     {
         if ($this->model->where([
             ['user_id', $userId],
-            ['calendar_id', $calendarId]
+            ['calendar_id', $calendarId],
         ])->first()) {
             return false;
         }
@@ -89,7 +89,7 @@ class RequestBloodRepository extends BaseRepository implements RequestBloodRepos
         if ($this->model->where([
             ['user_id', $userId],
             ['type', 'nhan'],
-            ['status', false]
+            ['status', false],
         ])->first()) {
             return false;
         } else {
