@@ -27,4 +27,9 @@ class User extends Model
     {
         return $this->hasMany('App\Models\Diary');
     }
+
+    public function posts()
+    {
+        return $this->hasMany('App\Models\Post');
+    }
 }

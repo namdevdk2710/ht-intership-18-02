@@ -91,6 +91,13 @@
                         <span>Nhật ký hiến/nhận máu</span>
                     </a>
                 </li>
+                <li>
+                    <a class="{{(Request::path() == 'admin/posts' )? 'active' : '' }}"
+                        href="{{ route('posts.index') }}">
+                        <i class="fa fa-clipboard"></i>
+                        <span>Quản lý tin tức</span>
+                    </a>
+                </li>
             </ul>
         </div>
         <!-- sidebar menu end-->

@@ -27,6 +27,8 @@ use App\Repositories\V1\WareHouse\WareHouseRepository;
 use App\Repositories\V1\WareHouse\WareHouseRepositoryInterface;
 use App\Repositories\V1\Diary\DiaryRepository;
 use App\Repositories\V1\Diary\DiaryRepositoryInterface;
+use App\Repositories\V1\Post\PostRepository;
+use App\Repositories\V1\Post\PostRepositoryInterface;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -59,5 +61,6 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(BloodBagRepositoryInterface::class, BloodBagRepository::class);
         $this->app->bind(WareHouseRepositoryInterface::class, WareHouseRepository::class);
         $this->app->bind(DiaryRepositoryInterface::class, DiaryRepository::class);
+        $this->app->bind(PostRepositoryInterface::class, PostRepository::class);
     }
 }
