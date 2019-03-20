@@ -10,7 +10,7 @@ class Calendar extends Model
 
     public function getTimeAttribute($value)
     {
-        return date('h:m d-m-Y', strtotime($value));
+        return date('H:m d-m-Y', strtotime($value));
     }
 
     public function user()

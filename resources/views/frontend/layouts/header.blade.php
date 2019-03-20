@@ -83,7 +83,7 @@
                             </a>
                         </li>
                         <li class="nav-item mx-lg-4 my-lg-0 my-3">
-                            <a class="nav-link" data-toggle="modal" data-target="#calendarModal" href="">
+                            <a class="nav-link" href="{{ route('requestBlood.getRegisterDonated') }}">
                                 Đăng ký hiến máu
                             </a>
                         </li>
@@ -141,8 +141,7 @@
             </div>
         </nav>
     </div>
-    @include('frontend.calendar')
     @include('frontend.layouts.login')
     @include('frontend.layouts.register')
-    @include('frontend.users.profile')
+<!-- include('frontend.users.profile') -->
 </div>
