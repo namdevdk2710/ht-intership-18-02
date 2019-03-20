@@ -268,8 +268,14 @@
 .span-color{
     color: red;
     font-weight: normal;
-    padding-left: .5em;
 }
 #deletePost{
     display: inline;
+}
+.search-container{
+    padding-bottom: 4em;
+}
+.table-search{
+    line-height: 1em;
+    font-size: 91%;
 }
