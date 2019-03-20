@@ -13,9 +13,9 @@ class CalendarRepository extends BaseRepository implements CalendarRepositoryInt
         return Calendar::class;
     }
 
-    public function listCalendar()
+    public function listCalendar($num)
     {
-        return $this->model->paginate(5);
+        return $this->model->paginate($num);
     }
 
     public function store($data)
@@ -41,6 +41,8 @@ class CalendarRepository extends BaseRepository implements CalendarRepositoryInt
 
     public function getDashboardData()
     {
-        return $this->model->where('time', '>', now())->get();
+        return $this->model->where('time', '>', now())
+                    ->orderBy('time', 'asc')
+                    ->get();
     }
 }

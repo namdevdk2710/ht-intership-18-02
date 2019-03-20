@@ -9,4 +9,5 @@ interface UserRepositoryInterface
     public function userLogin($request);
     public function changeAdminPassword($request);
     public function getDashboardData();
+    public function registerDonated($request);
 }

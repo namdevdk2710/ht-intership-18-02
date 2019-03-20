@@ -4,6 +4,7 @@ namespace App\Repositories\V1\RequestBlood;
 
 use App\Repositories\BaseRepository;
 use App\Models\RequestBlood;
+use Illuminate\Support\Facades\Auth;
 
 class RequestBloodRepository extends BaseRepository implements RequestBloodRepositoryInterface
 {
@@ -63,5 +64,26 @@ class RequestBloodRepository extends BaseRepository implements RequestBloodRepos
     public function getDashboardData()
     {
         return $this->model->orderBy('created_at', 'desc')->get();
+    }
+
+    public function registerDonated($request, $calendarId, $userId)
+    {
+        if (Auth::check()) {
+            return $this->model->create([
+                'user_id' => Auth::id(),
+                'calendar_id' => $calendarId,
+                'content' => 'Đăng ký hiến máu',
+                'status' => 0,
+                'type' => 'cho',
+            ]);
+        } else {
+            return $this->model->create([
+                'user_id' => $userId,
+                'calendar_id' => $calendarId,
+                'content' => 'Đăng ký hiến máu',
+                'status' => 0,
+                'type' => 'cho',
+            ]);
+        }
     }
 }

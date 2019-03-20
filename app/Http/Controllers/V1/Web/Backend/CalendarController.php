@@ -29,7 +29,7 @@ class CalendarController extends Controller
 
     public function index()
     {
-        $calendars = $this->calendarRepository->listCalendar();
+        $calendars = $this->calendarRepository->listCalendar(5);
         $cities = $this->cityRepository->getCity();
 
         return view('backend.calendar.index', compact('calendars', 'cities'));

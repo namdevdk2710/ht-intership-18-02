@@ -297,9 +297,9 @@ a.login-button:hover {
     background-position: -18px -33px;
 }
 
-.modal-header {
+/* .modal-header {
     border-bottom: none;
-}
+} */
 
 .form-control {
     border-radius: 0px

@@ -5,6 +5,10 @@ Route::group(['prefix' => '/', 'namespace' => 'V1\Web\Frontend'], function () {
     Route::post('/login', 'PageController@postLogin')->name('postLogin');
     Route::post('/register', 'PageController@postRegister')->name('postRegister');
     Route::get('/logout', 'PageController@logout')->name('logout');
+    Route::get('/register-donate', 'RequestBloodController@getRegisterDonated')
+    ->name('requestBlood.getRegisterDonated');
+    Route::post('/register-donate/{calendarId}', 'RequestBloodController@postRegisterDonated')
+    ->name('requestBlood.postRegisterDonated');
 });
 //---------------------------Admin-Login----------------------------------------//
 Route::get('admin/login', 'V1\Web\Backend\AdminController@getLogin')->name('admin.getLogin');

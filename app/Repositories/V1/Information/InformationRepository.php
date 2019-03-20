@@ -34,4 +34,15 @@ class InformationRepository extends BaseRepository implements InformationReposit
 
         return $infor;
     }
+
+    public function register($request, $userId)
+    {
+        return $this->model->create([
+            'name' => $request->input('name'),
+            'gender' => $request->input('gender'),
+            'cmnd' => $request->input('cmnd'),
+            'phone' => $request->input('phone'),
+            'user_id' => $userId,
+        ]);
+    }
 }

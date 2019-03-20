@@ -9,4 +9,5 @@ interface RequestBloodRepositoryInterface
     public function confirm($id);
     public function getById($id);
     public function getDashboardData();
+    public function registerDonated($request, $calendarId, $userId);
 }
