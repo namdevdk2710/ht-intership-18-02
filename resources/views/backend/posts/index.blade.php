@@ -53,7 +53,7 @@
         </tbody>
     </table>
     <div class="pagination-wrapper">
-
+        {{$posts->links()}}
     </div>
 </div>
 

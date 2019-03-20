@@ -13,6 +13,11 @@ class PostRepository extends BaseRepository implements PostRepositoryInterface
         return Post::class;
     }
 
+    public function index()
+    {
+        return $this->model->paginate(5);
+    }
+
     public function store($request)
     {
         if ($request['image_url'] != null) {
