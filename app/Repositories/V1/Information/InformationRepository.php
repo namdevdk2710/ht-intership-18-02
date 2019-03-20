@@ -44,9 +44,9 @@ class InformationRepository extends BaseRepository implements InformationReposit
             'phone' => $request->input('phone'),
             'user_id' => $userId,
         ];
-        $blood_id = $request->input('bloodgroup');
-        if (isset($blood_id)) {
-            $data['blood_id'] = $blood_id;
+        $bloodId = $request->input('bloodgroup');
+        if (isset($bloodId)) {
+            $data['blood_id'] = $bloodId;
         }
         $dob = $request->input('dob');
         if (isset($dob)) {
