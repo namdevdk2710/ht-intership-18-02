@@ -95,4 +95,6 @@ Route::group(['prefix' => 'admin', 'namespace' => 'V1\Web\Backend', 'middleware'
         Route::put('edit/{id}', 'BloodController@update')->name('bloods.update');
         Route::get('delete/{id}', 'BloodController@destroy')->name('bloods.destroy');
     });
+//-----------------------------------POST-MANAGER---------------------------------------//
+    Route::resource('/posts', 'PostController');
 });
