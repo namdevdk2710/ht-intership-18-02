@@ -54,7 +54,6 @@ class PostRepository extends BaseRepository implements PostRepositoryInterface
                 $imageUrl= str_random(5).'_'.$name;
             }
             $file->move($forder, $imageUrl);
-
         } else {
             $imageUrl = $post->image_url;
         }

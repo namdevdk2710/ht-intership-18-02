@@ -40,9 +40,12 @@
                         Sữa
                     </a>
                     @include('backend.posts.edit')
-                    {!! Form::open(['method' => 'DELETE', 'route' => ['posts.destroy', $post->id], 'id' =>
-                    'deletePost']) !!}
-                    {!! Form::submit('Xóa', ['class' => 'btn btn-sm btn-danger'] )!!}
+                    {!! Form::open([
+                        'method' => 'DELETE',
+                        'route' => ['posts.destroy', $post->id],
+                        'id' =>'deletePost'])
+                    !!}
+                        {!! Form::submit('Xóa', ['class' => 'btn btn-sm btn-danger'] )!!}
                     {!! Form::close() !!}
                 </td>
             </tr>
