@@ -19,11 +19,11 @@ class PostRepository extends BaseRepository implements PostRepositoryInterface
             $file = $request['image_url'];
             $forder = 'uploads/images';
             $name = $file->getClientOriginalName();
-            $imageUrl = str_random(5)."_".$name;
-            while(file_exists($forder.$imageUrl)){
-                $imageUrl= str_random(5)."_".$name;
+            $imageUrl = str_random(5).'_'.$name;
+            while (file_exists($forder.$imageUrl)) {
+                $imageUrl= str_random(5).'_'.$name;
             }
-            $file->move($forder, $image_url);
+            $file->move($forder, $imageUrl);
 
             $this->model->create([
                 'title' => $request['title'],
