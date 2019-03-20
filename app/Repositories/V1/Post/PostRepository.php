@@ -40,4 +40,28 @@ class PostRepository extends BaseRepository implements PostRepositoryInterface
         }
         return $this;
     }
+
+    public function update($id, $request)
+    {
+        $post = $this->model->find($id);
+
+        if ($request['image_url']) {
+            $file = $request['image_url'];
+            $forder = 'uploads/images/';
+            $name = $file->getClientOriginalName();
+            $imageUrl = str_random(5).'_'.$name;
+            while (file_exists($forder.$imageUrl)) {
+                $imageUrl= str_random(5).'_'.$name;
+            }
+            $file->move($forder, $imageUrl);
+
+        } else {
+            $imageUrl = $post->image_url;
+        }
+        $post->title = $request->input('title');
+        $post->content = $request->input('content');
+        $post->image_url = $imageUrl;
+
+        return $post->save();
+    }
 }

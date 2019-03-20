@@ -8,7 +8,7 @@
                 <h4 class="text-center">Thêm tin tức</h4>
             </div>
             <div class="modal-body">
-                {!! Form::open(['method' => 'POST', 'route' => 'posts.store',
+                {!! Form::open(['method' => 'POST', 'route' => 'posts.store', 'files' => true,
                 'class' => 'form-blood', 'id' => 'addPost']) !!}
                 <div class="form-group">
                     {!! Form::label('Tiêu đề:') !!}

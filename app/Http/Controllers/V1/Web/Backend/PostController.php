@@ -77,7 +77,9 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->postRepository->update($id, $request);
+
+        return redirect()->back()->with('success', 'Cập nhật thành công');
     }
 
     /**
