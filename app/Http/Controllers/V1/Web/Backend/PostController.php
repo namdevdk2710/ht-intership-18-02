@@ -20,7 +20,7 @@ class PostController extends Controller
     {
         $posts = $this->postRepository->index();
 
-        return view('backend.posts.index',  compact('posts'));
+        return view('backend.posts.index', compact('posts'));
     }
 
     /**

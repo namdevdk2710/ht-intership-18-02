@@ -15,13 +15,13 @@ class PostRepository extends BaseRepository implements PostRepositoryInterface
 
     public function store($request)
     {
-        if($request['image_url'] != null){
+        if ($request['image_url'] != null) {
             $file = $request['image_url'];
             $forder = 'uploads/images';
             $name = $file->getClientOriginalName();
-            $image_url = str_random(5)."_".$name;
-            while(file_exists($forder.$image_url)){
-                $image_url= str_random(5)."_".$name;
+            $imageUrl = str_random(5)."_".$name;
+            while(file_exists($forder.$imageUrl)){
+                $imageUrl= str_random(5)."_".$name;
             }
             $file->move($forder, $image_url);
 
@@ -31,8 +31,7 @@ class PostRepository extends BaseRepository implements PostRepositoryInterface
                 'user_id' => Auth::id(),
                 'image_url' =>  $image_url,
             ]);
-        }
-        else{
+        } else {
             $this->model->create([
                 'title' => $request['title'],
                 'content' => $request['content'],
