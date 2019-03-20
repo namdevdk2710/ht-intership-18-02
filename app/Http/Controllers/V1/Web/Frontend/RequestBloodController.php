@@ -44,18 +44,21 @@ class RequestBloodController extends Controller
     public function postRegisterDonated(Request $request, $calendarId)
     {
         if (Auth::check()) {
-            $this->requestBloodRepository->registerDonated($request, $calendarId, Auth::id());
+            $result = $this->requestBloodRepository->registerDonated($request, $calendarId, Auth::id());
         } else {
             $userId = $this->userRepository->registerDonated($request);
             if ($userId > 0) {
                 $this->informationRepository->register($request, $userId);
-                $this->requestBloodRepository->registerDonated($request, $calendarId, $userId);
+                $result = $this->requestBloodRepository->registerDonated($request, $calendarId, $userId);
             } else {
-                return redirect()->back();
+                return redirect()->back()->with('message', 'Đăng ký thất bại.');
             }
         }
-
-        return redirect()->route('requestBlood.getRegisterDonated')->with('success', 'Đăng ký thành công.');
+        if ($result == false) {
+            return redirect()->back()->with('message', 'Đăng ký thất bại.');
+        } else {
+            return redirect()->back()->with('message', 'Đăng ký thành công.');
+        }
     }
 
     public function getRegisterReceived()
@@ -74,17 +77,20 @@ class RequestBloodController extends Controller
     {
         if (Auth::check()) {
             $this->informationRepository->register($request, Auth::id());
-            $this->requestBloodRepository->registerReceived($request, Auth::id());
+            $result = $this->requestBloodRepository->registerReceived($request, Auth::id());
         } else {
             $userId = $this->userRepository->registerDonated($request);
             if ($userId > 0) {
                 $this->informationRepository->register($request, $userId);
-                $this->requestBloodRepository->registerReceived($request, $userId);
+                $result = $this->requestBloodRepository->registerReceived($request, $userId);
             } else {
-                return redirect()->back();
+                return redirect()->back()->with('message', 'Đăng ký thất bại.');
             }
         }
-
-        return redirect()->route('requestBlood.getRegisterReceived')->with('success', 'Đăng ký thành công.');
+        if ($result == false){
+            return redirect()->back()->with('message', 'Đăng ký thất bại.');
+        } else {
+            return redirect()->back()->with('message', 'Đăng ký thành công.');
+        }
     }
 }

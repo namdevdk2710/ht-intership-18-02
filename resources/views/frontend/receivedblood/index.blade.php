@@ -1,5 +1,10 @@
 @extends('frontend.layouts.app')
 @section('content')
+@if (session('message'))
+<script>
+    alert('{{ session('message') }}');
+</script>
+@endif
 <div class="container">
     <div class="card w-50 my-5 mx-auto">
         <div class="card-header">
@@ -16,7 +21,7 @@
             </div>
             @endif
             {!! Form::open(['route'=>'requestBlood.postRegisterReceived',
-            'class' => ''])
+            'id' => 'js-register-received-form'])
             !!}
             <div class="form-group mb-0">
                 {!! Form::label('E-Mail', null , ['class' =>
@@ -85,7 +90,7 @@
             <div class="form-group mb-0">
                 {!! Form::button('Đăng ký', ['class' => 'btn-sm btn-info
                 float-right received-submit',
-                'type'=>'submit']) !!}
+                'type'=>'submit', 'id'=>'js-add-calendar-form-submit']) !!}
                 {!! Form::close() !!}
             </div>
         </div>

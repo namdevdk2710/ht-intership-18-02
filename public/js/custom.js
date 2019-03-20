@@ -356,7 +356,7 @@ $(document).ready(function () {
         $('#js-change-admin-password-form').slideToggle('slow');
     });
 
-    $('#js-add-calendar-form input[type = "submit"]').click(function (e) {
+    $('#js-add-calendar-form button[type = "submit"]').click(function (e) {
         e.preventDefault();
         var time = $('#js-add-calendar-form input[name = "time"]').val();
         var date = $('#js-add-calendar-form input[name = "date"]').val();
@@ -366,6 +366,18 @@ $(document).ready(function () {
             alert('Thời gian phải lớn hơn thời gian hiện tại');
         } else {
             $('#js-add-calendar-form').submit();
+        }
+    });
+
+    $('#js-register-received-form #js-add-calendar-form-submit').click(function (e) {
+        e.preventDefault();
+        var dob = $('#js-register-received-form input[name = "dob"]').val();
+        var dateTime = new Date(dob).getFullYear();
+        var currentdate = new Date().getFullYear();
+        if (dateTime > currentdate) {
+            alert('Thời gian phải trước thời gian hiện tại');
+        } else {
+            $('#js-register-received-form').submit();
         }
     });
 });
