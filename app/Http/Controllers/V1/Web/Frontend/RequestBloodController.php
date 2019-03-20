@@ -84,6 +84,7 @@ class RequestBloodController extends Controller
                 return redirect()->back();
             }
         }
+
         return redirect()->route('requestBlood.getRegisterReceived')->with('success', 'Đăng ký thành công.');
     }
 }
