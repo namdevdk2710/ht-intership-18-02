@@ -11,6 +11,10 @@ Route::group(['prefix' => '/', 'namespace' => 'V1\Web\Frontend'], function () {
     ->name('requestBlood.postRegisterDonated');
     Route::get('/result', 'BloodBagController@index')->name('getSearch');
     Route::post('/result', 'BloodBagController@search')->name('search');
+    Route::get('/register-received', 'RequestBloodController@getRegisterReceived')
+    ->name('requestBlood.getRegisterReceived');
+    Route::post('/register-received', 'RequestBloodController@postRegisterReceived')
+    ->name('requestBlood.postRegisterReceived');
 });
 //---------------------------Admin-Login----------------------------------------//
 Route::get('admin/login', 'V1\Web\Backend\AdminController@getLogin')->name('admin.getLogin');

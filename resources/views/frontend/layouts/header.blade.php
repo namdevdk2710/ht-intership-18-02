@@ -87,6 +87,11 @@
                                 Đăng ký hiến máu
                             </a>
                         </li>
+                        <li class="nav-item mx-lg-4 my-lg-0 my-3">
+                            <a class="nav-link" href="{{ route('requestBlood.getRegisterReceived') }}">
+                                Đăng ký nhận máu
+                            </a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="appointment.html">Đối tác</a>
                         </li>

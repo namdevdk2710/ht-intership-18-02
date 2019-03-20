@@ -1,6 +1,11 @@
 @extends('frontend.layouts.app')
 @section('content')
 <div class="container">
+@if (session('message'))
+<script>
+    alert('{{ session('message') }}');
+</script>
+@endif
     <table class="table table-bordered my-5">
         <thead>
             <tr class="text-center">
@@ -34,7 +39,7 @@
                         href="#">
                         Đăng ký
                     </a>
-                    @include('frontend.requestblood.confirm')
+                    @include('frontend.donatedblood.confirm')
                     @else
                     <a type="button" class="btn btn-danger btn-sm"
                         data-toggle="modal"
@@ -42,7 +47,7 @@
                         href="#">
                         Đăng ký
                     </a>
-                    @include('frontend.requestblood.register')
+                    @include('frontend.donatedblood.register')
                     @endif
                 </td>
             </tr>

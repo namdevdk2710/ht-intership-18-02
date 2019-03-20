@@ -26,10 +26,17 @@
                         </li>
                     </ul>
                     <p class="text-muted">
+                    @if(isset($requestBlood->calendar->time))
                         Lịch thực hiện
                         <span class="text-primary">
                             {{ $requestBlood->calendar->time }}
                         </span>
+                    @else
+                        Yêu cầu lúc
+                        <span class="text-primary">
+                            {{ $requestBlood->created_at }}
+                        </span>
+                    @endif
                     </p>
                 </div>
             </div>
