@@ -125,6 +125,5 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
         } else {
             return false;
         }
-
     }
 }
