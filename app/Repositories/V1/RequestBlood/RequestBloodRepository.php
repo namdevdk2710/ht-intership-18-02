@@ -68,6 +68,13 @@ class RequestBloodRepository extends BaseRepository implements RequestBloodRepos
 
     public function registerDonated($request, $calendarId, $userId)
     {
+        if ($this->model->where([
+            ['user_id', $userId],
+            ['calendar_id', $calendarId],
+        ])->first()) {
+            return false;
+        }
+
         return $this->model->create([
                 'user_id' => $userId,
                 'calendar_id' => $calendarId,
@@ -79,12 +86,20 @@ class RequestBloodRepository extends BaseRepository implements RequestBloodRepos
 
     public function registerReceived($request, $userId)
     {
-        return $this->model->create([
+        if ($this->model->where([
+            ['user_id', $userId],
+            ['type', 'nhan'],
+            ['status', false],
+        ])->first()) {
+            return false;
+        } else {
+            return $this->model->create([
                 'user_id' => $userId,
                 'content' => 'Đăng ký nhận máu',
                 'status' => 0,
                 'type' => 'nhan',
                 'user_id' => $userId,
-        ]);
+            ]);
+        }
     }
 }

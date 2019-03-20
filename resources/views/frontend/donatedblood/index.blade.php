@@ -1,6 +1,11 @@
 @extends('frontend.layouts.app')
 @section('content')
 <div class="container">
+@if (session('message'))
+<script>
+    alert('{{ session('message') }}');
+</script>
+@endif
     <table class="table table-bordered my-5">
         <thead>
             <tr class="text-center">
