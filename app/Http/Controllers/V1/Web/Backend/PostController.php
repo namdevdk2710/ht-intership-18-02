@@ -75,9 +75,11 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PostRequest $request, $id)
     {
-        //
+        $this->postRepository->update($id, $request);
+
+        return redirect()->back()->with('success', 'Cập nhật thành công');
     }
 
     /**
@@ -88,6 +90,8 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $this->postRepository->destroy($id);
+
+        return redirect()->back()->with('success', 'Xóa thành công');
     }
 }
