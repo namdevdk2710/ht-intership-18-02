@@ -37,6 +37,8 @@
     <script src="{{asset('asset/js/jquery.scrollTo.js')}}"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js" type="text/javascript">
     </script>
+    <script src="{{ asset('asset/ckeditor/ckeditor.js') }}"></script>
+    <script>CKEDITOR.replace('editor1');</script>
     <script src="{{asset('js/custom.js')}}"></script>
 </body>
 
