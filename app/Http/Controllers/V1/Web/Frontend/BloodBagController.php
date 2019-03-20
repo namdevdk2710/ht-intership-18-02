@@ -20,6 +20,7 @@ class BloodBagController extends Controller
     {
         return view('frontend.bloodbags.index');
     }
+
     public function search(Request $request)
     {
         $results = $this->diaryRepository->searchFrontend($request);
