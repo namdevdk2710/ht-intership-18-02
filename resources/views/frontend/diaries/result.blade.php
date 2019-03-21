@@ -17,7 +17,7 @@
         </div>
     </div>
     <div class="mb-5 text-center span-color">
-        <span>(* Nhập mã hiến máu hoặc CMND để tra cứu)</span>
+        <span>(* Nhập mã người dùng hoặc CMND để tra cứu)</span>
     </div>
     <div class="table-responsive">
         <table class="table table-bordered table-search">
@@ -30,7 +30,6 @@
                     <th class="text-center">Loại</th>
                     <th class="text-center">Thể tích</th>
                     <th class="text-center">Kết quả</th>
-                    <th class="text-center">Chi tiết</th>
                 </tr>
             </thead>
             <tbody id="body-calendar">
@@ -52,7 +51,7 @@
                     </td>
                     @else
                     <td class="text-center">
-                        {{'Nhận'}}
+                        {{ $result->bloodBag->updated_at}}
                     </td>
                     @endif
                     @if($result->requestBlood->type == 'cho')
@@ -65,7 +64,7 @@
                     </td>
                     @endif
                     <td class="text-center">
-                        {{ 'Thể tích túi máu' }}
+                        {{ $result->bloodBag->unit }}
                     </td>
                     @if($result->requestBlood->type == 'cho')
                     <td>
@@ -73,14 +72,26 @@
                     </td>
                     @else
                     <td>
-                        {{'abc'}}
+                        {{ $result->requestBlood->status ? 'Đã nhận' : 'Chưa nhận' }}
                     </td>
                     @endif
                 </tr>
                 @endforeach
+                <tr>
+                    <td colspan="7" class="text-center">
+                        Số lần đã hiến:
+                            <span class="text-danger mr-4">
+                                {{ $result->user->requestBlood->bloodBag->count() }}
+                            </span>
+                        Số lần đã nhận:
+                            <span class="text-danger">
+                                {{ $result->bloodBag->count() }}
+                            </span>
+                    </td>
+                </tr>
                 @else
                 <tr>
-                    <td colspan="8" class="text-center text-danger">
+                    <td colspan="7" class="text-center text-danger">
                         Không tìm thấy dữ liệu với mã này
                     </td>
                 </tr>
@@ -88,8 +99,8 @@
             </tbody>
         </table>
     </div>
-    <div class="pagination-wrapper">
-
+    <div class="pagination-wrapper text-center">
+        {{$results->links()}}
     </div>
 </div>
 @endsection

@@ -30,7 +30,6 @@
                     <th class="text-center">Nhóm máu</th>
                     <th class="text-center">Thể tích</th>
                     <th class="text-center">Kết quả</th>
-                    <th class="text-center">Chi tiết</th>
                 </tr>
             </thead>
             <tbody id="body-calendar">
@@ -47,7 +46,7 @@
                         {{ $result->requestBlood->user->information->cmnd }}
                     </td>
                     <td class="text-center">
-                    {{ $result->requestBlood->calendar->address }}
+                    {{ $result->requestBlood->calendar->time }}
                     </td>
                     <td class="text-center">
                         {{ $result->requestBlood->user->information->bloodGroup->name}}
@@ -58,14 +57,11 @@
                     <td class="text-center">
                         {{ $result->requestBlood->bloodBag[0]->status ? 'Đạt': 'Không đạt' }}
                     </td>
-                    <td class="text-center">
-                        {{ $result->created_at }}
-                    </td>
                 </tr>
                 @endforeach
                 @else
                 <tr>
-                    <td colspan="8" class="text-center text-danger">
+                    <td colspan="7" class="text-center text-danger">
                         Không tìm thấy dữ liệu với mã này
                     </td>
                 </tr>

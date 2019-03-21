@@ -5,17 +5,15 @@ namespace App\Http\Controllers\V1\Web\Frontend;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Repositories\V1\Diary\DiaryRepositoryInterFace;
-use App\Repositories\V1\User\UserRepositoryInterFace;
 
 class DiaryController extends Controller
 {
     protected $diaryRepository;
     protected $userRepository;
 
-    public function __construct(DiaryRepositoryInterFace $diaryRepository, UserRepositoryInterFace $userRepository)
+    public function __construct(DiaryRepositoryInterFace $diaryRepository)
     {
         $this->diaryRepository = $diaryRepository;
-        $this->userRepository = $userRepository;
     }
 
     public function getDiary()

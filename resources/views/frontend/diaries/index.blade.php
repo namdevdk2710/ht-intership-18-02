@@ -17,7 +17,7 @@
         </div>
     </div>
     <div class="mb-5 text-center span-color">
-        <span>(* Nhập mã hiến máu hoặc CMND để tra cứu)</span>
+        <span>(* Nhập mã người dùng hoặc CMND để tra cứu)</span>
     </div>
 </div>
 @endsection
