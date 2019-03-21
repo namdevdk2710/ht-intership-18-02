@@ -86,8 +86,7 @@
                                 Đăng ký
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-                                <a class="dropdown-item scroll" href="{{ route('requestBlood.getRegisterDonated') }}">
+                                <a class="dropdown-item " href="{{ route('requestBlood.getRegisterDonated') }}">
                                     Đăng ký hiến máu
                                 </a>
                                 <a class="dropdown-item" href="{{ route('requestBlood.getRegisterReceived') }}">
