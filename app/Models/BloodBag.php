@@ -32,4 +32,9 @@ class BloodBag extends Model
     {
         return $this->belongsTo('App\Models\WareHouse', 'wareHouse_id');
     }
+
+    public function diary()
+    {
+        return $this->hasOne('App\Models\Diary');
+    }
 }

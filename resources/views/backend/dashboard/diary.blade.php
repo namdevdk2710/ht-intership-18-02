@@ -15,7 +15,7 @@
                         <li class="pull-left notification-sender">
                             <span>
                                 <a href="#">
-                                    {{$diary->user->information->name}}
+                                    Admin
                                 </a>
                                 thực hiện
                             </span>
