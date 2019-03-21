@@ -48,7 +48,12 @@ class BloodBagController extends Controller
     public function store(BloodBagRequest $request)
     {
         $bloodBag = $this->bloodBagRepository->store($request);
-        $this->diaryRepository->save($request->input('request_blood_id'), $bloodBag->requestBlood->user_id, $bloodBag->id, 'Nhập túi máu');
+        $this->diaryRepository->save(
+            $request->input('request_blood_id'),
+            $bloodBag->requestBlood->user_id,
+            $bloodBag->id,
+            'Nhập túi máu'
+        );
 
         return back()->with('success', 'Nhập túi máu thành công');
     }
