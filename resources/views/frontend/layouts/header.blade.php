@@ -77,10 +77,10 @@
                 </button>
                 <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-lg-auto">
-                        <li class="nav-item active mt-lg-0 mt-3">
+                        <li class="nav-item  mt-lg-0 mt-3">
                             <a class="nav-link" href="/">Trang chủ</a>
                         </li>
-                        <li class="nav-item dropdown mx-lg-4 my-lg-0 my-3">
+                        <li class="nav-item dropdown mx-lg-4 my-lg-0">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Đăng ký
@@ -94,10 +94,7 @@
                                 </a>
                             </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="appointment.html">Đối tác</a>
-                        </li>
-                        <li class="nav-item dropdown mx-lg-4 my-lg-0 my-3">
+                        <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Thông tin
@@ -108,7 +105,10 @@
                                 <a class="dropdown-item" href="">Kết quả xét nghiệm</a>
                             </div>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item mx-lg-4 my-lg-0">
+                            <a class="nav-link" href="">Đối tác</a>
+                        </li>
+                        <li class="nav-item ">
                             <a class="nav-link" href="">Phản hồi</a>
                         </li>
 
