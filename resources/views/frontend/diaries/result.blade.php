@@ -10,7 +10,7 @@
             !!}
             {!! Form::select('code',['id'=>'Mã người dùng', 'cmnd' => 'CMND']
             ,null ,['class'=>'form-control']) !!}
-            {!! Form::text('search', null, ['class' => 'form-control']) !!}
+            {!! Form::text('search', null, ['class' => 'form-control', 'required']) !!}
             {!! Form::button('<i class="fa fa-search"></i> Search', ['class' => 'btn
             btn-default', 'type' => 'submit']) !!}
             {!! Form::close() !!}
@@ -23,11 +23,11 @@
         <table class="table table-bordered table-search">
             <thead>
                 <tr>
-                    <th class="text-center">Mã hến máu</th>
-                    <th class="text-center">Tên người hiến</th>
+                    <th class="text-center">Mã người dùng</th>
+                    <th class="text-center">Họ tên</th>
                     <th class="text-center">CMND</th>
-                    <th class="text-center">Thời gian hiến</th>
-                    <th class="text-center">Nhóm máu</th>
+                    <th class="text-center">Thời gian</th>
+                    <th class="text-center">Loại</th>
                     <th class="text-center">Thể tích</th>
                     <th class="text-center">Kết quả</th>
                     <th class="text-center">Chi tiết</th>
@@ -36,10 +36,9 @@
             <tbody id="body-calendar">
                 @if($results->count() > 0)
                 @foreach($results as $result)
-
                 <tr>
                     <td class="text-center">
-                        {{ $result->requestBlood->id }}
+                        {{ $result->user_id }}
                     </td>
                     <td class="text-center">
                         {{ $result->requestBlood->user->information->name }}
@@ -47,16 +46,36 @@
                     <td class="text-center">
                         {{ $result->requestBlood->user->information->cmnd }}
                     </td>
+                    @if($result->requestBlood->type == 'cho')
                     <td class="text-center">
-                    {{ $result->requestBlood->created_at }}
+                        {{ $result->requestBlood->calendar->time }}
                     </td>
+                    @else
                     <td class="text-center">
-                        {{ $result->user->information->bloodGroup->name}}
+                        {{'Nhận'}}
                     </td>
-
+                    @endif
+                    @if($result->requestBlood->type == 'cho')
                     <td class="text-center">
-                        {{ $result->created_at }}
+                        {{ ' Hiến máu '}}
                     </td>
+                    @else
+                    <td class="text-center">
+                        {{ ' Nhận máu '}}
+                    </td>
+                    @endif
+                    <td class="text-center">
+                        {{ 'Thể tích túi máu' }}
+                    </td>
+                    @if($result->requestBlood->type == 'cho')
+                    <td>
+                        {{$result->requestBlood->bloodBag[0]->status ?'Đạt' : 'Không Đạt'}}
+                    </td>
+                    @else
+                    <td>
+                        {{'abc'}}
+                    </td>
+                    @endif
                 </tr>
                 @endforeach
                 @else

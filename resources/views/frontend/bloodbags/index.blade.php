@@ -10,7 +10,7 @@
             !!}
             {!! Form::select('code',['request_id'=>'Mã hiến máu', 'cmnd' => 'CMND']
             ,null ,['class'=>'form-control']) !!}
-            {!! Form::text('search', null, ['class' => 'form-control']) !!}
+            {!! Form::text('search', null, ['class' => 'form-control','required']) !!}
             {!! Form::button('<i class="fa fa-search"></i> Search', ['class' => 'btn
             btn-default', 'type' => 'submit']) !!}
             {!! Form::close() !!}

@@ -79,12 +79,11 @@ class DiaryRepository extends BaseRepository implements DiaryRepositoryInterface
                 ->paginate(7);
         } elseif ($request->input('code') == 'cmnd') {
             return $this->model
-                    ->leftJoin('request_bloods', 'diaries.request_blood_id', '=', 'request_bloods.id')
-                    ->leftJoin('users', 'request_bloods.user_id', '=', 'users.id')
+                    ->leftJoin('users', 'diaries.user_id', '=', 'users.id')
                     ->leftJoin('information', 'information.user_id', '=', 'users.id')
-                    ->where('cmnd', $request->input('search'))
-                    ->select('diaries.*')
-                    ->paginate(7);
+                    ->where('information.cmnd', $request->input('search'))
+                    ->select('diaries.*')->get();
+                    // ->paginate(7);
         }
     }
 
