@@ -126,7 +126,9 @@ class WareHouseController extends Controller
     {
         $this->bloodBagRepository->confirm($id2);
         $this->requestRepository->confirm($id);
-        $this->diaryRepository->save($id, 'Xuất túi máu');
+        $requestBlood = $this->requestRepository->find($id);
+        $bloodBag = $this->bloodBagRepository->find($id2);
+        $this->diaryRepository->save($id, $requestBlood->user_id, $bloodBag->id, 'Xuất túi máu');
 
         return redirect()->route('export-bloods.index')->with('success', 'Xuất túi máu thành công');
     }

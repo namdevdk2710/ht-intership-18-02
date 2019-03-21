@@ -17,7 +17,6 @@
         <thead>
             <tr>
                 <th scope="col" class="text-center">Người yêu cầu</th>
-                <th scope="col" class="text-center">Người nhập thông tin</th>
                 <th scope="col" class="text-center">Nội dung</th>
                 <th scope="col" class="text-center">Thời gian</th>
             </tr>
@@ -27,9 +26,6 @@
             <tr>
                 <td class="text-center">
                     {{ $diary->requestBlood->user->information->name }}
-                </td>
-                <td class="text-center">
-                    {{ $diary->user->information->name }}
                 </td>
                 <td class="text-center">
                     {{ $diary->note }}

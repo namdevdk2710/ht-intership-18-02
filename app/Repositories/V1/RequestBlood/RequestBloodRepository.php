@@ -86,20 +86,12 @@ class RequestBloodRepository extends BaseRepository implements RequestBloodRepos
 
     public function registerReceived($request, $userId)
     {
-        if ($this->model->where([
-            ['user_id', $userId],
-            ['type', 'nhan'],
-            ['status', false],
-        ])->first()) {
-            return false;
-        } else {
-            return $this->model->create([
-                'user_id' => $userId,
-                'content' => 'Đăng ký nhận máu',
-                'status' => 0,
-                'type' => 'nhan',
-                'user_id' => $userId,
-            ]);
-        }
+        return $this->model->create([
+            'user_id' => $userId,
+            'content' => 'Đăng ký nhận máu',
+            'status' => 0,
+            'type' => 'nhan',
+            'user_id' => $userId,
+        ]);
     }
 }

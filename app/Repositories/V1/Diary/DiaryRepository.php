@@ -18,11 +18,12 @@ class DiaryRepository extends BaseRepository implements DiaryRepositoryInterface
         return $this->model->paginate(7);
     }
 
-    public function save($requestId, $note)
+    public function save($requestId, $userId, $bloodBagId, $note)
     {
         return $this->model->create([
             'request_blood_id' => $requestId,
-            'user_id' => Auth::id(),
+            'user_id' => $userId,
+            'blood_bag_id' => $bloodBagId,
             'note' => $note,
         ]);
     }
