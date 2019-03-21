@@ -64,7 +64,7 @@
             <div class="container">
                 <!-- logo -->
                 <h1>
-                    <a class="navbar-brand font-weight-bold font-italic" href="index.html">
+                    <a class="navbar-brand font-weight-bold font-italic" href="/">
                         <span>B</span>lood
                         <i class="fas fa-syringe"></i>
                     </a>
@@ -78,19 +78,20 @@
                 <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-lg-auto">
                         <li class="nav-item active mt-lg-0 mt-3">
-                            <a class="nav-link" href="">Trang chủ
-                                <span class="sr-only">(current)</span>
-                            </a>
+                            <a class="nav-link" href="/">Trang chủ</a>
                         </li>
-                        <li class="nav-item mx-lg-4 my-lg-0 my-3">
-                            <a class="nav-link" href="{{ route('requestBlood.getRegisterDonated') }}">
-                                Đăng ký hiến máu
+                        <li class="nav-item dropdown mx-lg-4 my-lg-0 my-3">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Đăng ký
                             </a>
-                        </li>
-                        <li class="nav-item mx-lg-4 my-lg-0 my-3">
-                            <a class="nav-link" href="{{ route('requestBlood.getRegisterReceived') }}">
-                                Đăng ký nhận máu
-                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                                <a class="dropdown-item scroll"
+                                    href="{{ route('requestBlood.getRegisterDonated') }}">Đăng ký hiến máu</a>
+                                <a class="dropdown-item" href="{{ route('requestBlood.getRegisterReceived') }}">Đăng ký
+                                    nhận máu</a>
+                            </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="appointment.html">Đối tác</a>
@@ -124,8 +125,8 @@
                                 </a>
                                 <ul class="dropdown-menu extended dropdown-login">
                                     <li>
-                                        <a href="#"  data-toggle="modal"
-                            data-target="#modalProfile"><i class=" fa fa-suitcase"></i>Thông tin cá nhân</a>
+                                        <a href="#" data-toggle="modal" data-target="#modalProfile"><i
+                                                class=" fa fa-suitcase"></i>Thông tin cá nhân</a>
                                     </li>
                                     <li>
                                         <a href="{{ route('logout') }}"><i class="fa fa-key"></i>Đăng xuất</a>
@@ -148,5 +149,5 @@
     </div>
     @include('frontend.layouts.login')
     @include('frontend.layouts.register')
-<!-- include('frontend.users.profile') -->
+    <!-- include('frontend.users.profile') -->
 </div>
