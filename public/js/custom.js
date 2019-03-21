@@ -269,35 +269,7 @@ $(document).ready(function () {
         }
     });
 
-    $("#myInput").on("keyup", function()  {
-        var value = $(this).val().toLowerCase();
-        $(".body-user tr").filter(function() {
-          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-        });
-      });
-
-      $(".myInput").on("keyup", function()  {
-        var value = $(this).val().toLowerCase();
-        $("#body-calendar tr").filter(function() {
-          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-        });
-      });
-
-      $(".myInput").on("keyup", function()  {
-        var value = $(this).val().toLowerCase();
-        $("#body-donated tr").filter(function() {
-          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-        });
-      });
-
-      $(".myInput").on("keyup", function()  {
-        var value = $(this).val().toLowerCase();
-        $("#body-received tr").filter(function() {
-          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-        });
-      });
-
-      $('#addUser').validate({
+    $('#addUser').validate({
         rules: {
             email: {
                 required: true,

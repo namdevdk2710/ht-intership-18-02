@@ -1,7 +1,7 @@
 <?php
 // ---------------------------Front-end routes-----------------------------//
 Route::group(['prefix' => '/', 'namespace' => 'V1\Web\Frontend'], function () {
-    Route::get('', 'PageController@index')->name('home');
+    Route::get('/', 'PageController@index')->name('home');
     Route::post('/login', 'PageController@postLogin')->name('postLogin');
     Route::post('/register', 'PageController@postRegister')->name('postRegister');
     Route::get('/logout', 'PageController@logout')->name('logout');
@@ -9,6 +9,8 @@ Route::group(['prefix' => '/', 'namespace' => 'V1\Web\Frontend'], function () {
     ->name('requestBlood.getRegisterDonated');
     Route::post('/register-donate/{calendarId}', 'RequestBloodController@postRegisterDonated')
     ->name('requestBlood.postRegisterDonated');
+    Route::get('/result', 'BloodBagController@index')->name('getSearch');
+    Route::post('/result', 'BloodBagController@search')->name('search');
     Route::get('/register-received', 'RequestBloodController@getRegisterReceived')
     ->name('requestBlood.getRegisterReceived');
     Route::post('/register-received', 'RequestBloodController@postRegisterReceived')

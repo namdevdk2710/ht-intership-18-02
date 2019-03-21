@@ -97,12 +97,12 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Thông tin
+                                Tra cứu
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                                 <a class="dropdown-item scroll" href="">Nhật ký hiến/nhận</a>
-                                <a class="dropdown-item" href="">Kết quả xét nghiệm</a>
+                                <a class="dropdown-item" href="{{route('getSearch')}}">Kết quả xét nghiệm</a>
                             </div>
                         </li>
                         <li class="nav-item mx-lg-4 my-lg-0">
