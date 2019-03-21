@@ -11,6 +11,7 @@ use App\Repositories\V1\Commune\CommuneRepositoryInterFace;
 use Illuminate\Support\Facades\Auth;
 use App\Repositories\V1\User\UserRepositoryInterFace;
 use App\Repositories\V1\Information\InformationRepositoryInterFace;
+use App\Repositories\V1\Post\PostRepositoryInterFace;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
 
@@ -19,6 +20,7 @@ class PageController extends Controller
     protected $calendarRepository;
     protected $cityRepository;
     protected $inforRepository;
+    protected $postRepository;
 
     public function __construct(
         CalendarRepositoryInterFace $calendarRepository,
@@ -26,7 +28,8 @@ class PageController extends Controller
         DistrictRepositoryInterFace $districtRepository,
         CommuneRepositoryInterFace $communeRepository,
         UserRepositoryInterFace $userRepository,
-        InformationRepositoryInterFace $inforRepository
+        InformationRepositoryInterFace $inforRepository,
+        PostRepositoryInterFace $postRepository
     ) {
         $this->calendarRepository = $calendarRepository;
         $this->cityRepository = $cityRepository;
@@ -34,6 +37,7 @@ class PageController extends Controller
         $this->communeRepository = $communeRepository;
         $this->userRepository = $userRepository;
         $this->inforRepository = $inforRepository;
+        $this->postRepository = $postRepository;
     }
 
     public function index()
@@ -41,8 +45,9 @@ class PageController extends Controller
         $calendars = $this->calendarRepository->listCalendar(5);
         $cities = $this->cityRepository->getCity();
         $infor = $this->inforRepository->getInfor();
+        $posts = $this->postRepository->index();
 
-        return view('frontend.layouts.index', compact('calendars', 'cities', 'infor')) ;
+        return view('frontend.layouts.index', compact('calendars', 'cities', 'infor', 'posts')) ;
     }
 
     public function postLogin(LoginRequest $request)

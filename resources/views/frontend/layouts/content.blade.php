@@ -1,30 +1,4 @@
-<!-- middle section -->
-<div class="w3ls-welcome py-5">
-    <div class="container py-xl-5 py-lg-3">
-        <div class="row">
-            <div class="col-lg-5 welcome-right">
-                <img src="images/b2.png" alt=" " class="img-fluid">
-            </div>
-            <div class="col-lg-7 welcome-left mt-4">
-                <h3>Awesome Theme for Medical and Health Websites</h3>
-                <h6 class="mt-3">Suspendisse porta erat sit amet eros sagittis</h6>
-                <h4 class="my-4 font-italic">Cum sociis natoque penatibus et magnis dis parturient montesmus, Proin vel
-                    nibh et
-                    elit mollis commodo et nec augue
-                    tristique sed.</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse porta erat sit amet eros
-                    sagittis, quis
-                    hendrerit
-                    libero aliquam. Fusce semper augue ac dolor efficitur, a pretium metus pellentesque.</p>
-                <div class="readmore-w3-agileits mt-md-5 mt-4">
-                    <a href="single.html" class="w3ls-button-agile text-dark">View Some More</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- //middle section -->
-
+@include('frontend.news.index')
 <!-- services -->
 <div class="why-choose-agile pt-5" id="services">
     <div class="container pt-xl-5 pt-lg-3">

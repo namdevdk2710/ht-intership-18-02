@@ -279,3 +279,8 @@
     line-height: 1em;
     font-size: 91%;
 }
+.post-layout{
+    border-bottom: 2px slategrey solid !important;
+    padding-bottom: 1em;
+    padding-top: 1em;
+}
