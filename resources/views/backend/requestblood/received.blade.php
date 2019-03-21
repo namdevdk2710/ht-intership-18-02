@@ -32,7 +32,7 @@
                 @endif
                 <td class="text-center">{{ $requestBlood->content }}</td>
                 <td class="text-center text-nowrap">
-                    {{ $requestBlood->calendar->time }}</td>
+                    {{ $requestBlood->time }}</td>
                 @if($requestBlood->status == 1)
                 <td class="text-center">
                     <p class="text-danger">

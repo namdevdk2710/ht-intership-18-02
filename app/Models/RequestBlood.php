@@ -23,8 +23,8 @@ class RequestBlood extends Model
         return $this->hasMany('App\Models\BloodBag');
     }
 
-    public function diary()
+    public function diaries()
     {
-        return $this->hasOne('App\Models\Diary');
+        return $this->hasMany('App\Models\Diary');
     }
 }

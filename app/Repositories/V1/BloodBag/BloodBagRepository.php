@@ -14,7 +14,7 @@ class BloodBagRepository extends BaseRepository implements BloodBagRepositoryInt
 
     public function store($request)
     {
-        return $this->model->create([
+        $this->model->create([
             'request_blood_id' => $request->input('request_blood_id'),
             'unit' => $request->input('unit'),
             'hbsag' => $request->input('hbsag'),
@@ -30,6 +30,8 @@ class BloodBagRepository extends BaseRepository implements BloodBagRepositoryInt
             || $request->input('hbvnat') || $request->input('hivnat') || $request->input('hcvnat')
             || $request->input('syphilis') || $request->input('malaria')) ? false : true,
         ]);
+
+        return $this->model->orderBy('created_at', 'desc')->first();
     }
 
     public function getBloodBagByStatus()

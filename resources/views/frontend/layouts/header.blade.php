@@ -101,7 +101,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-                                <a class="dropdown-item scroll" href="">Nhật ký hiến/nhận</a>
+                                <a class="dropdown-item" href="{{route('postDiary')}}">Nhật ký hiến/nhận</a>
                                 <a class="dropdown-item" href="{{route('getSearch')}}">Kết quả xét nghiệm</a>
                             </div>
                         </li>

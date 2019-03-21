@@ -15,6 +15,8 @@ Route::group(['prefix' => '/', 'namespace' => 'V1\Web\Frontend'], function () {
     ->name('requestBlood.getRegisterReceived');
     Route::post('/register-received', 'RequestBloodController@postRegisterReceived')
     ->name('requestBlood.postRegisterReceived');
+    Route::get('/diary', 'DiaryController@getDiary')->name('getDiary');
+    Route::post('/diary', 'DiaryController@postDiary')->name('postDiary');
 });
 //---------------------------Admin-Login----------------------------------------//
 Route::get('admin/login', 'V1\Web\Backend\AdminController@getLogin')->name('admin.getLogin');
