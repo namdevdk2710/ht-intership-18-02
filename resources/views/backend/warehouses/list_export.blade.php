@@ -34,7 +34,7 @@
                 @endif
                 <td class="text-center">{{ $requestBlood->content }}</td>
                 <td class="text-center text-nowrap">
-                    {{ $requestBlood->calendar->time }}</td>
+                    {{ $requestBlood->created_at }}</td>
                 <td scope="row" class="text-center">
                     <a href="{{route('export-request', $requestBlood->id)}}"
                         class="btn-sm btn-primary text-nowrap">
