@@ -20,6 +20,8 @@ class CreateDiariesTable extends Migration
             $table->foreign('request_blood_id')->references('id')->on('request_bloods')->onDelete('cascade');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->integer('blood_bag_id')->unsigned();
+            $table->foreign('blood_bag_id')->references('id')->on('blood_bags')->onDelete('cascade');
             $table->timestamps();
         });
     }
