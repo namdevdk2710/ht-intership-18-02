@@ -32,7 +32,7 @@
                 <td>{{$post->user->information->name}}</td>
                 <td>{{$post->title}}</td>
                 <td>
-                    <img src="{{asset('uploads/images/'.$post->image_url)}}" width="80px" height="50px">
+                    <img src="{{ asset($post->image_url) }}" width="80px" height="50px">
                 </td>
                 <td>
                     <a href="" class="btn btn-sm btn-warning " class="btn btn-primary" data-toggle="modal"

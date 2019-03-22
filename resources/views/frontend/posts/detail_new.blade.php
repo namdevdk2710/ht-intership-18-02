@@ -3,8 +3,8 @@
     <div class="comments-grids mt-4">
         <div class="row comments-grid">
             <div class="comments-grid-left text-center">
-                <h4 class="text-danger">{{ $post->title}}</h4><br>
-                <img src="{{asset('uploads/images/'.$post->image_url)}}" width="50%" height="auto" />
+                <h4 class="text-danger">{{ $post->title }}</h4><br>
+                <img src="{{ asset($post->image_url) }}" width="50%" height="auto" />
 
                 <div class="comments-grid-right mt-3">
 

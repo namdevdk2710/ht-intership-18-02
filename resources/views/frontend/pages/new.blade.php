@@ -5,7 +5,7 @@
         <div class="row posts-grid mt-4">
             <a href="">
                 <div class="col-lg-4 col-md-3 col-4 posts-grid-left pr-0">
-                    <img src="{{asset('uploads/images/'.$post->image_url)}}" width="95px" height="130px" />
+                    <img src="{{ asset($post->image_url) }}" width="95px" height="130px" />
                 </div>
                 <div class="col-lg-8 col-md-7 col-8 posts-grid-right mt-lg-0 mt-4">
                     <h4>
