@@ -8,6 +8,8 @@ use App\Repositories\V1\RequestBlood\RequestBloodRepositoryInterFace;
 use App\Repositories\V1\BloodBag\BloodBagRepositoryInterFace;
 use App\Repositories\V1\WareHouse\WareHouseRepositoryInterFace;
 use App\Repositories\V1\Diary\DiaryRepositoryInterFace;
+use App\Repositories\V1\BloodGroup\BloodGroupRepositoryInterFace;
+use App\Repositories\V1\Information\InformationRepositoryInterFace;
 use App\Http\Requests\BloodBagRequest;
 
 class BloodBagController extends Controller
@@ -16,24 +18,31 @@ class BloodBagController extends Controller
     protected $bloodBagRepository;
     protected $wareHouseRepository;
     protected $diaryRepository;
+    protected $bloodGroupRepository;
+    protected $informationRepository;
 
     public function __construct(
         RequestBloodRepositoryInterFace $requestBloodRepository,
         BloodBagRepositoryInterFace $bloodBagRepository,
         WareHouseRepositoryInterFace $wareHouseRepository,
-        DiaryRepositoryInterFace $diaryRepository
+        DiaryRepositoryInterFace $diaryRepository,
+        BloodGroupRepositoryInterFace $bloodGroupRepository,
+        InformationRepositoryInterFace $informationRepository
     ) {
         $this->requestBloodRepository = $requestBloodRepository;
         $this->bloodBagRepository = $bloodBagRepository;
         $this->wareHouseRepository = $wareHouseRepository;
         $this->diaryRepository = $diaryRepository;
+        $this->bloodGroupRepository = $bloodGroupRepository;
+        $this->informationRepository = $informationRepository;
     }
 
     public function getImport()
     {
         $warehouses = $this->wareHouseRepository->getWareHouseAsArray();
+        $bloodGroups = $this->bloodGroupRepository->index();
 
-        return view('backend.bloodbag.import', compact('warehouses'));
+        return view('backend.bloodbag.import', compact('warehouses', 'bloodGroups'));
     }
 
     public function getInfoByCode(Request $request)
@@ -48,6 +57,8 @@ class BloodBagController extends Controller
     public function store(BloodBagRequest $request)
     {
         $bloodBag = $this->bloodBagRepository->store($request);
+        $userId = $bloodBag->requestBlood->user_id;
+        $this->informationRepository->updateBloodGroup($request, $userId);
         $this->diaryRepository->save(
             $request->input('request_blood_id'),
             $bloodBag->requestBlood->user_id,
