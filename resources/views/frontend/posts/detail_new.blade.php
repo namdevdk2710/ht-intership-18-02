@@ -13,7 +13,9 @@
                             <i>| Ngày đăng</i>
                         </li>
                     </ul>
-                    <p class="p-introduce">{{$post->content}}</p>
+                    @php
+                        echo $post->content
+                    @endphp
                 </div>
             </div>
         </div>
