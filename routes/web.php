@@ -18,6 +18,7 @@ Route::group(['prefix' => '/', 'namespace' => 'V1\Web\Frontend'], function () {
     Route::get('/diary', 'DiaryController@getDiary')->name('getDiary');
     Route::post('/diary', 'DiaryController@postDiary')->name('postDiary');
     Route::get('/new', 'PostController@index')->name('getNews');
+    Route::get('/detail-new/{id}', 'PostController@detail')->name('getDetailNews');
 });
 //---------------------------Admin-Login----------------------------------------//
 Route::get('admin/login', 'V1\Web\Backend\AdminController@getLogin')->name('admin.getLogin');
