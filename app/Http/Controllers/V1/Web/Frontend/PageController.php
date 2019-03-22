@@ -42,7 +42,7 @@ class PageController extends Controller
 
     public function index()
     {
-        $calendars = $this->calendarRepository->listCalendar(5);
+        $calendars = $this->calendarRepository->getFutureCalendar(5);
         $cities = $this->cityRepository->getCity();
         $infor = $this->inforRepository->getInfor();
         $posts = $this->postRepository->index();

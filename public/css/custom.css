@@ -284,3 +284,28 @@
     padding-bottom: 1em;
     padding-top: 1em;
 }
+.image-page{
+    width: 350px;
+    height: 250px;
+    padding: 1em;
+    background-image: none;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.p-introduce{
+    text-indent: 30px;
+    color: black !important;
+    letter-spacing: 0 !important;
+    text-align: justify;
+}
+.admin p i{
+    font-size: 15px !important;
+}
+.p-new{
+    color: #111;
+    font-size: 70% !important;
+}
+.name-post{
+    display: inline !important;
+}

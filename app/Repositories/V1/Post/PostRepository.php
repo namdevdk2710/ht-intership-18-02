@@ -15,7 +15,7 @@ class PostRepository extends BaseRepository implements PostRepositoryInterface
 
     public function index()
     {
-        return $this->model->paginate(5);
+        return $this->model->orderBy('id', 'asc')->paginate(5);
     }
 
     public function store($request)
