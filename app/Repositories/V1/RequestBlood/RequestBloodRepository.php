@@ -42,7 +42,7 @@ class RequestBloodRepository extends BaseRepository implements RequestBloodRepos
         if (isset($requestBlood->user->information->blood_id)) {
             $blood = $requestBlood->user->information->bloodGroup->name;
         } else {
-            $blood = "Chưa cập nhật";
+            $blood = 'Chưa cập nhật';
         }
         if ($requestBlood) {
             if ($this->model->has('bloodBag')->find($requestBlood->id)) {
