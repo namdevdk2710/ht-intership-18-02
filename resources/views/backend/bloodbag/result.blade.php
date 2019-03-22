@@ -66,6 +66,9 @@
                 {!! Form::text('unit', null, ['class' => 'col-sm-6']) !!}
             </td>
             <td class="col-sm-4">
+                {!! Form::label('blood_group', 'Nhóm máu', ['class' =>
+                'col-sm-6']) !!}
+                {!! Form::select('blood_group', $bloodGroups->pluck('name', 'id')->toArray(),null,['class'=>'col-sm-6']) !!}
             </td>
             <td class="col-sm-4">
             </td>

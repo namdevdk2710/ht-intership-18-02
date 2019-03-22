@@ -55,4 +55,12 @@ class InformationRepository extends BaseRepository implements InformationReposit
 
         return $this->model->create($data);
     }
+
+    public function updateBloodGroup($request, $userId)
+    {
+        $userInfo = $this->model->where('user_id', $userId)->first();
+        $userInfo->blood_id = $request->input('blood_group');
+
+        return $userInfo->save();
+    }
 }
