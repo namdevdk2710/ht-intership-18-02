@@ -27,6 +27,6 @@ class PostController extends Controller
         $posts = $this->postRepository->index();
         $post = $this->postRepository->find($id);
 
-        return view('frontend.posts.detail', compact('post','posts')) ;
+        return view('frontend.posts.detail', compact('post', 'posts')) ;
     }
 }
