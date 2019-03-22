@@ -46,9 +46,6 @@
                     @endif
                 </td>
                 <td>
-                    <a class="btn btn-sm btn-primary" href="#" data-toggle="modal" data-target="#">
-                        Chi tiết
-                    </a>
                     <a href="" class="btn btn-sm btn-warning " class="btn btn-primary" data-toggle="modal"
                         data-target="#exampleModalLong{{$user->id}}">
                         Sữa

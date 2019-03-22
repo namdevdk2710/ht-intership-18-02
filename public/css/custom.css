@@ -310,3 +310,6 @@
 .name-post{
     display: inline !important;
 }
+.back{
+    padding: .5em;
+}

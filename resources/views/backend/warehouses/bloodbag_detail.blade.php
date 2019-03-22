@@ -39,15 +39,25 @@
             </label>
             <div class="col-md-4">
                 <label class="">Trạng thái:</label>
-                {!! Form::select('note',[ 'Đã nhập kho' => 'Đã nhập kho', 'Hỏng' => 'Hỏng', 'Hết hạn' => 'Hết hạn'],
+                {!! Form::select('note',[
+                    'Đã nhập kho' => 'Đã nhập kho',
+                    'Hỏng' => 'Hỏng',
+                    'Hết hạn' => 'Hết hạn',
+                    'Xuất ngoài' => 'Xuất ngoài',
+                    ],
                 ['id' => 'select-warehouse']) !!}
             </div>
         </div>
     </div>
-    <div class="col-md-12 export-tr" align="right">
-        <button type="submit" class="btn btn-sm btn-danger">
-            Cập nhập tình trạng
-        </button>
+    <div>
+        <div class="text-left col-md-4 back">
+            <a href="{{route('blood-bags.index')}}">Quay lại</a>
+        </div>
+        <div class="col-md-8 export-tr" align="right">
+            <button type="submit" class="btn btn-sm btn-danger">
+                Cập nhập tình trạng
+            </button>
+        </div>
     </div>
     {!! Form::close() !!}
 </div>

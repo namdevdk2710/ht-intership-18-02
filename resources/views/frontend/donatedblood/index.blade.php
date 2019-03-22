@@ -16,8 +16,7 @@
 <div class="container">
     @if (session('message'))
     <script>
-    alert('{{ session('
-        message ') }}');
+    alert('{{ session('message') }}');
     </script>
     @endif
     <table class="table table-bordered my-5">
