@@ -28,7 +28,11 @@
             <tr class="text-center">
                 <td>{{$bloodBag->id}}</td>
                 <td>{{$bloodBag->requestBlood->user->information->name}}</td>
+                @if($bloodBag->requestBlood->user->information->blood_id > 0)
                 <td>{{$bloodBag->requestBlood->user->information->bloodGroup->name}}</td>
+                @else
+                <td>{{"Chưa nhập kết quả"}}</td>
+                @endif
                 <td>{{$bloodBag->unit}}</td>
                 <td>Đạt yêu cầu</td>
                 <td>
@@ -38,12 +42,17 @@
                         @endforeach
                     </select>
                 </td>
+                @if($bloodBag->requestBlood->user->information->blood_id > 0)
                 <td>
-                    {!! Form::button('Nhập kho', ['class' => 'btn btn-sm btn-danger', 'type' => 'submit']) !!}
+                    {!! Form::button('Nhập kho',
+                        ['class' => 'btn btn-sm btn-danger', 'type' => 'submit'])
+                    !!}
                 </td>
+                @else
+                <td class="text-danger">{{"Không thể nhập kho"}}</td>
+                @endif
             </tr>
             {!! Form::close() !!}
-
             @endforeach
         </tbody>
     </table>
@@ -54,7 +63,8 @@
 
 @if (session('success'))
 <script>
-    alert('{{ session('success') }}');
+alert('{{ session('
+    success ') }}');
 </script>
 @endif
 
