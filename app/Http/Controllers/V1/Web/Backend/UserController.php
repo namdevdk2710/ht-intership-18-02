@@ -51,7 +51,9 @@ class UserController extends Controller
 
     public function store(UserRequest $request)
     {
-       $this->userRepository->store($request->only('username', 'email', 'password', 'role'));
+        $user = $this->userRepository->store($request->only('username', 'email', 'password', 'role'));
+        $infor = $this->inforReponsitoty->store($request);
+        $infor->update(['user_id' => $user->id]);
 
         return redirect()->route('users.list')->with('success', 'Thêm người dùng thành công');
     }
