@@ -1,6 +1,18 @@
 @extends('frontend.layouts.app')
 @section('content')
-<div class="container">
+<div class="breadcrumb-agile">
+    <div aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="/">Trang chủ</a>
+            </li>
+            <a href="{{route('getSearch')}}" class="breadcrumb-item active" aria-current="page">
+                Kết quả xét nghiệm
+            </a>
+        </ol>
+    </div>
+</div>
+<div class="container mb-5">
     <table class="table table-bordered my-5">
 
     </table>

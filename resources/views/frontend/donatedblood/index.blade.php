@@ -1,11 +1,25 @@
 @extends('frontend.layouts.app')
 @section('content')
+<div class="breadcrumb-agile">
+    <div aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="/">Trang chủ</a>
+            </li>
+            <a href="{{route('requestBlood.getRegisterDonated')}}"
+             class="breadcrumb-item active" aria-current="page">
+                Đăng ký hiếm máu
+            </a>
+        </ol>
+    </div>
+</div>
 <div class="container">
-@if (session('message'))
-<script>
-    alert('{{ session('message') }}');
-</script>
-@endif
+    @if (session('message'))
+    <script>
+    alert('{{ session('
+        message ') }}');
+    </script>
+    @endif
     <table class="table table-bordered my-5">
         <thead>
             <tr class="text-center">
@@ -33,18 +47,14 @@
                 </td>
                 <td class="text-nowrap">
                     @if (Auth::check())
-                    <a type="button" class="btn btn-danger btn-sm"
-                        data-toggle="modal"
-                        data-target="#register-calendar{{$calendar->id}}"
-                        href="#">
+                    <a type="button" class="btn btn-danger btn-sm" data-toggle="modal"
+                        data-target="#register-calendar{{$calendar->id}}" href="#">
                         Đăng ký
                     </a>
                     @include('frontend.donatedblood.confirm')
                     @else
-                    <a type="button" class="btn btn-danger btn-sm"
-                        data-toggle="modal"
-                        data-target="#register-user-and-calendar{{$calendar->id}}"
-                        href="#">
+                    <a type="button" class="btn btn-danger btn-sm" data-toggle="modal"
+                        data-target="#register-user-and-calendar{{$calendar->id}}" href="#">
                         Đăng ký
                     </a>
                     @include('frontend.donatedblood.register')

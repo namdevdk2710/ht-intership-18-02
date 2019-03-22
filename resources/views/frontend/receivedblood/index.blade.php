@@ -1,8 +1,23 @@
 @extends('frontend.layouts.app')
 @section('content')
+
+<div class="breadcrumb-agile">
+    <div aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="/">Trang chủ</a>
+            </li>
+            <a href="{{route('requestBlood.getRegisterReceived')}}"
+            class="breadcrumb-item active" aria-current="page">
+                Đăng ký nhận máu
+            </a>
+        </ol>
+    </div>
+</div>
 @if (session('message'))
 <script>
-    alert('{{ session('message') }}');
+alert('{{ session('
+    message ') }}');
 </script>
 @endif
 <div class="container">

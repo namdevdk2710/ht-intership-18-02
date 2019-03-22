@@ -1,5 +1,17 @@
 @extends('frontend.layouts.app')
 @section('content')
+<div class="breadcrumb-agile">
+    <div aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="/">Trang chủ</a>
+            </li>
+            <a href="{{route('getDiary')}}" class="breadcrumb-item active" aria-current="page">
+                Tra cứu nhật ký
+            </a>
+        </ol>
+    </div>
+</div>
 <div class="container search-container">
     <table class="table table-bordered my-3">
 
@@ -80,13 +92,13 @@
                 <tr>
                     <td colspan="7" class="text-center">
                         Số lần đã hiến:
-                            <span class="text-danger mr-4">
-                                {{ $result->user->requestBlood->bloodBag->count() }}
-                            </span>
+                        <span class="text-danger mr-4">
+                            {{ $result->user->requestBlood->bloodBag->count() }}
+                        </span>
                         Số lần đã nhận:
-                            <span class="text-danger">
-                                {{ $result->bloodBag->count() }}
-                            </span>
+                        <span class="text-danger">
+                            {{ $result->bloodBag->count() }}
+                        </span>
                     </td>
                 </tr>
                 @else

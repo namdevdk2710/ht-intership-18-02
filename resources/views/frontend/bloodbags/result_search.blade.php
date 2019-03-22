@@ -1,5 +1,17 @@
 @extends('frontend.layouts.app')
 @section('content')
+<div class="breadcrumb-agile">
+    <div aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="/">Trang chủ</a>
+            </li>
+            <a href="{{route('getSearch')}}" class="breadcrumb-item active" aria-current="page">
+                Kết quả xét nghiệm
+            </a>
+        </ol>
+    </div>
+</div>
 <div class="container search-container">
     <table class="table table-bordered my-3">
 
@@ -46,7 +58,7 @@
                         {{ $result->requestBlood->user->information->cmnd }}
                     </td>
                     <td class="text-center">
-                    {{ $result->requestBlood->calendar->time }}
+                        {{ $result->requestBlood->calendar->time }}
                     </td>
                     <td class="text-center">
                         {{ $result->requestBlood->user->information->bloodGroup->name}}
