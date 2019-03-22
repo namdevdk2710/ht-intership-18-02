@@ -15,7 +15,9 @@
                         <i>|</i>
                     </li>
                     <li>
-                        <a href="#" class="font-weight-bold">Xem chi tiết</a>
+                        <a href="{{route('getDetailNews', $post->id)}}" class="font-weight-bold">
+                            Xem chi tiết
+                        </a>
                     </li>
                 </ul>
                 <p> {{ substr($post->content, 3, 100) }}... </p>
@@ -33,7 +35,9 @@
                         <i>|</i>
                     </li>
                     <li>
-                        <a href="#" class="font-weight-bold">Xem chi tiết</a>
+                        <a href="{{route('getDetailNews', $post->id)}}" class="font-weight-bold">
+                            Xem chi tiết
+                        </a>
                     </li>
                 </ul>
                 <p> {{ substr($post->content, 3, 100) }}... </p>

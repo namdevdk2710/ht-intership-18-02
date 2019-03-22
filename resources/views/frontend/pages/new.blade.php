@@ -9,7 +9,7 @@
                 </div>
                 <div class="col-lg-8 col-md-7 col-8 posts-grid-right mt-lg-0 mt-4">
                     <h4>
-                        <a href="">{{$post->title}}</a>
+                        <a href="{{route('getDetailNews', $post->id)}}">{{$post->title}}</a>
                     </h4>
                     <ul class="wthree_blog_events_list mt-2">
                         <p class="p-new"> {{ substr($post->content, 3, 50) }}... </p>
