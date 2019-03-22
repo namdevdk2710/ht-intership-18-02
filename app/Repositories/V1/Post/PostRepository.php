@@ -29,7 +29,7 @@ class PostRepository extends BaseRepository implements PostRepositoryInterface
                 $imageUrl= str_random(5).'_'.$name;
             }
             $file->move($forder, $imageUrl);
-
+            $imageUrl = 'uploads/images/' . $imageUrl;
             $this->model->create([
                 'title' => $request['title'],
                 'content' => $request['content'],
