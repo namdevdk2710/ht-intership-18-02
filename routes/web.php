@@ -25,7 +25,8 @@ Route::get('admin/login', 'V1\Web\Backend\AdminController@getLogin')->name('admi
 Route::post('admin/login', 'V1\Web\Backend\AdminController@postLogin')->name('admin.postLogin');
 
 //---------------------------Back-end routes----------------------------------------//
-Route::group(['prefix' => 'admin', 'namespace' => 'V1\Web\Backend', 'middleware' => 'admin'], function () {
+Route::group(['prefix' => 'admin', 'namespace' => 'V1\Web\Backend',
+    'middleware' => 'admin'], function () {
 //---------------------------Admin index----------------------------------------//
     Route::get('/', 'AdminController@index')->name('admin.index');
 //---------------------------Admin-logout----------------------------------------//
