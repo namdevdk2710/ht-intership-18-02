@@ -7,6 +7,10 @@ Route::group(['prefix' => '/', 'namespace' => 'V1\Web\Frontend'], function () {
     Route::get('/logout', 'PageController@logout')->name('logout');
     Route::get('/register-donate', 'RequestBloodController@getRegisterDonated')
     ->name('requestBlood.getRegisterDonated');
+    Route::get('/register-donate/showDistrictInCity', 'RequestBloodController@showDistrict')
+    ->name('showDistrictInCity');
+    Route::get('/register-donate/showCommuneInDistrict', 'RequestBloodController@showCommune')
+    ->name('showCommuneInDistrict');
     Route::post('/register-donate/{calendarId}', 'RequestBloodController@postRegisterDonated')
     ->name('requestBlood.postRegisterDonated');
     Route::get('/result', 'BloodBagController@index')->name('getSearch');

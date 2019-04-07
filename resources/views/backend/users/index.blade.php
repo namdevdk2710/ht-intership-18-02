@@ -1,7 +1,11 @@
 @extends('backend.layouts.app')
 
 @section('content')
-
+@if(Auth::user()->id == 2)
+<div class="table-responsive blood-table text-danger">
+    Không có quyển truy cập !!
+</div>
+@else
 <div class="table-responsive blood-table">
     <div class='calendar-table-header'>
         <span class="calendar-table-header-title text-center text-uppercase col-md-10 col-sm-8 col-6">
@@ -95,5 +99,5 @@ $(document).ready(function() {
     });
 });
 </script>
-
+@endif
 @endsection

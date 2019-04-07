@@ -63,7 +63,7 @@ class AdminController extends Controller
             return redirect()->back()->with('login-error', 'Email không tồn tại !');
         } elseif ($rs == 'role') {
             return redirect()->back()->with('login-error', 'Không có quyền truy cập trang này !');
-        } elseif ($rs == 'password') {
+        } else {
             return redirect()->back()->with('login-error', 'Password không chính xác !');
         }
 

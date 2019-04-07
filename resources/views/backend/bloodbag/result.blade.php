@@ -54,7 +54,7 @@
                 tính'],0,['class'=>'col-sm-6']) !!}
             </td>
             <td class="col-sm-4">
-                {!! Form::label('other', 'Kết quả khác', ['class' =>
+                {!! Form::label('other', 'Ghi chú', ['class' =>
                 'col-sm-6']) !!}
                 {!! Form::text('other', null, ['class' => 'col-sm-6']) !!}
             </td>

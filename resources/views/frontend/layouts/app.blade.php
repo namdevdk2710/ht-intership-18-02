@@ -80,8 +80,6 @@
     <script src="{{asset('asset/fe/js/fixed-nav.js')}}"></script>
     <!-- //fixed navigation -->
 
-    <!-- smooth scrolling -->
-    <script src="{{asset('asset/fe/js/SmoothScroll.min.js')}}"></script>
     <!-- move-top -->
     <script src="{{asset('asset/fe/js/move-top.js')}}"></script>
     <!-- easing -->

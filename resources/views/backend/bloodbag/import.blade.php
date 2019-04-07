@@ -2,8 +2,9 @@
 @section('content')
 <div class="table-responsive blood-bag">
     <div class='calendar-table-header'>
-        <span class="calendar-table-header-title text-center text-uppercase col-12">Nhập
-            túi máu</span>
+        <span class="calendar-table-header-title text-center text-uppercase col-12">
+            Nhập kết quả xét nghiệm
+        </span>
     </div>
     <div class="row">
     </div>

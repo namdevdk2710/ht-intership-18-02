@@ -14,11 +14,6 @@
     </div>
 </div>
 <div class="container">
-    @if (session('message'))
-    <script>
-    alert('{{ session('message') }}');
-    </script>
-    @endif
     <table class="table table-bordered my-5">
         <thead>
             <tr class="text-center">
@@ -67,4 +62,9 @@
         {{ $calendars->links() }}
     </div>
 </div>
+@if (session('message'))
+    <script>
+        alert("{{ session('message') }}");
+    </script>
+@endif
 @endsection

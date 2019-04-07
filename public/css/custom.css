@@ -313,3 +313,11 @@
 .back{
     padding: .5em;
 }
+.form-check-label{
+    color: #000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.form-control{
+    border-radius: 5px;
+}

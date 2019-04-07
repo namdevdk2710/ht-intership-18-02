@@ -25,13 +25,12 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
 
         if (! $user) {
             return 'email';
-        } elseif ($user->role !== 1) {
+        } elseif ($user->role == 0) {
             return 'role';
         }
         $data = [
             'email' => $request['email'],
             'password' => $request['password'],
-            'role' => 1,
         ];
         if (Auth::attempt($data)) {
             return 'password';

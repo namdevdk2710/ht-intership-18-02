@@ -352,4 +352,49 @@ $(document).ready(function () {
             $('#js-register-received-form').submit();
         }
     });
+
+    $("#js-register-donated select[name='cities']").on('change', function() {
+        var city_id = $(this).val();
+        var token = $("input[name='_token']").val();
+        $.ajax({
+            url: "/register-donate/showDistrictInCity",
+            method: 'GET',
+            data: {
+                city_id: city_id,
+                _token: token,
+            },
+            success: function(data) {
+                $("select[name='districts']").html('');
+                $.each(data, function(key, value) {
+                    $("select[name='districts']").append(
+                        "<option value=" + key + ">" + value +
+                        "</option>"
+                        );
+                });
+            }
+        });
+    });
+
+    $("select[name='districts']").change(function() {
+        var district_id = $(this).val();
+        var token = $("input[name='_token']").val();
+        $.ajax({
+            url: "/register-donate/showCommuneInDistrict",
+            method: 'GET',
+            data: {
+                district_id: district_id,
+                _token: token,
+            },
+            success: function(data) {
+                $("select[name='communes'").html('');
+                $.each(data, function(key, value) {
+                    console.log(key);
+                    $("select[name='communes']").append(
+                        "<option value=" + key + ">" + value +
+                        "</option>"
+                        );
+                });
+            }
+        });
+    });
 });
