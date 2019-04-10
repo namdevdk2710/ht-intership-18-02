@@ -51,7 +51,7 @@ class RequestBloodController extends Controller
         $calendars = $this->calendarRepository->getFutureCalendar(5);
         $cities = $this->cityRepository->getCity();
 
-        return view('frontend.donatedblood.index', compact('calendars','cities'));
+        return view('frontend.donatedblood.index', compact('calendars', 'cities'));
     }
 
     public function postRegisterDonated(Request $request, $calendarId)
