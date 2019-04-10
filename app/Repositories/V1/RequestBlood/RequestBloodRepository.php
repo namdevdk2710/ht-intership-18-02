@@ -15,12 +15,12 @@ class RequestBloodRepository extends BaseRepository implements RequestBloodRepos
 
     public function donated()
     {
-        return $this->model->where('type', 'cho')->paginate(5);
+        return $this->model->where('type', 'cho')->where('status', 0)->paginate(5);
     }
 
     public function received()
     {
-        return $this->model->where('type', 'nhan')->paginate(5);
+        return $this->model->where('type', 'nhan')->where('status', 0)->paginate(5);
     }
 
     public function receivedByStatus()
@@ -31,14 +31,14 @@ class RequestBloodRepository extends BaseRepository implements RequestBloodRepos
     public function confirm($id)
     {
         $requestBlood = $this->model->find($id);
-        $requestBlood->status = !($requestBlood->status);
+        $requestBlood->status = 1;
 
         return $requestBlood->save();
     }
 
     public function getById($id)
     {
-        $requestBlood = $this->model->where('type', 'cho')->find($id);
+        $requestBlood = $this->model->where('type', 'cho')->where('status', 1)->find($id);
         if (isset($requestBlood->user->information->blood_id)) {
             $blood = $requestBlood->user->information->bloodGroup->name;
         } else {
@@ -73,11 +73,20 @@ class RequestBloodRepository extends BaseRepository implements RequestBloodRepos
 
     public function registerDonated($request, $calendarId, $userId)
     {
+        $requestBlood = $this->model->where('user_id', $userId)->orderBy('updated_at', 'dec')->first();
+
         if ($this->model->where([
             ['user_id', $userId],
-            ['calendar_id', $calendarId],
+            ['status', 0],
         ])->first()) {
             return false;
+        } elseif (isset($requestBlood)) {
+            $week = strtotime(date('d-m-Y', strtotime($requestBlood->updated_at)) . ' +12 week');
+            $expiryDate = strftime('%d-%m-%Y', $week);
+            $today = date('Y-m-d');
+            if ($today < $expiryDate) {
+                return 'time';
+            }
         }
 
         return $this->model->create([
@@ -86,7 +95,7 @@ class RequestBloodRepository extends BaseRepository implements RequestBloodRepos
                 'content' => 'Đăng ký hiến máu',
                 'status' => 0,
                 'type' => 'cho',
-            ]);
+        ]);
     }
 
     public function registerReceived($request, $userId)
