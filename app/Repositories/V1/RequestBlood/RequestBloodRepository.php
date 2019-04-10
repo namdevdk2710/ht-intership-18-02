@@ -77,14 +77,14 @@ class RequestBloodRepository extends BaseRepository implements RequestBloodRepos
 
         if ($this->model->where([
             ['user_id', $userId],
-            ['status', 0]
+            ['status', 0],
         ])->first()) {
             return false;
         }
         elseif(isset($requestBlood)){
-            $week = strtotime(date("d-m-Y", strtotime($requestBlood->updated_at)) . " +12 week");
-            $expiryDate = strftime("%d-%m-%Y", $week);
-            $today = date("Y-m-d");
+            $week = strtotime(date('d-m-Y', strtotime($requestBlood->updated_at)) . ' +12 week');
+            $expiryDate = strftime('%d-%m-%Y', $week);
+            $today = date('Y-m-d');
             if($today < $expiryDate ){
                 return 'time';
             }
