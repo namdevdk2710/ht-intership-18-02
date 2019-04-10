@@ -269,6 +269,69 @@ $(document).ready(function () {
         }
     });
 
+    $('#js-register-donated').validate({
+        rules: {
+            email: {
+                required: true,
+                email: true,
+            },
+            name: {
+                required: true,
+            },
+            dob:{
+                required: true,
+            },
+            cmnd:{
+                required: true,
+            },
+            phone:{
+                required: true,
+            },
+            cities:{
+                required: true,
+            },
+            districts:{
+                required: true,
+            },
+            communes:{
+                required: true,
+            },
+            address:{
+                required: true,
+            },
+        },
+        messages: {
+            email: {
+                required: "Trường này phải có dữ liệu",
+                email: "Email không hợp lệ",
+            },
+            name: {
+                required: "Trường này phải có dữ liệu",
+            },
+            dob:{
+                required: "Trường này phải có dữ liệu",
+            },
+            cmnd:{
+                required: "Trường này phải có dữ liệu",
+            },
+            phone:{
+                required: "Trường này phải có dữ liệu",
+            },
+            cities:{
+                required: "Trường này phải có dữ liệu",
+            },
+            districts:{
+                required: "Trường này phải có dữ liệu",
+            },
+            communes:{
+                required: "Trường này phải có dữ liệu",
+            },
+            address:{
+                required: "Trường này phải có dữ liệu",
+            },
+        }
+    });
+
     $('#addUser').validate({
         rules: {
             email: {

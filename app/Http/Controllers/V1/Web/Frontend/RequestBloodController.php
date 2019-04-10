@@ -11,6 +11,7 @@ use App\Repositories\V1\BloodGroup\BloodGroupRepositoryInterFace;
 use App\Repositories\V1\Information\InformationRepositoryInterFace;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\RegisterReceivedRequest;
+use App\Http\Requests\RegisterDonatedRequest;
 use App\Repositories\V1\City\CityRepositoryInterFace;
 use App\Repositories\V1\District\DistrictRepositoryInterFace;
 use App\Repositories\V1\Commune\CommuneRepositoryInterFace;
@@ -54,7 +55,7 @@ class RequestBloodController extends Controller
         return view('frontend.donatedblood.index', compact('calendars', 'cities'));
     }
 
-    public function postRegisterDonated(Request $request, $calendarId)
+    public function postRegisterDonated(RegisterDonatedRequest $request, $calendarId)
     {
         if (Auth::check()) {
             $result = $this->requestBloodRepository->registerDonated($request, $calendarId, Auth::id());
