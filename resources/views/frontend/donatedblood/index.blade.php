@@ -6,8 +6,7 @@
             <li class="breadcrumb-item">
                 <a href="/">Trang chủ</a>
             </li>
-            <a href="{{route('requestBlood.getRegisterDonated')}}"
-             class="breadcrumb-item active" aria-current="page">
+            <a href="{{route('requestBlood.getRegisterDonated')}}" class="breadcrumb-item active" aria-current="page">
                 Đăng ký hiếm máu
             </a>
         </ol>
@@ -62,9 +61,34 @@
         {{ $calendars->links() }}
     </div>
 </div>
+
+@if ($errors->any())
+<script>
+    var str = "";
+</script>
+@foreach($errors->all() as $error)
+<script>
+    str = str.concat('{{ $error }}' + '\n');
+</script>
+@endforeach
+<script>
+    alert(str);
+</script>
+@endif
+@if (session('success'))
+<script>
+    alert('{{ session('success') }}');
+</script>
+@endif
+@if (session('success'))
+<script>
+alert('{{ session('success') }}');
+</script>
+@endif
+
 @if (session('message'))
-    <script>
-        alert("{{ session('message') }}");
-    </script>
+<script>
+alert("{{ session('message') }}");
+</script>
 @endif
 @endsection

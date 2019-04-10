@@ -9,9 +9,19 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
+            @if ($errors->any())
+            <div class="alert alert-danger text-left">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        {{ $error }}
+                    @endforeach
+                </ul>
+            </div>
+            @endif
+
             {!! Form::open(['route' =>
-            ['requestBlood.postRegisterDonated', $calendar->id,
-            ], 'class' => '', 'id' => 'js-register-donated'])
+            ['requestBlood.postRegisterDonated', $calendar->id],
+            'class' => '', 'id' => 'js-register-donated'])
             !!}
             <div class="modal-body mb-4">
                 <div class="form-group row mb-0 pb-3">
@@ -30,7 +40,7 @@
                     <div class="col-md-6 pb-2">
                         {!! Form::label('Ngày sinh', null , ['class' =>
                         'text-dark text-left']) !!}
-                        {!! Form::date('gender', null, ['class'=>'form-control'])
+                        {!! Form::date('dob', null, ['class'=>'form-control'])
                         !!}
                     </div>
                     <div class="col-md-6 pb-2">

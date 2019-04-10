@@ -321,3 +321,7 @@
 .form-control{
     border-radius: 5px;
 }
+.error{
+    color: red !important;
+    font-size: 85% !important;
+}
