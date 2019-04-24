@@ -325,3 +325,11 @@
     color: red !important;
     font-size: 85% !important;
 }
+::-webkit-input-placeholder {
+    font-size: 85%;
+}
+label{
+    font-weight: bold;
+    letter-spacing: 0 !important ;
+}
+

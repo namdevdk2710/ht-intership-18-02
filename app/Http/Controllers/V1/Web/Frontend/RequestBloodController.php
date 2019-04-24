@@ -79,21 +79,22 @@ class RequestBloodController extends Controller
 
     public function getRegisterReceived()
     {
+        $cities = $this->cityRepository->getCity();
         $bloodGrooups = $this->bloodGroupRepository->index();
         if (Auth::check()) {
             $user = $this->userRepository->find(Auth::id());
 
-            return view('frontend.receivedblood.index', compact('user', 'bloodGrooups'));
+            return view('frontend.receivedblood.index', compact('user', 'bloodGrooups', 'cities'));
         }
 
-        return view('frontend.receivedblood.index', compact('bloodGrooups'));
+        return view('frontend.receivedblood.index', compact('bloodGrooups', 'cities'));
     }
 
-    public function postRegisterReceived(RegisterReceivedRequest $request)
+    public function postRegisterReceived(Request $request)
     {
         if (Auth::check()) {
-            $this->informationRepository->register($request, Auth::id());
             $result = $this->requestBloodRepository->registerReceived($request, Auth::id());
+            return redirect()->back()->with('message', 'Đăng ký thành công.');
         } else {
             $userId = $this->userRepository->registerDonated($request);
             if ($userId > 0) {
