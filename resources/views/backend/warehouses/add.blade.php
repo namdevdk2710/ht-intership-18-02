@@ -9,7 +9,15 @@
                 <h4 class="text-center">Thêm kho máu</h4>
             </div>
             <div class="modal-body add-warehouse">
-                {!! Form::open(['method' => 'POST', 'route' => ['warehouses.store'],'id' => 'js-add-calendar-form']) !!}
+                {!! Form::open
+                    (
+                        [
+                            'method' => 'POST',
+                            'route' => ['warehouses.store'],
+                            'id' => 'js-add-calendar-form'
+                        ]
+                    )
+                !!}
                 <div class="form-group">
                     {!! Form::label('Tên kho máu:', null) !!}
                     <span style="color:red;">*</span>

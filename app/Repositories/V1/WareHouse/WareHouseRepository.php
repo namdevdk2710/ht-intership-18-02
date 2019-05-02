@@ -33,6 +33,7 @@ class WareHouseRepository extends BaseRepository implements WareHouseRepositoryI
         $warehouse = $this->model->find($id);
         $warehouse->name = $data->input('name');
         $warehouse->address = $data->input('address');
+        $warehouse->commune_id = $data->input('commune');
 
         return $warehouse->save();
     }
