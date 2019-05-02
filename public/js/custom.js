@@ -126,6 +126,33 @@ $(document).ready(function () {
         }
     });
 
+    $('#edit-warehouse').validate({
+        rules: {
+            city: "required",
+            district: "required",
+            commune: "required",
+            address: "required",
+            name: "required",
+        },
+        messages: {
+            city: {
+                required: "Trường này phải có dữ liệu",
+            },
+            district: {
+                required: "Trường này phải có dữ liệu",
+            },
+            commune: {
+                required: "Trường này phải có dữ liệu",
+            },
+            address: {
+                required: "Trường này phải có dữ liệu",
+            },
+            name: {
+                required: "Trường này phải có dữ liệu",
+            },
+        }
+    });
+
     $('#fe-login').validate({
         rules: {
             email: {

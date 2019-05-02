@@ -102,7 +102,7 @@ class WareHouseController extends Controller
     {
         $this->repository->update($id, $request);
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Sữa thành công');
     }
 
     /**
@@ -115,7 +115,7 @@ class WareHouseController extends Controller
     {
         $this->repository->destroy($id);
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Xóa thành công');
     }
 
     public function getExport()
