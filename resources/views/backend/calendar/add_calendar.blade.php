@@ -16,35 +16,50 @@
                     'col-sm-4']) !!}
                     <div class="col-sm-4">
                         {!!
-                        Form::time('time',now(),['class'=>'form-control'])!!}
+                        Form::time('time', now(), ['class'=>'form-control'])!!}
                     </div>
                     <div class="col-sm-4">
                         {!!
-                        Form::date('date',now(),['class'=>'form-control'])!!}
+                        Form::date('date', now(), ['class'=>'form-control'])!!}
                     </div>
                 </div>
                 <div class="form-group form-padding">
-                    {!! Form::label('Thành phố: ', null , ['class' =>
-                    'col-sm-4']) !!}
+                    {!! Form::label('Thành phố: ', null , ['class' => 'col-sm-4']) !!}
                     <div class="col-sm-8">
-                        {!! Form::select('city',[''=>'--- Chọn Thành
-                        phố---']+$cities ,null,['class'=>'form-control']) !!}
+                        {!! Form::select
+                            (
+                                'city',
+                                [''=>'--- Chọn Thành phố---']+$cities ,
+                                null,
+                                ['class'=>'form-control']
+                            )
+                        !!}
                     </div>
                 </div>
                 <div class="form-group form-padding">
-                    {!! Form::label('Quận/Huyện: ', null , ['class' =>
-                    'col-sm-4']) !!}
+                    {!! Form::label('Quận/Huyện: ', null , ['class' => 'col-sm-4']) !!}
                     <div class="col-sm-8">
-                        {!! Form::select('district',[''=>'--- Chọn Quận/Huyện
-                        ---'],null,['class'=>'form-control']) !!}
+                        {!! Form::select
+                            (
+                                'district',
+                                [''=>'--- Chọn Quận/Huyện ---'],
+                                null,
+                                ['class'=>'form-control']
+                            )
+                        !!}
                     </div>
                 </div>
                 <div class="form-group form-padding">
-                    {!! Form::label('Xã/Phường: ', null , ['class' =>
-                    'col-sm-4']) !!}
+                    {!! Form::label('Xã/Phường: ', null , ['class' => 'col-sm-4']) !!}
                     <div class="col-sm-8">
-                        {!! Form::select('commune',[''=>'--- Chọn Xã/Phường
-                        ---'],null,['class'=>'form-control']) !!}
+                        {!! Form::select
+                            (
+                                'commune',
+                                [''=>'--- Chọn Xã/Phường ---'],
+                                null,
+                                ['class'=>'form-control']
+                            )
+                        !!}
                     </div>
                 </div>
                 <div class="form-group form-padding">

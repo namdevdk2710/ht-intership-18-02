@@ -17,6 +17,8 @@ class CreateWareHousesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('address');
+            $table->integer('commune_id')->unsigned()->nullable();
+            $table->foreign('commune_id')->references('id')->on('communes')->onDelete('cascade');   
             $table->timestamps();
         });
     }

@@ -8,6 +8,9 @@ use App\Repositories\V1\WareHouse\WareHouseRepositoryInterface;
 use App\Repositories\V1\RequestBlood\RequestBloodRepositoryInterface;
 use App\Repositories\V1\BloodBag\BloodBagRepositoryInterface;
 use App\Repositories\V1\Diary\DiaryRepositoryInterFace;
+use App\Repositories\V1\City\CityRepositoryInterFace;
+use App\Repositories\V1\District\DistrictRepositoryInterFace;
+use App\Repositories\V1\Commune\CommuneRepositoryInterFace;
 
 class WareHouseController extends Controller
 {
@@ -15,24 +18,32 @@ class WareHouseController extends Controller
     protected $requestRepository;
     protected $bloodBagRepository;
     protected $diaryRepository;
+    protected $cityRepository;
 
     public function __construct(
         WareHouseRepositoryInterFace $repository,
         RequestBloodRepositoryInterface $requestRepository,
         BloodBagRepositoryInterface $bloodBagRepository,
-        DiaryRepositoryInterFace $diaryRepository
+        DiaryRepositoryInterFace $diaryRepository,
+        CityRepositoryInterFace $cityRepository,
+        DistrictRepositoryInterFace $districtRepository,
+        CommuneRepositoryInterFace $communeRepository
     ) {
         $this->repository = $repository;
         $this->requestRepository = $requestRepository;
         $this->bloodBagRepository = $bloodBagRepository;
         $this->diaryRepository = $diaryRepository;
+        $this->cityRepository = $cityRepository;
+        $this->districtRepository = $districtRepository;
+        $this->communeRepository = $communeRepository;
     }
 
     public function index()
     {
         $warehouses = $this->repository->index();
+        $cities = $this->cityRepository->getCity();
 
-        return view('backend.warehouses.index', compact('warehouses'));
+        return view('backend.warehouses.index', compact('warehouses', 'cities'));
     }
 
     /**
@@ -167,5 +178,23 @@ class WareHouseController extends Controller
         $this->bloodBagRepository->updateStatus($id, $request);
 
         return redirect()->route('blood-bags.index')->with('success', 'Cập nhập thành công');
+    }
+
+    public function showDistrictInCity(Request $request)
+    {
+        if ($request->ajax()) {
+            $districts = $this->districtRepository->showDistrictInCity($request);
+
+            return response()->json($districts);
+        }
+    }
+
+    public function showCommuneInDistrict(Request $request)
+    {
+        if ($request->ajax()) {
+            $communes = $this->communeRepository->showCommuneInDistrict($request);
+
+            return response()->json($communes);
+        }
     }
 }
