@@ -34,7 +34,7 @@ $(document).ready(function () {
             success: function(data) {
                 $("select[name='commune'").html('');
                 $.each(data, function(key, value) {
-                    console.log(key);
+                    // console.log(key);
                     $("select[name='commune']").append(
                         "<option value=" + key + ">" + value +
                         "</option>"
@@ -57,6 +57,7 @@ $(document).ready(function () {
             district: "required",
             commune: "required",
             address: "required",
+            name: "required",
         },
         messages: {
             time: {
@@ -76,6 +77,9 @@ $(document).ready(function () {
                 required: "Trường này phải có dữ liệu",
             },
             address: {
+                required: "Trường này phải có dữ liệu",
+            },
+            name: {
                 required: "Trường này phải có dữ liệu",
             },
         }
@@ -94,6 +98,7 @@ $(document).ready(function () {
             district: "required",
             commune: "required",
             address: "required",
+            name: "required",
         },
         messages: {
             time: {
@@ -113,6 +118,9 @@ $(document).ready(function () {
                 required: "Trường này phải có dữ liệu",
             },
             address: {
+                required: "Trường này phải có dữ liệu",
+            },
+            name: {
                 required: "Trường này phải có dữ liệu",
             },
         }

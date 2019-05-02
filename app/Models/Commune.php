@@ -20,4 +20,9 @@ class Commune extends Model
     {
         return $this->hasMany('App\Models\Information');
     }
+
+    public function warehouses()
+    {
+        return $this->hasMany('App\Models\Warehouse');
+    }
 }
