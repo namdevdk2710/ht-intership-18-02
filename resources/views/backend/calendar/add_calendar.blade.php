@@ -29,7 +29,7 @@
                         {!! Form::select
                             (
                                 'city',
-                                [''=>'--- Chọn Thành phố---']+$cities ,
+                                [''=>'--- Chọn Thành phố---']+$cities,
                                 null,
                                 ['class'=>'form-control']
                             )
