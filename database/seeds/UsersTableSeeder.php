@@ -14,7 +14,7 @@ class UsersTableSeeder extends Seeder
     {
         $faker = Faker\Factory::create();
 
-        for ($i = 0; $i < 50; $i++) {
+        for ($i = 0; $i < 5; $i++) {
             DB::table('users')->insert([
                 'username' => $faker->name,
                 'email' => $faker->unique()->email,
