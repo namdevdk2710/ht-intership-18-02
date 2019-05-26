@@ -16,6 +16,11 @@
     <table class="table table-bordered my-5">
 
     </table>
+    @if (session('success'))
+    <div class="alert alert-info">
+        {{ session('success') }}
+    </div>
+    @endif
     <div class="d-flex justify-content-center">
         <div class='calendar-table-header'>
             {!! Form::open(['route' => 'search', 'class' => 'form-inline'])

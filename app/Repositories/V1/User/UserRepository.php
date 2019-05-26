@@ -6,6 +6,8 @@ use App\Repositories\BaseRepository;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\LabResult;
 
 class UserRepository extends BaseRepository implements UserRepositoryInterface
 {
@@ -124,5 +126,12 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
         } else {
             return false;
         }
+    }
+
+    public function mailLabResult($id)
+    {
+        $data = $this->model->find($id);
+
+        return Mail::to($data['email'])->send(new LabResult($data));
     }
 }
