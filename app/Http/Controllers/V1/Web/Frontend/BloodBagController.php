@@ -13,8 +13,7 @@ class BloodBagController extends Controller
     protected $diaryRepository;
     protected $userRepository;
 
-    public function __construct
-    (
+    public function __construct(
         DiaryRepositoryInterFace $diaryRepository,
         UserRepositoryInterFace $userRepository
     ) {
@@ -38,10 +37,6 @@ class BloodBagController extends Controller
         $this->userRepository->mailLabResult($id);
 
         return redirect()->back()
-                        ->with
-                            (
-                                'success',
-                                'Chúng tôi đã gửi kết quả đển mail của bạn.Hãy kiểm tra hộp thư của bạn'
-                            );
+            ->with('success', 'Chúng tôi đã gửi kết quả đển mail của bạn. Hãy kiểm tra hộp thư của bạn');
     }
 }
