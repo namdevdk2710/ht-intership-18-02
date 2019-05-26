@@ -34,6 +34,7 @@
         href="//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
         rel="stylesheet">
     <!-- //Web-Fonts -->
+    <script src="{{asset('asset/fe/js/jquery-2.2.3.min.js')}}"></script>
     <link rel="stylesheet" href="{{asset('css/custom.css')}}">
 </head>
 

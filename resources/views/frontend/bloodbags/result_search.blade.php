@@ -16,10 +16,10 @@
     <table class="table table-bordered my-3">
 
     </table>
+   
     <div class="d-flex justify-content-center">
         <div class='calendar-table-header'>
-            {!! Form::open(['route' => 'search', 'class' => 'form-inline'])
-            !!}
+            {!! Form::open(['route' => 'search', 'class' => 'form-inline']) !!}
             {!! Form::select('code',['request_id'=>'Mã hiến máu', 'cmnd' => 'CMND']
             ,null ,['class'=>'form-control']) !!}
             {!! Form::text('search', null, ['class' => 'form-control', 'required']) !!}
@@ -40,8 +40,8 @@
                     <th class="text-center">CMND</th>
                     <th class="text-center">Thời gian hiến</th>
                     <th class="text-center">Nhóm máu</th>
-                    <th class="text-center">Thể tích</th>
-                    <th class="text-center">Kết quả</th>
+                    <th class="text-center">Tình trạng</th>
+                    <th class="text-center">Chi tiết kết quả</th>
                 </tr>
             </thead>
             <tbody id="body-calendar">
@@ -64,10 +64,19 @@
                         {{ $result->requestBlood->user->information->bloodGroup->name}}
                     </td>
                     <td class="text-center">
-                        {{ $result->requestBlood->bloodBag[0]->unit }}
+                        {{ $result->requestBlood->bloodBag[0]->status ? 'Đạt': 'Không đạt' }}
                     </td>
                     <td class="text-center">
-                        {{ $result->requestBlood->bloodBag[0]->status ? 'Đạt': 'Không đạt' }}
+                        {!! Form::open
+                            (
+                                [
+                                    'method' => 'post',
+                                    'route' => ['mailResult', $result->user->id],
+                                ]
+                            )
+                        !!}
+                        {!! Form::submit('Xem chi tiết', ['class' => 'btn btn-sm btn-info'] )!!}
+                        {!! Form::close() !!}
                     </td>
                 </tr>
                 @endforeach
@@ -85,4 +94,9 @@
         {{ $results->links() }}
     </div>
 </div>
+<script>
+$(".btn-info").click(function() {
+    return confirm('Đồng ý chúng tôi sẽ gửi mail kết quả cho bạn?');
+});
+</script>
 @endsection

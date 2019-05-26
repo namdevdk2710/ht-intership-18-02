@@ -15,6 +15,7 @@ Route::group(['prefix' => '/', 'namespace' => 'V1\Web\Frontend'], function () {
     ->name('requestBlood.postRegisterDonated');
     Route::get('/result', 'BloodBagController@index')->name('getSearch');
     Route::post('/result', 'BloodBagController@search')->name('search');
+    Route::post('/result/mail/{id}', 'BloodBagController@mailResult')->name('mailResult');
     Route::get('/register-received', 'RequestBloodController@getRegisterReceived')
     ->name('requestBlood.getRegisterReceived');
     Route::post('/register-received', 'RequestBloodController@postRegisterReceived')
