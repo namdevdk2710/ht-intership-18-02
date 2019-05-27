@@ -53,8 +53,8 @@
                     {!! Form::select
                         (
                             'commune',
-                            $->commune->district->communes->pluck('name', 'id')->toArray(),
-                            $->commune->id,
+                            $warehouse->commune->district->communes->pluck('name', 'id')->toArray(),
+                            $warehouse->commune->id,
                             ['class'=>'form-control']
                         )
                     !!}

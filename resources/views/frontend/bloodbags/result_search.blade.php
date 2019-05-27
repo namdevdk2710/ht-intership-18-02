@@ -16,7 +16,7 @@
     <table class="table table-bordered my-3">
 
     </table>
-   
+
     <div class="d-flex justify-content-center">
         <div class='calendar-table-header'>
             {!! Form::open(['route' => 'search', 'class' => 'form-inline']) !!}
@@ -64,7 +64,7 @@
                         {{ $result->requestBlood->user->information->bloodGroup->name}}
                     </td>
                     <td class="text-center">
-                        {{ $result->requestBlood->bloodBag[0]->status ? 'Đạt': 'Không đạt' }}
+                        {{ $result->requestBlood->bloodBag->last()->status ? 'Đạt': 'Không đạt' }}
                     </td>
                     <td class="text-center">
                         {!! Form::open
