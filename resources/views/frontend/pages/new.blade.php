@@ -3,7 +3,7 @@
     <div class="posts-grids">
         @foreach($posts as $post)
         <div class="row posts-grid mt-4">
-            <a href="">
+            <a href="{{route('getDetailNews', $post->id)}}">
                 <div class="col-lg-4 col-md-3 col-4 posts-grid-left pr-0">
                     <img src="{{ asset($post->image_url) }}" width="95px" height="130px" />
                 </div>
@@ -12,7 +12,7 @@
                         <a href="{{route('getDetailNews', $post->id)}}">{{$post->title}}</a>
                     </h4>
                     <ul class="wthree_blog_events_list mt-2">
-                        <p class="p-new"> {{ substr($post->content, 3, 50) }}... </p>
+                        <p class="p-new"></p>
                         <li class="mr-2 text-dark">
                             <i class="fa fa-calendar mr-2" aria-hidden="true"></i>
                             {{substr($post->created_at, 0, 10)}}

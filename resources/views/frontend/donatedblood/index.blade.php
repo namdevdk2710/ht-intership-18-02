@@ -77,12 +77,12 @@
 @endif
 @if (session('success'))
 <script>
-    alert('{{ session('success') }}');
+    alert("{{ session('success') }}");
 </script>
 @endif
 @if (session('success'))
 <script>
-alert('{{ session('success') }}');
+alert("{{ session('success') }}");
 </script>
 @endif
 

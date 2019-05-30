@@ -24,14 +24,14 @@ class RegisterDonatedRequest extends FormRequest
     public function rules()
     {
         return [
-            'email' => 'required|email|unique:users',
+            'email' => 'email|unique:users',
         ];
     }
 
     public function messages()
     {
         return [
-            'email.required' => 'Yêu cầu nhập email !',
+
             'email.email' => 'Email không đúng định dạng !',
             'email.unique' => 'Email đã tồn tại !',
         ];
