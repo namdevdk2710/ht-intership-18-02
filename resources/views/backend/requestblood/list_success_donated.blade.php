@@ -2,39 +2,37 @@
 @section('content')
 <div class="request-blood table-responsive">
     <div class="request-blood-header">
-        <span class="text-center text-uppercase">Danh sách yêu cầu hiến
-            máu</span>
+        <span class="text-center text-uppercase">Danh sách đăng kí hiến
+            máu theo lịch</span>
     </div>
     <table class="table table-hover">
         <thead>
             <tr>
-                <th scope="col" class="text-center">Mã hiến máu</th>
                 <th scope="col" class="text-center">Tên người hiến</th>
                 <th scope="col" class="text-center">E-Mail</th>
-                <th scope="col" class="text-center text-nowrap">Trạng thái</th>
-                <th scope="col" class="text-center text-nowrap">Xác nhận</th>
+                <th scope="col" class="text-center text-nowrap">Số điện thoại</th>
+                <th scope="col" class="text-center text-nowrap">Địa chỉ</th>
+                <th scope="col" class="text-center text-nowrap">Mã túi máu</th>
             </tr>
         </thead>
         <tbody id="body-donated">
             @foreach($requestBloods as $key => $requestBlood)
             <tr>
-                <td scope="row" class="text-center">{{ $requestBlood->id }}</td>
                 <td scope="row" class="text-center">{{ $requestBlood->user->information->name }}</td>
                 <td class="text-center">{{ $requestBlood->user->email }}</td>
-                @if ($requestBlood->status == true)
                 <td scope="row" class="text-center">
-                    <strong class="text-success text-nowrap">Đã hiến</strong>
+                    {{ $requestBlood->user->information->phone }}
                 </td>
-                @else
                 <td scope="row" class="text-center">
-                    <strong class="text-muted text-nowrap">Chưa hiến</strong>
+                    {{
+                        $requestBlood->user->information->address . ' - ' .
+                        $requestBlood->user->information->commune->name .' - ' .
+                        $requestBlood->user->information->commune->district->name . ' - ' .
+                        $requestBlood->user->information->commune->district->city->name
+                    }}
                 </td>
-                @endif
                 <td scope="row" class="text-center">
-                    <a href="{{ route('request-bloods.confirm', $requestBlood->id) }}"
-                        class="btn-sm btn-primary text-nowrap">
-                        Xác nhận
-                    </a>
+                    {{ $requestBlood->id }}
                 </td>
             </tr>
             @endforeach
@@ -44,11 +42,4 @@
         {{ $requestBloods->links() }}
     </div>
 </div>
-
-<script>
-$(".btn-primary").click(function() {
-    return confirm("Xác nhận đã hiến?");
-});
-</script>
-
 @endsection

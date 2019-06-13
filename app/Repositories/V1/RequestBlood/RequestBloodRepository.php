@@ -14,9 +14,30 @@ class RequestBloodRepository extends BaseRepository implements RequestBloodRepos
         return RequestBlood::class;
     }
 
-    public function donated()
+    public function listDonated()
     {
-        return $this->model->where('type', 'cho')->where('status', 0)->paginate(5);
+        return $this->model
+                ->where('type', 'cho')
+                ->where('calendar_id', null)
+                ->where('status', 0)
+                ->paginate(5);
+    }
+
+    public function listRegisterDonated()
+    {
+        return $this->model
+                ->where('type', 'cho')
+                ->where('status', 0)
+                ->where('calendar_id', '<>', null)
+                ->paginate(5);
+    }
+
+    public function listSuccessDonated()
+    {
+        return $this->model
+            ->rightJoin('blood_bags', 'request_bloods.id', '=', 'blood_bags.request_blood_id')
+            ->select('request_bloods.*', 'blood_bags.id')
+            ->paginate(5);
     }
 
     public function received()

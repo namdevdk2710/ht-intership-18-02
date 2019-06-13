@@ -77,17 +77,6 @@
     alert(str);
 </script>
 @endif
-@if (session('success'))
-<script>
-    alert("{{ session('success') }}");
-</script>
-@endif
-@if (session('success'))
-<script>
-alert("{{ session('success') }}");
-</script>
-@endif
-
 @if (session('message'))
 <script>
 alert("{{ session('message') }}");

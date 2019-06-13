@@ -9,9 +9,9 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            @if (session('message'))
+            @if (session('success'))
             <script>
-            alert("{{ session('message') }}");
+            alert("{{ session('success') }}");
             </script>
             @endif
             {!! Form::open

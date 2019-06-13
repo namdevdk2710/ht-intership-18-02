@@ -55,7 +55,11 @@ Route::group(['prefix' => 'admin', 'namespace' => 'V1\Web\Backend', 'middleware'
     });
 //---------------------------Admin-Request-Blood----------------------------------------//
     Route::group(['prefix' => 'request-bloods'], function () {
-        Route::get('/donated', 'RequestBloodController@donated')->name('request-bloods.donated');
+        Route::get('/listDonated', 'RequestBloodController@litsDonated')->name('request-bloods.listDonated');
+        Route::get('/listRegisterDonated', 'RequestBloodController@listRegisterDonated')
+        ->name('request-bloods.listRegisterDonated');
+        Route::get('/listSuccessDonated', 'RequestBloodController@listSuccessDonated')
+        ->name('request-bloods.listRegisterSuccess');
         Route::get('/received', 'RequestBloodController@received')->name('request-bloods.received');
         Route::get('/donated/confirm/{id}', 'RequestBloodController@confirm')
         ->name('request-bloods.confirm');
