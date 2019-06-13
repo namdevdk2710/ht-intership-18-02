@@ -19,6 +19,8 @@ class CreateRequestBloodsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->integer('calendar_id')->unsigned()->nullable();
             $table->foreign('calendar_id')->references('id')->on('calendars')->onDelete('cascade');
+            $table->integer('blood_group_id')->unsigned()->nullable();
+            $table->foreign('blood_group_id')->references('id')->on('blood_groups')->onDelete('cascade');
             $table->string('content')->nullable();
             $table->boolean('status');
             $table->string('type');

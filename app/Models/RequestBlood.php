@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class RequestBlood extends Model
 {
-    protected $fillable = ['user_id', 'calendar_id', 'content', 'status', 'type'];
+    protected $fillable = ['user_id', 'calendar_id', 'content', 'status', 'type', 'blood_group_id'];
 
     public function user()
     {
@@ -26,5 +26,10 @@ class RequestBlood extends Model
     public function diaries()
     {
         return $this->hasMany('App\Models\Diary');
+    }
+
+    public function bloodGroup()
+    {
+        return $this->hasOne('App\Models\BloodGroup');
     }
 }

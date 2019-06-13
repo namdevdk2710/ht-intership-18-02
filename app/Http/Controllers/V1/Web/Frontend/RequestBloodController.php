@@ -103,8 +103,9 @@ class RequestBloodController extends Controller
             if ($userId > 0) {
                 $this->informationRepository->register($request, $userId);
                 $result = $this->requestBloodRepository->registerReceived($request, $userId);
+                $this->informationRepository->update($userId, $request);
             } else {
-                return redirect()->back()->with('message', 'Đăng ký thất bại.');
+                 $result = $this->requestBloodRepository->registerReceived($request, $userId);
             }
         }
         if ($result == false) {
