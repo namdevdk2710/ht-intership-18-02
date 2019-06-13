@@ -107,6 +107,7 @@ class RequestBloodRepository extends BaseRepository implements RequestBloodRepos
             'status' => 0,
             'type' => 'nhan',
             'user_id' => $userId,
+            'blood_group_id' => $request->bloodgroup,
         ]);
     }
 }

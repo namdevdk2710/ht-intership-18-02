@@ -37,25 +37,34 @@ class InformationRepository extends BaseRepository implements InformationReposit
 
     public function register($request, $userId)
     {
-        if(!$this->model->where('user_id', $userId)){
-        $data = [
-            'name' => $request->input('name'),
-            'gender' => $request->input('gender'),
-            'cmnd' => $request->input('cmnd'),
-            'phone' => $request->input('phone'),
-            'user_id' => $userId,
-            'commune_id' => $request->input('communes'),
-            'address' => $request->input('address'),
-            'dob' => $request->input('dob'),
-        ];
-        $bloodId = $request->input('bloodgroup');
-        if (isset($bloodId)) {
-            $data['blood_id'] = $bloodId;
-        }
+        $a = $this->model->where('user_id', $userId)->first();
+        if (!$a) {
+            $data = [
+                'name' => $request->input('name'),
+                'gender' => $request->input('gender'),
+                'cmnd' => $request->input('cmnd'),
+                'phone' => $request->input('phone'),
+                'user_id' => $userId,
+                'commune_id' => $request->input('communes'),
+                'address' => $request->input('address'),
+                'dob' => $request->input('dob'),
+            ];
 
-        return $this->model->create($data);
+            return $this->model->create($data);
+        } else {
+            return $this->model->update([
+                    'name' => $request->input('name'),
+                    'gender' => $request->input('gender'),
+                    'cmnd' => $request->input('cmnd'),
+                    'phone' => $request->input('phone'),
+                    'user_id' => $userId,
+                    'commune_id' => $request->input('communes'),
+                    'address' => $request->input('address'),
+                    'dob' => $request->input('dob'),
+            ]);
+        }
     }
-    }
+
     public function updateBloodGroup($request, $userId)
     {
         $userInfo = $this->model->where('user_id', $userId)->first();

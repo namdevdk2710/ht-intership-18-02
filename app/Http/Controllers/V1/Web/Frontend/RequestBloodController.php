@@ -68,16 +68,14 @@ class RequestBloodController extends Controller
                 $this->informationRepository->update($userId, $request);
             } else {
                 $result = $this->requestBloodRepository->registerDonated($request, $calendarId, $userId);
-
             }
             if ($result == false) {
                 return redirect()->back()->with('message', 'Bạn đã đăng ký hiến máu');
             } elseif ($result == 'time') {
                 return redirect()->back()->with('message', 'Số lần hiến gần nhất chưa đủ 3 tháng');
+            }
         }
-        }
-
-            return redirect()->back()->with('message', 'Đăng ký thành công.');
+        return redirect()->back()->with('message', 'Đăng ký thành công.');
     }
 
     public function getRegisterReceived()
@@ -103,8 +101,9 @@ class RequestBloodController extends Controller
             if ($userId > 0) {
                 $this->informationRepository->register($request, $userId);
                 $result = $this->requestBloodRepository->registerReceived($request, $userId);
+                $this->informationRepository->update($userId, $request);
             } else {
-                return redirect()->back()->with('message', 'Đăng ký thất bại.');
+                 $result = $this->requestBloodRepository->registerReceived($request, $userId);
             }
         }
         if ($result == false) {
