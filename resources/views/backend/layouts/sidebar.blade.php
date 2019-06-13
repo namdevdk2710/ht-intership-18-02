@@ -47,7 +47,7 @@
                                 lịch</a></li>
                         <li><a
                             class="{{( Request::path() === 'admin/request-bloods/listSuccessDonated') ? 'active' : '' }}"
-                            href="{{ route('request-bloods.listRegisterSuccess') }}">Người đăng ký hiến theo lịch</a>
+                            href="{{ route('request-bloods.listRegisterSuccess') }}">Người đã lấy máu</a>
                 </li>
             </ul>
             </li>
