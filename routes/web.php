@@ -88,8 +88,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'V1\Web\Backend', 'middleware'
     });
     Route::group(['prefix' => 'bloodbags'], function () {
          //---------------------Import-BloodBag-into-WareHouse---------------------------------//
-      Route::get('/import-blood', 'WareHouseController@getImport')->name('import-loods.index');
-      Route::post('/import-blood/{id}', 'WareHouseController@import')->name('import-loods');
+        Route::get('/import-blood', 'WareHouseController@getImport')->name('import-loods.index');
+        Route::post('/import-blood/{id}', 'WareHouseController@import')->name('import-loods');
     });
 //-----------------------------------DIARY---------------------------------------//
     Route::group(['prefix' => 'diary'], function () {

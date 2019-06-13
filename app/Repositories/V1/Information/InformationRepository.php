@@ -38,7 +38,7 @@ class InformationRepository extends BaseRepository implements InformationReposit
     public function register($request, $userId)
     {
         $a = $this->model->where('user_id', $userId)->first();
-        if(!$a){
+        if(!$a) {
         $data = [
             'name' => $request->input('name'),
             'gender' => $request->input('gender'),
@@ -49,12 +49,10 @@ class InformationRepository extends BaseRepository implements InformationReposit
             'address' => $request->input('address'),
             'dob' => $request->input('dob'),
         ];
-
         return $this->model->create($data);
     }
-    else{
-        return $this->model->update(
-            [
+    else {
+        return $this->model->update([
                 'name' => $request->input('name'),
                 'gender' => $request->input('gender'),
                 'cmnd' => $request->input('cmnd'),
@@ -63,11 +61,10 @@ class InformationRepository extends BaseRepository implements InformationReposit
                 'commune_id' => $request->input('communes'),
                 'address' => $request->input('address'),
                 'dob' => $request->input('dob'),
-            ]
-        );
+            ]);
+        }
     }
 
-    }
     public function updateBloodGroup($request, $userId)
     {
         $userInfo = $this->model->where('user_id', $userId)->first();
