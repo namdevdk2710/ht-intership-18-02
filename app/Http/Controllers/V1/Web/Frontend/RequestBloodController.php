@@ -67,12 +67,12 @@ class RequestBloodController extends Controller
                 $result = $this->requestBloodRepository->registerDonated($request, $calendarId, $userId);
                 $this->informationRepository->update($userId, $request);
             } else {
-                $result = $this->requestBloodRepository->registerDonated($request, $calendarId, $userId);
+                $result = $this->requestBloodRepository->registerDonatedbyCalendar($request, $calendarId, $userId);
             }
             if ($result == false) {
                 return redirect()->back()->with('message', 'Bạn đã đăng ký hiến máu');
             } elseif ($result == 'time') {
-                return redirect()->back()->with('message', 'Số lần hiến gần nhất chưa đủ 3 tháng');
+                return redirect()->back()->with('message', 'Thời gian hiến gần nhất chưa đủ 3   tháng');
             }
         }
         return redirect()->back()->with('message', 'Đăng ký thành công.');
@@ -101,6 +101,27 @@ class RequestBloodController extends Controller
             if ($userId > 0) {
                 $this->informationRepository->register($request, $userId);
                 $result = $this->requestBloodRepository->registerReceived($request, $userId);
+                $this->informationRepository->update($userId, $request);
+            } else {
+                 $result = $this->requestBloodRepository->registerReceived($request, $userId);
+            }
+        }
+        if ($result == false) {
+            return redirect()->back()->with('message', 'Đăng ký thất bại.');
+        } else {
+            return redirect()->back()->with('message', 'Đăng ký thành công.');
+        }
+    }
+    public function registerDonated(Request $request)
+    {
+        if (Auth::check()) {
+            $result = $this->requestBloodRepository->registerReceived($request, Auth::id());
+            return redirect()->back()->with('message', 'Đăng ký thành công.');
+        } else {
+            $userId = $this->userRepository->registerDonated($request);
+            if ($userId > 0) {
+                $this->informationRepository->register($request, $userId);
+                $result = $this->requestBloodRepository->registerDonated($request, $userId);
                 $this->informationRepository->update($userId, $request);
             } else {
                  $result = $this->requestBloodRepository->registerReceived($request, $userId);

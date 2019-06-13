@@ -72,7 +72,7 @@ class RequestBloodRepository extends BaseRepository implements RequestBloodRepos
         return $this->model->orderBy('created_at', 'desc')->get();
     }
 
-    public function registerDonated($request, $calendarId, $userId)
+    public function registerDonatedbyCalendar($request, $calendarId, $userId)
     {
         $requestBlood = $this->model->where('user_id', $userId)->orderBy('created_at', 'dec')->first();
 
@@ -93,6 +93,32 @@ class RequestBloodRepository extends BaseRepository implements RequestBloodRepos
         return $this->model->create([
                 'user_id' => $userId,
                 'calendar_id' => $calendarId,
+                'content' => 'Đăng ký hiến máu',
+                'status' => 0,
+                'type' => 'cho',
+        ]);
+    }
+
+    public function registerDonated($request, $userId)
+    {
+        $requestBlood = $this->model->where('user_id', $userId)->orderBy('created_at', 'dec')->first();
+
+        if ($this->model->where([
+            ['user_id', $userId],
+            ['status', 0],
+        ])->orderBy('user_id', 'dec')->first()) {
+            return false;
+        } elseif (isset($requestBlood)) {
+            $expiryDate = $requestBlood->created_at->addMonth(3);
+            $now = Carbon::now();
+
+            if ($now < $expiryDate) {
+                return 'time';
+            }
+        }
+
+        return $this->model->create([
+                'user_id' => $userId,
                 'content' => 'Đăng ký hiến máu',
                 'status' => 0,
                 'type' => 'cho',

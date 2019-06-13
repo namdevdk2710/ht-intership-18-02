@@ -13,7 +13,9 @@
     </div>
 </div>
 <div class="container">
-    <table class="table table-bordered my-5">
+
+    <table class="table table-bordered mb-5 mt-4">
+    <h4 class="title text-center text-uppercase">Địa điểm hiến máu sắp tới</h4>
         <thead>
             <tr class="text-center">
                 <th class="text-nowrap" scope="col">Thời gian</th>
