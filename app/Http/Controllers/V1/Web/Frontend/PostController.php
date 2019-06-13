@@ -16,7 +16,6 @@ class PostController extends Controller
     {
         $this->postRepository = $postRepository;
         $this->cityRepository = $cityRepository;
-
     }
 
     public function index()

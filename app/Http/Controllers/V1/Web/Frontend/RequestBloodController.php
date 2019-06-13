@@ -114,7 +114,6 @@ class RequestBloodController extends Controller
     }
     public function registerDonated(Request $request)
     {
-
         if (Auth::check()) {
             $result = $this->requestBloodRepository->registerReceived($request, Auth::id());
             return redirect()->back()->with('message', 'Đăng ký thành công.');
