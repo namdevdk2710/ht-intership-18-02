@@ -114,7 +114,8 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
 
     public function registerDonated($request)
     {
-        if (!$this->model->where('email', $request->email)->first()) {
+        $user = $this->model->where('email', $request->email)->first();
+        if (!$user) {
             $this->model->create([
                 'username' => explode('@', $request->email)[0],
                 'email' => $request->email,
@@ -124,7 +125,7 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
 
             return $this->model->orderBy('created_at', 'desc')->first()->id;
         } else {
-            return $this->model->orderBy('created_at', 'desc')->first()->id;
+            return $user->id;
         }
     }
 
