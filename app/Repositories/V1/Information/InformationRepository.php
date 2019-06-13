@@ -49,18 +49,19 @@ class InformationRepository extends BaseRepository implements InformationReposit
             'address' => $request->input('address'),
             'dob' => $request->input('dob'),
         ];
+
         return $this->model->create($data);
-    }
-    else {
-        return $this->model->update([
-                'name' => $request->input('name'),
-                'gender' => $request->input('gender'),
-                'cmnd' => $request->input('cmnd'),
-                'phone' => $request->input('phone'),
-                'user_id' => $userId,
-                'commune_id' => $request->input('communes'),
-                'address' => $request->input('address'),
-                'dob' => $request->input('dob'),
+        }
+        else {
+            return $this->model->update([
+                    'name' => $request->input('name'),
+                    'gender' => $request->input('gender'),
+                    'cmnd' => $request->input('cmnd'),
+                    'phone' => $request->input('phone'),
+                    'user_id' => $userId,
+                    'commune_id' => $request->input('communes'),
+                    'address' => $request->input('address'),
+                    'dob' => $request->input('dob'),
             ]);
         }
     }
