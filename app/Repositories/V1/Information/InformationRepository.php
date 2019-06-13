@@ -50,7 +50,7 @@ class InformationRepository extends BaseRepository implements InformationReposit
                 'dob' => $request->input('dob'),
             ];
 
-        return $this->model->create($data);
+            return $this->model->create($data);
         } else {
             return $this->model->update([
                     'name' => $request->input('name'),
