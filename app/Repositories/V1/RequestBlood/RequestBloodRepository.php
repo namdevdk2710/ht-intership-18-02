@@ -25,7 +25,6 @@ class RequestBloodRepository extends BaseRepository implements RequestBloodRepos
 
     public function listRegisterDonated()
     {
-
         return $this->model
                 ->where('type', 'cho')
                 ->where('status', 0)
@@ -35,11 +34,10 @@ class RequestBloodRepository extends BaseRepository implements RequestBloodRepos
 
     public function listSuccessDonated()
     {
-
-        return  $this->model
-                ->rightJoin('blood_bags', 'request_bloods.id', '=', 'blood_bags.request_blood_id')
-                ->select('request_bloods.*', 'blood_bags.id')
-                ->paginate(5);
+        return $this->model
+            ->rightJoin('blood_bags', 'request_bloods.id', '=', 'blood_bags.request_blood_id')
+            ->select('request_bloods.*', 'blood_bags.id')
+            ->paginate(5);
     }
 
     public function received()
