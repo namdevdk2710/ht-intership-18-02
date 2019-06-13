@@ -19,7 +19,7 @@
                 <th class="text-nowrap" scope="col">Thời gian</th>
                 <th class="text-nowrap" scope="col">Ngày</th>
                 <th class="text-nowrap" scope="col">Địa điểm</th>
-                <th class="text-nowrap" scope="col">Số người đk</th>
+                <th class="text-nowrap" scope="col">Số người đã đăng ký</th>
                 <th class="text-nowrap" scope="col">Hoạt động</th>
             </tr>
         </thead>
@@ -31,11 +31,11 @@
                 <td class="text-nowrap">
                     {{(new DateTime($calendar->time))->format('d/m/Y')}}</td>
                 @php
-                $add = $calendar->address . ' - ' . $calendar->commune->name .
+                $address = $calendar->address . ' - ' . $calendar->commune->name .
                 ' - ' . $calendar->commune->district->name . ' - ' .
                 $calendar->commune->district->city->name
                 @endphp
-                <td>{{ $add }}</td>
+                <td>{{ $address }}</td>
                 <td class="text-nowrap">{{ $calendar->requestBloods->count() }}
                 </td>
                 <td class="text-nowrap">

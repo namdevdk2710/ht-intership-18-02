@@ -80,14 +80,16 @@ Route::group(['prefix' => 'admin', 'namespace' => 'V1\Web\Backend', 'middleware'
         Route::get('/export-blood', 'WareHouseController@getExport')->name('export-bloods.index');
         Route::get('/export-blood/{id}', 'WareHouseController@getExportRequest')->name('export-request');
         Route::get('/export-blood/{id}/{id2}', 'WareHouseController@confirm')->name('confirm-request');
-        //---------------------Import-BloodBag-into-WareHouse---------------------------------//
-        Route::get('/import-blood', 'WareHouseController@getImport')->name('import-loods.index');
-        Route::post('/import-blood/{id}', 'WareHouseController@import')->name('import-loods');
         //-----------------------Manager-BloodBag-In-WareHouse------------------------------------//
         Route::get('/blood-bag', 'WareHouseController@listBloodBag')->name('blood-bags.index');
         Route::get('/blood-bag/{id}', 'WareHouseController@detailBloodBag')
         ->name('blood-bags.updateStatus');
         Route::post('/blood-bag/{id}', 'WareHouseController@updateStatus')->name('updateStatus');
+    });
+    Route::group(['prefix' => 'bloodbags'], function () {
+         //---------------------Import-BloodBag-into-WareHouse---------------------------------//
+      Route::get('/import-blood', 'WareHouseController@getImport')->name('import-loods.index');
+      Route::post('/import-blood/{id}', 'WareHouseController@import')->name('import-loods');
     });
 //-----------------------------------DIARY---------------------------------------//
     Route::group(['prefix' => 'diary'], function () {

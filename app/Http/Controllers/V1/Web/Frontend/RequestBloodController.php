@@ -61,20 +61,23 @@ class RequestBloodController extends Controller
             $result = $this->requestBloodRepository->registerDonated($request, $calendarId, Auth::id());
         } else {
             $userId = $this->userRepository->registerDonated($request);
+
             if ($userId > 0) {
                 $this->informationRepository->register($request, $userId);
                 $result = $this->requestBloodRepository->registerDonated($request, $calendarId, $userId);
+                $this->informationRepository->update($userId, $request);
             } else {
-                return redirect()->back()->with('message', 'Bạn đã đăng ký hiến máu');
+                $result = $this->requestBloodRepository->registerDonated($request, $calendarId, $userId);
+
             }
+            if ($result == false) {
+                return redirect()->back()->with('message', 'Bạn đã đăng ký hiến máu');
+            } elseif ($result == 'time') {
+                return redirect()->back()->with('message', 'Số lần hiến gần nhất chưa đủ 3 tháng');
         }
-        if ($result == false) {
-            return redirect()->back()->with('message', 'Bạn đã đăng ký hiến máu');
-        } elseif ($result == 'time') {
-            return redirect()->back()->with('message', 'Số lần hiến gần nhất chưa đủ 3 tháng');
-        } else {
+        }
+
             return redirect()->back()->with('message', 'Đăng ký thành công.');
-        }
     }
 
     public function getRegisterReceived()

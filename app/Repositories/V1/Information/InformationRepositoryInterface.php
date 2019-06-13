@@ -6,4 +6,5 @@ interface InformationRepositoryInterface
 {
     public function register($request, $userId);
     public function updateBloodGroup($request, $userId);
+    public function update($userId, $request);
 }

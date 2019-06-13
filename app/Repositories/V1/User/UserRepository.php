@@ -124,7 +124,7 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
 
             return $this->model->orderBy('created_at', 'desc')->first()->id;
         } else {
-            return false;
+            return $this->model->orderBy('created_at', 'desc')->first()->id;
         }
     }
 

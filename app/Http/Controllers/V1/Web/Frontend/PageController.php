@@ -60,14 +60,14 @@ class PageController extends Controller
             return redirect()->back()->with('login-error', 'Password không chính xác !');
         }
 
-        return redirect()->route('home');
+        return redirect(session('link'))->back();
     }
 
     public function postRegister(RegisterRequest $request)
     {
         $this->userRepository->register($request->all());
 
-        return redirect()->route('home');
+        return redirect(session('link'))->back();
     }
 
     public function logout()

@@ -57,6 +57,13 @@
                                 href="{{ route('blood-bags.getSearch') }}">Tra cứu kết quả</a></li>
                     </ul>
                 </li>
+                <li class="sub">
+                    <a class="|| Request::path() === 'admin/bloodbags/blood-bag' ? 'active' : '' }}"
+                    href="{{route('import-loods.index')}}">
+                        <i class="fa fa-university"></i>
+                        <span>Nhập túi máu vào kho</span>
+                    </a>
+                </li>
                 <li class="sub-menu">
                     <a href="javascript:;" class="{{( Request::path() === 'admin/warehouses'
                             || Request::path() === 'admin/warehouses/import-blood' )
@@ -69,10 +76,6 @@
                         <li>
                             <a class="{{( Request::path() === 'admin/warehouses' ) ? 'active' : '' }}"
                                 href="{{route('warehouses.index')}}">Danh sách kho máu</a>
-                        </li>
-                        <li>
-                            <a class="{{( Request::path() === 'admin/warehouses/import-blood' ) ? 'active' : '' }}"
-                                href="{{route('import-loods.index')}}">Nhập kho túi máu</a>
                         </li>
                         <li>
                             <a class="{{( Request::path() === 'admin/warehouses/blood-bag' ) ? 'active' : '' }}"

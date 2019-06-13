@@ -24,7 +24,7 @@ class RegisterDonatedRequest extends FormRequest
     public function rules()
     {
         return [
-            'email' => 'email|unique:users',
+            'email' => 'email',
         ];
     }
 
@@ -33,7 +33,6 @@ class RegisterDonatedRequest extends FormRequest
         return [
 
             'email.email' => 'Email không đúng định dạng !',
-            'email.unique' => 'Email đã tồn tại !',
         ];
     }
 }

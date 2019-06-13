@@ -5,6 +5,7 @@ namespace App\Repositories\V1\RequestBlood;
 use App\Repositories\BaseRepository;
 use App\Models\RequestBlood;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Carbon;
 
 class RequestBloodRepository extends BaseRepository implements RequestBloodRepositoryInterface
 {
@@ -73,18 +74,18 @@ class RequestBloodRepository extends BaseRepository implements RequestBloodRepos
 
     public function registerDonated($request, $calendarId, $userId)
     {
-        $requestBlood = $this->model->where('user_id', $userId)->orderBy('updated_at', 'dec')->first();
+        $requestBlood = $this->model->where('user_id', $userId)->orderBy('created_at', 'dec')->first();
 
         if ($this->model->where([
             ['user_id', $userId],
             ['status', 0],
-        ])->first()) {
+        ])->orderBy('user_id', 'dec')->first()) {
             return false;
         } elseif (isset($requestBlood)) {
-            $week = strtotime(date('d-m-Y', strtotime($requestBlood->updated_at)) . ' +12 week');
-            $expiryDate = strftime('%d-%m-%Y', $week);
-            $today = date('Y-m-d');
-            if ($today < $expiryDate) {
+            $expiryDate = $requestBlood->created_at->addMonth(3);
+            $now = Carbon::now();
+
+            if ($now < $expiryDate) {
                 return 'time';
             }
         }
