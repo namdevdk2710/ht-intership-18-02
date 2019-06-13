@@ -11,7 +11,6 @@
                 <th scope="col" class="text-center">Mã hiến máu</th>
                 <th scope="col" class="text-center">Tên người hiến</th>
                 <th scope="col" class="text-center">E-Mail</th>
-                <th scope="col" class="text-center text-nowrap">Thời gian</th>
                 <th scope="col" class="text-center text-nowrap">Trạng thái</th>
                 <th scope="col" class="text-center text-nowrap">Xác nhận</th>
             </tr>
@@ -22,9 +21,6 @@
                 <td scope="row" class="text-center">{{ $requestBlood->id }}</td>
                 <td scope="row" class="text-center">{{ $requestBlood->user->information->name }}</td>
                 <td class="text-center">{{ $requestBlood->user->email }}</td>
-                <td class="text-center text-nowrap">
-                    {{ $requestBlood->calendar->time }}
-                </td>
                 @if ($requestBlood->status == true)
                 <td scope="row" class="text-center">
                     <strong class="text-success text-nowrap">Đã hiến</strong>

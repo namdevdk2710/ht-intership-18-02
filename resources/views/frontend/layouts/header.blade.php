@@ -71,8 +71,8 @@
                 </h1>
                 <!-- //logo -->
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
@@ -81,26 +81,26 @@
                             <a class="nav-link" href="/">Trang chủ</a>
                         </li>
                         <li class="nav-item dropdown mx-lg-4 my-lg-0">
-                            <a class="nav-link dropdown-toggle" href="#"
-                            id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Đăng ký
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item "
-                                href="{{ route('requestBlood.getRegisterDonated') }}">
+                                <a class="dropdown-item " href="{{ route('requestBlood.getRegisterDonated') }}">
+                                    Địa điểm hiếm máu sắp tới
+                                </a>
+                                <a  class="dropdown-item " data-toggle="modal"
+                                    data-target="#register-donated" href="#">
                                     Đăng ký hiến máu
                                 </a>
-                                <a class="dropdown-item"
-                                href="{{ route('requestBlood.getRegisterReceived') }}">
+                                <a class="dropdown-item" href="{{ route('requestBlood.getRegisterReceived') }}">
                                     Đăng ký nhận máu
                                 </a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-                                role="button" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Tra cứu
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -135,7 +135,7 @@
                                 <ul class="dropdown-menu extended dropdown-login">
                                     <li>
                                         <a href="#" data-toggle="modal" data-target="#modalProfile"><i
-                                        class=" fa fa-suitcase"></i>Thông tin cá nhân
+                                                class=" fa fa-suitcase"></i>Thông tin cá nhân
                                         </a>
                                     </li>
                                     <li>
@@ -148,8 +148,8 @@
                             <!-- user login dropdown end -->
                         </ul>
                         @else
-                        <a href="#" class="login-button ml-lg-5 mt-lg-0 mt-4 mb-lg-0 mb-3"
-                        data-toggle="modal" data-target="#exampleModalCenter1">
+                        <a href="#" class="login-button ml-lg-5 mt-lg-0 mt-4 mb-lg-0 mb-3" data-toggle="modal"
+                            data-target="#exampleModalCenter1">
                             <i class="fas fa-sign-in-alt mr-2"></i>Đăng nhập
                         </a>
                         @endif
@@ -159,6 +159,7 @@
             </div>
         </nav>
     </div>
+    @include('frontend.donatedblood.registerDonated')
     @include('frontend.layouts.login')
     @include('frontend.layouts.register')
 </div>
