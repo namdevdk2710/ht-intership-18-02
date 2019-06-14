@@ -57,6 +57,7 @@ class BloodBagController extends Controller
     public function store(BloodBagRequest $request)
     {
         $bloodBag = $this->bloodBagRepository->store($request);
+        $this->requestBloodRepository->update(['status', 1]);
         $userId = $bloodBag->requestBlood->user_id;
         $this->informationRepository->updateBloodGroup($request, $userId);
         $this->diaryRepository->save(

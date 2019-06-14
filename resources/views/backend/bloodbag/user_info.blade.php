@@ -45,8 +45,8 @@
                 <h4 class="col-sm-8 import-user-info-cmnd"></h4>
             </td>
             <td class="col-sm-6">
-                <span class="col-sm-4">Ngày lấy máu</span>
-                <h4 class="col-sm-8 import-user-info-time"></h4>
+                <span class="col-sm-4">Địa chỉ</span>
+                <h4 class="col-sm-8 import-user-info-address"></h4>
             </td>
         </tr>
     </tbody>

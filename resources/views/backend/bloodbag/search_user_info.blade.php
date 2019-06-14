@@ -48,8 +48,8 @@
                 <h5 class="col-sm-8 search-user-info-cmnd"></h5>
             </td>
             <td class="col-sm-6">
-                <span class="col-sm-4">Ngày lấy máu</span>
-                <h5 class="col-sm-8 search-user-info-time"></h5>
+                <span class="col-sm-4">Địa chỉ</span>
+                <h5 class="col-sm-8 search-user-info-address"></h5>
             </td>
         </tr>
     </tbody>
