@@ -88,7 +88,7 @@ class RequestBloodRepository extends BaseRepository implements RequestBloodRepos
 
     public function getById($id)
     {
-        $requestBlood = $this->model->where('type', 'cho')->where('status', 1)->find($id);
+        $requestBlood = $this->model->where('type', 'cho')->find($id);
         if (isset($requestBlood->user->information->blood_id)) {
             $blood = $requestBlood->user->information->bloodGroup->name;
         } else {
@@ -108,7 +108,9 @@ class RequestBloodRepository extends BaseRepository implements RequestBloodRepos
                     'birthday' => $requestBlood->user->information->dob,
                     'gender' => ($requestBlood->user->information->gender == 1) ? 'Nam' : 'Nữ',
                     'cmnd' => $requestBlood->user->information->cmnd,
-                    'time' => $requestBlood->calendar->time,
+                    'address' => $requestBlood->user->information->address.'-'.
+                        $requestBlood->user->information->commune->name.'-'.
+                        $requestBlood->user->information->commune->district->name,
                     'blood' => $blood,
                 ];
         } else {

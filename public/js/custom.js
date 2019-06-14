@@ -197,7 +197,7 @@ $(document).ready(function () {
                         $('#import-user-info .import-user-info-birthday').text(data.birthday);
                         $('#import-user-info .import-user-info-gender').text(data.gender);
                         $('#import-user-info .import-user-info-cmnd').text(data.cmnd);
-                        $('#import-user-info .import-user-info-time').text(data.time);
+                        $('#import-user-info .import-user-info-address').text(data.address);
                         $('#import-user-info .import-user-info-blood').text(data.blood);
                         if (data.hasBag) {
                             $('#js-import-bloodbag-result').hide();
@@ -241,7 +241,7 @@ $(document).ready(function () {
                     $('#search-user-info .search-user-info-birthday').text(data.birthday);
                     $('#search-user-info .search-user-info-gender').text(data.gender);
                     $('#search-user-info .search-user-info-cmnd').text(data.cmnd);
-                    $('#search-user-info .search-user-info-time').text(data.time);
+                    $('#search-user-info .search-user-info-address').text(data.address);
                     $('#search-user-info .search-user-info-blood').text(data.blood);
 
                     if (data.exist) {
