@@ -72,6 +72,13 @@ class RequestBloodController extends Controller
         return view('backend.requestblood.list_success_donated', compact('requestBloods'));
     }
 
+    public function listReceived()
+    {
+        $requestBloods = $this->repository->listReceived();
+
+        return view('backend.requestblood.list_receiver', compact('requestBloods', 'bloodBag'));
+    }
+
     public function received()
     {
         $requestBloods = $this->repository->received();

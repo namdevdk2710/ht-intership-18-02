@@ -28,8 +28,8 @@ class RequestBlood extends Model
         return $this->hasMany('App\Models\Diary');
     }
 
-    public function bloodGroup()
+    public function bloodgroup()
     {
-        return $this->hasOne('App\Models\BloodGroup');
+        return $this->belongsTo('App\Models\BloodGroup', 'blood_group_id');
     }
 }

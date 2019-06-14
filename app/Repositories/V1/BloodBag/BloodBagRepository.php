@@ -36,9 +36,7 @@ class BloodBagRepository extends BaseRepository implements BloodBagRepositoryInt
 
     public function getBloodBagByStatus()
     {
-        $bloodBag = $this->model->where('note', 'Đã nhập kho')->get();
-
-        return $bloodBag;
+        return $this->model->where('note', 'Đã nhập kho')->paginate(5);
     }
 
     public function getResultByRequestId($id)

@@ -7,6 +7,7 @@ interface RequestBloodRepositoryInterface
     public function listDonated();
     public function listRegisterDonated();
     public function listSuccessDonated();
+    public function listReceived();
     public function received();
     public function confirm($id);
     public function getById($id);

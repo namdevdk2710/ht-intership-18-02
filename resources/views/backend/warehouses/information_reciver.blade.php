@@ -31,8 +31,8 @@
         </label>
     </div>
     <div class="col-md-12 export-tr">
-        <label class="col-md-4">Nhóm máu cần:
-            <span class="span-color">{{$requests->user->information->bloodgroup->name}}</span>
+        <label class="col-md-4">Nhóm máu cần nhận:
+            <span class="span-color">{{$requests->bloodgroup->name}}</span>
         </label>
         <label class="col-md-8">Ghi chú:
             <span class="span-color">{{$requests->content}}</span>
