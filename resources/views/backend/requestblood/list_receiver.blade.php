@@ -2,7 +2,7 @@
 @section('content')
 <div class="request-blood table-responsive">
     <div class="request-blood-header">
-        <span class="text-center text-uppercase">Danh sách yêu cầu nhận
+        <span class="text-center text-uppercase">Danh sách người nhận
             máu</span>
     </div>
     <table class="table table-hover">
@@ -11,10 +11,9 @@
                 <th scope="col" class="text-center">Mã yêu cầu</th>
                 <th scope="col" class="text-center">E-Mail</th>
                 <th scope="col" class="text-center">Họ tên</th>
-                <th scope="col" class="text-center">Địa chỉ</th>
                 <th scope="col" class="text-center text-nowrap">Giới tính</th>
                 <th scope="col" class="text-center">Số điện thoại</th>
-                <th scope="col" class="text-center text-nowrap">Thao tác</th>
+                <th scope="col" class="text-center text-nowrap">Túi máu đã nhận(Mã túi máu)</th>
             </tr>
         </thead>
         <tbody id="body-received">
@@ -23,14 +22,6 @@
                 <td scope="row" class="text-center">{{ $requestBlood->id }}</td>
                 <td scope="row" class="text-center">{{ $requestBlood->user->email }}</td>
                 <td scope="row" class="text-center">{{ $requestBlood->user->information->name }}</td>
-                <td scope="row" class="text-center">
-                {{
-                    $requestBlood->user->information->address.'-'.
-                    $requestBlood->user->information->commune->name.'-'.
-                    $requestBlood->user->information->commune->district->name.'-'.
-                    $requestBlood->user->information->commune->district->city->name
-                }}
-                </td>
                 @if ($requestBlood->user->information->gender == 1)
                 <td scope="row" class="text-center">Nam</td>
                 @else

@@ -60,6 +60,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'V1\Web\Backend', 'middleware'
         ->name('request-bloods.listRegisterDonated');
         Route::get('/listSuccessDonated', 'RequestBloodController@listSuccessDonated')
         ->name('request-bloods.listRegisterSuccess');
+        Route::get('/list-received', 'RequestBloodController@listReceived')
+        ->name('request-bloods.listReceived');
         Route::get('/received', 'RequestBloodController@received')->name('request-bloods.received');
         Route::get('/donated/confirm/{id}', 'RequestBloodController@confirm')
         ->name('request-bloods.confirm');

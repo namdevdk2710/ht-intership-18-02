@@ -20,6 +20,7 @@ class RequestBloodRepository extends BaseRepository implements RequestBloodRepos
                 ->where('type', 'cho')
                 ->where('calendar_id', null)
                 ->where('status', 0)
+                ->orderBy('id', 'dec')
                 ->paginate(5);
     }
 
@@ -29,6 +30,7 @@ class RequestBloodRepository extends BaseRepository implements RequestBloodRepos
                 ->where('type', 'cho')
                 ->where('status', 0)
                 ->where('calendar_id', '<>', null)
+                ->orderBy('id', 'dec')
                 ->paginate(5);
     }
 
@@ -37,17 +39,43 @@ class RequestBloodRepository extends BaseRepository implements RequestBloodRepos
         return $this->model
             ->rightJoin('blood_bags', 'request_bloods.id', '=', 'blood_bags.request_blood_id')
             ->select('request_bloods.*', 'blood_bags.id')
+            ->orderBy('request_bloods.id', 'dec')
+            ->paginate(5);
+    }
+
+    public function listReceived()
+    {
+        return $this->model
+            ->where('type', 'nhan')
+            ->orderBy('id', 'dec')
+            ->paginate(5);
+    }
+
+    public function listReceivedSuccess()
+    {
+        return $this->model
+            ->rightJoin('diaries', 'request_bloods.id', '=', 'diaries.request_blood_id')
+            ->select('request_bloods.*', 'diaries.blood_bag_id')
+            ->orderBy('id', 'dec')
             ->paginate(5);
     }
 
     public function received()
     {
-        return $this->model->where('type', 'nhan')->where('status', 0)->paginate(5);
+        return $this->model
+            ->where('type', 'nhan')
+            ->where('status', 0)
+            ->orderBy('id', 'dec')
+            ->paginate(5);
     }
 
     public function receivedByStatus()
     {
-        return $this->model->where('type', 'nhan')->where('status', 0)->paginate(5);
+        return $this->model
+            ->where('type', 'nhan')
+            ->where('status', 0)
+            ->orderBy('id', 'dec')
+            ->paginate(5);
     }
 
     public function confirm($id)

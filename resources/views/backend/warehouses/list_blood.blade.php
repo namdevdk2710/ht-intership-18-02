@@ -13,11 +13,11 @@
             <th scope="col" class="text-center">Thao tác</th>
         </tr>
     </thead>
+
     <tbody>
         @foreach($bloodbags as $key => $bloodbag)
 
-        @if ($bloodbag->requestBlood->user->information->bloodgroup->name
-            == $requests->user->information->bloodgroup->name)
+        @if ($bloodbag->requestBlood->user->information->bloodgroup->id == $requests->blood_group_id)
         <tr class="text-center">
             <td>{{$bloodbag->id}}</td>
             <td>{{$bloodbag->wareHouse->name}}</td>
@@ -40,6 +40,10 @@
                 {!! Form::close() !!}
             </td>
         </tr>
+        @else
+            <tr>
+                <td colspan= "6" style="color:red" class="text-center">Không có túi máu phù hợp</td>
+            </tr>
         @endif
         @endforeach
     </tbody>

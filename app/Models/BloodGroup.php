@@ -13,8 +13,8 @@ class BloodGroup extends Model
         return $this->hasMany('App\Models\Information');
     }
 
-    public function requestBlood()
+    public function requestBloods()
     {
-        return $this->hasOne('App\Models\RequestBlood');
+        return $this->hasMany('App\Models\RequestBlood');
     }
 }
