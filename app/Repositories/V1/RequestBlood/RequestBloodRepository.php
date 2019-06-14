@@ -109,8 +109,8 @@ class RequestBloodRepository extends BaseRepository implements RequestBloodRepos
                     'gender' => ($requestBlood->user->information->gender == 1) ? 'Nam' : 'Nữ',
                     'cmnd' => $requestBlood->user->information->cmnd,
                     'address' => $requestBlood->user->information->address.'-'.
-                        $requestBlood->user->information->commune->name.'-'.
-                        $requestBlood->user->information->commune->district->name,
+                    $requestBlood->user->information->commune->name.'-'.
+                    $requestBlood->user->information->commune->district->name,
                     'blood' => $blood,
                 ];
         } else {
