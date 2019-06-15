@@ -31,14 +31,12 @@
                 @if ($requestBlood->status == 1)
                 <td scope="row" class="text-center">
                 @foreach($requestBlood->diaries as $diaries)
-                    {{count($requestBlood->diaries).'  '.'túi'.'('.$diaries->blood_bag_id.','.')'}}
+                    <p style="color:navy">{{count($requestBlood->diaries).'  '.'túi'.'('.$diaries->blood_bag_id.','.')'}}</p>
                 @endforeach
                 </td>
                 @else
                 <td scope="row" class="text-center">
-                    <a class= "btn-sm btn-primary text-nowrap" href="{{route('export-request', $requestBlood->id)}}">
-                        Xác nhận
-                    </a>
+                    <p style="color:red">Chưa nhận</p>
                 </td>
                 @endif
             </tr>
