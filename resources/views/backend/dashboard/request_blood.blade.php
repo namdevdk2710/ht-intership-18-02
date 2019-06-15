@@ -5,9 +5,6 @@
         </header>
         <div class="notify-w3ls">
             @foreach($requestBloods as $key => $requestBlood)
-            @if ($key >= 5)
-            @break
-            @endif
             <div class="alert alert-success ">
                 <span class="alert-icon"><i class="fa fa-wpforms"></i></span>
                 <div class="notification-info">
@@ -26,21 +23,24 @@
                         </li>
                     </ul>
                     <p class="text-muted">
-                    @if(isset($requestBlood->calendar->time))
+                        @if(isset($requestBlood->calendar->time))
                         Lịch thực hiện
                         <span class="text-primary">
                             {{ $requestBlood->calendar->time }}
                         </span>
-                    @else
+                        @else
                         Yêu cầu lúc
                         <span class="text-primary">
                             {{ $requestBlood->created_at }}
                         </span>
-                    @endif
+                        @endif
                     </p>
                 </div>
             </div>
             @endforeach
+            <div class="text-center">
+                {{ $requestBloods->links() }}
+            </div>
         </div>
     </div>
 </div>

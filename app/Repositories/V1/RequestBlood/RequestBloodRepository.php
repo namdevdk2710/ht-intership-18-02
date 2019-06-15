@@ -118,7 +118,7 @@ class RequestBloodRepository extends BaseRepository implements RequestBloodRepos
 
     public function getDashboardData()
     {
-        return $this->model->orderBy('created_at', 'desc')->get();
+        return $this->model->orderBy('created_at', 'desc')->paginate(5);
     }
 
     public function registerDonatedbyCalendar($request, $calendarId, $userId)
