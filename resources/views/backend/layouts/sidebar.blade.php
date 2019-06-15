@@ -7,7 +7,7 @@
                     <a class="{{( Request::path() === 'admin/index' || Request::path() === 'admin' )? 'active' : '' }}"
                         href="{{ route('admin.index') }}">
                         <i class="fa fa-dashboard"></i>
-                        <span>Dashboard</span>
+                        <span>Trang chủ</span>
                     </a>
                 </li>
                 <li>
@@ -81,7 +81,7 @@
                 <li class="sub">
                     <a class="|| Request::path() === 'admin/bloodbags/blood-bag' ? 'active' : '' }}"
                         href="{{route('import-loods.index')}}">
-                        <i class="fa fa-university"></i>
+                        <i class="fa fa-shopping-bag"></i>
                         <span>Nhập túi máu vào kho</span>
                     </a>
                 </li>
@@ -100,7 +100,7 @@
                         </li>
                         <li>
                             <a class="{{( Request::path() === 'admin/warehouses/blood-bag' ) ? 'active' : '' }}"
-                                href="{{route('blood-bags.index')}}">Quản lý túi máu</a>
+                                href="{{route('blood-bags.index')}}">Quản lý túi máu trong kho</a>
                         </li>
                         <li>
                             <a class="{{( Request::path() === 'warehouses/export-blood' ) ? 'active' : '' }}"
@@ -118,7 +118,7 @@
                 <li>
                     <a class="{{(Request::path() == 'admin/posts' )? 'active' : '' }}"
                         href="{{ route('posts.index') }}">
-                        <i class="fa fa-clipboard"></i>
+                        <i class="fa fa-tags"></i>
                         <span>Quản lý tin tức</span>
                     </a>
                 </li>

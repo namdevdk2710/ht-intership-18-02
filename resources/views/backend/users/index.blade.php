@@ -3,7 +3,7 @@
 @section('content')
 @if(Auth::user()->id == 2)
 <div class="table-responsive blood-table text-danger">
-    Không có quyển truy cập !!
+    Không có quyền truy cập danh mục này !!
 </div>
 @else
 <div class="table-responsive blood-table">
