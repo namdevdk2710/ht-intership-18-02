@@ -5,9 +5,6 @@
         </header>
         <div class="notify-w3ls">
             @foreach($diaries as $key => $diary)
-            @if ($key >= 5)
-            @break
-            @endif
             <div class="alert alert-info clearfix">
                 <span class="alert-icon"><i class="fa fa-clipboard"></i></span>
                 <div class="notification-info">
@@ -36,6 +33,9 @@
                 </div>
             </div>
             @endforeach
+            <div class="text-center">
+                {{ $diaries->links() }}
+            </div>
         </div>
     </div>
 </div>

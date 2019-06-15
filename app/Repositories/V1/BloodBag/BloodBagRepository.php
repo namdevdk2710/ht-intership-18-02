@@ -116,6 +116,6 @@ class BloodBagRepository extends BaseRepository implements BloodBagRepositoryInt
 
     public function getDashboardData()
     {
-        return $this->model->where('note', 'Đã nhập kho')->get();
+        return $this->model->all();
     }
 }

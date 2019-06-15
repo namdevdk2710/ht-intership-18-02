@@ -92,6 +92,6 @@ class DiaryRepository extends BaseRepository implements DiaryRepositoryInterface
 
     public function getDashboardData()
     {
-        return $this->model->orderBy('created_at', 'desc')->get();
+        return $this->model->orderBy('created_at', 'desc')->paginate(5);
     }
 }

@@ -47,8 +47,8 @@
                 <i class="fa fa-tint dashboard-icon-custom" aria-hidden="true"></i>
             </div>
             <div class="col-md-8 market-update-left">
-                <h4>Lượng máu</h4>
-                <h3>{{ $bloodBags->sum('unit') }}</h3>
+                <h4>Số túi máu</h4>
+                <h3>{{ count($bloodBags) }}</h3>
             </div>
             <div class="clearfix"></div>
         </div>
